@@ -1,0 +1,32 @@
+.notFound {
+    color: $black;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2 {
+        display: inline-block;
+        border-right: 1px solid rgba(0, 0, 0, 0.75);
+        margin: 0;
+        margin-right: 1.25rem;
+        padding: 1.25rem 1.4375rem 1.25rem 0;
+        font-size: 1.5rem;
+        vertical-align: top;
+        font-weight: 700;
+    }
+    .bar {
+        display: inline-block;
+        text-align: left;
+        line-height: 3rem;
+        height: 3rem;
+        vertical-align: middle;
+        h3 {
+            font-weight: normal;
+            line-height: inherit;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}

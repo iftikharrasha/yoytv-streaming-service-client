@@ -1,0 +1,100 @@
+[
+    {
+        "id": "1",
+        "checked": false,
+        "title": "CSE438",
+        "value": "CSE438",
+        "type": "course"
+    },
+    {
+        "id": "2",
+        "checked": false,
+        "title": "CSE373",
+        "value": "CSE373",
+        "type": "course"
+    },
+    {
+        "id": "3",
+        "checked": false,
+        "title": "MAT350",
+        "value": "MAT350",
+        "type": "course"
+    },
+    {
+        "id": "4",
+        "checked": false,
+        "title": "ENG111",
+        "value": "ENG111",
+        "type": "course"
+    },
+    {
+        "id": "5",
+        "checked": false,
+        "title": "HIS101",
+        "value": "HIS101",
+        "type": "course"
+    },
+    {
+        "id": "6",
+        "checked": false,
+        "title": "Monday-Wednesday (MW)",
+        "value": "MW",
+        "type": "day"
+    },
+    {
+        "id": "7",
+        "checked": false,
+        "title": "Thursday-Saturday (RA)",
+        "value": "RA",
+        "type": "day"
+    },
+    {
+        "id": "8",
+        "checked": false,
+        "title": "Sunday-Tuesday (ST)",
+        "value": "ST",
+        "type": "day"
+    },
+    {
+        "id": "9",
+        "checked": false,
+        "title": "08:00 AM - 09:30 AM",
+        "value": "08:00 - 09:30",
+        "type": "time"
+    },
+    {
+        "id": "10",
+        "checked": false,
+        "title": "09:40 AM - 11:10 AM",
+        "value": "09:40 - 11:10",
+        "type": "time"
+    },
+    {
+        "id": "11",
+        "checked": false,
+        "title": "11:20 AM - 12:50 PM",
+        "value": "11:20 - 12:50",
+        "type": "time"
+    },
+    {
+        "id": "12",
+        "checked": false,
+        "title": "01:00 PM - 02:30 PM",
+        "value": "01:00 - 02:30",
+        "type": "time"
+    },
+    {
+        "id": "13",
+        "checked": false,
+        "title": "02:40 PM - 04:10 PM",
+        "value": "02:40 - 04:10",
+        "type": "time"
+    },
+    {
+        "id": "14",
+        "checked": false,
+        "title": "04:20 PM - 05:50 PM",
+        "value": "04:20 - 05:50",
+        "type": "time"
+    }
+]

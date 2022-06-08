@@ -1,0 +1,133 @@
+@import './variables';
+@import './header';
+@import './footer';
+@import './notFound';
+@import './loader';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    @media (max-width: 575.98px) {
+        font-size: 12px;
+    }
+    @media (max-width: 320px) {
+        font-size: 11px;
+    }
+    @media (min-width: 576px) and (max-width: 1531.98px) {
+        font-size: 12px;
+    }
+}
+
+body {
+    font-family: $ff1;
+    background-color: $white;
+    color: $darkblue;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar {
+width: 0.1875rem;
+}
+
+::-webkit-scrollbar-track {
+-webkit-border-radius: 0.625rem;
+border-radius: 0.625rem;
+}
+
+::-webkit-scrollbar-thumb {
+-webkit-border-radius: 0.625rem;
+border-radius: 0.625rem;
+background: $blue;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+background: $blue;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+	margin:0;
+	padding:0;
+    font-weight: 400;
+}
+
+h2{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+ul{
+	margin: 0;
+	padding:0;
+	list-style: none;
+}
+
+a{
+	margin:0;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration:none;
+}
+
+a, select , input , textarea , button{
+	outline: none !important;
+}
+
+.btn:focus, .btn.focus, .form-control:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+.btn-link:focus, .btn-link.focus {
+    text-decoration: none;
+}
+
+.wrapper {
+  margin: 0 auto;
+    @media (max-width: 575.98px) {
+        width: 90%;
+        margin: 0 auto;
+    }
+    @media (min-width: 576px) and (max-width: 991.98px) {
+        width: 80%;
+        margin: 0 auto;
+    }
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        max-width: 720px;
+    }
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+            max-width: 960px;
+    }
+    @media (min-width: 1200px) and (max-width: 1299.98px) {
+        max-width: 980px;
+    }
+    @media (min-width: 1300px){
+        max-width: 100rem;
+    }
+}
+
+.pulse{
+    animation: borderPulse 1000ms infinite ease-out;
+}
+
+@keyframes borderPulse {
+    0% {
+      transform: scale(1);
+    }
+    30% {
+        box-shadow: inset 0px 0px 0px 5px rgba(255, 255, 255,.4), 0px 0px 0px 0px rgba(255,255,255,1);
+      transform: scale(0.98);
+    }
+    100% {
+        box-shadow: inset 0px 0px 0px 3px rgba(117, 117, 255,.2), 0px 0px 0px 10px rgba(255,255,255,0);
+        transform: scale(1);
+    }
+}

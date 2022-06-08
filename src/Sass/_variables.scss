@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+  
+:root {
+    --white: #ffffff;
+    --darkblue: #111e62;
+    --lagoon: #e7f1ff;
+    --yellow: #F0AF4E;
+    --blue: #537FE5;
+    --red: #E55664;
+    --green: #a7e2d7;
+    --black: #121212;
+}
+
+$white: var(--white);
+$darkblue: var(--darkblue);
+$lagoon: var(--lagoon);
+$yellow: var(--yellow);
+$blue: var(--blue);
+$red: var(--red);
+$green: var(--green);
+$black: var(--black);
+
+$ff1: 'Poppins', sans-serif;
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
