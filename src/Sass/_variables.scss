@@ -1,30 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-  
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
     --white: #ffffff;
-    --darkblue: #111e62;
-    --lagoon: #e7f1ff;
-    --yellow: #F0AF4E;
-    --blue: #537FE5;
-    --red: #E55664;
-    --green: #a7e2d7;
+    --green: #67fe65;
+    --blue: #0e005c;
     --black: #121212;
 }
 
 $white: var(--white);
-$darkblue: var(--darkblue);
-$lagoon: var(--lagoon);
-$yellow: var(--yellow);
-$blue: var(--blue);
-$red: var(--red);
 $green: var(--green);
+$blue: var(--blue);
 $black: var(--black);
 
-$ff1: 'Poppins', sans-serif;
+$ff1: 'Epilogue', sans-serif;
 
 @mixin flexCenter {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+@mixin flexBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin bgCover {
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
 }
   
