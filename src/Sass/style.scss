@@ -1,5 +1,6 @@
 @import './variables';
 @import './header';
+@import './hero';
 @import './footer';
 @import './notFound';
 
@@ -25,8 +26,8 @@ html {
 
 body {
     font-family: $ff1;
-    background-color: $white;
-    color: $blue;
+    background-color: $darkblue;
+    color: $white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: all 0.3s ease-in-out;
@@ -109,6 +110,6 @@ a, select , input , textarea , button{
         max-width: 980px;
     }
     @media (min-width: 1300px){
-        max-width: 100rem;
+        max-width: 110rem;
     }
 }
