@@ -25,6 +25,12 @@
   position: relative;
 }
 
+@media (max-width: 575.98px) {
+  .hero {
+    min-height: 18rem;
+  }
+}
+
 .hero__contents {
   width: 100%;
 }
@@ -36,12 +42,24 @@
   padding-bottom: 1.25rem;
 }
 
+@media (max-width: 575.98px) {
+  .hero__contents h1 {
+    font-size: 1.75rem;
+  }
+}
+
 .hero__contents h2 {
   font-size: 2.0625rem;
   font-weight: 600;
   font-style: italic;
   position: relative;
   padding-bottom: 3rem;
+}
+
+@media (max-width: 575.98px) {
+  .hero__contents h2 {
+    font-size: 1.5rem;
+  }
 }
 
 .hero__contents ul {
@@ -60,16 +78,17 @@
   font-weight: 600;
   border-radius: 1.5rem;
   padding: 0.5rem 1.75rem;
-  background: transparent -webkit-gradient(linear, right top, left top, from(var(--green)), to(var(--green))) 0% 0% no-repeat padding-box;
-  background: transparent linear-gradient(270deg, var(--green) 0%, var(--green) 100%) 0% 0% no-repeat padding-box;
+  background: rgba(255, 255, 255, 0) -webkit-gradient(linear, right top, left top, from(var(--green)), to(var(--green))) 0% 0% no-repeat padding-box;
+  background: rgba(255, 255, 255, 0) linear-gradient(270deg, var(--green) 0%, var(--green) 100%) 0% 0% no-repeat padding-box;
   color: var(--blue);
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
+  border: 0;
 }
 
-.hero__contents ul li button:hover span {
-  -webkit-transform: scale(0.7);
-          transform: scale(0.7);
+.hero__contents ul li button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .hero__contents ul li:first-child {
@@ -77,16 +96,16 @@
 }
 
 .hero__contents ul li:last-child button {
-  background: transparent -webkit-gradient(linear, right top, left top, from(#0E005C73), to(#0E005C73)) 0% 0% no-repeat padding-box;
-  background: transparent linear-gradient(270deg, #0E005C73 0%, #0E005C73 100%) 0% 0% no-repeat padding-box;
+  background: rgba(255, 255, 255, 0) -webkit-gradient(linear, right top, left top, from(#0E005C73), to(#0E005C73)) 0% 0% no-repeat padding-box;
+  background: rgba(255, 255, 255, 0) linear-gradient(270deg, #0E005C73 0%, #0E005C73 100%) 0% 0% no-repeat padding-box;
   color: var(--white);
   border: 0.125rem solid var(--green);
 }
 
 .hero__contents ul li:last-child button:hover {
   color: var(--blue);
-  background: transparent -webkit-gradient(linear, right top, left top, from(var(--green)), to(var(--green))) 0% 0% no-repeat padding-box;
-  background: transparent linear-gradient(270deg, var(--green) 0%, var(--green) 100%) 0% 0% no-repeat padding-box;
+  background: rgba(255, 255, 255, 0) -webkit-gradient(linear, right top, left top, from(var(--green)), to(var(--green))) 0% 0% no-repeat padding-box;
+  background: rgba(255, 255, 255, 0) linear-gradient(270deg, var(--green) 0%, var(--green) 100%) 0% 0% no-repeat padding-box;
 }
 
 .hero__contents:before {
@@ -101,6 +120,49 @@
   left: 0;
   z-index: 0;
   opacity: 1;
+}
+
+.hero__audio {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 575.98px) {
+  .hero__audio {
+    display: none;
+  }
+}
+
+.hero__audio__controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero__audio__controls img {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1.25rem;
+  cursor: pointer;
+}
+
+.hero__audio__controls span {
+  border-left: 4px solid var(--green);
+  background-color: var(--blue);
+  padding: 0.65rem 1rem;
+}
+
+.hero__audio__controls span p {
+  color: var(--green);
+  font-size: 1.125rem;
+  font-weight: 700;
 }
 
 .notFound {
@@ -167,15 +229,45 @@ html {
   }
 }
 
-@media (max-width: 320px) {
+@media (min-width: 576px) and (max-width: 991.98px) {
   html {
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 
-@media (min-width: 576px) and (max-width: 1531.98px) {
+@media (min-width: 992px) and (max-width: 1299.98px) {
   html {
     font-size: 12px;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1531.98px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1532px) and (max-width: 1600px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 2500px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 376px) {
+  html {
+    font-size: 10px;
   }
 }
 

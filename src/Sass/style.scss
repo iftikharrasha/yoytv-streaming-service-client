@@ -16,12 +16,27 @@ html {
     @media (max-width: 575.98px) {
         font-size: 12px;
     }
-    @media (max-width: 320px) {
-        font-size: 11px;
-    }
-    @media (min-width: 576px) and (max-width: 1531.98px) {
+    @media (min-width: 576px) and (max-width: 991.98px) {
         font-size: 12px;
     }
+    @media (min-width: 992px) and (max-width: 1299.98px) {
+        font-size: 12px;
+    }
+    @media (min-width: 1300px) and (max-width: 1531.98px){
+        font-size: 12px;
+    }
+    @media (min-width: 1532px) and (max-width: 1600px){
+        font-size: 12px;
+    }
+    @media (min-width: 2500px) {
+        font-size: 22px;
+    }
+    @media (max-width: 320px) {
+        font-size: 9px;
+    }
+    @media (min-width: 321px) and (max-width: 376px) {
+        font-size: 10px;
+    }  
 }
 
 body {
