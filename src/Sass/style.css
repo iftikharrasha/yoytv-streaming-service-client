@@ -165,6 +165,154 @@
   font-weight: 700;
 }
 
+.recent, .onDemand {
+  padding: 5rem 0 3rem 0;
+}
+
+.recent__title, .onDemand__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.recent__title h2, .recent__title a, .onDemand__title h2, .onDemand__title a {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.recent__title a, .onDemand__title a {
+  font-weight: 500;
+}
+
+@media (max-width: 575.98px) {
+  .recent__title a, .onDemand__title a {
+    display: none;
+  }
+}
+
+.recent__slider, .onDemand__slider {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 991.98px) {
+  .recent__slider, .onDemand__slider {
+    padding-bottom: 5rem;
+  }
+}
+
+.recent__slider .swiper-slide, .onDemand__slider .swiper-slide {
+  margin: 2rem 0;
+  width: 15%;
+  border-radius: 1.125rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+@media (max-width: 575.98px) {
+  .recent__slider .swiper-slide, .onDemand__slider .swiper-slide {
+    width: 25%;
+  }
+}
+
+.recent__slider .swiper-slide img, .onDemand__slider .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.recent__slider .swiper-slide p, .onDemand__slider .swiper-slide p {
+  text-align: center;
+  font-size: 1.125rem;
+}
+
+.recent__slider .swiper-slide:hover, .onDemand__slider .swiper-slide:hover {
+  border: 0.25rem solid var(--white);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.recent__slider .swiper-button-next, .recent__slider .swiper-button-prev, .onDemand__slider .swiper-button-next, .onDemand__slider .swiper-button-prev {
+  color: var(--darkblue);
+  background: var(--green);
+  padding: 0.75rem 1.35rem;
+  border-radius: 50%;
+}
+
+@media (min-width: 992px) and (max-width: 1299.98px) {
+  .recent__slider .swiper-button-next, .recent__slider .swiper-button-prev, .onDemand__slider .swiper-button-next, .onDemand__slider .swiper-button-prev {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1531.98px) {
+  .recent__slider .swiper-button-next, .recent__slider .swiper-button-prev, .onDemand__slider .swiper-button-next, .onDemand__slider .swiper-button-prev {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+@media (min-width: 2500px) {
+  .recent__slider .swiper-button-next, .recent__slider .swiper-button-prev, .onDemand__slider .swiper-button-next, .onDemand__slider .swiper-button-prev {
+    padding: 1.25rem;
+  }
+}
+
+.recent__slider .swiper-button-next::after, .recent__slider .swiper-button-prev::after, .onDemand__slider .swiper-button-next::after, .onDemand__slider .swiper-button-prev::after {
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+@media (min-width: 992px) and (max-width: 1299.98px) {
+  .recent__slider .swiper-button-next::after, .recent__slider .swiper-button-prev::after, .onDemand__slider .swiper-button-next::after, .onDemand__slider .swiper-button-prev::after {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .recent__slider .swiper-button-next, .recent__slider .swiper-button-prev, .onDemand__slider .swiper-button-next, .onDemand__slider .swiper-button-prev {
+    display: none;
+  }
+}
+
+.recent__slider .swiper-button-prev, .onDemand__slider .swiper-button-prev {
+  left: 4.875rem;
+}
+
+.recent__slider .swiper-button-next, .onDemand__slider .swiper-button-next {
+  right: 4.875rem;
+}
+
+.recent__slider .swiper-slide-next, .recent__slider .swiper-slide-prev, .onDemand__slider .swiper-slide-next, .onDemand__slider .swiper-slide-prev {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .recent__slider .swiper-pagination, .onDemand__slider .swiper-pagination {
+    display: none;
+  }
+}
+
+.recent__slider .swiper-pagination .swiper-pagination-bullet, .onDemand__slider .swiper-pagination .swiper-pagination-bullet {
+  background: var(--white);
+}
+
+.recent__slider .swiper-pagination .swiper-pagination-bullet-active, .onDemand__slider .swiper-pagination .swiper-pagination-bullet-active {
+  background: var(--white);
+}
+
+.onDemand {
+  padding-top: 0;
+}
+
 .notFound {
   background-color: var(--darkblue);
   color: var(--white);
