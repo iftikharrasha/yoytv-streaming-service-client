@@ -51,21 +51,23 @@ body {
 }
 
 ::-webkit-scrollbar {
-width: 0.1875rem;
+    width: 0.1875rem;
+    height: 0.1875rem;
+    border-radius: 0.625rem;
 }
 
 ::-webkit-scrollbar-track {
--webkit-border-radius: 0.625rem;
-border-radius: 0.625rem;
+    -webkit-border-radius: 0.625rem;
+    border-radius: 0.625rem;
 }
 
 ::-webkit-scrollbar-thumb {
--webkit-border-radius: 0.625rem;
-border-radius: 0.625rem;
-background: $green;
+    -webkit-border-radius: 0.625rem;
+    border-radius: 0.625rem;
+    background: $green;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-background: $green;
+    background: $green;
 }
 
 h1,h2,h3,h4,h5,h6,p{

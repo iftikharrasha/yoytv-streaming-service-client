@@ -235,7 +235,7 @@ export const shows = [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
     },
     {
-      no: 21,
+      no: 22,
       image: stranger_by_the_lake,
       recent: false,
       onDemand: false,

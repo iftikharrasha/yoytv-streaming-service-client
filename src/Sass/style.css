@@ -57,6 +57,491 @@
   }
 }
 
+.header {
+  background: var(--darkblue);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.header nav {
+  padding: 0 2rem 0 2rem;
+}
+
+@media (max-width: 991.98px) {
+  .header nav {
+    padding: 0 1rem;
+  }
+}
+
+.header nav .navbar-brand {
+  background: var(--green);
+  padding: 1.25rem 1.125rem;
+  border-bottom-left-radius: 1.75rem;
+  border-bottom-right-radius: 1.75rem;
+}
+
+.header nav .navbar-brand:hover {
+  background: rgba(255, 255, 255, 0);
+  background: linear-gradient(75deg, rgba(103, 254, 101, 0.75) 30%, #0e005c 100%);
+}
+
+.header nav .navbar-brand:hover svg {
+  fill: var(--white);
+}
+
+.header nav .navbar-brand svg {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  width: 10rem;
+  height: auto;
+  fill: var(--blue);
+}
+
+.header nav .searchBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 1rem;
+}
+
+.header nav .searchBox img {
+  width: 2rem;
+  height: auto;
+  margin-right: 0.75rem;
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .header nav .searchBox img {
+    width: 1.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.header nav .searchBox label {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .header nav .searchBox label {
+    font-size: 1rem;
+  }
+}
+
+.header nav .navbar-nav .navLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--white) !important;
+  border-radius: 5rem;
+  padding: 0.25rem 1.25rem !important;
+  border: 0.0625rem solid rgba(255, 255, 255, 0);
+}
+
+@media (max-width: 575.98px) {
+  .header nav .navbar-nav .navLink {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .header nav .navbar-nav .navLink {
+    font-size: 1rem;
+  }
+}
+
+.header nav .navbar-nav .navLink:hover {
+  color: var(--green) !important;
+  border: 0.0625rem solid var(--green);
+}
+
+.header nav .navbar-nav .navLink:hover .nav-icon {
+  fill: var(--green);
+}
+
+.header nav .navbar-nav .nav-icon {
+  width: 1.75rem;
+  height: auto;
+  margin-right: 0.75rem;
+  fill: var(--white);
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .header nav .navbar-nav .nav-icon {
+    width: 1.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.header nav .navbar-nav .gameNav {
+  width: 2.25rem;
+  height: auto;
+}
+
+.header nav .auth-dropdown button {
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 500;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .header nav .auth-dropdown button {
+    font-size: 1rem;
+  }
+}
+
+.header nav .auth-dropdown button:after {
+  display: none;
+}
+
+.header nav .auth-dropdown .dropdown-menu {
+  position: absolute;
+  background-color: #4A3D7E;
+  padding: 0;
+}
+
+.header nav .auth-dropdown .dropdown-menu a {
+  color: var(--white);
+  padding: .65rem 1rem;
+}
+
+.header nav .auth-dropdown .dropdown-menu a:hover {
+  background-color: var(--blue);
+  color: var(--green);
+}
+
+.header nav .auth-dropdown .dropdown-item {
+  font-size: 1rem;
+  width: 100%;
+  clear: both;
+  font-weight: 400;
+}
+
+.header nav .auth-dropdown .avatar {
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: .375rem;
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50% !important;
+  border: 0.125rem solid var(--green);
+}
+
+.header nav .auth-dropdown .avatar img {
+  border-radius: 50% !important;
+  width: 2.5rem;
+  height: 2.5rem;
+  position: static;
+}
+
+.header nav .mobile-design {
+  margin: 0 1.5rem;
+}
+
+.header nav .mobile-design img {
+  position: absolute;
+  right: 5rem;
+  top: 1.25rem;
+}
+
+@media screen and (max-width: 991.98px) {
+  .header nav .mobile-design img {
+    width: 2rem;
+    top: 1.5rem;
+  }
+}
+
+.header nav .mobile-design .auth-dropdown {
+  position: absolute;
+  right: 5rem;
+  top: 1.125rem;
+}
+
+.header nav .mobile-design .nav-toggle {
+  cursor: pointer;
+  position: absolute;
+  right: 1.5rem;
+  top: 2rem;
+  width: 2rem;
+  z-index: 9000;
+}
+
+.header nav .mobile-design .nav-toggle .top {
+  display: block;
+  width: 2rem;
+  height: 0.15rem;
+  background-color: var(--white);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  margin-bottom: 0.35rem;
+}
+
+.header nav .mobile-design .nav-toggle .mid {
+  display: block;
+  width: 2rem;
+  height: 0.15rem;
+  background-color: var(--white);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  margin-bottom: 0.35rem;
+  position: relative;
+}
+
+.header nav .mobile-design .nav-toggle .bot {
+  display: block;
+  width: 2rem;
+  height: 0.2rem;
+  background-color: var(--white);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.header nav .mobile-design .nav-toggle .top, .header nav .mobile-design .nav-toggle .bot {
+  -webkit-transform-origin: 0.1875rem 0.125rem;
+          transform-origin: 0.1875rem 0.125rem;
+}
+
+.header nav .mobile-design .nav-full {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.header nav .mobile-design .nav-full span {
+  background-color: var(--blue);
+  height: 100vh;
+  right: 0;
+  pointer-events: auto;
+  position: absolute;
+  opacity: .5;
+  top: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  width: 20%;
+  z-index: 1;
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .header nav .mobile-design .nav-full span {
+    width: 50%;
+  }
+}
+
+.header nav .mobile-design .nav-full ul {
+  width: 80%;
+  background: linear-gradient(45deg, #0E1043 0%, #262262 29%, #4F2578 49%, #C92FBA 71%, #D02FBE 89%, #D330C0 100%) 0% 0% no-repeat padding-box;
+  height: 100vh;
+  padding: 1.5rem 4rem;
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .header nav .mobile-design .nav-full ul {
+    width: 50%;
+  }
+}
+
+.header nav .mobile-design .nav-full ul li {
+  width: 100%;
+  border-bottom: 1px solid var(--white);
+  margin-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.header nav .mobile-design .nav-full ul li a {
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--white);
+}
+
+.header nav .mobile-design .nav-full ul li .icon-games {
+  position: static;
+  width: 7rem;
+  height: auto;
+  top: 1.5rem;
+}
+
+.header nav .mobile-design .nav-full ul li:last-child {
+  border-bottom: none;
+  padding-top: 1rem;
+}
+
+.header nav .login-design {
+  margin: 0 1.5rem;
+}
+
+.header nav .login-design .nav-toggle {
+  z-index: 9000;
+  cursor: pointer;
+  position: absolute;
+  right: 4.75rem;
+  top: 2rem;
+}
+
+@media screen and (max-width: 991.98px) {
+  .header nav .login-design .nav-toggle {
+    right: 1.45rem;
+  }
+}
+
+.header nav .login-design .nav-toggle .top {
+  display: block;
+  width: 2rem;
+  height: 0.15rem;
+  background-color: var(--white);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  margin-bottom: 0.35rem;
+  -webkit-transform: rotate(38deg);
+          transform: rotate(38deg);
+}
+
+.header nav .login-design .nav-toggle .mid {
+  display: block;
+  width: 2rem;
+  height: 0.15rem;
+  background-color: var(--white);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  margin-bottom: 0.35rem;
+  position: relative;
+  opacity: 0;
+}
+
+.header nav .login-design .nav-toggle .bot {
+  display: block;
+  width: 2rem;
+  height: 0.2rem;
+  background-color: var(--white);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -webkit-transform: rotate(-38deg);
+          transform: rotate(-38deg);
+}
+
+.header nav .login-design .nav-toggle .top, .header nav .login-design .nav-toggle .bot {
+  -webkit-transform-origin: 0.1875rem 0.125rem;
+          transform-origin: 0.1875rem 0.125rem;
+}
+
+.header nav .login-design .nav-full {
+  width: 100%;
+  position: absolute;
+  top: -100vh;
+  left: 0;
+  right: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  background-color: #14141F;
+  opacity: 0.9;
+  z-index: 9999;
+}
+
+.header nav .login-design .nav-full ul {
+  width: 50%;
+  height: 25rem;
+  padding: 1.5rem 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+}
+
+@media (max-width: 991.98px) {
+  .header nav .login-design .nav-full ul {
+    width: 100%;
+    height: 25rem;
+    padding: 1.5rem;
+  }
+}
+
+.header nav .login-design .nav-full ul li {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.header nav .login-design .nav-full ul li a {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--white);
+  font-size: 1.45rem;
+}
+
+.header nav .login-design .nav-full ul li a:hover {
+  font-weight: 700;
+}
+
+.header nav .login-design .nav-full ul li a img {
+  width: 3.75rem;
+  height: auto;
+}
+
+@media (max-width: 991.98px) {
+  .header nav .login-design .nav-full ul li a img {
+    width: 2.125rem;
+    height: auto;
+  }
+}
+
+.header nav .desktop-hidden {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  .header nav .desktop-hidden {
+    display: block;
+  }
+}
+
+.header .slidingTop .nav-full {
+  top: 0 !important;
+}
+
+.fixed-header .header-top {
+  display: none;
+}
+
 .heroBg {
   background-color: var(--blue);
   background-position: center;
@@ -73,6 +558,7 @@
       -ms-flex-align: end;
           align-items: flex-end;
   position: relative;
+  margin-top: 5.5rem;
 }
 
 @media (max-width: 575.98px) {
@@ -538,6 +1024,8 @@ body {
 
 ::-webkit-scrollbar {
   width: 0.1875rem;
+  height: 0.1875rem;
+  border-radius: 0.625rem;
 }
 
 ::-webkit-scrollbar-track {
