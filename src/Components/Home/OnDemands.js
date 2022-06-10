@@ -15,7 +15,7 @@ const OnDemands = () => {
                         <Link to="/onDemand">{`Ver máss>`}</Link>
                     </div>
                 </div>
-                <ShowSlider shows={onDemandShows}/>
+                <ShowSlider shows={onDemandShows} delay={3000}/>
             </section>
         </>
     );

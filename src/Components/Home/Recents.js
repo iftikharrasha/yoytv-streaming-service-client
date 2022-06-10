@@ -15,7 +15,7 @@ const Recents = () => {
                         <Link to="/recent">{`Ver máss>`}</Link>
                     </div>
                 </div>
-                <ShowSlider shows={recentShows}/>
+                <ShowSlider shows={recentShows} delay={3000}/>
             </section>
         </>
     );

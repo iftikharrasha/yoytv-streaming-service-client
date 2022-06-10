@@ -6,7 +6,7 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import 'swiper/css/navigation';
 
-const ShowSlider = ({shows}) => {
+const ShowSlider = ({shows, delay}) => {
     return (
         <>
             <Swiper
@@ -32,7 +32,7 @@ const ShowSlider = ({shows}) => {
                     }
                 }}
                 navigation
-                autoplay= {{ delay: 3000 }}
+                autoplay= {{ delay: delay }}
                 modules={[Navigation, Pagination, Autoplay]}
                 className="recent__slider"
             >

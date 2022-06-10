@@ -1,0 +1,25 @@
+.loader{
+    // border-bottom: 1px solid $green;
+    background-color: $darkblue;
+    padding: 1.75rem 0;
+    opacity: 0.75;
+}
+
+.pulse{
+    border-bottom: 1px solid $green;
+    animation: borderPulse 1000ms infinite ease-out;
+}
+
+@keyframes borderPulse {
+    0% {
+      transform: scale(1);
+    }
+    30% {
+      box-shadow: inset 0px 0px 0px 1px rgba(103, 254, 101, 0.4), 0px 0px 0px 0px rgba(103, 254, 101, 1);
+      transform: scale(1);
+    }
+    100% {
+        box-shadow: inset 0px 0px 0px 1px rgba(103, 254, 101, 0.2), 0px 0px 0px 5px rgba(103, 254, 101, 0);
+        transform: scale(1);
+    }
+}
