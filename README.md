@@ -20,27 +20,25 @@
 
 1.  Clone the repository and change directories
 
-    ```open terminal and paste below
+    ```shell
     git clone https://github.com/iftikharrasha/yoytv-streaming-service-client.git
     cd yoytv-streaming-service-client
     ```
 
 2. Install dependencies
 
-    ````open terminal and run below
+    ````shell
     npm install
     ```
 
 3. Once done Start the local server
 
-    ````open terminal and run below
+    ````shell
     npm start
     ```
 
-    The client site will be running at `http://localhost:3000`
-    
-
-4.  **Open the source code with code editor and start editing!**
+4.  The client site will be running at `http://localhost:3000`
+**Open the source code with code editor and start editing!**
 
 
 ## What's inside once installed? 🧐
@@ -99,8 +97,8 @@ A quick look at the top-level files hierarchy.
 | Color          | Hex                                                                |
 | -------------- | ------------------------------------------------------------------ |
 | Black          | ![#121212](https://via.placeholder.com/10/121212?text=+) `#121212` |
-| Green        | ![#67fe65](https://via.placeholder.com/10/67fe65?text=+) `#67fe65` |
-| Blue        | ![#0e005c](https://via.placeholder.com/10/0e005c?text=+) `#0e005c` |
-| White          | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) `#ffffff` |
+| Green          | ![#67FE65](https://via.placeholder.com/10/67FE65?text=+) `#67FE65` |
+| Blue          | ![#0E005C](https://via.placeholder.com/10/0E005C?text=+) `#0E005C` |
+| White          | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF?text=+) `#FFFFFF` |
 
 
