@@ -1,1 +1,106 @@
-# yoytv-streaming-service-client
+### `Live Demo` [Visit](https://siteprogress.netlify.app/)
+
+<p align="center">
+  <a href="https://siteprogress.netlify.app/">
+    <img alt="logo" src="https://i.ibb.co/1KmhBYr/YOY-green.png" width="100" />
+  </a>
+</p>
+
+<h1 align="center">
+  YOY TV - Live Streaming Service
+</h1>
+
+<p align="center">
+  Frontend is built with <a href="https://reactjs.org/" target="_blank">React JS</a> and <a href="https://sass-lang.com/" target="_blank">SASS</a>(SCSS). Component based folder structure for reusability and performance. Fakedata used to map through the components for speeding up the backend progress. 
+</p>
+
+![hero](https://i.ibb.co/Pj5Z5yZ/gig-preview.png)
+
+## 🚀 Installation
+
+1.  Clone the repository and change directories
+
+    ```open terminal and paste below
+    git clone https://github.com/iftikharrasha/yoytv-streaming-service-client.git
+    cd yoytv-streaming-service-client
+    ```
+
+2. Install dependencies
+
+    ````open terminal and run below
+    npm install
+    ```
+
+3. Once done Start the local server
+
+    ````open terminal and run below
+    npm start
+    ```
+
+    The client site will be running at `http://localhost:3000`
+    
+
+4.  **Open the source code with code editor and start editing!**
+
+
+## What's inside once installed? 🧐
+
+A quick look at the top-level files hierarchy.
+
+```sh
+  .
+  ├── node_modules
+  ├── public 
+  ├── src
+      └── Components
+          └── Common
+          └── Custom
+            ├── Modals
+            ├── Sliders
+          └── Home
+            ├── Hero.js
+            ├── OnDemands.js
+            ├── Recents.js
+            ├── Recommended.js
+          └── Loader
+            ├── Loader.js
+          └── Data
+            ├── shows.js
+            ├── similar.js
+          └── Header
+            ├── Header.js
+          └── Fonts
+          └── Image
+            ├── SvgCodes
+          └── Layouts
+            ├── Footer.js
+            ├── Header.js
+            ├── Main.js
+            ├── ScrollToTop.js
+            ├── Views.js
+          └── Pages
+            ├── Home
+            ├── NotFound
+            ├── privateRoute
+          └── Sass
+          └── Utilities
+            ├── Hooks
+      ├── App.test.js
+      ├── index.js
+      ├── reportWebVitals.js
+      ├── setupTests.js
+  ├── .gitignore
+  ├── package-lock.json
+  ├── package.json
+  ├── README.md
+ ```
+ 
+ ## 🎨 Color Reference
+| Color          | Hex                                                                |
+| -------------- | ------------------------------------------------------------------ |
+| Black          | ![#121212](https://via.placeholder.com/10/121212?text=+) `#121212` |
+| Green        | ![#67fe65](https://via.placeholder.com/10/67fe65?text=+) `#67fe65` |
+| Blue        | ![#0e005c](https://via.placeholder.com/10/0e005c?text=+) `#0e005c` |
+| White          | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) `#ffffff` |
+
+
