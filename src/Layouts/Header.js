@@ -61,19 +61,19 @@ const Header = () => {
                     </form>
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link as={Link} to="/tournaments" className="mx-lg-2 mx-3 navLink">
+                            <Nav.Link as={Link} to="/tv-en-vivo" className="mx-lg-2 mx-3 navLink">
                                 <TvSvg className="navIcon"/>
                                 <span className="pt-1">TV en vivo</span>
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/games" className="mx-lg-2 mx-3 navLink">
+                            <Nav.Link as={Link} to="/on-demand" className="mx-lg-2 mx-3 navLink">
                                 <OnDemandSvg className="navIcon"/>
                                 <span className="pt-1">OnDemand</span>
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/championships" className="mx-lg-2 mx-3 navLink">
+                            <Nav.Link as={Link} to="/radio" className="mx-lg-2 mx-3 navLink">
                                 <RadioSvg className="navIcon"/>
                                 <span className="pt-1">Radio</span>
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/about" className="mx-lg-2 mx-3 navLink">
+                            <Nav.Link as={Link} to="/juegos" className="mx-lg-2 mx-3 navLink">
                                 <GamesSvg className="navIcon gameNav"/>
                                 <span className="pt-1">Juegos</span>
                             </Nav.Link>
@@ -122,31 +122,31 @@ const Header = () => {
                         <div className="menu" id="menu">
                             <ul>
                                 <li className="menu__item">
-                                    <Link to="/" className="menu__link">
+                                    <Link to="/tv-en-vivo" className="menu__link">
                                         <TvSvg className="navIcon"/>
                                         <span className="pt-1">TV en vivo</span>
                                     </Link>
                                 </li>
                                 <li className="menu__item">
-                                    <Link to="/" className="menu__link">
+                                    <Link to="/on-demand" className="menu__link">
                                         <OnDemandSvg className="navIcon"/>
                                         <span className="pt-1">OnDemand</span>
                                     </Link>
                                 </li>
                                 <li className="menu__item">
-                                    <Link to="/" className="menu__link">
+                                    <Link to="/radio" className="menu__link">
                                         <RadioSvg className="navIcon"/>
                                         <span className="pt-1">Radio</span>
                                     </Link>
                                 </li>
                                 <li className="menu__item">
-                                    <Link to="/" className="menu__link">
+                                    <Link to="/juegos" className="menu__link">
                                         <GamesSvg className="navIcon gameNav"/>
                                         <span className="pt-1">Juegos</span>
                                     </Link>
                                 </li>
                                 <li className="menu__item">
-                                    <Link to="/" className="menu__link">
+                                    <Link to="/buscar" className="menu__link">
                                         <SearchSvg className="navIcon"/>
                                         <span className="menu-name">Buscar</span>
                                     </Link>

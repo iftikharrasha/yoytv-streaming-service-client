@@ -797,11 +797,14 @@
 }
 
 .recent__slider .swiper-slide, .onDemand__slider .swiper-slide, .recommended__slider .swiper-slide {
+  position: relative;
+  overflow: hidden;
   margin: 2.25rem 0;
   width: 15%;
   border-radius: 1.125rem;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
+  z-index: 1;
 }
 
 @media (max-width: 575.98px) {
@@ -817,15 +820,115 @@
      object-fit: cover;
 }
 
-.recent__slider .swiper-slide p, .onDemand__slider .swiper-slide p, .recommended__slider .swiper-slide p {
-  text-align: center;
-  font-size: 1.125rem;
+.recent__slider .swiper-slide .card__buttons, .onDemand__slider .swiper-slide .card__buttons, .recommended__slider .swiper-slide .card__buttons {
+  position: absolute;
+  width: 100%;
+  -webkit-transform: translateY(0rem);
+          transform: translateY(0rem);
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.recent__slider .swiper-slide .card__buttons ul, .onDemand__slider .swiper-slide .card__buttons ul, .recommended__slider .swiper-slide .card__buttons ul {
+  position: relative;
+  width: 62%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: 1;
+}
+
+.recent__slider .swiper-slide .card__buttons ul li img, .onDemand__slider .swiper-slide .card__buttons ul li img, .recommended__slider .swiper-slide .card__buttons ul li img {
+  cursor: pointer;
+  width: 2.25rem;
+  height: auto;
+}
+
+@media (max-width: 575.98px) {
+  .recent__slider .swiper-slide .card__buttons ul li img, .onDemand__slider .swiper-slide .card__buttons ul li img, .recommended__slider .swiper-slide .card__buttons ul li img {
+    width: 1.25rem;
+  }
+}
+
+.recent__slider .swiper-slide .card__buttons ul li .play, .onDemand__slider .swiper-slide .card__buttons ul li .play, .recommended__slider .swiper-slide .card__buttons ul li .play {
+  width: 5rem;
+}
+
+@media (max-width: 575.98px) {
+  .recent__slider .swiper-slide .card__buttons ul li .play, .onDemand__slider .swiper-slide .card__buttons ul li .play, .recommended__slider .swiper-slide .card__buttons ul li .play {
+    width: 3rem;
+  }
+}
+
+.recent__slider .swiper-slide .card__buttons ul li .plus, .onDemand__slider .swiper-slide .card__buttons ul li .plus, .recommended__slider .swiper-slide .card__buttons ul li .plus {
+  margin-right: 0.75rem;
+}
+
+@media (max-width: 575.98px) {
+  .recent__slider .swiper-slide .card__buttons ul li .plus, .onDemand__slider .swiper-slide .card__buttons ul li .plus, .recommended__slider .swiper-slide .card__buttons ul li .plus {
+    margin-right: 0.5rem;
+  }
+}
+
+.recent__slider .swiper-slide .card__buttons ul li .love, .onDemand__slider .swiper-slide .card__buttons ul li .love, .recommended__slider .swiper-slide .card__buttons ul li .love {
+  width: 2.5rem;
+}
+
+@media (max-width: 575.98px) {
+  .recent__slider .swiper-slide .card__buttons ul li .love, .onDemand__slider .swiper-slide .card__buttons ul li .love, .recommended__slider .swiper-slide .card__buttons ul li .love {
+    width: 1.45rem;
+  }
+}
+
+.recent__slider .swiper-slide .card__buttons .more, .onDemand__slider .swiper-slide .card__buttons .more, .recommended__slider .swiper-slide .card__buttons .more {
+  cursor: pointer;
+  width: 5rem;
+  height: auto;
+}
+
+@media (max-width: 575.98px) {
+  .recent__slider .swiper-slide .card__buttons .more, .onDemand__slider .swiper-slide .card__buttons .more, .recommended__slider .swiper-slide .card__buttons .more {
+    width: 3rem;
+  }
 }
 
 .recent__slider .swiper-slide:hover, .onDemand__slider .swiper-slide:hover, .recommended__slider .swiper-slide:hover {
   border: 0.25rem solid var(--white);
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.recent__slider .swiper-slide:hover .card__buttons, .onDemand__slider .swiper-slide:hover .card__buttons, .recommended__slider .swiper-slide:hover .card__buttons {
+  -webkit-transform: translateY(-5.625rem);
+          transform: translateY(-5.625rem);
+}
+
+@media (max-width: 575.98px) {
+  .recent__slider .swiper-slide:hover .card__buttons, .onDemand__slider .swiper-slide:hover .card__buttons, .recommended__slider .swiper-slide:hover .card__buttons {
+    -webkit-transform: translateY(-3.25rem);
+            transform: translateY(-3.25rem);
+  }
+}
+
+.recent__slider .swiper-slide-active, .onDemand__slider .swiper-slide-active, .recommended__slider .swiper-slide-active {
+  z-index: 9999;
 }
 
 .recent__slider .swiper-button-next, .recent__slider .swiper-button-prev, .onDemand__slider .swiper-button-next, .onDemand__slider .swiper-button-prev, .recommended__slider .swiper-button-next, .recommended__slider .swiper-button-prev {

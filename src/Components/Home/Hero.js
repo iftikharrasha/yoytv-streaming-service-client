@@ -12,26 +12,26 @@ const Hero = () => {
                         <div className="wrapper heroBg__contents">
                             <h1>TV en vivo, películas, series y más…</h1>
                             <h2>Navega con la experiencia YOY sin costo</h2>
-                                {
-                                    windowWidth > 575.98 ? 
-                                    <ul>
+                            {
+                                windowWidth > 575.98 ? 
+                                <ul>
+                                    <li>
+                                        <button>
+                                            <span>Suscribirme</span> 
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button>
+                                            <span>Navegar sin costo</span> 
+                                        </button>
+                                    </li>
                                         <li>
                                             <button>
-                                                <span>Suscribirme</span> 
+                                                <span>Mas información</span> 
                                             </button>
-                                        </li>
-                                        <li>
-                                            <button>
-                                                <span>Navegar sin costo</span> 
-                                            </button>
-                                        </li>
-                                            <li>
-                                                <button>
-                                                    <span>Mas información</span> 
-                                                </button>
-                                            </li> 
-                                    </ul>: null
-                                }
+                                        </li> 
+                                </ul>: null
+                            }
                         </div>
                         <div className="heroBg__audio">
                             <div className="heroBg__audio__controls">
