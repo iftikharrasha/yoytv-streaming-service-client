@@ -1,3 +1,49 @@
 .footer{
-   
+    padding: 1rem 0 2rem 0;
+    @media (max-width: 575.98px) {
+        padding-bottom: 6.5rem;
+    }
+    @media (min-width: 576px) and (max-width: 991.98px) {
+        padding-bottom: 7rem;
+    }
+    &__credit{
+        @include flexBetween;
+        @media (max-width: 991.98px) {
+            flex-direction: column;
+        }
+        &__logo{
+            @include flexCenter;
+            @media (max-width: 991.98px) {
+                padding-bottom: 1rem;
+            }
+            svg{
+                width: 5rem;
+                height: auto;
+                fill: $white;
+                margin-right: 1.5rem;
+            }
+            p{
+                font-size: 1rem;
+                font-weight: 500;
+                color: $white;
+                padding-top: 1rem;
+            }
+        }
+        ul{
+            @include flexBetween;
+            li{
+                a{
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: $white;
+                    &:hover{
+                        color: $green;
+                    }
+                }
+                &:last-child{
+                    margin-left: 2rem;
+                }
+            }
+        }
+    }
 }

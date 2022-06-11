@@ -26,10 +26,10 @@ const Header = () => {
         console.log(e);
     }
 
-    const activeToggle = e => {
-        document.getElementById('header').classList.toggle('open');
-        e.preventDefault();
-    }
+    // const activeToggle = e => {
+    //     document.getElementById('header').classList.toggle('open');
+    //     e.preventDefault();
+    // }
 
     const menuLinks = document.querySelectorAll(".menu__link");
 
