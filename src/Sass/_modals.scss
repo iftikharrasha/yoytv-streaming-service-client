@@ -10,6 +10,7 @@
         .modal-content{
             color: $white;
             border-radius: 5rem;
+            border: 1px solid rgba(0,0,0,0);
             .modal__bg{
                 border-radius: 3rem;
                 background-color: $darkblue;

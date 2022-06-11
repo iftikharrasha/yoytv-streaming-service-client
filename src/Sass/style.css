@@ -1044,6 +1044,7 @@
 .show__modal .modal-dialog .modal-content {
   color: var(--white);
   border-radius: 5rem;
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 
 .show__modal .modal-dialog .modal-content .modal__bg {
