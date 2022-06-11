@@ -31,14 +31,16 @@
     npm install
     ```
 
-3. Once done Start the local server
+3. Once done Start the Project
 
     ````shell
     npm start
     ```
 
-4.  The client site will be running at `http://localhost:3000`
-**Open the source code with code editor and start editing!**
+4. The client site is now running at `http://localhost:3000`!   
+
+    
+5.  **Open the source code with code editor and start editing!**
 
 
 ## What's inside once installed? 🧐
