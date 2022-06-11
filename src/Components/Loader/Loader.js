@@ -4,8 +4,8 @@ const Loader = () => {
     return (
         <>
             {
-                Array(16).fill().map((index) => {
-                    return <div className="loader" key={index}>
+                Array(16).fill().map((key) => {
+                    return <div className="loader" key={key}>
                         <div className="pulse"></div>
                     </div>
             })}
