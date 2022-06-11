@@ -27,20 +27,16 @@
 
 2. Install dependencies
 
-    ````shell
+    ```shell
     npm install
     ```
 
-3. Once done Start the Project
+3. Start the local server
 
-    ````shell
-    npm start
-    ```
-
-4. The client site is now running at `http://localhost:3000`!   
-
+    The client site is now running at `http://localhost:3000`!
     
-5.  **Open the source code with code editor and start editing!**
+
+4.  **Open the source code and start editing!**
 
 
 ## What's inside once installed? 🧐
@@ -94,13 +90,5 @@ A quick look at the top-level files hierarchy.
   ├── package.json
   ├── README.md
  ```
- 
- ## 🎨 Color Reference
-| Color          | Hex                                                                |
-| -------------- | ------------------------------------------------------------------ |
-| Black          | ![#121212](https://via.placeholder.com/10/121212?text=+) `#121212` |
-| Green          | ![#67FE65](https://via.placeholder.com/10/67FE65?text=+) `#67FE65` |
-| Blue          | ![#0E005C](https://via.placeholder.com/10/0E005C?text=+) `#0E005C` |
-| White          | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF?text=+) `#FFFFFF` |
 
 
