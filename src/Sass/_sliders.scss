@@ -100,8 +100,6 @@
             z-index: 9999;
         }
         .swiper-button-next, .swiper-button-prev{
-            color: $darkblue;
-            background: $green;
             padding: 0.75rem 1.35rem;
             border-radius:50%;
             @media (min-width: 992px) and (max-width: 1299.98px) {
@@ -126,9 +124,26 @@
         }
         .swiper-button-prev{
             left: 4.875rem;
+            &:after {
+                content: "";
+                position: absolute;
+                width: 3.5rem;
+                height: 3.5rem;
+                background-image: url("../Image/arrow_left_green.svg");
+                @include bgCover;
+            }
         }
         .swiper-button-next{
             right: 4.875rem;
+            &:after {
+                content: "";
+                position: absolute;
+                width: 3.5rem;
+                height: 3.5rem;
+                background-image: url("../Image/arrow_left_green.svg");
+                @include bgCover;
+                transform: rotate(180deg);
+            }
         }
         .swiper-slide-next, .swiper-slide-prev{
             position: relative;

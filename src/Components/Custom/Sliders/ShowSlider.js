@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Navigation } from "swiper";
 import "swiper/css";
@@ -9,8 +9,19 @@ import play_button from '../../../Image/play_button.svg';
 import plus_icon from '../../../Image/plus_icon.svg';
 import love_icon from '../../../Image/love_icon.svg';
 import arrow_down from '../../../Image/arrow_down.svg';
+import ShowModal from '../Modals/ShowModal';
 
 const ShowSlider = ({shows, delay}) => {
+    const [lgShow, setLgShow] = useState(false);
+    const [details, setDetails] = useState({});
+    const [isFetching, setIsFetching] = useState(true);
+
+    const handlePopup = (data) => {
+        setDetails(data);
+        setIsFetching(false);
+        setLgShow(true);
+    }
+
     return (
         <>
             <Swiper
@@ -50,12 +61,14 @@ const ShowSlider = ({shows, delay}) => {
                                 <li><img src={plus_icon} alt="add" className="plus"/></li>
                                 <li><img src={love_icon} alt="love" className="love"/></li>
                             </ul>
-                            <img src={arrow_down} alt="more" className="more"/>
+                            <img src={arrow_down} alt="more" className="more" onClick={() => handlePopup(item)}/>
                         </div>
                     </SwiperSlide>
                 ))
             }
             </Swiper>
+
+            {!isFetching ? <ShowModal lgShow={lgShow} setLgShow={setLgShow} details={details}/> : null}
         </>
     );
 };

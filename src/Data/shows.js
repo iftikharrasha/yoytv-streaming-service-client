@@ -23,6 +23,12 @@ import ventana from '../Image/ventana.png';
 import policiacas from '../Image/policiacas.png';
 import rons_gone_wild from '../Image/rons_gone_wild.png';
 
+import stranger_things_albumCover from '../Image/stranger_things_albumCover.png';
+import stranger_things_cover from '../Image/stranger_things_cover.png';
+import stranger_things_episode_thumb1 from '../Image/stranger_things_episode_thumb1.png';
+import stranger_things_episode_thumb2 from '../Image/stranger_things_episode_thumb2.png';
+import stranger_things_episode_thumb3 from '../Image/stranger_things_episode_thumb3.png';
+
 export const shows = [
     {
       no: 1,
@@ -31,8 +37,57 @@ export const shows = [
       onDemand: false,
       recommended: false,
       name: "Spider-Man No Way Home",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 2,
@@ -41,8 +96,57 @@ export const shows = [
       onDemand: false,
       recommended: false,
       name: "Stranger Things",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 3,
@@ -51,8 +155,57 @@ export const shows = [
       onDemand: false,
       recommended: false,
       name: "Ice Age - Adventure of Buck Wild",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 4,
@@ -61,8 +214,57 @@ export const shows = [
       onDemand: false,
       recommended: false,
       name: "Eternals",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 5,
@@ -71,8 +273,57 @@ export const shows = [
       onDemand: false,
       recommended: false,
       name: "Venom - Let there be Carnage",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 6,
@@ -80,9 +331,58 @@ export const shows = [
       recent: true,
       onDemand: false,
       recommended: false,
-      name: "Shang Chi - Legend of the ten rings",
+      name: "Stranger Things",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 7,
@@ -90,9 +390,58 @@ export const shows = [
       recent: false,
       onDemand: false,
       recommended: true,
-      name: "Shang Chi - Legend of the ten rings",
+      name: "Stranger Things",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 8,
@@ -100,9 +449,58 @@ export const shows = [
       recent: false,
       onDemand: true,
       recommended: false,
-      name: "Shang Chi - Legend of the ten rings",
+      name: "Stranger Things",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 9,
@@ -110,9 +508,58 @@ export const shows = [
       recent: false,
       onDemand: true,
       recommended: false,
-      name: "Shang Chi - Legend of the ten rings",
+      name: "Stranger Things",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 10,
@@ -120,9 +567,58 @@ export const shows = [
       recent: false,
       onDemand: true,
       recommended: false,
-      name: "Shang Chi - Legend of the ten rings",
+      name: "Stranger Things",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 11,
@@ -130,9 +626,58 @@ export const shows = [
       recent: false,
       onDemand: true,
       recommended: false,
-      name: "Shang Chi - Legend of the ten rings",
+      name: "Stranger Things",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 12,
@@ -140,9 +685,58 @@ export const shows = [
       recent: false,
       onDemand: true,
       recommended: false,
-      name: "Shang Chi - Legend of the ten rings",
+      name: "Stranger Things",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 13,
@@ -150,9 +744,58 @@ export const shows = [
       recent: true,
       onDemand: true,
       recommended: false,
-      name: "Shang Chi - Legend of the ten rings",
+      name: "Stranger Things",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 14,
@@ -160,9 +803,58 @@ export const shows = [
       recent: false,
       onDemand: true,
       recommended: true,
-      name: "Shang Chi - Legend of the ten rings",
+      name: "Stranger Things",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 15,
@@ -170,9 +862,58 @@ export const shows = [
       recent: false,
       onDemand: true,
       recommended: false,
-      name: "Shang Chi - Legend of the ten rings",
+      name: "Stranger Things",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 16,
@@ -180,9 +921,58 @@ export const shows = [
       recent: false,
       onDemand: false,
       recommended: true,
-      name: "Shang Chi - Legend of the ten rings",
+      name: "Stranger Things",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 17,
@@ -190,9 +980,58 @@ export const shows = [
       recent: false,
       onDemand: false,
       recommended: true,
-      name: "Shang Chi - Legend of the ten rings",
+      name: "Stranger Things",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 18,
@@ -200,9 +1039,58 @@ export const shows = [
       recent: false,
       onDemand: false,
       recommended: true,
-      name: "Shang Chi - Legend of the ten rings",
+      name: "Stranger Things",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 19,
@@ -210,9 +1098,58 @@ export const shows = [
       recent: false,
       onDemand: false,
       recommended: true,
-      name: "Shang Chi - Legend of the ten rings",
+      name: "Stranger Things",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 20,
@@ -220,9 +1157,58 @@ export const shows = [
       recent: false,
       onDemand: false,
       recommended: true,
-      name: "Shang Chi - Legend of the ten rings",
+      name: "Stranger Things",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 21,
@@ -230,9 +1216,58 @@ export const shows = [
       recent: false,
       onDemand: false,
       recommended: true,
-      name: "Shang Chi - Legend of the ten rings",
+      name: "Shang Chi",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
     {
       no: 22,
@@ -240,8 +1275,57 @@ export const shows = [
       recent: false,
       onDemand: false,
       recommended: true,
-      name: "Shang Chi - Legend of the ten rings",
+      name: "Shang Chi",
+      type: "Series",
+      rating: 8.4,
+      subtitle: "4 temporadas - 2016 - EUA",
+      albumCover: stranger_things_albumCover,
+      modalCover: stranger_things_cover,
+      categories: [
+        {
+          id: 1,
+          name: "Terror",
+        },
+        {
+          id: 2,
+          name: "Suspenso",
+        },
+        {
+          id: 3,
+          name: "Misterio",
+        },
+        {
+          id: 4,
+          name: "Fantasía",
+        },
+      ],
+      episodes: [
+        {
+          id: 1,
+          no: 1,
+          name: "Capítulo 1",
+          description: "Tras ser descubiertos por los trabajadores del laboratorio Hawkins, Joyce y Hooper deciden acordar con ellos el decirles el paradero de Once si, a cambio, les permiten adentrarse en el universo paralelo en el que está atrapado Will para poder rescatarlo.",
+          time: 58,
+          thumbnail: stranger_things_episode_thumb1,
+        },
+        {
+          id: 2,
+          no: 2,
+          name: "Capítulo 2",
+          description: "Conocedores de lo que están tramando, los trabajadores del laboratorio Hawkins deciden frenar los avances de Once y sus amigos e ir a por ellos, sin ningún resultado positivo.",
+          time: 60,
+          thumbnail: stranger_things_episode_thumb2,
+        },
+        {
+          id: 3,
+          no: 3,
+          name: "Capítulo 3",
+          description: "Después de su horrible experiencia en el bosque, Nancy y Jonathan deciden unirse para descubrir toda la verdad y acabar con ese monstruo que parece tener retenidos a su amiga y a su hermano, respectivamente.",
+          time: 59,
+          thumbnail: stranger_things_episode_thumb3,
+        },
+      ],
       details:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisi lobortis, efficitur libero vel, consequat ipsum. Donec venenatis tortor non rhoncus aliquam. Donec hendrerit justo ac tortor accumsan, nec volutpat tortor scelerisque. ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel consequat sem, at scelerisque ante. Nullam pulvinar quis metus quis faucibus. Curabitur id convallis libero. Maecenas id justo augue. Fusce finibus, lectus varius commodo viverra, nisl felis tempus turpis, sit amet convallis magna arcu at magna.",
     },
 ];
