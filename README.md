@@ -94,5 +94,12 @@ A quick look at the top-level files hierarchy.
   ├── package.json
   ├── README.md
  ```
-
+ 
+ ## 🎨 Color Reference
+| Color          | Hex                                                                |
+| -------------- | ------------------------------------------------------------------ |
+| Black          | ![#121212](https://via.placeholder.com/10/121212?text=+) `#121212` |
+| Green          | ![#67FE65](https://via.placeholder.com/10/67FE65?text=+) `#67FE65` |
+| Blue          | ![#0E005C](https://via.placeholder.com/10/0E005C?text=+) `#0E005C` |
+| White          | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF?text=+) `#FFFFFF` |
 
