@@ -608,13 +608,13 @@
   font-size: 1.25rem;
   font-weight: 600;
   border-radius: 1.5rem;
-  padding: 0.5rem 1.75rem;
-  background: rgba(255, 255, 255, 0) -webkit-gradient(linear, right top, left top, from(var(--green)), to(var(--green))) 0% 0% no-repeat padding-box;
-  background: rgba(255, 255, 255, 0) linear-gradient(270deg, var(--green) 0%, var(--green) 100%) 0% 0% no-repeat padding-box;
+  padding: 0.5rem 1.75rem 0.25rem 1.75rem;
+  background: var(--green);
   color: var(--blue);
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
   border: 0;
+  border: 0.125rem solid var(--green);
 }
 
 .heroBg__contents ul li button:hover {
@@ -627,10 +627,10 @@
 }
 
 .heroBg__contents ul li:last-child button {
+  border: 0.125rem solid var(--green) !important;
   background: rgba(255, 255, 255, 0) -webkit-gradient(linear, right top, left top, from(#0E005C73), to(#0E005C73)) 0% 0% no-repeat padding-box;
   background: rgba(255, 255, 255, 0) linear-gradient(270deg, #0E005C73 0%, #0E005C73 100%) 0% 0% no-repeat padding-box;
   color: var(--white);
-  border: 0.125rem solid var(--green);
 }
 
 .heroBg__contents ul li:last-child button:hover {
@@ -722,12 +722,11 @@
     font-weight: 600;
     border-radius: 1.5rem;
     padding: 0.5rem 2rem;
-    background: rgba(255, 255, 255, 0) -webkit-gradient(linear, right top, left top, from(var(--green)), to(var(--green))) 0% 0% no-repeat padding-box;
-    background: rgba(255, 255, 255, 0) linear-gradient(270deg, var(--green) 0%, var(--green) 100%) 0% 0% no-repeat padding-box;
+    background: var(--green);
     color: var(--blue);
     -webkit-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
-    border: 0;
+    border: 0.125rem solid var(--green);
   }
   .heroSm li button:hover {
     -webkit-transform: scale(1.05);
@@ -737,14 +736,12 @@
     margin-left: 0;
   }
   .heroSm li:first-child button {
-    padding: 0.5rem 3rem;
-    border: 0.125rem solid var(--green);
+    padding: 0.5rem 2.75rem;
   }
   .heroSm li:last-child button {
     background: rgba(255, 255, 255, 0) -webkit-gradient(linear, right top, left top, from(#0E005C73), to(#0E005C73)) 0% 0% no-repeat padding-box;
     background: rgba(255, 255, 255, 0) linear-gradient(270deg, #0E005C73 0%, #0E005C73 100%) 0% 0% no-repeat padding-box;
     color: var(--white);
-    border: 0.125rem solid var(--green);
   }
   .heroSm li:last-child button:hover {
     color: var(--blue);
@@ -973,6 +970,9 @@
 
 .recent__slider .swiper-button-prev, .onDemand__slider .swiper-button-prev, .recommended__slider .swiper-button-prev {
   left: 4.875rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  opacity: 0;
 }
 
 .recent__slider .swiper-button-prev:after, .onDemand__slider .swiper-button-prev:after, .recommended__slider .swiper-button-prev:after {
@@ -988,6 +988,9 @@
 
 .recent__slider .swiper-button-next, .onDemand__slider .swiper-button-next, .recommended__slider .swiper-button-next {
   right: 4.875rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  opacity: 0;
 }
 
 .recent__slider .swiper-button-next:after, .onDemand__slider .swiper-button-next:after, .recommended__slider .swiper-button-next:after {
@@ -1023,6 +1026,10 @@
 
 .onDemand, .recommended {
   padding-top: 0;
+}
+
+.onDemand .swiper:hover .swiper-button-prev, .onDemand .swiper:hover .swiper-button-next, .recommended .swiper:hover .swiper-button-prev, .recommended .swiper:hover .swiper-button-next, .recent .swiper:hover .swiper-button-prev, .recent .swiper:hover .swiper-button-next {
+  opacity: 1;
 }
 
 .show__modal .modal-dialog {
@@ -1990,12 +1997,14 @@ a, select, input, textarea, button {
 
 .wrapper {
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 @media (max-width: 575.98px) {
   .wrapper {
     width: 90%;
     margin: 0 auto;
+    padding: 0;
   }
 }
 
@@ -2020,13 +2029,19 @@ a, select, input, textarea, button {
 
 @media (min-width: 1200px) and (max-width: 1299.98px) {
   .wrapper {
-    max-width: 980px;
+    max-width: 95rem;
   }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1300px) and (max-width: 1398.98px) {
   .wrapper {
-    max-width: 110rem;
+    max-width: 105rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .wrapper {
+    max-width: 115rem;
   }
 }
 /*# sourceMappingURL=style.css.map */

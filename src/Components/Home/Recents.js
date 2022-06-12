@@ -12,10 +12,10 @@ const Recents = () => {
                 <div className="wrapper">
                     <div className="recent__title">
                         <h2>Lanzamientos recientes</h2>
-                        <Link to="/recent">{`Ver máss>`}</Link>
+                        <Link to="/recent">{`Ver más>`}</Link>
                     </div>
                 </div>
-                <ShowSlider shows={recentShows} delay={3000}/>
+                <ShowSlider shows={recentShows} delay={4500}/>
             </section>
         </>
     );

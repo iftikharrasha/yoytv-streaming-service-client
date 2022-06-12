@@ -52,7 +52,7 @@ const Header = () => {
                     <form action="" onSubmit={handlerSearch} className="d-lg-flex d-none">
                         <div className="search-box">
                             <img src={search_icon} alt="search"/>
-                            <input className="search-text" type="text" placeholder="Type here.."/>
+                            <input className="search-text" type="text" placeholder="Escribe aquí..."/>
                             <Link to="/search">
                                 <img src={cross_icon} alt="cross"/>
                             </Link>
@@ -113,12 +113,6 @@ const Header = () => {
                                 </Dropdown.Menu>
                             </Dropdown>
                         </Nav>
-                        {/* <a className="nav-toggle" href="/" onClick={activeToggle}>
-                            <span className="top"></span>
-                            <span className="mid"></span>
-                            <span className="bot"></span>
-                        </a> */}
-
                         <div className="menu" id="menu">
                             <ul>
                                 <li className="menu__item">

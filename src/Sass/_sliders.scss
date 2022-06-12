@@ -124,6 +124,8 @@
         }
         .swiper-button-prev{
             left: 4.875rem;
+            transition: all 0.5s;
+            opacity: 0;
             &:after {
                 content: "";
                 position: absolute;
@@ -135,6 +137,8 @@
         }
         .swiper-button-next{
             right: 4.875rem;
+            transition: all 0.5s;
+            opacity: 0;
             &:after {
                 content: "";
                 position: absolute;
@@ -164,4 +168,14 @@
 
 .onDemand, .recommended{
     padding-top: 0;
+}
+
+.onDemand, .recommended, .recent{
+    .swiper{
+        &:hover{
+            .swiper-button-prev, .swiper-button-next{
+                opacity: 1;
+            }
+        }
+    }
 }

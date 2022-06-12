@@ -25,10 +25,11 @@ const ShowSlider = ({shows, delay}) => {
     return (
         <>
             <Swiper
+                // loop={true}
                 grabCursor={true}
                 slidesPerView={6} 
                 spaceBetween={30}
-                centeredSlides={true}
+                centeredSlides={false}
                 pagination={false}
                 breakpoints={{
                     320: {
@@ -53,7 +54,7 @@ const ShowSlider = ({shows, delay}) => {
             >
             {
                 shows.map((item) => (
-                    <SwiperSlide key={item.no}>
+                    <SwiperSlide key={item.no} onClick={() => handlePopup(item)}>
                         <img src={item.image} alt="thumbnail" />
                         <div className="card__buttons">
                             <ul>

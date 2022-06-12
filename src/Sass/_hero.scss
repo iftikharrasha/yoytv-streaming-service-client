@@ -1,6 +1,5 @@
 .heroBg{
     background-color: $blue;
-    // background-image: url(../Image/hero-back.png);
     @include bgCover;
     min-height: 36rem;
     display: flex;
@@ -42,11 +41,12 @@
                     font-size: 1.25rem;
                     font-weight: 600;
                     border-radius: 1.5rem;
-                    padding: 0.5rem 1.75rem;
-                    background: rgba(255, 255, 255, 0) linear-gradient(270deg, $green 0%, $green 100%) 0% 0% no-repeat padding-box;
+                    padding: 0.5rem 1.75rem 0.25rem 1.75rem;
+                    background: $green;
                     color: $blue;
                     transition: all 0.3s ease-in;
                     border: 0;
+                    border: 0.125rem solid $green;
                     &:hover{
                         transform: scale(1.05);
                     }
@@ -56,9 +56,9 @@
                 }
                 &:last-child{
                     button{
+                        border: 0.125rem solid $green !important;
                         background: rgba(255, 255, 255, 0) linear-gradient(270deg, #0E005C73 0%, #0E005C73 100%) 0% 0% no-repeat padding-box;
                         color: $white;
-                        border: 0.125rem solid $green;
                         &:hover{
                             color: $blue;
                             background: rgba(255, 255, 255, 0) linear-gradient(270deg, $green 0%, $green 100%) 0% 0% no-repeat padding-box;
@@ -122,10 +122,10 @@
                 font-weight: 600;
                 border-radius: 1.5rem;
                 padding: 0.5rem 2rem;
-                background: rgba(255, 255, 255, 0) linear-gradient(270deg, $green 0%, $green 100%) 0% 0% no-repeat padding-box;
+                background: $green;
                 color: $blue;
                 transition: all 0.3s ease-in;
-                border: 0;
+                border: 0.125rem solid $green;
                 &:hover{
                     transform: scale(1.05);
                 }
@@ -133,15 +133,13 @@
             &:first-child{
                 margin-left: 0;
                 button{
-                    padding: 0.5rem 3rem;
-                    border: 0.125rem solid $green;
+                    padding: 0.5rem 2.75rem;
                 }
             }
             &:last-child{
                 button{
                     background: rgba(255, 255, 255, 0) linear-gradient(270deg, #0E005C73 0%, #0E005C73 100%) 0% 0% no-repeat padding-box;
                     color: $white;
-                    border: 0.125rem solid $green;
                     &:hover{
                         color: $blue;
                         background: rgba(255, 255, 255, 0) linear-gradient(270deg, $green 0%, $green 100%) 0% 0% no-repeat padding-box;

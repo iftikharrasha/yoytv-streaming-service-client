@@ -12,10 +12,10 @@ const OnDemands = () => {
                 <div className="wrapper">
                     <div className="onDemand__title">
                         <h2>On Demand</h2>
-                        <Link to="/onDemand">{`Ver máss>`}</Link>
+                        <Link to="/onDemand">{`Ver más>`}</Link>
                     </div>
                 </div>
-                <ShowSlider shows={onDemandShows} delay={3000}/>
+                <ShowSlider shows={onDemandShows} delay={4500}/>
             </section>
         </>
     );
