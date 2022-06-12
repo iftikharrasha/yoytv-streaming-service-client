@@ -72,17 +72,18 @@ const ShowModal = (props) => {
                                     </select>
                                 </div>
                             </div>
+                            <ul className="body__contents__episodes">
                             {
                                 details.episodes.map((item) => (
-                                <div className="body__contents__episodes" key={item.id}>
-                                    <div className="body__contents__episodes__left">
+                                <div className="body__contents__episodes__single" key={item.id}>
+                                    <div className="body__contents__episodes__single__left">
                                         <span>{item.no}</span>
-                                        <div className="body__contents__episodes__left__thumb">
+                                        <div className="body__contents__episodes__single__left__thumb">
                                             <img src={item.thumbnail} alt="intro" className="thumb"/>
                                         </div>
                                     </div>
-                                    <div className="body__contents__episodes__right">
-                                        <div className="body__contents__episodes__right__info">
+                                    <div className="body__contents__episodes__single__right">
+                                        <div className="body__contents__episodes__single__right__info">
                                             <h4>{item.name}</h4>
                                             <p>{item.description}</p>
                                         </div>
@@ -91,6 +92,7 @@ const ShowModal = (props) => {
                                 </div>
                                 ))
                             }
+                            </ul>
                             <div className="body__contents__similar">
                                 <h2>Más títulos similares a este</h2>
                                 <div className="body__contents__similar__contents">

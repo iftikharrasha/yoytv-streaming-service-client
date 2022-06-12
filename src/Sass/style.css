@@ -1453,7 +1453,7 @@
   }
 }
 
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes {
+.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1468,7 +1468,7 @@
 }
 
 @media (max-width: 575.98px) {
-  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes {
+  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1476,7 +1476,7 @@
   }
 }
 
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__left {
+.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__left {
   width: 38%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1487,34 +1487,34 @@
 }
 
 @media (max-width: 575.98px) {
-  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__left {
+  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__left {
     width: 100%;
     padding-bottom: 2rem;
   }
 }
 
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__left span {
+.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__left span {
   font-size: 1.65rem;
   font-weight: 600;
 }
 
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__left__thumb {
+.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__left__thumb {
   position: relative;
 }
 
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__left__thumb img {
+.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__left__thumb img {
   width: 24.5rem;
   height: auto;
   cursor: pointer;
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
-  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__left__thumb img {
+  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__left__thumb img {
     width: 18rem;
   }
 }
 
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__left__thumb:before {
+.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__left__thumb:before {
   content: '';
   background: url("../Image/play_button_white.svg");
   background-position: center;
@@ -1530,7 +1530,7 @@
   cursor: pointer;
 }
 
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__right {
+.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__right {
   width: 58%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1544,7 +1544,7 @@
 }
 
 @media (max-width: 575.98px) {
-  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__right {
+  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__right {
     width: 100%;
     -webkit-box-align: start;
         -ms-flex-align: start;
@@ -1552,69 +1552,89 @@
   }
 }
 
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__right__info {
+.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__right__info {
   width: 80%;
 }
 
 @media (max-width: 575.98px) {
-  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__right__info {
+  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__right__info {
     width: 75%;
   }
 }
 
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__right__info h4 {
+.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__right__info h4 {
   font-size: 2.125rem;
   font-weight: 600;
   padding-bottom: 1.25rem;
 }
 
 @media (max-width: 575.98px) {
-  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__right__info h4 {
+  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__right__info h4 {
     font-size: 1.125rem;
   }
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
-  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__right__info h4 {
+  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__right__info h4 {
     font-size: 1.5rem;
   }
 }
 
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__right__info p {
+.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__right__info p {
   font-size: 1.25rem;
 }
 
 @media (max-width: 575.98px) {
-  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__right__info p {
+  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__right__info p {
     font-size: 1rem;
   }
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
-  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__right__info p {
+  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__right__info p {
     font-size: 1rem;
   }
 }
 
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__right span {
+.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__right span {
   font-size: 1.65rem;
   font-weight: 600;
 }
 
 @media (max-width: 575.98px) {
-  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__right span {
+  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__right span {
     font-size: 1.125rem;
   }
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
-  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__right span {
+  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__right span {
     font-size: 1.25rem;
   }
 }
 
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes:last-child {
-  border-bottom: 0;
+.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single:last-child {
+  position: relative;
+}
+
+.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single:last-child:after {
+  content: '';
+  background: url("../Image/arrow_left_green.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  bottom: -1.5rem;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
 }
 
 .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__similar h2 {

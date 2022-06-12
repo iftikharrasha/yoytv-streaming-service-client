@@ -244,96 +244,114 @@
                             }
                         }
                         &__episodes{
-                            @include flexBetween;
-                            padding: 2rem 0;
-                            border-bottom: 0.125rem solid #3E337D;
-                            @media (max-width: 575.98px) {
-                                flex-direction: column;
-                            }
-                            &__left{
-                                width: 38%;
-                                display: flex;
-                                justify-content: space-between;
-                                @media (max-width: 575.98px) {
-                                    width: 100%;
-                                    padding-bottom: 2rem;
-                                }
-                                span{
-                                    font-size: 1.65rem;
-                                    font-weight: 600;
-                                }
-                                &__thumb{
-                                    position: relative;
-                                    img{
-                                        width: 24.5rem;
-                                        height: auto;
-                                        cursor: pointer;
-                                        @media (max-width: 575.98px) {
-                                        }
-                                        @media (min-width: 576px) and (max-width: 991.98px) {
-                                            width: 18rem;
-                                        }
-                                    }
-                                    &:before{
-                                        content: '';
-                                        background: url('../Image/play_button_white.svg');
-                                        @include bgCover;
-                                        position: absolute;
-                                        width: 5rem;
-                                        height: 5rem;
-                                        top: 50%;
-                                        left: 50%;
-                                        transform: translate(-50%, -50%);
-                                        cursor: pointer;
-                                    }
-                                }
-                            }
-                            &__right{
-                                width: 58%;
+                            &__single{
                                 @include flexBetween;
+                                padding: 2rem 0;
+                                border-bottom: 0.125rem solid #3E337D;
                                 @media (max-width: 575.98px) {
-                                    width: 100%;
-                                    align-items: flex-start;
+                                    flex-direction: column;
                                 }
-                                &__info{
-                                    width: 80%;
+                                &__left{
+                                    width: 38%;
+                                    display: flex;
+                                    justify-content: space-between;
                                     @media (max-width: 575.98px) {
-                                        width: 75%;
+                                        width: 100%;
+                                        padding-bottom: 2rem;
                                     }
-                                    h4{
-                                        font-size: 2.125rem;
+                                    span{
+                                        font-size: 1.65rem;
                                         font-weight: 600;
-                                        padding-bottom: 1.25rem;
+                                    }
+                                    &__thumb{
+                                        position: relative;
+                                        img{
+                                            width: 24.5rem;
+                                            height: auto;
+                                            cursor: pointer;
+                                            @media (max-width: 575.98px) {
+                                            }
+                                            @media (min-width: 576px) and (max-width: 991.98px) {
+                                                width: 18rem;
+                                            }
+                                        }
+                                        &:before{
+                                            content: '';
+                                            background: url('../Image/play_button_white.svg');
+                                            @include bgCover;
+                                            position: absolute;
+                                            width: 5rem;
+                                            height: 5rem;
+                                            top: 50%;
+                                            left: 50%;
+                                            transform: translate(-50%, -50%);
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+                                &__right{
+                                    width: 58%;
+                                    @include flexBetween;
+                                    @media (max-width: 575.98px) {
+                                        width: 100%;
+                                        align-items: flex-start;
+                                    }
+                                    &__info{
+                                        width: 80%;
+                                        @media (max-width: 575.98px) {
+                                            width: 75%;
+                                        }
+                                        h4{
+                                            font-size: 2.125rem;
+                                            font-weight: 600;
+                                            padding-bottom: 1.25rem;
+                                            @media (max-width: 575.98px) {
+                                                font-size: 1.125rem;
+                                            }
+                                            @media (min-width: 576px) and (max-width: 991.98px) {
+                                                font-size: 1.5rem;
+                                            }
+                                        }
+                                        p{
+                                            font-size: 1.25rem;
+                                            @media (max-width: 575.98px) {
+                                                font-size: 1rem;
+                                            }
+                                            @media (min-width: 576px) and (max-width: 991.98px) {
+                                                font-size: 1rem;
+                                            }
+                                        }
+                                    }
+                                    span{
+                                        font-size: 1.65rem;
+                                        font-weight: 600;
                                         @media (max-width: 575.98px) {
                                             font-size: 1.125rem;
                                         }
                                         @media (min-width: 576px) and (max-width: 991.98px) {
-                                            font-size: 1.5rem;
-                                        }
-                                    }
-                                    p{
-                                        font-size: 1.25rem;
-                                        @media (max-width: 575.98px) {
-                                            font-size: 1rem;
-                                        }
-                                        @media (min-width: 576px) and (max-width: 991.98px) {
-                                            font-size: 1rem;
+                                            font-size: 1.25rem;
                                         }
                                     }
                                 }
-                                span{
-                                    font-size: 1.65rem;
-                                    font-weight: 600;
-                                    @media (max-width: 575.98px) {
-                                        font-size: 1.125rem;
-                                    }
-                                    @media (min-width: 576px) and (max-width: 991.98px) {
-                                        font-size: 1.25rem;
+                                &:last-child{
+                                    position: relative;
+                                    &:after {
+                                        content: '';
+                                        background: url('../Image/arrow_left_green.svg');
+                                        @include bgCover;
+                                        position: absolute;
+                                        width: 3rem;
+                                        height: 3rem;
+                                        bottom: -1.5rem;
+                                        right: 0;
+                                        left: 0;
+                                        margin-left: auto;
+                                        margin-right: auto;
+                                        text-align: center;
+                                        cursor: pointer;
+                                        transform: rotate(270deg);
                                     }
                                 }
-                            }
-                            &:last-child{
-                                border-bottom: 0;
                             }
                         }
                         &__similar{
