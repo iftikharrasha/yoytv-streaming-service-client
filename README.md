@@ -57,16 +57,22 @@ A quick look at the top-level files hierarchy.
           └── Custom
             ├── Modals
             ├── Sliders
+            ├── Loaders
           └── Home
             ├── Hero.js
-            ├── OnDemands.js
-            ├── Recents.js
-            ├── Recommended.js
-          └── Loader
-            ├── Loader.js
+            ├── Categories.js
+          └── TvEnVivo
+            ├── ChannelItem.js
+            ├── index.js
+            ├── ProgramItem.js
+            ├── Timeline.js
           └── Data
-            ├── shows.js
+            ├── categories.js
+            ├── episodes.js
+            ├── faqs.js
+            ├── home_first_section.js
             ├── similar.js
+          └── Fonts
           └── Header
             ├── Header.js
           └── Fonts
@@ -82,8 +88,11 @@ A quick look at the top-level files hierarchy.
             ├── Home
             ├── NotFound
             ├── privateRoute
+            ├── TvEnVivo
           └── Sass
           └── Utilities
+            ├── Contexts
+            ├── Helpers
             ├── Hooks
       ├── App.test.js
       ├── index.js
