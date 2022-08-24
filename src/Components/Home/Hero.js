@@ -1,62 +1,49 @@
 import React from 'react';
-import audio from '../../Image/audio.svg';
-import heroBack from '../../Image/hero-back.png';
+import arrow from '../../Image/subarrow.svg';
 import useWindowSize from '../../Utilities/Hooks/useWindowSize';
 
-const Hero = () => {
+const Hero = ({landingData, loggedInUser}) => {
     const { windowWidth } = useWindowSize();
+    const { home_page_bg_image, site_logo, home_banner_heading } = landingData;
+
     return (
             <>
                 <section className="hero">
-                    <div className="heroBg" style={{backgroundImage: `url(${heroBack})`}}>
+                    <div className="heroBg heroFixed" style={{backgroundImage: `url(${home_page_bg_image})`}}>
                         <div className="wrapper heroBg__contents">
-                            <h1>TV en vivo, películas, series y más…</h1>
-                            <h2>Navega con la experiencia YOY sin costo</h2>
                             {
                                 windowWidth > 575.98 ? 
+                                <img src={site_logo} alt="site_logo" width="200" height="99" data-aos="fade" data-aos-offset="0" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true"/>: null
+                            }
+                            <h1 data-aos="fade" data-aos-offset="0" data-aos-delay="600" data-aos-duration="1000" data-aos-once="true">TV en vivo, películas, series y más…</h1>
+                            <h2 data-aos="fade" data-aos-delay="800" data-aos-offset="0" data-aos-duration="1000" data-aos-once="true">Disfruta de todo el contenido con <br /> tu suscripción <span>Coppel Digital</span></h2>
+                            
+                            {
+                                loggedInUser ? 
                                 <ul>
                                     <li>
-                                        <button>
+                                        <button data-aos="fade" data-aos-offset="0" data-aos-delay="1200" data-aos-duration="1000" data-aos-once="true">
+                                            <span>Mas información</span> 
+                                        </button>
+                                    </li>
+                                </ul> :
+                                <ul>
+                                    <li>
+                                        <button data-aos="fade" data-aos-offset="0" data-aos-delay="1200" data-aos-duration="1000" data-aos-once="true">
                                             <span>Suscribirme</span> 
                                         </button>
                                     </li>
-                                    <li>
-                                        <button>
-                                            <span>Navegar sin costo</span> 
-                                        </button>
-                                    </li>
-                                        <li>
-                                            <button>
-                                                <span>Mas información</span> 
-                                            </button>
-                                        </li> 
-                                </ul>: null
+                                </ul>
                             }
-                        </div>
-                        <div className="heroBg__audio">
-                            <div className="heroBg__audio__controls">
-                                <img src={audio} alt="audioIcon" />
-                                <span>
-                                    <p>Todo</p>
-                                </span>
-                            </div>
+                            
+                            {
+                                loggedInUser ? null :
+                                    windowWidth > 575.98 ? 
+                                    <h6 data-aos="fade" data-aos-offset="0" data-aos-delay="1200" data-aos-duration="1000" data-aos-once="true"><img src={arrow} alt="arrow" width="30" height="22"/> <span>Inicia tu prueba gratuita de 7 días</span></h6> : null
+                            }
+
                         </div>
                     </div>
-                    {
-                        windowWidth < 576 ? 
-                        <ul className="wrapper heroSm">
-                            <li>
-                                <button>
-                                    <span>Suscribirme</span> 
-                                </button>
-                            </li>
-                            <li>
-                                <button>
-                                    <span>Navegar sin costo</span> 
-                                </button>
-                            </li>
-                        </ul> : null
-                    }
                 </section>
             </>
         );

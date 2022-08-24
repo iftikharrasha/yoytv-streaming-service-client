@@ -2,8 +2,10 @@
 @import './loader';
 @import './header';
 @import './hero';
+@import './tvEnVivo';
 @import './sliders';
 @import './modals';
+@import './landingContent';
 @import './footer';
 @import './notFound';
 
@@ -110,17 +112,46 @@ a, select , input , textarea , button{
     text-decoration: none;
 }
 
+.relativeTop{
+    position: relative;
+    top: 52rem;
+    background: $darkblue;
+    @media (max-width: 575.98px) {
+        top: 28rem;
+    }
+}
+
+.main-btn{
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-radius: 1.5rem;
+    padding: 0.5rem 1.75rem 0.25rem 1.75rem;
+    background: $green;
+    color: $black !important;
+    transition: all 0.1s ease-in;
+    border: 0;
+    border: 0.125rem solid $green;
+    @media (max-width: 575.98px) {
+        font-size: 1rem;
+    }
+    &:hover{
+        border: 0.125rem solid $green !important;
+        transform: scale(1.05);
+        color: $white !important;
+        background: $darkblue;
+    }
+}
+
 .wrapper {
   margin: 0 auto;
   padding: 0 1rem;
     @media (max-width: 575.98px) {
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
         padding: 0;
     }
     @media (min-width: 576px) and (max-width: 991.98px) {
-        width: 80%;
-        margin: 0 auto;
+        width: 100%;
     }
     @media (min-width: 576px) and (max-width: 767.98px) {
         max-width: 720px;

@@ -1,5 +1,4 @@
 .header{
-    background: $darkblue;
     width: 100%;
     position: fixed;
     top: 0;
@@ -7,7 +6,26 @@
     width: 100%;
     z-index: 1000;
     transition: all 1s;
+    @media (max-width: 575.98px) {
+        background: $darkblue;
+    }
+    &:before{
+        content: "";
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        height: 5.75rem;
+        width: 100%;
+        background: $darkblue;
+        opacity: 1;
+        z-index: 1;
+        @media (max-width: 575.98px) {
+            content: none;
+        }
+    }
     nav{
+        position: relative;
+        z-index: 2;
         padding: 0 2rem 0 2rem;
         @media (max-width: 991.98px) {
             padding: 0 1rem;
@@ -29,6 +47,9 @@
                 width: 10rem;
                 height: auto;
                 fill: $blue;
+                @media (max-width: 575.98px) {
+                    width: 7rem;
+                }
             }
         }
         form{
@@ -119,7 +140,7 @@
                 color: $white !important;
                 border-radius: 5rem;
                 padding: 0.25rem 1.25rem !important;
-                border: 0.0625rem solid rgba(255, 255, 255, 0);
+                border: 0.1875rem solid rgba(255, 255, 255, 0);
                 @media (max-width: 575.98px) {
                     font-size: 1.5rem;
                 }
@@ -128,7 +149,7 @@
                 }
                 &:hover{
                     color: $green !important;
-                    border: 0.0625rem solid $green;
+                    border: 0.1875rem solid $green;
                     .navIcon{
                         fill: $green;
                     }
@@ -214,7 +235,10 @@
             .auth-dropdown{
                 position: absolute;
                 right: 0;
-                top: 1.125rem;
+                top: 1rem;
+                @media (max-width: 575.98px) {
+                    top: 0.5rem;
+                }
             }
             .nav-toggle {
                 cursor: pointer;
@@ -306,6 +330,7 @@
                     }
                     .navIcon{
                         fill: $green;
+                        margin-right: 0;
                     }
                 }
                 .navIcon{
@@ -328,8 +353,95 @@
     }
 }
 
-.fixed-header {
-    .header-top{
-        display: none; 
+.public-header {
+    @media (min-width: 576px) {
+        &:before{
+            opacity: 0.3;
+        }
+    }
+}
+
+.authModal{
+    .modal-dialog {
+        color: $black;
+        max-width: 36rem;
+        @media (min-width: 576px) and (max-width: 1531.98px){
+            max-width: 32rem;
+        }
+        .modal-content {
+            background-color: $blue;
+            text-align: center;
+            .modal-header {
+                border-bottom: none;
+                margin-left: auto;
+                img{
+                    cursor: pointer;
+                    width: 1.75rem;
+                    height: 1.75rem;
+                    margin: 1rem 1rem 0 0;
+                }
+            }
+            .modal-body{
+                color: $white;
+                img{
+                    width: 13.5rem;
+                    height: auto;
+                    margin-bottom:1rem;
+                }
+                h2{
+                    text-align: center;
+                    font-size: 1.5rem;
+                    font-weight: 800;
+                    opacity: 1;
+                    margin: 1.5rem 0;
+                }
+                p{
+                    text-align: center;
+                    font-size: 1.125rem;
+                    font-weight: 500;
+                    color: $white;
+                    margin-top: 1.25rem;
+                    padding: 0 2rem;
+                    span{
+                        text-align: center;
+                        font-size: 1.25rem;
+                        font-weight: 600;
+                        color: $green;
+                        margin: 0;
+                        cursor: pointer;
+                    }
+                }
+                h5{
+                    text-align: center;
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    color: $green;
+                    margin: 0;
+                    cursor: pointer;
+                }
+                form{
+                    margin-top:1.5rem;
+                    padding: 0 1rem;
+                    input{
+                        border: 0.125rem solid $green;
+                        height: 3.125rem;
+                        background-color: $blue;
+                        font-size: 1.25rem;
+                        padding: 0.625rem;
+                        color: $white;
+                        border-radius: 0;
+                    }
+                }
+            }
+            .modal-footer{
+                justify-content: center;
+                border-top: none;
+                padding-bottom:3rem;
+                button{
+                    padding: 0.25rem 4rem;
+                    font-size: 1.125rem;
+                }
+            }
+        }
     }
 }

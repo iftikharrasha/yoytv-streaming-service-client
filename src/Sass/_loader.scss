@@ -1,16 +1,15 @@
-.loader{
-    // border-bottom: 1px solid $green;
+.loader__wrap{
+  margin-top:4rem;
+  .loader{
     background-color: $darkblue;
     padding: 1.75rem 0;
     opacity: 0.75;
-}
-
-.pulse{
-    border-bottom: 1px solid $green;
-    animation: borderPulse 1000ms infinite ease-out;
-}
-
-@keyframes borderPulse {
+    .pulse{
+        border-bottom: 1px solid $green;
+        animation: borderPulse 1000ms infinite ease-out;
+    } 
+  }
+  @keyframes borderPulse {
     0% {
       transform: scale(1);
     }
@@ -22,4 +21,8 @@
         box-shadow: inset 0px 0px 0px 1px rgba(103, 254, 101, 0.2), 0px 0px 0px 5px rgba(103, 254, 101, 0);
         transform: scale(1);
     }
+  }
 }
+
+
+

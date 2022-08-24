@@ -1,7 +1,20 @@
-.recent, .onDemand, .recommended{
-    padding: 5rem 0 3rem 0;
+.shows{
+    padding: 3rem 0 0 0;
+    @media (max-width: 575.98px) {
+        padding: 2rem 0;
+    }
+    .swiper-wrapper{
+        margin-left: 3rem !important;
+        @media (max-width: 575.98px) {
+            margin-left: 2rem !important;
+        }
+    }
     &__title{
         @include flexBetween;
+        margin: 0 3rem;
+        @media (max-width: 575.98px) {
+            margin: 0 2rem;
+        }
         h2, a{
             font-size: 1.75rem;
             font-weight: 700;
@@ -24,7 +37,7 @@
             position: relative;
             overflow: hidden;
             margin: 2.25rem 0;
-            width: 15%;
+            width: 16rem !important;
             border-radius: 1.125rem;
             transition: all 0.2s ease-in;
             z-index: 1;
@@ -44,8 +57,8 @@
                 @include flexBetween;
                 ul{
                     position: relative;
-                    width: 62%;
-                    @include flexCenter;
+                    width: 100%;
+                    @include flexBetween;
                     z-index: 1;
                     li{
                         img{
@@ -63,7 +76,6 @@
                             }
                         }
                         .plus{
-                            margin-right: 0.75rem;
                             @media (max-width: 575.98px) {
                                 margin-right: 0.5rem;
                             }
@@ -86,7 +98,7 @@
                 }
             }
             &:hover{
-                border: 0.25rem solid $white;
+                border: 0.25rem solid $green;
                 transform: scale(1.1);
                 .card__buttons {
                     transform: translateY(-5.625rem);
@@ -118,14 +130,15 @@
                     padding: 1rem 1.5rem;
                 }
             }
-            @media (max-width: 575.98px) {
-                display: none;
-            }
         }
         .swiper-button-prev{
-            left: 4.875rem;
+            left: 2rem;
             transition: all 0.5s;
-            opacity: 0;
+            opacity: 1;
+            z-index: 999;
+            // @media (min-width: 992px) {
+            //     opacity: 0;
+            // }
             &:after {
                 content: "";
                 position: absolute;
@@ -136,9 +149,13 @@
             }
         }
         .swiper-button-next{
-            right: 4.875rem;
+            right: 2rem;
             transition: all 0.5s;
-            opacity: 0;
+            opacity: 1;
+            z-index: 999;
+            // @media (min-width: 992px) {
+            //     opacity: 0;
+            // }
             &:after {
                 content: "";
                 position: absolute;
@@ -153,9 +170,6 @@
             position: relative;
         }
         .swiper-pagination{
-            @media (min-width: 992px) {
-                display: none;
-            }
             .swiper-pagination-bullet{
                 background: $white;
             }
@@ -166,11 +180,7 @@
     }
 }
 
-.onDemand, .recommended{
-    padding-top: 0;
-}
-
-.onDemand, .recommended, .recent{
+.shows{
     .swiper{
         &:hover{
             .swiper-button-prev, .swiper-button-next{
@@ -178,4 +188,8 @@
             }
         }
     }
+}
+
+.searchlist{
+    margin-top: 5.5rem;
 }

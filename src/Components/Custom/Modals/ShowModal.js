@@ -1,10 +1,12 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
 import arrow_left from '../../../Image/arrow_left.svg';
+import banner_image from '../../../Image/stranger_things_cover.png';
 import play_fill from '../../../Image/play_fill.svg';
 import share_icon from '../../../Image/share_icon.svg';
 import plus_icon from '../../../Image/plus_icon.svg';
 import love_icon from '../../../Image/love_icon.svg';
+import { episodes } from '../../../Data/episodes.js';
 import { similar } from '../../../Data/similar.js';
 
 const ShowModal = (props) => {
@@ -21,27 +23,20 @@ const ShowModal = (props) => {
                 className="show__modal"
             >
                 <div className="modal__bg">
-                    <Modal.Header style={{backgroundImage: `url(${details.modalCover})`}}>
+                    <Modal.Header style={{backgroundImage: `url(${banner_image})`}}>
                         <img src={arrow_left} alt="close" className="close" onClick={handleClose}/>
                         <div className="modal__contents">
                             <div className="modal__contents__left">
-                                <img src={details.albumCover} alt="close"/>
+                                <img src={details.default_image} alt="close"/>
                             </div>
                             <div className="modal__contents__right">
                                 <Modal.Title id="example-modal-sizes-title-lg">
-                                    {details.name}
+                                    {details.title}
                                 </Modal.Title>
-                                <h5>{details.type}</h5>
-                                <h6>{details.rating}</h6>
-                                <h4>{details.subtitle}</h4> 
-                                <h2>Categorias:
-                                    {
-                                        details.categories.map((item) => (
-                                            <span key={item.id}>{item.name}. </span>
-                                        ))
-                                    }
-                                </h2>
-                                <p>{details.details}</p>
+                                <h5>Series</h5>
+                                <h6>8.1</h6>
+                                <h4>4 temporadas - 2016 - EUA</h4> 
+                                <p>{details.description}</p>
                             </div>
                         </div>
                         <div className="modal__buttons">
@@ -52,11 +47,11 @@ const ShowModal = (props) => {
                                         <span>Reproducir</span> 
                                     </button>
                                 </li>
-                                <li><img src={plus_icon} alt="add" className="plus"/></li>
                                 <li><img src={love_icon} alt="love" className="love"/></li>
                                 <li><img src={share_icon} alt="play" className="play"/></li>
+                                <li><img src={plus_icon} alt="add" className="plus"/></li>
                             </ul>
-                            <h2><span>Categorias:</span> Tags</h2>
+                            <h2><span>Categorias:</span> Terror. Suspenso. Misterio. Fantasía.</h2>
                         </div>
                     </Modal.Header>
                     <Modal.Body>
@@ -74,7 +69,7 @@ const ShowModal = (props) => {
                             </div>
                             <ul className="body__contents__episodes">
                             {
-                                details.episodes.map((item) => (
+                                episodes.map((item) => (
                                 <div className="body__contents__episodes__single" key={item.id}>
                                     <div className="body__contents__episodes__single__left">
                                         <span>{item.no}</span>

@@ -1,35 +1,66 @@
 .heroBg{
+    position: relative;
     background-color: $blue;
     @include bgCover;
-    min-height: 36rem;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    position: relative;
-    margin-top: 5.5rem;
+    @include flexCenter;
+    min-height: 64rem;
+    // margin-top: 3.5rem;
     @media (max-width: 575.98px) {
-        min-height: 18rem;
+        min-height: 22rem;
+        align-items: flex-end;
+        margin-top: 4rem;
     }
     &__contents{
-        width: 100%;
+        padding: 6rem 6rem 0 0 !important;
+        @media (max-width: 575.98px) {
+            padding: 0 3rem !important;
+        }
+        @media (min-width: 576px) and (max-width: 991.98px) {
+            width: 90% !important;
+        }
+        img{
+            position: relative;
+            width: 18.75rem;
+            height: 6.1875rem;
+        }
         h1{
             font-size: 2.4375rem;
             font-weight: 700;
             position: relative;
-            padding-bottom: 1.25rem;
+            padding: 1rem 0 1.25rem 0;
             @media (max-width: 575.98px) {
-                font-size: 1.75rem;
-            }      
+                font-size: 1.5rem;
+            } 
         }
         h2{
             font-size: 2.0625rem;
             font-weight: 600;
-            font-style: italic;
             position: relative;
-            padding-bottom: 3rem;
+            padding-bottom: 2rem;
             @media (max-width: 575.98px) {
-                font-size: 1.5rem;
+                font-size: 1.25rem;
                 padding-bottom: 1rem;
+            }
+            span{
+                font-weight: 700;
+            }
+        }
+        h6{
+            display: flex;
+            justify-content: flex-start;
+            position: relative;
+            font-family: $ff2;
+            font-size: 1.0625rem;
+            font-weight: 700;
+            margin-left: 8.5rem;
+            margin-top: 0.5rem;
+            img{
+                width: 1.875rem;
+                height: 1.375rem;
+            }
+            span{
+                margin-top: 0.5rem;
+                margin-left: 0.25rem;
             }
         }
         ul{
@@ -44,25 +75,17 @@
                     padding: 0.5rem 1.75rem 0.25rem 1.75rem;
                     background: $green;
                     color: $blue;
-                    transition: all 0.3s ease-in;
+                    transition: all 0.1s ease-in;
                     border: 0;
                     border: 0.125rem solid $green;
-                    &:hover{
-                        transform: scale(1.05);
+                    @media (max-width: 575.98px) {
+                        font-size: 1rem;
                     }
-                }
-                &:first-child{
-                    margin-left: 0;
-                }
-                &:last-child{
-                    button{
+                    &:hover{
                         border: 0.125rem solid $green !important;
-                        background: rgba(255, 255, 255, 0) linear-gradient(270deg, #0E005C73 0%, #0E005C73 100%) 0% 0% no-repeat padding-box;
+                        transform: scale(1.05);
                         color: $white;
-                        &:hover{
-                            color: $blue;
-                            background: rgba(255, 255, 255, 0) linear-gradient(270deg, $green 0%, $green 100%) 0% 0% no-repeat padding-box;
-                        }
+                        background: $darkblue;
                     }
                 }
             }
@@ -72,80 +95,24 @@
             width: 100%;
             height: 100%;
             background: rgba(255,255,255, 0);
-            background: transparent linear-gradient(180deg, rgba(9, 0, 46, 0) 0%, #07002E 100%) 0% 0% no-repeat padding-box;
+            background: transparent linear-gradient(180deg, rgba(9, 0, 46, 0) 0%, #07002E 80%) 0% 0% no-repeat padding-box;
             position: absolute;
             top: 0;
             left: 0;
             z-index: 0;
             opacity: 1;
-        }
-    }
-    &__audio{
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        @media screen and (max-width: 575.98px) {
-            display: none;
-        }
-        &__controls{
-            @include flexBetween;
-            img{
-                width: 3rem;
-                height: 3rem;
-                margin-right: 1.25rem;
-                cursor: pointer;
-            }
-            span{
-                border-left: 4px solid $green;
-                background-color: $blue;
-                padding: 0.65rem 1rem;
-                p{
-                    color: $green;
-                    font-size: 1.125rem;
-                    font-weight: 700;
-                }
+            @media (max-width: 575.98px) {
+                background: transparent linear-gradient(180deg, rgba(9, 0, 46, 0) 30%, #07002E 100%) 0% 0% no-repeat padding-box;
             }
         }
     }
 }
 
-.heroSm{
-    display: none;
-    @media screen and (max-width: 575.98px) {
-        padding-top: 1rem;
-        position: relative;
-        @include flexBetween;
-        li{
-            margin: 0 0.5rem;
-            button{
-                font-size: 1.25rem;
-                font-weight: 600;
-                border-radius: 1.5rem;
-                padding: 0.5rem 2rem;
-                background: $green;
-                color: $blue;
-                transition: all 0.3s ease-in;
-                border: 0.125rem solid $green;
-                &:hover{
-                    transform: scale(1.05);
-                }
-            }
-            &:first-child{
-                margin-left: 0;
-                button{
-                    padding: 0.5rem 2.75rem;
-                }
-            }
-            &:last-child{
-                button{
-                    background: rgba(255, 255, 255, 0) linear-gradient(270deg, #0E005C73 0%, #0E005C73 100%) 0% 0% no-repeat padding-box;
-                    color: $white;
-                    &:hover{
-                        color: $blue;
-                        background: rgba(255, 255, 255, 0) linear-gradient(270deg, $green 0%, $green 100%) 0% 0% no-repeat padding-box;
-                    }
-                }
-            }
-        }
-    }
+.heroFixed{
+    position: fixed;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    right: 0;
 }
