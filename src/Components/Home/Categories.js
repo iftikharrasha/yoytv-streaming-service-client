@@ -7,8 +7,8 @@ const Categories = () => {
     return (
         <>
         {
-            categories.map(category => (
-                <section className="shows relativeTop">
+            categories.map((category, index) => (
+                <section className="shows relativeTop" key={index}>
                     <div className="shows__title">
                         <h2 data-aos="fade" data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000">{category.title}</h2>
                         <Link to="/shows">{`Ver más>`}</Link>

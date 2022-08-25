@@ -14,7 +14,7 @@ const Home = () => {
         <>
             {
                 !landingData ? <Loader/> :
-                !loggedInUser ?
+                !loggedInUser?.isSignedIn ?
                 <>  
                     <Hero landingData={landingData}/>
                     <LandingContent landingData={landingData} newRelease={newRelease}/>

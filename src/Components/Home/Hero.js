@@ -19,7 +19,7 @@ const Hero = ({landingData, loggedInUser}) => {
                             <h2 data-aos="fade" data-aos-delay="800" data-aos-offset="0" data-aos-duration="1000" data-aos-once="true">Disfruta de todo el contenido con <br /> tu suscripción <span>Coppel Digital</span></h2>
                             
                             {
-                                loggedInUser ? 
+                                loggedInUser?.isSignedIn ? 
                                 <ul>
                                     <li>
                                         <button data-aos="fade" data-aos-offset="0" data-aos-delay="1200" data-aos-duration="1000" data-aos-once="true">
@@ -37,7 +37,7 @@ const Hero = ({landingData, loggedInUser}) => {
                             }
                             
                             {
-                                loggedInUser ? null :
+                                loggedInUser?.isSignedIn ? null :
                                     windowWidth > 575.98 ? 
                                     <h6 data-aos="fade" data-aos-offset="0" data-aos-delay="1200" data-aos-duration="1000" data-aos-once="true"><img src={arrow} alt="arrow" width="30" height="22"/> <span>Inicia tu prueba gratuita de 7 días</span></h6> : null
                             }

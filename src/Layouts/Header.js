@@ -31,13 +31,13 @@ const Header = () => {
 
     return (
         <>
-           <header className={!loggedInUser ? "header public-header" : "header"} id="header">
+           <header className={!loggedInUser?.isSignedIn ? "header public-header" : "header"} id="header">
                 <Navbar collapseOnSelect expand="lg" variant="dark" id="mainNavbar">
                     <Navbar.Brand as={Link} to="/">
                         <YoySvg/>
                     </Navbar.Brand>
                         {
-                            !loggedInUser ? null :
+                            !loggedInUser?.isSignedIn ? null :
                             <form className="d-lg-flex d-none" data-aos="flip-up" data-aos-delay="100" data-aos-duration="1000" data-aos-once="true">
                                 <div className="search-box">
                                     <img src={search_icon} alt="search"/>
@@ -51,7 +51,7 @@ const Header = () => {
                         }
                     <Navbar.Collapse id="responsive-navbar-nav">
                         {
-                            !loggedInUser ? null :
+                            !loggedInUser?.isSignedIn ? null :
                             <Nav className="ms-auto">
                                 <Nav.Link as={Link} to="/tv-en-vivo" className="mx-lg-2 mx-3 navLink" data-aos="flip-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
                                     <TvSvg className="navIcon"/>
@@ -74,7 +74,7 @@ const Header = () => {
                         
                         <Nav className="ms-auto auth-dropdown" data-aos="flip-up" data-aos-offset="0" data-aos-delay="500" data-aos-duration="1000" data-aos-once="true"> 
                         {
-                            !loggedInUser ? 
+                            !loggedInUser?.isSignedIn ? 
                                 <button className="main-btn" onClick={(e) => setShow(true)}>
                                     <span>Iniciar sesión</span> 
                                 </button> :
@@ -100,8 +100,8 @@ const Header = () => {
                         <Nav className="ms-auto auth-dropdown" data-aos="flip-up" data-aos-offset="0" data-aos-delay="100" data-aos-duration="1000" data-aos-once="true"> 
                         
                         {
-                            !loggedInUser ? 
-                            <button className={!loggedInUser ? "main-btn me-3 d-block d-lg-none mt-1" : "main-btn me-3 d-block d-lg-none"} onClick={(e) => setShow(true)}>
+                            !loggedInUser?.isSignedIn ? 
+                            <button className={!loggedInUser?.isSignedIn ? "main-btn me-3 d-block d-lg-none mt-1" : "main-btn me-3 d-block d-lg-none"} onClick={(e) => setShow(true)}>
                                 <span>Iniciar sesión</span> 
                             </button> :
                                 <Dropdown className="d-block d-lg-none">
@@ -115,7 +115,7 @@ const Header = () => {
                                     <Dropdown.Menu>
                                         <Link to={"/profile/cuenta/id"} className="dropdown-item lit-14">Cuenta</Link>
                                         <Link to={"/profile/preferencias/id"} className="dropdown-item lit-14">Preferencias</Link>
-                                        <Link to="/logout" className="dropdown-item lit-14">Cerrar Sesión</Link>
+                                        <Link to="/" className="dropdown-item lit-14" onClick={handleLogOut}>Cerrar Sesión</Link>
                                     </Dropdown.Menu>
                                 </Dropdown>
                         }

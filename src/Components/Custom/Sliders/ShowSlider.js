@@ -52,8 +52,8 @@ const ShowSlider = ({shows, delay}) => {
                 className="shows__slider"
             >
             {
-                shows.data.map((item) => (
-                    <SwiperSlide key={item.no} onClick={() => handlePopup(item)}>
+                shows.data.map((item, index) => (
+                    <SwiperSlide key={index} onClick={() => handlePopup(item)}>
                         <img src={item.default_image} alt="default_image" />
                         <div className="card__buttons">
                             <ul>
