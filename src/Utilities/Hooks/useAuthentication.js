@@ -4,53 +4,74 @@ import axios from 'axios';
 
 const useAuthentication = () => {
     const [loggedInUser, setLoggedInUser] = useState(null);
+      const [error, setError] = useState('');
+      const [success, setSuccess] = useState('');
 
     const navigate = useNavigate();
 
     const handleLogin = async (data) => {
-        const signedInUser = {
-            isSignedIn: true,
-            email: process.env.REACT_APP_USER,
-            name: process.env.REACT_APP_USERNAME
-        };
-        setLoggedInUser(signedInUser);
-        navigate('/');
 
-        // try {
-        //     const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/v4/login?id=&token=&language=en&email=${data.emailAddress}&password=${data.password}&timezone=America/Mexico_City&login_by=manual&device_type=web&device_token=123456`, data);
-        //     return response.data
-        // } catch (error) {
-        //     console.log(error);
-        // }
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/v4/login`, data);
+
+            if(response.data.success){
+                const signedInUser = {
+                    isSignedIn: true,
+                    user_id: response.data.data.user_id,
+                    sub_profile_id: response.data.data.sub_profile_id,
+                    name: response.data.data.name.split("@"),
+                    email: response.data.data.email,
+                    picture: response.data.data.picture,
+                    mobile: response.data.data.mobile,
+                    gender: response.data.data.gender,
+                    is_verified: response.data.data.is_verified,
+                    token: response.data.data.token,
+                };
+                setSuccess(response.data.message);
+                setLoggedInUser(signedInUser);
+                navigate('/');
+            }else{
+                setError(response.data.error_messages);
+            }
+
+            return response.data;
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     const handleRegistration = async (data) => {
-        const signedInUser = {
-            isSignedIn: true,
-            email: process.env.REACT_APP_USER,
-            name: process.env.REACT_APP_API_USERNAME
-        };
-        setLoggedInUser(signedInUser);
-        navigate('/');
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/v4/register`, data);
 
-        // try {
-        //     const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/v4/registration?id=&token=&language=en&email=${data.emailAddress}&password=${data.password}&timezone=America/Mexico_City&login_by=manual&device_type=web&device_token=123456`, data);
-        //     return response.data
-        // } catch (error) {
-        //     console.log(error);
-        // }
+            if(response.data.success){
+                setSuccess(response.data.message);
+            }else{
+                setError(response.data.error_messages);
+            }
+
+            return response.data
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     const handleLogOut = () => {
+        setError('');
+        setSuccess('');
         setLoggedInUser(null);
         navigate('/');
     }
 
     return {
+        error,
+        success,
         loggedInUser,
         handleLogin,
         handleLogOut,
-        handleRegistration
+        handleRegistration,
+        setSuccess,
+        setError,
     };
 };
 

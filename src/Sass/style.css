@@ -1,5 +1,12 @@
 .loader__wrap {
+  position: absolute;
   margin-top: 4rem;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  background-color: #07002E;
 }
 
 .loader__wrap .loader {

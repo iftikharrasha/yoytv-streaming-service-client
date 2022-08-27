@@ -5,7 +5,7 @@ const Loader = () => {
         <>
         <div className="loader__wrap">
             {   
-                Array(16).fill().map((arr, index) => {
+                Array(30).fill().map((arr, index) => {
                     return <div className="loader" key={index}>
                                 <div className="pulse"></div>
                             </div>

@@ -80,9 +80,9 @@ const Header = () => {
                                 </button> :
                                 <Dropdown>
                                     <Dropdown.Toggle variant="" id="dropdown-basic" className="d-flex align-items-center">
-                                        <span>Alejandra</span>
+                                        <span>{loggedInUser.name[0]}</span>
                                         <span className="avatar ms-3">
-                                            <img alt="user" src={avatar}/>
+                                            <img alt="user" src={loggedInUser.picture}/>
                                         </span>
                                     </Dropdown.Toggle>
 
@@ -106,9 +106,9 @@ const Header = () => {
                             </button> :
                                 <Dropdown className="d-block d-lg-none">
                                     <Dropdown.Toggle variant="" id="dropdown-basic" className="d-flex align-items-center">
-                                        <span>Alejandra</span>
+                                        <span>{loggedInUser.name[0]}</span>
                                         <span className="avatar ms-3">
-                                            <img alt="user" src={avatar}/>
+                                            <img alt="user" src={loggedInUser.picture}/>
                                         </span>
                                     </Dropdown.Toggle>
 
