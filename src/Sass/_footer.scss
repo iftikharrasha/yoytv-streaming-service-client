@@ -1,5 +1,6 @@
 .footer{
-    // position: relative;
+    position: relative;
+    background: $darkblue;
     padding: 1rem 0 2rem 0;
     @media (max-width: 575.98px) {
         padding-bottom: 6.5rem;

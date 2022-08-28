@@ -1,4 +1,6 @@
 .shows{
+    position: relative;
+    background: $darkblue;
     padding: 3rem 0 0 0;
     @media (max-width: 575.98px) {
         padding: 2rem 0;

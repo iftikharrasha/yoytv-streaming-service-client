@@ -5,7 +5,7 @@ import YoySvg from '../Image/SvgCodes/YoySvg';
 const Footer = () => {
     return (
         <>
-            <footer className="footer relativeTop">
+            <footer className="footer">
                 <div className="wrapper">
                     <div className="footer__credit">
                         <div className="footer__credit__logo" data-aos="fade" data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000">

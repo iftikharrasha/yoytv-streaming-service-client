@@ -21,7 +21,10 @@ const LandingContent = ({landingData, newRelease}) => {
 
     return (
         <>
-            <section className="video relativeTop">
+            <section className="relativeTop">
+                {/* only for landing parallex! */}
+            </section>
+            <section className="video">
                 <div className="wrapper">
                     <div className="video__content">
                         <div className="video__content__left">
@@ -43,7 +46,7 @@ const LandingContent = ({landingData, newRelease}) => {
                 </div>
             </section>
 
-            <section className="featured relativeTop">
+            <section className="featured">
                 <div className="featured__content">
                     <div className="featured__content__top">
                         <h6 data-aos="fade" data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000">{home_section_2_title}</h6>
@@ -57,7 +60,7 @@ const LandingContent = ({landingData, newRelease}) => {
                 </div>
             </section>
 
-            <section className="featured devices relativeTop">
+            <section className="featured devices">
                 <div className="wrapper">
                     <div className="featured__content">
                         <div className="featured__content__top">
@@ -80,7 +83,7 @@ const LandingContent = ({landingData, newRelease}) => {
                 </div>
             </section>
 
-            <section className="faq relativeTop">
+            <section className="faq">
                 <div className="wrapper">
                     <div className="faq__content">
                         <div className="faq__content__form">
@@ -115,7 +118,7 @@ const LandingContent = ({landingData, newRelease}) => {
                 </div>
             </section>
 
-            <section className="plans relativeTop">
+            <section className="plans">
                 <div className="wrapper">
                     <div className="plans__content">
                         <h3 data-aos="fade" data-aos-offset="0" data-aos-delay="400" data-aos-duration="1000">Obtén acceso ilimitado con tu membresía<span> Coppel Digital</span></h3>

@@ -1,4 +1,5 @@
 .video{
+    position: relative;
     background: $darkblue;
     padding: 5rem 3rem;
     @media (max-width: 575.98px) {
@@ -79,6 +80,7 @@
 }
 
 .featured{
+    position: relative;
     background: $darkblue;
     padding: 3rem 0;
     // padding: 3rem;
@@ -116,6 +118,8 @@
 }
 
 .devices{
+    position: relative;
+    background: $darkblue;
     .featured__content__below{
         @include flexCenter;
         width: 100%;
@@ -161,6 +165,8 @@
 }
 
 .faq{
+    position: relative;
+    background: $darkblue;
     padding: 5rem 3rem;
     @media (max-width: 575.98px) {
         padding: 2rem 2rem;
@@ -247,6 +253,7 @@
 }
 
 .plans{
+    position: relative;
     background-color: $green !important;
     padding: 3rem;
     &__content{
