@@ -52,7 +52,7 @@ const ReleaseSlider = ({shows, delay}) => {
                 className="shows__slider featured__slider"
             >
             {
-                shows.map((item, index) => (
+                shows?.map((item, index) => (
                     <SwiperSlide key={index} onClick={() => handlePopup(item)}>
                         <img src={item.default_image} alt="default_image" />
                         <div className="card__buttons">

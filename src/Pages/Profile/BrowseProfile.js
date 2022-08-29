@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import browse from '../../Image/browse.png';
 import plus from '../../Image/plus-greeen.svg';
+import useAuth from '../../Utilities/Hooks/useAuth';
 
 const BrowseProfile = () => {
+    const { loggedInUser } = useAuth();
+    
     return (
         <>
             <section className="browse">
@@ -14,26 +17,28 @@ const BrowseProfile = () => {
                     <ul>
                         <li>
                             <Link to="/">
-                                <img className="screen" src={browse} alt="browse" width="344" height="344"/>
-                                <h6>Alejandra</h6>
+                                <img className="screen" src={loggedInUser.picture} alt="browse" width="344" height="344"/>
+                                <h6>{loggedInUser.name[0]}</h6>
                             </Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link to="/">
                                 <img className="screen" src={browse} alt="browse" width="344" height="344"/>
                                 <h6>Toñito</h6>
                             </Link>
-                        </li>
+                        </li> */}
                         <li>
-                            <Link to="/">
-                                <div className="screen border-0">
-                                    <img className="plus" src={plus} alt="browse" width="127" height="127"/>
+                            <Link to="/profile/create">
+                                <div className="screen plus">
+                                    <img src={plus} alt="browse" width="127" height="127"/>
                                 </div>
                                 <h6>Agregar perfil</h6>
                             </Link>
                         </li>
                     </ul>
-                    <button type="submit" className="main-btn secondary">Gestionar perfiles</button>
+                    <Link to="/profile/edit">
+                        <button type="submit" className="main-btn secondary">Gestionar perfiles</button>
+                    </Link>
                 </div>
             </section>
         </>

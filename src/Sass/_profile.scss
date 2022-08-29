@@ -1,11 +1,12 @@
 .browse{
     position: relative;
-    padding: 8rem 0 5rem 0;
+    padding: 4rem 0 5rem 0;
     background-image: url(../Image/gradient.svg);
     @include bgCover;
     width: 100%;
     height: auto;
     min-height: 100vh;
+    z-index: 1000;
     &__contents{
         @include flexCenter;
         flex-direction: column;
@@ -21,6 +22,9 @@
             font-size: 2.625rem;
             font-weight: 800;
             margin: 3rem 0 1rem 0;
+            @media (max-width: 575.98px) {
+                font-size: 1.75rem;
+            }
         }
         p{
             font-size: 1.5rem;
@@ -32,21 +36,25 @@
         ul{
             margin: 3rem 0 2rem 0;
             width: 100%;
-            @include flexBetween;
+            @include flexCenter;
+            flex-wrap: wrap;
             @media (max-width: 575.98px) {
                 width: 90%;
             }
             @media (min-width: 576px) and (max-width: 991.98px) {  
                 flex-wrap: wrap;
-                width: 80%;
+                width: 100%;
             }
             li{
                 text-align: center;
-                margin-bottom: 3rem;
+                margin: 0 2rem 3rem 2rem;
+                @media (max-width: 575.98px) {
+                    margin: 0 0.5rem 3rem 0.5rem;
+                }
                 a{
                     color: $white;
                     .screen{
-                        background: #3E337D 0% 0% no-repeat padding-box;
+                        background: $blue 0% 0% no-repeat padding-box;
                         box-shadow: 0.3125rem 0.25rem 0.8125rem #000000A2;
                         border-radius: 3rem;
                         width: 21.5625rem;
@@ -54,7 +62,6 @@
                         margin-bottom: 1.5rem;
                         border: 0.1875rem solid $green;
                         overflow: hidden;
-                        border: 0.1875rem solid $green;
                         @include flexCenter;
                         @media (max-width: 575.98px) {
                             width: 9.5rem;
@@ -68,10 +75,23 @@
                         }
                     }
                     .plus{
-                        width: 7.9375rem;
-                        height: auto;
-                        @media (max-width: 575.98px) {
-                            width: 4rem;
+                        border: none;
+                        img{
+                            width: 7.9375rem;
+                            height: auto;
+                            @media (max-width: 575.98px) {
+                                width: 4rem;
+                            }
+                        }
+                    }
+                    .ques{
+                        border: none;
+                        img{
+                            width: 7.9375rem;
+                            height: auto;
+                            @media (max-width: 575.98px) {
+                                width: 4rem;
+                            }
                         }
                     }
                     h6{
@@ -84,6 +104,21 @@
                             font-size: 1.5rem;
                         }
                     }
+                }
+            }
+            .edit{
+                position: relative;
+                .screen{
+                    mix-blend-mode: screen;
+                    opacity: 0.25;
+                    background: $white;
+                }
+                .pen{
+                    position: absolute;
+                    width: 5.4619rem;
+                    height: 5.4619rem;
+                    top: 0;
+                    left: 0;
                 }
             }
         }
