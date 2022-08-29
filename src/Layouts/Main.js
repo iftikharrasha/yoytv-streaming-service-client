@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ScrollToTop from './ScrollToTop';
+import PrivateRoute from '../Pages/PrivateRoute/PrivateRoute';
 const Home = React.lazy(() => import("../Pages/Home/Home"));
 const TvEnVivo = React.lazy(() => import("../Pages/TvEnVivo/TvEnVivo"));
 const BrowseProfile = React.lazy(() => import("../Pages/Profile/BrowseProfile"));
@@ -19,9 +20,21 @@ const Main = () => {
                             <Route path="/" element={<Home />} />
                             <Route path="/home" element={<Home />} />
                             <Route path="/tv-en-vivo" element={<TvEnVivo/>} />
-                            <Route path="/profile/browse" element={<BrowseProfile/>} />
-                            <Route path="/profile/create" element={<CreateProfile/>} />
-                            <Route path="/profile/edit" element={<EditProfile/>} />
+                            <Route path="/profile/browse" element={
+                                <PrivateRoute>
+                                    <BrowseProfile/>
+                                </PrivateRoute>}
+                            />
+                            <Route path="/profile/create" element={
+                                <PrivateRoute>
+                                    <CreateProfile/>
+                                </PrivateRoute>}
+                            />
+                            <Route path="/profile/edit" element={
+                                <PrivateRoute>
+                                    <EditProfile/>
+                                </PrivateRoute>}
+                            />
                             <Route path="*" element={<NotFound/>} />
                         </Routes>
                     </Suspense>

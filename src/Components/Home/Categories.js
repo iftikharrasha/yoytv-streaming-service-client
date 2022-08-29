@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useLandingApi from '../../Utilities/Hooks/useLandingApi';
-// import categories from "../../Data/categories";
 import ShowSlider from '../Custom/Sliders/ShowSlider';
 
 const Categories = () => {
