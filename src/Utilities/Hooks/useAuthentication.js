@@ -4,8 +4,8 @@ import axios from 'axios';
 
 const useAuthentication = () => {
     const [loggedInUser, setLoggedInUser] = useState(null);
-      const [error, setError] = useState('');
-      const [success, setSuccess] = useState('');
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
 
     const navigate = useNavigate();
 
@@ -56,11 +56,29 @@ const useAuthentication = () => {
         }
     }
 
-    const handleLogOut = () => {
-        setError('');
-        setSuccess('');
-        setLoggedInUser(null);
-        navigate('/');
+    const handleLogOut = async () => {
+        const data = {
+            "id": loggedInUser.user_id,
+            "token": loggedInUser.token,
+            "sub_profile_id": loggedInUser.sub_profile_id
+        }
+
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/logout`, data);
+            console.log(response.data);
+            if(response.data.success){
+                setError('');
+                setSuccess('');
+                setLoggedInUser(null);
+                navigate('/');
+            }else{
+                setError(response.data.error_messages);
+            }
+
+            return response.data
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     return {

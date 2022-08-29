@@ -1,11 +1,11 @@
 .loader__wrap{    
-  position: absolute;
-  margin-top: 4rem;
+  position: fixed;
   left: 0;
   right: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 999;
+  z-index: 1000;
+  overflow: hidden;
   background-color: $darkblue;
   .loader{
     background-color: $darkblue;

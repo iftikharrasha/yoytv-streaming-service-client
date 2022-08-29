@@ -25,7 +25,7 @@ const LoginModal = (props) => {
   const login = async () => {
     setError('');
     setSuccess('');
-    const response = await handleLogin(logData);;
+    const response = await handleLogin(logData);
     if(response.success){
         setShow(false)
     }

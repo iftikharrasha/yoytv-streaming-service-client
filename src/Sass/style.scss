@@ -116,7 +116,8 @@ a, select , input , textarea , button{
 
 .relativeTop{
     position: relative;
-    min-height: 52rem;
+    min-height: 52rem;    
+    z-index: -1;
     @media (max-width: 575.98px) {
         min-height: 28rem;
     }
