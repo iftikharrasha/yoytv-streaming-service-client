@@ -4,7 +4,6 @@ import { Nav, Navbar } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
 import search_icon from '../Image/search_icon.svg';
 import cross_icon from '../Image/cross_icon.svg';
-import avatar from '../Image/avatar.png';
 import TvSvg from '../Image/SvgCodes/TvSvg';
 import OnDemandSvg from '../Image/SvgCodes/OnDemandSvg';
 import RadioSvg from '../Image/SvgCodes/RadioSvg';

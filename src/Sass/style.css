@@ -929,6 +929,7 @@
 }
 
 .shows__slider .swiper-slide {
+  cursor: pointer;
   position: relative;
   overflow: hidden;
   margin: 2.25rem 0;
@@ -1756,94 +1757,6 @@
     font-size: 1.75rem;
     padding-bottom: 1rem;
   }
-}
-
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__similar__contents {
-  padding: 2rem 0 0 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__similar__contents__singleItem {
-  width: 21.125rem;
-  margin-bottom: 4rem;
-}
-
-@media (max-width: 575.98px) {
-  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__similar__contents__singleItem {
-    width: 100%;
-  }
-}
-
-@media (min-width: 576px) and (max-width: 991.98px) {
-  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__similar__contents__singleItem {
-    width: 25rem;
-  }
-}
-
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__similar__contents__singleItem__top {
-  background-color: #0e005c;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 16.6875rem;
-  border-top-left-radius: 2.5rem;
-  border-top-right-radius: 2.5rem;
-  position: relative;
-}
-
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__similar__contents__singleItem__top span {
-  font-size: 1.5rem;
-  font-weight: 600;
-  position: absolute;
-  right: 1.5rem;
-  top: 2rem;
-}
-
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__similar__contents__singleItem__top:before {
-  content: '';
-  background: url("../Image/play_button_white.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  width: 6rem;
-  height: 6rem;
-  bottom: 0;
-  right: 0;
-  cursor: pointer;
-}
-
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__similar__contents__singleItem__below {
-  background-color: #2C2261;
-  width: 100%;
-  padding: 0 1.5rem 2rem 1.5rem;
-}
-
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__similar__contents__singleItem__below h4 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  padding: 2rem 0 1rem 0;
-}
-
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__similar__contents__singleItem__below h6 {
-  font-size: 1.25rem;
-  font-weight: 400;
-  padding-bottom: 1rem;
-}
-
-.show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__similar__contents__singleItem__below p {
-  font-size: 1.125rem;
 }
 
 .video {

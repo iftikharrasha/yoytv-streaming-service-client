@@ -65,7 +65,7 @@ const useAuthentication = () => {
 
         try {
             const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/logout`, data);
-            console.log(response.data);
+            
             if(response.data.success){
                 setError('');
                 setSuccess('');

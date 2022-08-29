@@ -1,13 +1,14 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
+import ShowSlider from '../Sliders/ShowSlider';
+import { episodes } from '../../../Data/episodes.js';
+import { similar } from '../../../Data/similar';
 import arrow_left from '../../../Image/arrow_left.svg';
 import banner_image from '../../../Image/stranger_things_cover.png';
 import play_fill from '../../../Image/play_fill.svg';
 import share_icon from '../../../Image/share_icon.svg';
 import plus_icon from '../../../Image/plus_icon.svg';
 import love_icon from '../../../Image/love_icon.svg';
-import { episodes } from '../../../Data/episodes.js';
-import { similar } from '../../../Data/similar.js';
 
 const ShowModal = (props) => {
     const { lgShow, setLgShow, details } = props;
@@ -90,22 +91,8 @@ const ShowModal = (props) => {
                             </ul>
                             <div className="body__contents__similar">
                                 <h2>Más títulos similares a este</h2>
-                                <div className="body__contents__similar__contents">
-                                    {
-                                        similar.map((item) => (  
-                                            <div className="body__contents__similar__contents__singleItem" key={item.no}>
-                                                <div className="body__contents__similar__contents__singleItem__top" style={{backgroundImage: `url(${item.image})`}}>
-                                                    <span>Temporada {item.season}</span>
-                                                </div>
-                                                <div className="body__contents__similar__contents__singleItem__below">
-                                                    <h4>{item.name}</h4>
-                                                    <h6>Tag {item.tag}</h6>
-                                                    <p>{item.details.slice(0,190)}...</p>
-                                                </div>
-                                            </div>
-                                        ))
-                                    }
-                                </div>
+                                {/* TODO: RELATED SHOWS SLIDER FUNCTIONALITY NEEDED*/}
+                                <ShowSlider shows={similar} delay={2500} similar={true}/>
                             </div>
                         </div>
                     </Modal.Body>
