@@ -83,12 +83,14 @@
     position: relative;
     background: $darkblue;
     padding: 3rem 0;
-    // padding: 3rem;
     @media (max-width: 575.98px) {
         padding: 3rem 2rem;
     }
     .swiper-wrapper{
         margin-left: 3rem !important;
+        @media (max-width: 575.98px) {
+            margin-left: 2rem !important;
+        }
     }
     &__content{
         &__top{

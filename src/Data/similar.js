@@ -1,5 +1,3 @@
-import the_flash from '../Image/the_flash.png';
-
 export const similar = {
     "data": [
               {

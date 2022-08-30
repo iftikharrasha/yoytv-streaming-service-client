@@ -2,13 +2,13 @@ import React from 'react';
 import { Modal } from 'react-bootstrap';
 import ShowSlider from '../Sliders/ShowSlider';
 import { episodes } from '../../../Data/episodes.js';
-import { similar } from '../../../Data/similar';
 import arrow_left from '../../../Image/arrow_left.svg';
 import banner_image from '../../../Image/stranger_things_cover.png';
 import play_fill from '../../../Image/play_fill.svg';
 import share_icon from '../../../Image/share_icon.svg';
 import plus_icon from '../../../Image/plus_icon.svg';
 import love_icon from '../../../Image/love_icon.svg';
+import { similar } from '../../../Data/similar';
 
 const ShowModal = (props) => {
     const { lgShow, setLgShow, details } = props;

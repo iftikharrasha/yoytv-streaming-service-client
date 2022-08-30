@@ -940,12 +940,6 @@
   z-index: 1;
 }
 
-@media (max-width: 575.98px) {
-  .shows__slider .swiper-slide {
-    width: 25%;
-  }
-}
-
 .shows__slider .swiper-slide img {
   width: 100%;
   height: 100%;
@@ -1040,8 +1034,8 @@
 
 .shows__slider .swiper-slide:hover {
   border: 0.25rem solid #67fe65;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .shows__slider .swiper-slide:hover .card__buttons {
@@ -1054,6 +1048,44 @@
     -webkit-transform: translateY(-3.25rem);
             transform: translateY(-3.25rem);
   }
+}
+
+.shows__slider .rectangular {
+  width: 20.1875rem !important;
+  height: 13.9375rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.shows__slider .rectangular a {
+  display: block;
+}
+
+.shows__slider .rectangular .game-btn {
+  position: absolute;
+  width: 6.25rem;
+  height: 6.25rem;
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+  opacity: 0;
+}
+
+.shows__slider .rectangular:hover {
+  opacity: 1;
+}
+
+.shows__slider .rectangular:hover .game-btn {
+  opacity: 1;
 }
 
 .shows__slider .swiper-slide-active {
@@ -1905,6 +1937,12 @@
 
 .featured .swiper-wrapper {
   margin-left: 3rem !important;
+}
+
+@media (max-width: 575.98px) {
+  .featured .swiper-wrapper {
+    margin-left: 2rem !important;
+  }
 }
 
 .featured__content__top {

@@ -6,8 +6,9 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import 'swiper/css/navigation';
 import { Link } from 'react-router-dom';
+import gamebtn from '../../../Image/game-btn.svg';
 
-const TvSlider = ({shows, delay}) => {
+const JuegosSlider = ({shows, delay}) => {
 
     return (
         <>
@@ -42,12 +43,10 @@ const TvSlider = ({shows, delay}) => {
             {
                 shows?.map((item, index) => (
                     <SwiperSlide className="rectangular" key={index}>
-                        <Link to="/tv-en-vivo" className="rectangular">
+                        <Link to="/juegos">
                             <img src={item.default_image} alt="default_image" />
                         </Link>
-                        <div className="card__buttons">
-                            {/* <img src={arrow_down} alt="more" className="more"/> */}
-                        </div>
+                        <img src={gamebtn} alt="gamebtn" className="game-btn"/>
                     </SwiperSlide>
                 ))
             }
@@ -56,4 +55,4 @@ const TvSlider = ({shows, delay}) => {
     );
 };
 
-export default TvSlider;
+export default JuegosSlider;
