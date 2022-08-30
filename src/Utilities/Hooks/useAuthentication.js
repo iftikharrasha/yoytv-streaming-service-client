@@ -29,7 +29,7 @@ const useAuthentication = () => {
                 };
                 setSuccess(response.data.message);
                 setLoggedInUser(signedInUser);
-                navigate('/profile/browse');
+                navigate(`/profile/browse/`+signedInUser.token);
             }else{
                 setError(response.data.error_messages);
             }

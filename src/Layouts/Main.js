@@ -7,6 +7,7 @@ const TvEnVivo = React.lazy(() => import("../Pages/TvEnVivo/TvEnVivo"));
 const BrowseProfile = React.lazy(() => import("../Pages/Profile/BrowseProfile"));
 const CreateProfile = React.lazy(() => import("../Pages/Profile/CreateProfile"));
 const EditProfile = React.lazy(() => import("../Pages/Profile/EditProfile"));
+const SettingsProfile = React.lazy(() => import("../Pages/Profile/SettingsProfile"));
 const NotFound = React.lazy(() => import("../Pages/NotFound/NotFound"));
 const Loader = React.lazy(() => import("../Components/Custom/Loaders/Loader"));
 
@@ -20,19 +21,24 @@ const Main = () => {
                             <Route path="/" element={<Home />} />
                             <Route path="/home" element={<Home />} />
                             <Route path="/tv-en-vivo" element={<TvEnVivo/>} />
-                            <Route path="/profile/browse" element={
+                            <Route path="/profile/browse/:token" element={
                                 <PrivateRoute>
                                     <BrowseProfile/>
                                 </PrivateRoute>}
                             />
-                            <Route path="/profile/create" element={
+                            <Route path="/profile/create/:token" element={
                                 <PrivateRoute>
                                     <CreateProfile/>
                                 </PrivateRoute>}
                             />
-                            <Route path="/profile/edit" element={
+                            <Route path="/profile/edit/:token" element={
                                 <PrivateRoute>
                                     <EditProfile/>
+                                </PrivateRoute>}
+                            />
+                            <Route path="/profile/settings/:token" element={
+                                <PrivateRoute>
+                                    <SettingsProfile/>
                                 </PrivateRoute>}
                             />
                             <Route path="*" element={<NotFound/>} />

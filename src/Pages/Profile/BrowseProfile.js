@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import browse from '../../Image/browse.png';
+import { Link, useParams } from 'react-router-dom';
 import plus from '../../Image/plus-greeen.svg';
 import useAuth from '../../Utilities/Hooks/useAuth';
 
 const BrowseProfile = () => {
     const { loggedInUser } = useAuth();
+    const { token } = useParams();
     
     return (
         <>
@@ -21,14 +21,8 @@ const BrowseProfile = () => {
                                 <h6>{loggedInUser.name[0]}</h6>
                             </Link>
                         </li>
-                        {/* <li>
-                            <Link to="/">
-                                <img className="screen" src={browse} alt="browse" width="344" height="344"/>
-                                <h6>Toñito</h6>
-                            </Link>
-                        </li> */}
                         <li>
-                            <Link to="/profile/create">
+                            <Link to={`/profile/create/`+token}>
                                 <div className="screen plus">
                                     <img src={plus} alt="browse" width="127" height="127"/>
                                 </div>
@@ -36,7 +30,7 @@ const BrowseProfile = () => {
                             </Link>
                         </li>
                     </ul>
-                    <Link to="/profile/edit">
+                    <Link to={`/profile/edit/`+token}>
                         <button type="submit" className="main-btn secondary">Gestionar perfiles</button>
                     </Link>
                 </div>

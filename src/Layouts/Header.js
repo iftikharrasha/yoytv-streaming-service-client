@@ -86,9 +86,9 @@ const Header = () => {
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>
-                                        <Link to={"/profile/cuenta/id"} className="dropdown-item">Cuenta</Link>
+                                        <Link to={`/profile/browse/`+loggedInUser.token} className="dropdown-item">Cuenta</Link>
                                         <Link to={"/profile/mi-lista/id"} className="dropdown-item">Mi lista</Link>
-                                        <Link to={"/profile/preferencias/id"} className="dropdown-item">Preferencias</Link>
+                                        <Link to={`/profile/settings/`+loggedInUser.token} className="dropdown-item">Preferencias</Link>
                                         <Link to="/" className="dropdown-item" onClick={handleLogOut}>Cerrar Sesión</Link>
                                     </Dropdown.Menu>
                                 </Dropdown>
@@ -113,9 +113,9 @@ const Header = () => {
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>
-                                        <Link to={"/profile/cuenta/id"} className="dropdown-item">Cuenta</Link>
+                                        <Link to={`/profile/browse/`+loggedInUser.token} className="dropdown-item">Cuenta</Link>
                                         <Link to={"/profile/mi-lista/id"} className="dropdown-item">Mi lista</Link>
-                                        <Link to={"/profile/preferencias/id"} className="dropdown-item">Preferencias</Link>
+                                        <Link to={`/profile/settings/`+loggedInUser.token} className="dropdown-item">Preferencias</Link>
                                         <Link to="/" className="dropdown-item" onClick={handleLogOut}>Cerrar Sesión</Link>
                                     </Dropdown.Menu>
                                 </Dropdown>

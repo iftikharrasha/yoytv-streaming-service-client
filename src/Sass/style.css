@@ -2633,22 +2633,296 @@
   }
 }
 
-.browse__contents ul .edit {
+.browse__contents ul .edit a {
   position: relative;
 }
 
-.browse__contents ul .edit .screen {
-  mix-blend-mode: screen;
-  opacity: 0.25;
-  background: #ffffff;
+.browse__contents ul .edit a .screen {
+  position: relative;
+  border: none;
 }
 
-.browse__contents ul .edit .pen {
+.browse__contents ul .edit a .screen img {
+  opacity: 0.35;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.browse__contents ul .edit a .screen:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  mix-blend-mode: screen;
   position: absolute;
-  width: 5.4619rem;
-  height: 5.4619rem;
   top: 0;
   left: 0;
+  z-index: 0;
+  opacity: 1;
+}
+
+.browse__contents ul .edit a .pen {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (max-width: 575.98px) {
+  .browse__contents ul .edit a .pen {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+.browse__contents__form {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+@media (max-width: 575.98px) {
+  .browse__contents__form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 2rem;
+  }
+}
+
+.browse__contents__form__left {
+  width: 12rem;
+}
+
+@media (max-width: 575.98px) {
+  .browse__contents__form__left {
+    margin-bottom: 2rem;
+  }
+}
+
+.browse__contents__form__left .edit {
+  position: relative;
+}
+
+.browse__contents__form__left .edit .screen img {
+  border-radius: 0.675rem;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.browse__contents__form__left .edit .pen {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+
+@media (max-width: 575.98px) {
+  .browse__contents__form__left .edit .pen {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+.browse__contents__form__right {
+  width: 100%;
+}
+
+.browse__contents__form__right form {
+  padding: 0 2rem;
+}
+
+.browse__contents__form__right form .single {
+  padding: 0 0 1.5rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 0.0625rem solid #67fe65;
+}
+
+.browse__contents__form__right form .single h4 {
+  font-size: 2.125rem;
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+@media (max-width: 575.98px) {
+  .browse__contents__form__right form .single h4 {
+    font-size: 1.5rem;
+  }
+}
+
+.browse__contents__form__right form .single h6 {
+  padding: 0.75rem;
+  font-size: 1.625rem;
+  background-color: rgba(103, 253, 101, 0.75);
+  color: #ffffff;
+  width: 60%;
+}
+
+@media (max-width: 575.98px) {
+  .browse__contents__form__right form .single h6 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .browse__contents__form__right form .single h6 {
+    width: 100%;
+  }
+}
+
+.browse__contents__form__right form .single p {
+  font-size: 1.375rem;
+  width: 100%;
+  text-align: left;
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 575.98px) {
+  .browse__contents__form__right form .single p {
+    font-size: 1.25rem;
+  }
+}
+
+.browse__contents__form__right form .single .terms li {
+  text-align: left;
+  margin: 0;
+  font-size: 1.375rem;
+  line-height: 1.5;
+  font-style: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  margin-bottom: 0.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.browse__contents__form__right form .single .terms li a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.browse__contents__form__right form .single .terms li .checkbox {
+  position: relative;
+  width: 3.5rem;
+  height: auto;
+  color: #ffffff;
+  overflow: hidden;
+  padding: 0;
+  margin: 0 1rem 0 0;
+  background: tranparent none;
+  border: 0.125rem solid rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 575.98px) {
+  .browse__contents__form__right form .single .terms li .checkbox {
+    width: 6.5rem;
+  }
+}
+
+.browse__contents__form__right form .single__dropdown {
+  position: relative;
+  width: 15rem;
+}
+
+.browse__contents__form__right form .single__dropdown select {
+  display: block;
+  margin: 0.125rem 0;
+  width: 15rem;
+  height: 3.125rem;
+  line-height: 1;
+  font-size: 1.625rem;
+  font-weight: 500;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: normal;
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  outline: none;
+  background-color: #0e005c;
+  color: #67fe65;
+  padding: 0 1rem;
+  border: none;
+  cursor: pointer;
+  border: 0.125rem solid #67fe65;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+@media (max-width: 575.98px) {
+  .browse__contents__form__right form .single__dropdown select {
+    height: 2.75rem;
+    font-size: 1.25rem;
+  }
+}
+
+.browse__contents__form__right form .single__dropdown select ::-ms-expand {
+  display: none;
+}
+
+.browse__contents__form__right form .single__dropdown select::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.browse__contents__form__right form .single__dropdown select:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.browse__contents__form__right form .single__dropdown select::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.browse__contents__form__right form .single__dropdown select::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.browse__contents__form__right form .single__dropdown .caret {
+  width: 1.125rem;
+  height: auto;
+  position: absolute;
+  right: 1rem;
+  top: 1.125rem;
+}
+
+.browse__contents__form__right form button {
+  font-size: 1.5rem;
+  margin-right: 2rem;
+}
+
+@media (max-width: 575.98px) {
+  .browse__contents__form__right form button {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
 }
 
 * {
