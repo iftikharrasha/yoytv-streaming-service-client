@@ -115,6 +115,7 @@
             @include flexCenter;
             a{
                 display: block;
+                width: 100%;
             }
             .game-btn{
                 position: absolute;
@@ -127,6 +128,44 @@
                 opacity: 1;
                 .game-btn {
                     opacity: 1;
+                }
+            }
+        }
+        .radio{
+            position: relative;
+            @include flexCenter;
+            a{
+                display: block;
+                width: 100%;
+            }
+            h6{
+                position: absolute;
+                transition: transform .5s ease;
+                text-align: center;
+                width: 50%;
+                font-size: 1.5rem;
+                font-weight: 600;
+                bottom: 2rem;
+            }
+            &:hover{
+                opacity: 1;
+                .game-btn {
+                    opacity: 1;
+                }
+            }
+            &:before {
+                content: '';
+                width: 100%;
+                height: 100%;
+                background: rgba(255,255,255, 0);
+                background: transparent linear-gradient(180deg, rgba(9, 0, 46, 0) 0%, #0e005c 100%) 0% 0% no-repeat padding-box;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+                opacity: 1;
+                @media (max-width: 575.98px) {
+                    background: transparent linear-gradient(180deg, rgba(9, 0, 46, 0) 30%, #0e005c 100%) 0% 0% no-repeat padding-box;
                 }
             }
         }

@@ -10,7 +10,7 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import 'swiper/css/navigation';
 
-const ShowSlider = ({shows, delay, similar}) => {
+const ShowSlider = ({shows, delay, clicks}) => {
     const [lgShow, setLgShow] = useState(false);
     const [details, setDetails] = useState({});
     const [isFetching, setIsFetching] = useState(true);
@@ -56,7 +56,7 @@ const ShowSlider = ({shows, delay, similar}) => {
                     <SwiperSlide key={index} onClick={() => handlePopup(item)}>
                         <img src={item.default_image} alt="default_image" />
                         {
-                            similar ? null : 
+                            clicks ? null : 
                             <div className="card__buttons">
                                 <ul>
                                     <li><img src={play_button} alt="play" className="play"/></li>

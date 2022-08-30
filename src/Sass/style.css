@@ -1067,6 +1067,7 @@
 
 .shows__slider .rectangular a {
   display: block;
+  width: 100%;
 }
 
 .shows__slider .rectangular .game-btn {
@@ -1086,6 +1087,66 @@
 
 .shows__slider .rectangular:hover .game-btn {
   opacity: 1;
+}
+
+.shows__slider .radio {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.shows__slider .radio a {
+  display: block;
+  width: 100%;
+}
+
+.shows__slider .radio h6 {
+  position: absolute;
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+  text-align: center;
+  width: 50%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  bottom: 2rem;
+}
+
+.shows__slider .radio:hover {
+  opacity: 1;
+}
+
+.shows__slider .radio:hover .game-btn {
+  opacity: 1;
+}
+
+.shows__slider .radio:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  background: transparent -webkit-gradient(linear, left top, left bottom, from(rgba(9, 0, 46, 0)), to(#0e005c)) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(180deg, rgba(9, 0, 46, 0) 0%, #0e005c 100%) 0% 0% no-repeat padding-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 1;
+}
+
+@media (max-width: 575.98px) {
+  .shows__slider .radio:before {
+    background: transparent -webkit-gradient(linear, left top, left bottom, color-stop(30%, rgba(9, 0, 46, 0)), to(#0e005c)) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, rgba(9, 0, 46, 0) 30%, #0e005c 100%) 0% 0% no-repeat padding-box;
+  }
 }
 
 .shows__slider .swiper-slide-active {

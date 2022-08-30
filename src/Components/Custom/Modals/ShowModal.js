@@ -91,8 +91,8 @@ const ShowModal = (props) => {
                             </ul>
                             <div className="body__contents__similar">
                                 <h2>Más títulos similares a este</h2>
-                                {/* TODO: RELATED SHOWS SLIDER FUNCTIONALITY NEEDED*/}
-                                <ShowSlider shows={similar} delay={2500} similar={true}/>
+                                {/* TODO: RELATED SHOWS SLIDER FILTERING FUNCTIONALITY NEEDED*/}
+                                <ShowSlider shows={similar} delay={2500} clicks={true}/>
                             </div>
                         </div>
                     </Modal.Body>
