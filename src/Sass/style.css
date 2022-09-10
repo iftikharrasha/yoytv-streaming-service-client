@@ -301,6 +301,15 @@
   fill: #67fe65;
 }
 
+.header nav .navbar-nav .is__active {
+  color: #67fe65 !important;
+  border: 0.1875rem solid #67fe65;
+}
+
+.header nav .navbar-nav .is__active .navIcon {
+  fill: #67fe65;
+}
+
 .header nav .navbar-nav .navIcon {
   width: 1.75rem;
   height: auto;
@@ -800,7 +809,7 @@
   font-size: 1.25rem;
   font-weight: 600;
   border-radius: 1.5rem;
-  padding: 0.5rem 1.75rem 0.25rem 1.75rem;
+  padding: 0.25rem 1.75rem 0.25rem 1.75rem;
   background: #67fe65;
   color: #0e005c;
   -webkit-transition: all 0.1s ease-in;
@@ -1244,7 +1253,18 @@
 }
 
 .searchlist {
-  margin-top: 5.5rem;
+  margin-top: 7.5rem;
+}
+
+.searchlist a {
+  color: #ffffff;
+  font-size: 1.375rem;
+}
+
+.searchlist a img {
+  width: 2rem;
+  height: auto;
+  margin-right: 0.25rem;
 }
 
 .show__modal .modal-dialog {
@@ -3070,7 +3090,7 @@ a, select, input, textarea, button {
   font-size: 1.25rem;
   font-weight: 600;
   border-radius: 1.5rem;
-  padding: 0.5rem 1.75rem 0.25rem 1.75rem;
+  padding: 0.25rem 1.75rem 0.25rem 1.75rem;
   background: #67fe65;
   color: #121212 !important;
   -webkit-transition: all 0.1s ease-in;
@@ -3099,7 +3119,7 @@ a, select, input, textarea, button {
   color: #67fe65 !important;
   background: rgba(0, 0, 0, 0);
   border-radius: 0;
-  padding: 0.5rem 2rem 0.25rem 2rem;
+  padding: 0.25rem 2rem 0.25rem 2rem;
   min-width: 10rem;
 }
 

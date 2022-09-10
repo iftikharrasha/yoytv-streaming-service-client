@@ -4,6 +4,7 @@ import ScrollToTop from './ScrollToTop';
 import PrivateRoute from '../Pages/PrivateRoute/PrivateRoute';
 const Home = React.lazy(() => import("../Pages/Home/Home"));
 const TvEnVivo = React.lazy(() => import("../Pages/TvEnVivo/TvEnVivo"));
+const Search = React.lazy(() => import("../Pages/Search/Search"));
 const BrowseProfile = React.lazy(() => import("../Pages/Profile/BrowseProfile"));
 const CreateProfile = React.lazy(() => import("../Pages/Profile/CreateProfile"));
 const EditProfile = React.lazy(() => import("../Pages/Profile/EditProfile"));
@@ -21,6 +22,7 @@ const Main = () => {
                             <Route path="/" element={<Home />} />
                             <Route path="/home" element={<Home />} />
                             <Route path="/tv-en-vivo" element={<TvEnVivo/>} />
+                            <Route path="/search" element={<Search/>} />
                             <Route path="/profile/browse/:token" element={
                                 <PrivateRoute>
                                     <BrowseProfile/>
