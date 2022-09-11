@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ScrollToTop from './ScrollToTop';
 import PrivateRoute from '../Pages/PrivateRoute/PrivateRoute';
+import ViewMore from '../Pages/ViewMore/ViewMore';
 const Home = React.lazy(() => import("../Pages/Home/Home"));
 const TvEnVivo = React.lazy(() => import("../Pages/TvEnVivo/TvEnVivo"));
 const Search = React.lazy(() => import("../Pages/Search/Search"));
@@ -9,6 +10,7 @@ const BrowseProfile = React.lazy(() => import("../Pages/Profile/BrowseProfile"))
 const CreateProfile = React.lazy(() => import("../Pages/Profile/CreateProfile"));
 const EditProfile = React.lazy(() => import("../Pages/Profile/EditProfile"));
 const SettingsProfile = React.lazy(() => import("../Pages/Profile/SettingsProfile"));
+const MiLista = React.lazy(() => import("../Pages/Profile/MiLista"));
 const NotFound = React.lazy(() => import("../Pages/NotFound/NotFound"));
 const Loader = React.lazy(() => import("../Components/Custom/Loaders/Loader"));
 
@@ -23,6 +25,11 @@ const Main = () => {
                             <Route path="/home" element={<Home />} />
                             <Route path="/tv-en-vivo" element={<TvEnVivo/>} />
                             <Route path="/search" element={<Search/>} />
+                            <Route path="/view-more/:pageId" element={
+                                <PrivateRoute>
+                                    <ViewMore/>
+                                </PrivateRoute>}
+                            />
                             <Route path="/profile/browse/:token" element={
                                 <PrivateRoute>
                                     <BrowseProfile/>
@@ -41,6 +48,11 @@ const Main = () => {
                             <Route path="/profile/settings/:token" element={
                                 <PrivateRoute>
                                     <SettingsProfile/>
+                                </PrivateRoute>}
+                            />
+                            <Route path="/profile/mi-lista/:token" element={
+                                <PrivateRoute>
+                                    <MiLista/>
                                 </PrivateRoute>}
                             />
                             <Route path="*" element={<NotFound/>} />

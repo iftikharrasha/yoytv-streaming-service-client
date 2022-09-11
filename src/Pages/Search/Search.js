@@ -5,7 +5,6 @@ import SearchResult from "../../Components/Common/SearchResult/SearchResult";
 
 const Search = () => {
     const { landingData } = useUserApi();
-    console.log(landingData)
 
     return (
         <>

@@ -209,6 +209,10 @@
                 clear: both;
                 font-weight: 400;
             }
+            .is__active{
+                color: $white !important;
+                border: 0 solid rgba(0,0,0,0) !important;
+            }
             .avatar {
                 font-size: 1rem;
                 display: flex;

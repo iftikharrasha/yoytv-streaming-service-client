@@ -13,9 +13,9 @@ const SearchResult = () => {
 
     return (
     <>
-        <section className="searchlist">
+        <section className="list">
             <div className="wrapper">
-                <Link to="/"><img src={arrow} alt={arrow} /> Resultados - Rock: 45 títulos</Link>
+                <Link to="/" className="title"><img src={arrow} alt={arrow} /> Resultados - Rock: 45 títulos</Link>
             </div>
         </section>
         {/* TODO: TV EN VIVO SLIDER - CURRENTLY HARDCODED NEED API*/}
