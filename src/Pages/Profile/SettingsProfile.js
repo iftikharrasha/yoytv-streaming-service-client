@@ -37,7 +37,7 @@ const SettingsProfile = () => {
                                             <option value="Hindi">Hindi</option>
                                             <option value="Japanese">Japanese</option>
                                         </select>
-                                        <img class="caret" width="20" height="20" src={caret} alt="caret" />
+                                        <img className="caret" width="20" height="20" src={caret} alt="caret" />
                                     </div>
                                 </div>
                                 <div className="single">
@@ -52,7 +52,7 @@ const SettingsProfile = () => {
                                 </div>
                                 <div className="single border-0 mb-0">
                                     <h4>Controles de reproducción automática</h4>
-                                    <ul class="terms">
+                                    <ul className="terms">
                                         <li> 
                                             <input type="checkbox" id="term1" name="term1" value="term1" className="checkbox"/>
                                             <label for="term1">Reproducir automáticamente el siguiente episodio de una serie en todos los dispositivos conectados.</label>

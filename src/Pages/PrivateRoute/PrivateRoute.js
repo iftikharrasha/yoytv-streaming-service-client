@@ -8,7 +8,7 @@ const PrivateRoute = ({ children, ...rest }) => {
     let location = useLocation();
 
 	if (!loggedInUser?.isSignedIn) {
-		return <Navigate to="/login" state={{ from: location }} />;
+		return <Navigate to="/subscription" state={{ from: location }} />;
 	}
 	
 	return children;

@@ -12,7 +12,7 @@ const useAuthentication = () => {
     const handleLogin = async (data) => {
 
         try {
-            const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/v4/login`, data);
+            const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/v4/subscription`, data);
 
             if(response.data.success){
                 const signedInUser = {

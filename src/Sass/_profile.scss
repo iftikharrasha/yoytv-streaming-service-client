@@ -37,9 +37,11 @@
             margin: 3rem 0 2rem 0;
             width: 100%;
             @include flexCenter;
+            align-items: flex-start;
             flex-wrap: wrap;
             @media (max-width: 575.98px) {
                 width: 90%;
+                margin-bottom: 0;
             }
             @media (min-width: 576px) and (max-width: 991.98px) {  
                 flex-wrap: wrap;
@@ -102,6 +104,34 @@
                         }
                         @media (min-width: 576px) and (max-width: 991.98px) {  
                             font-size: 1.5rem;
+                        }
+                    }
+                    h4{
+                        font-size: 1.75rem;
+                        font-weight: 500;
+                        margin-bottom: 2rem;
+                        @media (max-width: 575.98px) {
+                            font-size: 1.125rem;
+                        }
+                        @media (min-width: 576px) and (max-width: 991.98px) {  
+                            font-size: 1.5rem;
+                        }
+                    }
+                    .package{
+                        margin-left: 3rem;
+                        @media (max-width: 575.98px) {
+                            margin-left: 0;
+                        }
+                        p{
+                            font-size: 1.75rem;
+                            font-weight: 500;
+                            text-align: left !important;
+                            @media (max-width: 575.98px) {
+                                font-size: 0.85rem;
+                            }
+                            @media (min-width: 576px) and (max-width: 991.98px) {  
+                                font-size: 1.25rem;
+                            }
                         }
                     }
                 }
@@ -313,6 +343,22 @@
                     }
                 }
             }
+        }
+    }
+}
+
+.subscription{
+    h2{
+        font-size: 2rem;
+        font-weight: 600;
+        @media (max-width: 575.98px) {
+            font-size: 1.5rem;
+        }
+    }
+    .screen{
+        border: 0.1875rem solid rgba(0, 0, 0, 0) !important;
+        &:hover{
+            border: 0.1875rem solid #67fe65 !important;
         }
     }
 }

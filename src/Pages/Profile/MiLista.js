@@ -22,7 +22,7 @@ const MiLista = () => {
                             /* LIST FOR ALL THE SELECTED ITEMS*/
                             myList.data.map((list, index) => (
                                 <div className="swiper-slide" key={index}>
-                                    <Link to="/tv-en-vivo">
+                                    <Link to="/on-demand">
                                         <img src={list.default_image} alt="default_image" />
                                     </Link>
                                 </div>
