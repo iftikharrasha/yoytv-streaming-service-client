@@ -12,6 +12,7 @@ const SettingsProfile = React.lazy(() => import("../Pages/Profile/SettingsProfil
 const ViewMore = React.lazy(() => import("../Pages/ViewMore/ViewMore"));
 const MiLista = React.lazy(() => import("../Pages/Profile/MiLista"));
 const Subscription = React.lazy(() => import("../Pages/Subscription/Subscription"));
+const Registration = React.lazy(() => import("../Pages/Subscription/Registration"));
 const NotFound = React.lazy(() => import("../Pages/NotFound/NotFound"));
 const Loader = React.lazy(() => import("../Components/Custom/Loaders/Loader"));
 
@@ -27,6 +28,7 @@ const Main = () => {
                             <Route path="/tv-en-vivo" element={<TvEnVivo/>} />
                             <Route path="/search" element={<Search/>} />
                             <Route path="/subscription" element={<Subscription/>} />
+                            <Route path="/registration" element={<Registration/>} />
                             <Route path="/view-more/:pageId" element={
                                 <PrivateRoute>
                                     <ViewMore/>

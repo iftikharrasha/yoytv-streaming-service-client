@@ -4,7 +4,6 @@
     @include bgCover;
     @include flexCenter;
     min-height: 64rem;
-    // margin-top: 3.5rem;
     @media (max-width: 575.98px) {
         min-height: 22rem;
         align-items: flex-end;
@@ -86,6 +85,12 @@
                         transform: scale(1.05);
                         color: $white;
                         background: $darkblue;
+                        a{
+                            color: $white;
+                        }
+                    }
+                    a{
+                        color: $blue;
                     }
                 }
             }

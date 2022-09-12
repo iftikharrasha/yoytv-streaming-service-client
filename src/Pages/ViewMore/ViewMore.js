@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from "react-router-dom";
 import arrow from '../../Image/arrow-left-white.svg';
 import adBanner from '../../Image/adbanner2.png';
-import { similar } from '../../Data/similar.js';
 import useLandingApi from '../../Utilities/Hooks/useLandingApi';
 
 const ViewMore = () => {
@@ -40,7 +39,7 @@ const ViewMore = () => {
                         ))
                     }
                     </div>
-                    <div className="swiper-slide shows__slider__list__adbanner">
+                    <div className="swiper-slide shows__slider__list__adbanner adLinear">
                         <h6>Escucha tu <br /> <span>Música favorita!</span></h6>
                         <img src={adBanner} alt="adBanner" />
                         <div className="bannerBtn">

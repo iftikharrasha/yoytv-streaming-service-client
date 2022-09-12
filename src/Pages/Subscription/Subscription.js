@@ -16,7 +16,7 @@ const Subscription = () => {
                     <p>Disfruta de los beneficios de nuestro contenido sin comerciales y estrenos todos los días</p>
                     <ul>
                         <li>
-                            <Link to="/">
+                            <Link to="/registration">
                                 <h4>Básica <br />$49.00/mes</h4>
                                 <img className="screen" src={basica} alt="basica" width="344" height="344"/>
                                 <div className="package">
@@ -29,7 +29,7 @@ const Subscription = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
+                            <Link to="/registration">
                                 <h4>Familiar <br />$79.00/mes</h4>
                                 <img className="screen" src={familiar} alt="familiar" width="344" height="344"/>
                                 <div className="package">
@@ -42,7 +42,7 @@ const Subscription = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
+                            <Link to="/registration">
                                 <h4>Premium <br />$99.00/mes</h4>
                                 <img className="screen" src={premium} alt="premium" width="344" height="344"/>
                                 <div className="package">
@@ -56,9 +56,10 @@ const Subscription = () => {
                             </Link>
                         </li>
                     </ul>
-                    <Link to={`/profile/edit/`+token}>
+                    <Link to="/registration">
                         <button type="submit" className="main-btn secondary">Elegir</button>
                     </Link>
+                    <h6 className="adfree">Si deseas continuar con la versión con anuncios <span>totalmente gratis,</span> <Link to="/ad-free">da click aquí</Link></h6>
                 </div>
             </section>
         </>

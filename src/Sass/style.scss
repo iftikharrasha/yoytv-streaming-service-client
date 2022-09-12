@@ -9,6 +9,7 @@
 @import './footer';
 @import './notFound';
 @import './profile';
+@import './auth';
 
 * {
     margin: 0;
@@ -184,4 +185,9 @@ a, select , input , textarea , button{
     @media (min-width: 1400px){
         max-width: 115rem;
     }
+}
+
+
+.adLinear{
+    background: transparent linear-gradient(0deg, #DE6C2F 35%, #8BD3CB 100%, #77ECF0 100%) 0% 0% no-repeat padding-box;
 }

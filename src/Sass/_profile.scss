@@ -32,6 +32,9 @@
             line-height: 1.25;
             width: 80%;
             text-align: center;
+            @media (max-width: 575.98px) {
+                font-size: 1.25rem;
+            }
         }
         ul{
             margin: 3rem 0 2rem 0;
@@ -175,6 +178,23 @@
                         }
                     }
                 }
+            }
+        }
+        .adfree{
+            margin-top: 3rem;
+            font-size: 1.25rem;
+            @media (max-width: 575.98px) {
+                font-size: 1rem;
+                text-align: center;
+                padding: 0 3rem;
+            }
+            span{
+                font-style: italic;
+            }
+            a{
+                font-weight: 700;
+                color: $white;
+                text-decoration: underline;
             }
         }
         &__form{

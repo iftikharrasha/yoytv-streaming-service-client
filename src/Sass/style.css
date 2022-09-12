@@ -837,6 +837,14 @@
   background: #07002E;
 }
 
+.heroBg__contents ul li button:hover a {
+  color: #ffffff;
+}
+
+.heroBg__contents ul li button a {
+  color: #0e005c;
+}
+
 .heroBg__contents:before {
   content: '';
   width: 100%;
@@ -1353,6 +1361,7 @@
 
 .shows__slider__list__adbanner .bannerBtn {
   padding: 1rem 2rem;
+  background-color: #44A4DC;
 }
 
 .shows__slider__list__adbanner .bannerBtn a {
@@ -2690,6 +2699,12 @@
   text-align: center;
 }
 
+@media (max-width: 575.98px) {
+  .browse__contents p {
+    font-size: 1.25rem;
+  }
+}
+
 .browse__contents ul {
   margin: 3rem 0 2rem 0;
   width: 100%;
@@ -2915,6 +2930,29 @@
     width: 3.5rem;
     height: 3.5rem;
   }
+}
+
+.browse__contents .adfree {
+  margin-top: 3rem;
+  font-size: 1.25rem;
+}
+
+@media (max-width: 575.98px) {
+  .browse__contents .adfree {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 3rem;
+  }
+}
+
+.browse__contents .adfree span {
+  font-style: italic;
+}
+
+.browse__contents .adfree a {
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 .browse__contents__form {
@@ -3180,6 +3218,128 @@
   border: 0.1875rem solid #67fe65 !important;
 }
 
+.registration {
+  position: relative;
+  padding: 4rem 0 5rem 0;
+  background-image: url(../Image/registrationBg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  z-index: 1000;
+}
+
+.registration__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+}
+
+.registration__form__contents {
+  width: 40%;
+}
+
+@media (max-width: 575.98px) {
+  .registration__form__contents {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .registration__form__contents {
+    width: 50%;
+  }
+}
+
+.registration__form__contents__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.registration__form__contents__top p {
+  color: #67fe65;
+  font-size: 1.4375rem;
+  font-style: italic;
+  font-weight: 600;
+  width: 100%;
+}
+
+.registration__form__contents__top .logo {
+  margin-bottom: 1rem;
+}
+
+.registration__form__contents form {
+  margin-top: 1.5rem;
+}
+
+.registration__form__contents form label {
+  font-size: 1.5rem;
+}
+
+.registration__form__contents form input {
+  border: 0.125rem solid #67fe65;
+  height: 3.125rem;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 1.25rem;
+  padding: 0.75rem 0.625rem;
+  color: #ffffff;
+  border-radius: 0;
+}
+
+.registration__form__contents form input::-webkit-input-placeholder {
+  color: #67fe65;
+}
+
+.registration__form__contents form input:-ms-input-placeholder {
+  color: #67fe65;
+}
+
+.registration__form__contents form input::-ms-input-placeholder {
+  color: #67fe65;
+}
+
+.registration__form__contents form input::placeholder {
+  color: #67fe65;
+}
+
+.registration__form__contents form input:active, .registration__form__contents form input:focus {
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+}
+
+.registration__form__contents form button {
+  margin: 4rem 0;
+  width: 100%;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  padding: 0.5rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -3410,5 +3570,10 @@ a, select, input, textarea, button {
   .wrapper {
     max-width: 115rem;
   }
+}
+
+.adLinear {
+  background: transparent -webkit-gradient(linear, left bottom, left top, color-stop(35%, #DE6C2F), color-stop(100%, #8BD3CB), to(#77ECF0)) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(0deg, #DE6C2F 35%, #8BD3CB 100%, #77ECF0 100%) 0% 0% no-repeat padding-box;
 }
 /*# sourceMappingURL=style.css.map */

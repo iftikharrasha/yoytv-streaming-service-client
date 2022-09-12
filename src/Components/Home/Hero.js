@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import arrow from '../../Image/subarrow.svg';
 import useWindowSize from '../../Utilities/Hooks/useWindowSize';
 
@@ -30,7 +31,7 @@ const Hero = ({landingData, loggedInUser}) => {
                                 <ul>
                                     <li>
                                         <button data-aos="fade" data-aos-offset="0" data-aos-delay="1200" data-aos-duration="1000" data-aos-once="true">
-                                            <span>Suscribirme</span> 
+                                            <Link to="/subscription"><span>Suscribirme</span></Link>
                                         </button>
                                     </li>
                                 </ul>
