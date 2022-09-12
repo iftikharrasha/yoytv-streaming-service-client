@@ -115,6 +115,14 @@ a, select , input , textarea , button{
     text-decoration: none;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: $green !important;
+}
+
 .relativeTop{
     position: relative;
     min-height: 52rem;    
@@ -187,6 +195,12 @@ a, select , input , textarea , button{
     }
 }
 
+.error{
+    color: rgba(255,255,255,.75);
+    font-size: 1rem !important;
+    width: 100% !important;
+    padding-top: 2rem;
+}
 
 .adLinear{
     background: transparent linear-gradient(0deg, #DE6C2F 35%, #8BD3CB 100%, #77ECF0 100%) 0% 0% no-repeat padding-box;

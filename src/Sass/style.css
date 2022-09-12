@@ -3293,6 +3293,11 @@
   margin-bottom: 1rem;
 }
 
+.registration__form__contents__top .underlineGreen {
+  width: 21.625rem;
+  height: auto;
+}
+
 .registration__form__contents form {
   margin-top: 1.5rem;
 }
@@ -3330,6 +3335,114 @@
 .registration__form__contents form input:active, .registration__form__contents form input:focus {
   background-color: rgba(0, 0, 0, 0);
   color: #ffffff;
+  border-color: #67fe65;
+}
+
+.registration__form__contents form input:-webkit-autofill, .registration__form__contents form input:-webkit-autofill:hover, .registration__form__contents form input:-webkit-autofill:focus, .registration__form__contents form input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #67fe65 !important;
+}
+
+.registration__form__contents form .form-check-inline {
+  margin-right: 2rem;
+}
+
+.registration__form__contents form .form-check-input {
+  margin-left: -1.5rem;
+  margin-right: 0.5rem;
+  height: auto;
+}
+
+.registration__form__contents form .form-check-input:checked {
+  background-color: #3E337D;
+  border-color: #ffffff;
+}
+
+.registration__form__contents form .select__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.registration__form__contents form .select__group .single__dropdown {
+  position: relative;
+  width: 15rem;
+}
+
+@media (max-width: 575.98px) {
+  .registration__form__contents form .select__group .single__dropdown {
+    width: 46%;
+  }
+}
+
+.registration__form__contents form .select__group .single__dropdown select {
+  display: block;
+  margin: 0.125rem 0;
+  width: 15rem;
+  border: 0.125rem solid #67fe65;
+  height: 3.125rem;
+  background-color: rgba(0, 0, 0, 0);
+  line-height: 1;
+  font-size: 1.25rem;
+  padding: 0.75rem 0.625rem;
+  font-weight: 500;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: normal;
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  outline: none;
+  color: #67fe65;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+@media (max-width: 575.98px) {
+  .registration__form__contents form .select__group .single__dropdown select {
+    width: 100%;
+    font-size: 1.25rem;
+  }
+}
+
+.registration__form__contents form .select__group .single__dropdown select ::-ms-expand {
+  display: none;
+}
+
+.registration__form__contents form .select__group .single__dropdown select::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.registration__form__contents form .select__group .single__dropdown select:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.registration__form__contents form .select__group .single__dropdown select::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.registration__form__contents form .select__group .single__dropdown select::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.registration__form__contents form .select__group .single__dropdown .caret {
+  width: 1.125rem;
+  height: auto;
+  position: absolute;
+  right: 1rem;
+  top: 1.125rem;
 }
 
 .registration__form__contents form button {
@@ -3338,6 +3451,67 @@
   -webkit-transform: scale(1);
           transform: scale(1);
   padding: 0.5rem;
+}
+
+.registration__form__contents form .cvv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 19.5rem;
+}
+
+@media (max-width: 575.98px) {
+  .registration__form__contents form .cvv {
+    width: 46%;
+  }
+}
+
+.registration__form__contents form .cvv span {
+  margin-left: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #3E337D;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 3.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+.registration__form__contents form .reg__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.registration__form__contents form .reg__button button {
+  width: 15rem;
+}
+
+@media (max-width: 575.98px) {
+  .registration__form__contents form .reg__button button {
+    width: 46%;
+  }
 }
 
 * {
@@ -3469,6 +3643,15 @@ a, select, input, textarea, button {
   text-decoration: none;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #67fe65 !important;
+}
+
 .relativeTop {
   position: relative;
   min-height: 52rem;
@@ -3570,6 +3753,13 @@ a, select, input, textarea, button {
   .wrapper {
     max-width: 115rem;
   }
+}
+
+.error {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1rem !important;
+  width: 100% !important;
+  padding-top: 2rem;
 }
 
 .adLinear {

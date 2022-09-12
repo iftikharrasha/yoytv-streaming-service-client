@@ -1,7 +1,7 @@
-### `Live Demo` [Visit](https://siteprogress.netlify.app/)
+### `Live Demo` [Visit](https://yoy-preview.netlify.app/)
 
 <p align="center">
-  <a href="https://siteprogress.netlify.app/">
+  <a href="https://yoy-preview.netlify.app/">
     <img alt="logo" src="https://i.ibb.co/1KmhBYr/YOY-green.png" width="100" />
   </a>
 </p>

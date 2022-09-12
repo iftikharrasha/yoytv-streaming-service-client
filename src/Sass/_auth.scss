@@ -36,6 +36,10 @@
                 .logo{
                     margin-bottom: 1rem;
                 }
+                .underlineGreen{
+                    width: 21.625rem;
+                    height: auto;
+                }
             }
             form{
                 margin-top:1.5rem;
@@ -56,6 +60,79 @@
                     &:active, &:focus{
                         background-color: rgba(0, 0, 0, 0);
                         color: $white;
+                        border-color: $green;
+                    }
+                    &:-webkit-autofill,
+                    &:-webkit-autofill:hover,
+                    &:-webkit-autofill:focus,
+                    &:-webkit-autofill:active {
+                        transition: background-color 5000s ease-in-out 0s;
+                        -webkit-text-fill-color: $green !important;
+                    }
+                }
+                .form-check-inline {
+                    margin-right: 2rem;
+                }
+                .form-check-input{
+                    margin-left: -1.5rem;
+                    margin-right: 0.5rem;
+                    height: auto;
+                    &:checked {
+                        background-color: #3E337D;
+                        border-color: $white;
+                    }
+                }
+                .select__group{
+                    @include flexBetween;
+                    .single__dropdown{
+                        position: relative;
+                        width: 15rem;
+                        @media (max-width: 575.98px) {
+                            width: 46%;
+                        }
+                        select{
+                            display: block;
+                            margin: 0.125rem 0;
+                            width: 15rem;
+                            border: 0.125rem solid $green;
+                            height: 3.125rem;
+                            background-color: rgba(0, 0, 0, 0);
+                            line-height: 1;
+                            font-size: 1.25rem;
+                            padding: 0.75rem 0.625rem;
+                            font-weight: 500;
+                            text-align: left;
+                            text-transform: none;
+                            letter-spacing: normal;
+                            transition: color .3s ease;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            outline: none;
+                            color: $green;
+                            cursor: pointer;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            text-indent: 1px;
+                            text-overflow: '';
+                            @media (max-width: 575.98px) {
+                                width: 100%;
+                                font-size: 1.25rem;
+                            }
+                            ::-ms-expand {
+                                display: none;
+                            }
+                            &::placeholder {
+                                color: hsla(0,0%,100%,.65);
+                            }
+                        }
+                        .caret{
+                            width: 1.125rem;
+                            height: auto;
+                            position: absolute;
+                            right: 1rem;
+                            top: 1.125rem;
+                        }
                     }
                 }
 
@@ -64,6 +141,33 @@
                     width: 100%;
                     transform: scale(1);
                     padding: 0.5rem;
+                }
+                .cvv{
+                    @include flexBetween;
+                    width: 19.5rem;
+                    @media (max-width: 575.98px) {
+                        width: 46%;
+                    }
+                    span{
+                        margin-left: 2rem;
+                        @include flexCenter;
+                        background-color: #3E337D;
+                        border-radius: 50%;
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                        width: 3.5rem;
+                        height: 2.5rem;
+                        cursor: pointer;
+                    }
+                }
+                .reg__button{
+                    @include flexBetween;
+                    button{
+                        width: 15rem;
+                        @media (max-width: 575.98px) {
+                            width: 46%;
+                        }
+                    }
                 }
             }
         }

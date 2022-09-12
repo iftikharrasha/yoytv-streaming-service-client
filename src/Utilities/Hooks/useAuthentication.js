@@ -56,6 +56,22 @@ const useAuthentication = () => {
         }
     }
 
+    const handleCardData = async (data) => {
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/v4/subscriptions_payment`, data);
+
+            if(response.data.success){
+                setSuccess(response.data.message);
+            }else{
+                setError(response.data.error_messages);
+            }
+
+            return response.data
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const handleLogOut = async () => {
         const data = {
             "id": loggedInUser.user_id,
@@ -87,6 +103,7 @@ const useAuthentication = () => {
         loggedInUser,
         handleLogin,
         handleLogOut,
+        handleCardData,
         handleRegistration,
         setSuccess,
         setError,
