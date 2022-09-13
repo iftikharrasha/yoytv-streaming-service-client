@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import ques from '../../Image/ques.svg';
 import personal from '../../Image/personal.svg';
 import young from '../../Image/young.svg';
+import logoGreen from '../../Image/LogoGreen.svg';
 
 const CreateProfile = () => {
     const { token } = useParams();
@@ -11,7 +12,7 @@ const CreateProfile = () => {
         <>
             <section className="browse">
                 <div className="wrapper browse__contents">
-                    <img src={process.env.REACT_APP_SITE_LOGO} className="logo" alt="SiteLogo" width="216" height="71"/>
+                    <img src={logoGreen} className="logo" alt="SiteLogo" width="216" height="71"/>
                     <h2>Creación de perfiles</h2>
                     <p>Selecciona el tipo de perfil que quieres crear</p>
                     <ul>

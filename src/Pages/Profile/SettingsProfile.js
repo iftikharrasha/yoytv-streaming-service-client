@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import edit from '../../Image/pen-bg.svg';
 import caret from '../../Image/caret-below.svg';
+import logoGreen from '../../Image/LogoGreen.svg';
 import useAuth from '../../Utilities/Hooks/useAuth';
 
 const SettingsProfile = () => {
@@ -12,7 +13,7 @@ const SettingsProfile = () => {
         <>
             <section className="browse">
                 <div className="wrapper browse__contents">
-                    <img src={process.env.REACT_APP_SITE_LOGO} className="logo" alt="SiteLogo" width="216" height="71"/>
+                    <img src={logoGreen} className="logo" alt="SiteLogo" width="216" height="71"/>
                     <h2>Editar perfil</h2>
                     <div className="browse__contents__form">
                         <div className="browse__contents__form__left">

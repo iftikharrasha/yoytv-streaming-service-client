@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import basica from '../../Image/basica.png';
 import familiar from '../../Image/familiar.png';
 import premium from '../../Image/premium.png';
+import logoGreen from '../../Image/LogoGreen.svg';
 
 const Subscription = () => {
     const { token } = useParams();
@@ -11,7 +12,7 @@ const Subscription = () => {
         <>
             <section className="browse subscription">
                 <div className="wrapper browse__contents">
-                    <img src={process.env.REACT_APP_SITE_LOGO} className="logo" alt="SiteLogo" width="216" height="71"/>
+                    <img src={logoGreen} className="logo" alt="SiteLogo" width="216" height="71"/>
                     <h2>Selecciona tu tipo deseado de membresía</h2>
                     <p>Disfruta de los beneficios de nuestro contenido sin comerciales y estrenos todos los días</p>
                     <ul>

@@ -8,8 +8,8 @@ import TvSvg from '../Image/SvgCodes/TvSvg';
 import OnDemandSvg from '../Image/SvgCodes/OnDemandSvg';
 import RadioSvg from '../Image/SvgCodes/RadioSvg';
 import GamesSvg from '../Image/SvgCodes/GamesSvg';
-import YoySvg from '../Image/SvgCodes/YoySvg';
 import SearchSvg from '../Image/SvgCodes/SearchSvg';
+import logoBlue from '../Image/LogoBlue.svg';
 import LoginModal from '../Components/Custom/Modals/LoginModal';
 import useAuth from '../Utilities/Hooks/useAuth';
 
@@ -33,7 +33,7 @@ const Header = () => {
            <header className={!loggedInUser?.isSignedIn ? "header public-header" : "header"} id="header">
                 <Navbar collapseOnSelect expand="lg" variant="dark" id="mainNavbar">
                     <Navbar.Brand as={Link} to="/" className="menu__link">
-                        <YoySvg/>
+                        <img src={logoBlue} alt="logo" className="logo" width="160" height="50"/>
                     </Navbar.Brand>
                         {
                             !loggedInUser?.isSignedIn ? null :

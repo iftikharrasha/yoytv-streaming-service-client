@@ -122,16 +122,16 @@
   fill: #ffffff;
 }
 
-.header nav .navbar-brand svg {
+.header nav .navbar-brand svg, .header nav .navbar-brand .logo {
   -webkit-transition: all .2s;
   transition: all .2s;
-  width: 10rem;
+  width: 8rem;
   height: auto;
   fill: #0e005c;
 }
 
 @media (max-width: 575.98px) {
-  .header nav .navbar-brand svg {
+  .header nav .navbar-brand svg, .header nav .navbar-brand .logo {
     width: 7rem;
   }
 }
@@ -739,8 +739,8 @@
 
 .heroBg__contents img {
   position: relative;
-  width: 18.75rem;
-  height: 6.1875rem;
+  width: 17rem;
+  height: auto;
 }
 
 .heroBg__contents h1 {
@@ -1428,6 +1428,7 @@
   color: #67fe65;
   font-size: 1.5rem;
   font-weight: 600;
+  margin: 0 3rem;
 }
 
 @media (max-width: 991.98px) {
@@ -2546,8 +2547,8 @@
   }
 }
 
-.footer__credit__logo svg {
-  width: 5rem;
+.footer__credit__logo svg, .footer__credit__logo .logo {
+  width: 4.75rem;
   height: auto;
   fill: #ffffff;
   margin-right: 1.5rem;

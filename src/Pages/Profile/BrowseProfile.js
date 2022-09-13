@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import plus from '../../Image/plus-greeen.svg';
+import logoGreen from '../../Image/LogoGreen.svg';
 import useAuth from '../../Utilities/Hooks/useAuth';
 
 const BrowseProfile = () => {
@@ -11,7 +12,7 @@ const BrowseProfile = () => {
         <>
             <section className="browse">
                 <div className="wrapper browse__contents">
-                    <img src={process.env.REACT_APP_SITE_LOGO} className="logo" alt="SiteLogo" width="216" height="71"/>
+                    <img src={logoGreen} className="logo" alt="SiteLogo" width="216" height="71"/>
                     <h2>¡Cuenta registrada!</h2>
                     <p>Bienvenid@ a la plataforma multimedia YOY. Selecciona tu perfil para continuar navegando dentro de nuestro contenido exclusivo</p>
                     <ul>

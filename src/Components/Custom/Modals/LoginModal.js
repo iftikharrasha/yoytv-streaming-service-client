@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Form } from 'react-bootstrap';
 import close from '../../../Image/close.svg';
+import logoGreen from '../../../Image/LogoGreen.svg';
 import useAuth from '../../../Utilities/Hooks/useAuth';
 
 const LoginModal = (props) => {
@@ -50,7 +51,7 @@ const LoginModal = (props) => {
                 <img src={close} alt="close" width="32" height="32" onClick={() => setShow(false)}/>
             </Modal.Header>
             <Modal.Body>
-                <img src={process.env.REACT_APP_SITE_LOGO} alt="SiteLogo" width="216" height="221"/>
+                <img src={logoGreen} alt="SiteLogo" width="216" height="221"/>
                 <h2>Iniciar Sesión</h2>
                 <p>Utiliza tu cuenta Coppel Digital. ¿No tienes membresía?</p>
                 <h5 onClick={handleRegisterModal}>Regístrate aquí</h5>
@@ -93,7 +94,7 @@ const LoginModal = (props) => {
                 <img src={close} alt="close" width="32" height="32" onClick={() => setShow(false)}/>
             </Modal.Header>
             <Modal.Body>
-                <img src={process.env.REACT_APP_SITE_LOGO} alt="SiteLogo" width="216" height="221"/>
+                <img src={logoGreen} alt="SiteLogo" width="216" height="221"/>
                 <h2>Añadir Breaking Bad a Mi Lista</h2>
                 <p>Para guardar tu podcast en favoritos es necesario una membresía ¿Tienes membresía? <span onClick={handleLoginModal}>Inicia sesión</span></p>
                 <Form>

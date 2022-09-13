@@ -20,9 +20,7 @@ const ViewMore = () => {
     return (
     <>
         <section className="list">
-            <div className="wrapper">
-                <Link to={"/"} onClick={() => navigate(-1)} className="title"><img src={arrow} alt={arrow} width="28" height="28"/> Lanzamientos recientes</Link>
-            </div>
+            <Link to={"/"} onClick={() => navigate(-1)} className="title"><img src={arrow} alt={arrow} width="28" height="28"/> Lanzamientos recientes</Link>
 
             <div className="shows">
                 <div className="shows__slider adcontainer">

@@ -11,9 +11,7 @@ const MiLista = () => {
     return (
     <>
         <section className="list">
-            <div className="wrapper">
-                <Link to={"/"} onClick={() => navigate(-1)} className="title"><img src={arrow} alt={arrow} width="28" height="28"/> Mi lista</Link>
-            </div>
+            <Link to={"/"} onClick={() => navigate(-1)} className="title"><img src={arrow} alt={arrow} width="28" height="28"/> Mi lista</Link>
 
             <div className="shows">
                 <div className="shows__slider adcontainer">

@@ -4,6 +4,7 @@ import { Form } from 'react-bootstrap';
 import underlineGreen from '../../Image/underlineGreen.png';
 import useAuth from '../../Utilities/Hooks/useAuth';
 import caret from '../../Image/caret-below.svg';
+import logoGreen from '../../Image/LogoGreen.svg';
 
 const Registration = () => {
     const { handleRegistration, handleCardData, error, success, setError, setSuccess } = useAuth();
@@ -48,7 +49,7 @@ const Registration = () => {
                     <div className="registration__form">
                         <div className="registration__form__contents">
                             <div className="registration__form__contents__top">
-                                <img src={process.env.REACT_APP_SITE_LOGO} className="logo" alt="SiteLogo" width="216" height="71"/>
+                                <img src={logoGreen} className="logo" alt="SiteLogo" width="216" height="71"/>
                                 <p>STREAMING PARA TODOS</p>
                                 <img src={underlineGreen} alt="underlineGreen" width="346" height="19" className="underlineGreen"/>
                             </div>
@@ -106,7 +107,7 @@ const Registration = () => {
                     <div className="registration__form">
                         <div className="registration__form__contents">
                             <div className="registration__form__contents__top">
-                                <img src={process.env.REACT_APP_SITE_LOGO} className="logo" alt="SiteLogo" width="216" height="71"/>
+                                <img src={logoGreen} className="logo" alt="SiteLogo" width="216" height="71"/>
                                 <p>STREAMING PARA TODOS</p>
                                 <img src={underlineGreen} alt="underlineGreen" width="346" height="19" className="underlineGreen"/>
                             </div>
