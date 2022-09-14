@@ -4,6 +4,7 @@ import axios from "axios";
 
 const useLandingApi = () => {
     const [newRelease, setNewRelease] = useState([]);
+    const [shows, setShows] = useState([]);
     const [categories, setCategories] = useState([]);
 
     const tokenData = {
@@ -32,6 +33,21 @@ const useLandingApi = () => {
             const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/home_second_section`, tokenData);
 
             if(response.data.success){
+                setShows(response.data.data);
+            }else{
+                console.log('Api Error!');
+            }
+            return response.data
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const getCategories = async () => {
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/v4/categories/list`, tokenData);
+
+            if(response.data.success){
                 setCategories(response.data.data);
             }else{
                 console.log('Api Error!');
@@ -46,6 +62,7 @@ const useLandingApi = () => {
     useEffect(() => {
         getHomeFirstShows();
         getHomeFirstShowsAfterLog();
+        getCategories();
     }, [])
 
     // homesettings api
@@ -61,8 +78,9 @@ const useLandingApi = () => {
 
     return {
         newRelease,
-        categories,
         landingData,
+        shows,
+        categories
     };
 };
 

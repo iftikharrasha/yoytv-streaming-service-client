@@ -9,7 +9,7 @@ import { tvData } from '../../../Data/tvData';
 import { radioData } from '../../../Data/radioData';
 
 const SearchResult = () => {
-    const { categories } = useLandingApi();
+    const { shows } = useLandingApi();
 
     return (
     <>
@@ -26,7 +26,7 @@ const SearchResult = () => {
 
         {/* SLIDER FOR ALL THE OTHER CATEGORIES*/}
         {
-            categories.map((category, index) => (
+            shows.map((category, index) => (
                 <section className="shows" key={index}>
                     <div className="shows__title">
                         <h2 data-aos="fade" data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000">{category.title}</h2>

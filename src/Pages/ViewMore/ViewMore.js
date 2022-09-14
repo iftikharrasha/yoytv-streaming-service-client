@@ -6,16 +6,16 @@ import useLandingApi from '../../Utilities/Hooks/useLandingApi';
 
 const ViewMore = () => {
     const navigate = useNavigate();
-    const { categories } = useLandingApi();
+    const { shows } = useLandingApi();
     const { pageId } = useParams();
     const [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
-        if(categories){
-            const data = categories.filter(category => category.url_page_id === parseInt(pageId));
+        if(shows){
+            const data = shows.filter(category => category.url_page_id === parseInt(pageId));
             setFilteredData(data[0]?.data);
         }
-    }, [categories, pageId]);
+    }, [shows, pageId]);
 
     return (
     <>

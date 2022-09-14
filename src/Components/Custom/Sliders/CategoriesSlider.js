@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import 'swiper/css/navigation';
 import { Link } from 'react-router-dom';
 
-const TvSlider = ({shows, delay}) => {
+const CategoriesSlider = ({categories, delay}) => {
 
     return (
         <>
@@ -40,14 +40,11 @@ const TvSlider = ({shows, delay}) => {
                 className="shows__slider"
             >
             {
-                shows?.map((item, index) => (
+                categories?.map((item, index) => (
                     <SwiperSlide className="rectangular" key={index}>
-                        <Link to="/tv-en-vivo" className="rectangular">
-                            <img src={item.default_image} alt="default_image" />
+                        <Link to={`/`+item.name} className="rectangular">
+                            <img src={item.picture} alt="category" />
                         </Link>
-                        {/* <div className="card__buttons">
-                            <img src={arrow_down} alt="more" className="more"/>
-                        </div> */}
                     </SwiperSlide>
                 ))
             }
@@ -56,4 +53,4 @@ const TvSlider = ({shows, delay}) => {
     );
 };
 
-export default TvSlider;
+export default CategoriesSlider;
