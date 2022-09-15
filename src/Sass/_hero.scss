@@ -213,4 +213,84 @@
             }
         }
     }
+    .onDemand_slider{
+        min-height: 40rem;
+        .swiper-slide-active{
+            z-index: 9999;
+        }
+        .swiper-button-next, .swiper-button-prev{
+            padding: 0.75rem 1.35rem;
+            border-radius:50%;
+            @media (min-width: 992px) and (max-width: 1299.98px) {
+                padding: 0 1.5rem;
+            }
+            @media (min-width: 1300px) and (max-width: 1531.98px){
+                padding: 1.25rem 1.5rem;
+            }
+            @media (min-width: 2500px) {
+                padding: 1.25rem;
+            }
+            &::after {
+                font-size: 1.25rem;
+                font-weight: 900;
+                @media (min-width: 992px) and (max-width: 1299.98px) {
+                    padding: 1rem 1.5rem;
+                }
+            }
+        }
+        .swiper-button-prev{
+            left: 2rem;
+            transition: all 0.5s;
+            opacity: 1;
+            z-index: 999;
+            &:after {
+                content: "";
+                position: absolute;
+                width: 3.5rem;
+                height: 3.5rem;
+                background-image: url("../Image/arrow_left_green.svg");
+                @include bgCover;
+            }
+        }
+        .swiper-button-next{
+            right: 2rem;
+            transition: all 0.5s;
+            opacity: 1;
+            z-index: 999;
+            &:after {
+                content: "";
+                position: absolute;
+                width: 3.5rem;
+                height: 3.5rem;
+                background-image: url("../Image/arrow_left_green.svg");
+                @include bgCover;
+                transform: rotate(180deg);
+            }
+        }
+        .swiper-button-disabled{
+            opacity: 0;
+        }
+        .swiper-slide-next, .swiper-slide-prev{
+            position: relative;
+        }
+        .swiper-pagination{
+            .swiper-pagination-bullet{
+                background: $white;
+            }
+            .swiper-pagination-bullet-active {
+                background: $white;
+            }
+        }
+    }
+    .swiper-wrapper{
+        .swiper-slide{
+            &:not(:first-child){
+                .heroBg{
+                    @media (min-width: 576px) {
+                        padding-left: 3rem;
+                    }
+                }
+            }
+        }
+    }
 }
