@@ -875,6 +875,142 @@
   right: 0;
 }
 
+.onDemandHero {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.onDemandHero .heroBg {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+@media (min-width: 1300px) {
+  .onDemandHero .heroBg {
+    min-height: 56rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .onDemandHero .heroBg__contents {
+    padding: 0 !important;
+  }
+}
+
+.onDemandHero .heroBg__contents:before {
+  background: transparent -webkit-gradient(linear, left top, left bottom, color-stop(30%, rgba(9, 0, 46, 0)), color-stop(95%, #07002E)) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(180deg, rgba(9, 0, 46, 0) 30%, #07002E 95%) 0% 0% no-repeat padding-box;
+}
+
+@media (max-width: 575.98px) {
+  .onDemandHero .heroBg__contents:before {
+    background: transparent -webkit-gradient(linear, left top, left bottom, color-stop(70%, rgba(9, 0, 46, 0)), to(#07002E)) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, rgba(9, 0, 46, 0) 70%, #07002E 100%) 0% 0% no-repeat padding-box;
+  }
+}
+
+.onDemandHero .heroBg__contents__text {
+  width: 38rem;
+  margin: 0 3rem;
+}
+
+@media (max-width: 575.98px) {
+  .onDemandHero .heroBg__contents__text {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    top: 12rem;
+  }
+}
+
+.onDemandHero .heroBg__contents__text h1 {
+  font-size: 2.4375rem;
+  font-weight: 700;
+  color: #67fe65;
+}
+
+@media (max-width: 575.98px) {
+  .onDemandHero .heroBg__contents__text h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.onDemandHero .heroBg__contents__text h2 {
+  font-size: 1.4375rem;
+  font-weight: 500;
+}
+
+@media (max-width: 575.98px) {
+  .onDemandHero .heroBg__contents__text h2 {
+    font-size: 1.125rem;
+  }
+}
+
+.onDemandHero .heroBg__contents__text h4 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ffffff;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.onDemandHero .heroBg__contents__text h4 span {
+  padding: 0.35rem 1rem;
+  border: 1px solid #ffffff;
+  margin: 0 1rem;
+}
+
+.onDemandHero .heroBg__contents__text ul li img {
+  width: 2.75rem;
+  height: auto;
+  cursor: pointer;
+}
+
+@media (max-width: 575.98px) {
+  .onDemandHero .heroBg__contents__text ul li img {
+    width: 2rem;
+  }
+}
+
+.onDemandHero .heroBg__contents__text ul li .love {
+  width: 2.95rem;
+}
+
+@media (max-width: 575.98px) {
+  .onDemandHero .heroBg__contents__text ul li .love {
+    width: 2.25rem;
+  }
+}
+
+.onDemandHero .heroBg__contents__text ul li button span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.onDemandHero .heroBg__contents__text ul li button span img {
+  width: 1rem;
+  height: auto;
+  margin-right: .5rem;
+}
+
+.onDemandHero .heroBg__contents__text ul li button:hover {
+  color: #07002E;
+  background-color: #ffffff !important;
+}
+
+.onDemandHero .heroBg__contents__text ul li .secondary {
+  background-color: #0e005c;
+}
+
 .tvEnVivo {
   width: 100%;
   height: 100vh;
@@ -3662,6 +3798,12 @@ input:-webkit-autofill:active {
 @media (max-width: 575.98px) {
   .relativeTop {
     min-height: 28rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .demandTop {
+    min-height: 40rem;
   }
 }
 

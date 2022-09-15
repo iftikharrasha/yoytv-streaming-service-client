@@ -121,3 +121,96 @@
     left: 0;
     right: 0;
 }
+
+.onDemandHero{
+    align-items: flex-start;
+    .heroBg{
+        justify-content: flex-start;
+        @media (min-width: 1300px) {
+            min-height: 56rem;
+        }
+        &__contents{
+            @media (max-width: 575.98px) {
+                padding: 0 !important;
+            } 
+            &:before {
+                background: transparent linear-gradient(180deg, rgba(9, 0, 46, 0) 30%, #07002E 95%) 0% 0% no-repeat padding-box;
+                @media (max-width: 575.98px) {
+                    background: transparent linear-gradient(180deg, rgba(9, 0, 46, 0) 70%, #07002E 100%) 0% 0% no-repeat padding-box;
+                } 
+            }
+            &__text{
+                width: 38rem;
+                margin: 0 3rem;
+                @media (max-width: 575.98px) {
+                    width: 90%;
+                    margin: 0 auto;    
+                    position: relative;
+                    top: 12rem;
+                } 
+                h1{
+                    font-size: 2.4375rem;
+                    font-weight: 700;
+                    color: $green;
+                    @media (max-width: 575.98px) {
+                        font-size: 1.5rem;
+                    } 
+                }
+                h2{
+                    font-size: 1.4375rem;
+                    font-weight: 500;
+                    @media (max-width: 575.98px) {
+                        font-size: 1.125rem;
+                    } 
+                }
+                h4{
+                    font-size: 1.5rem;
+                    font-weight: 500;  
+                    color: $white;
+                    position: relative;
+                    margin-bottom: 2rem;
+                    span{
+                        padding: 0.35rem 1rem;
+                        border: 1px solid $white;
+                        margin: 0 1rem;
+                    }
+                }
+                ul{
+                    li{
+                        img{
+                            width: 2.75rem;
+                            height: auto;
+                            cursor: pointer;
+                            @media (max-width: 575.98px) {
+                                width: 2rem;
+                            } 
+                        }
+                        .love{
+                            width: 2.95rem;
+                            @media (max-width: 575.98px) {
+                                width: 2.25rem;
+                            } 
+                        }
+                        button{
+                            span{
+                                @include flexCenter;
+                                img{
+                                    width: 1rem;
+                                    height: auto;
+                                    margin-right: .5rem;
+                                }
+                            }
+                            &:hover{
+                                color: $darkblue;
+                                background-color: $white !important;
+                            }
+                        }
+                        .secondary{
+                            background-color: $blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

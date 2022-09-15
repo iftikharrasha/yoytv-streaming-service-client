@@ -132,6 +132,12 @@ input:-webkit-autofill:active {
     }
 }
 
+.demandTop{
+    @media (max-width: 575.98px) {
+        min-height: 40rem;
+    }
+}
+
 .main-btn{
     font-size: 1.25rem;
     font-weight: 600;

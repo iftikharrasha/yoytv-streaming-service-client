@@ -15,7 +15,7 @@ const Categories = ({demandPage}) => {
 
     return (
     <>
-        <section className="relativeTop">
+        <section className={!demandPage ? "relativeTop" : "relativeTop demandTop"}>
             {/* Only for landing parallex! */}
         </section>
 
