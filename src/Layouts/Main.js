@@ -47,12 +47,13 @@ const Main = () => {
                   </PrivateRoute>
                 }
               />
+
               <Route
                 path="/profile/browse"
                 element={
-                  <PrivateRoute>
-                    <BrowseProfile />
-                  </PrivateRoute>
+                  <BrowseProfile />
+                  // <PrivateRoute>
+                  // </PrivateRoute>
                 }
               />
               <Route
