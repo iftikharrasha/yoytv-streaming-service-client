@@ -3,17 +3,21 @@ import { usePlanby } from "../../Utilities/Hooks/usePlanby";
 import { Epg, Layout } from "planby";
 import { ChannelItem, ProgramItem, Timeline } from "../../Components/TvEnVivo";
 import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const TvEnVivo = () => {
   const { isLoading, getEpgProps, getLayoutProps } = usePlanby();
 
   // Redirect if user authenticated.
   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+  const navigate = useNavigate();
 
-  if (!isAuthenticated) {
-    return <Navigate to={`/subscription`} />;
-  }
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate("/subscription");
+    }
+  }, [isAuthenticated]);
 
   return (
     <>
