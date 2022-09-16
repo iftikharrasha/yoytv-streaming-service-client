@@ -240,7 +240,7 @@
                                     flex-direction: column;
                                 }
                                 &__left{
-                                    width: 36%;
+                                    width: 38%;
                                     display: flex;
                                     justify-content: space-between;
                                     @media (max-width: 575.98px) {
@@ -257,9 +257,6 @@
                                             width: 24.5rem;
                                             height: auto;
                                             cursor: pointer;
-                                            @media (max-width: 575.98px) {
-                                                width: 100%;
-                                            }
                                             @media (min-width: 576px) and (max-width: 991.98px) {
                                                 width: 18rem;
                                             }

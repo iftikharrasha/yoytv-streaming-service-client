@@ -2991,7 +2991,7 @@
 }
 
 .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__left {
-  width: 36%;
+  width: 38%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3020,12 +3020,6 @@
   width: 24.5rem;
   height: auto;
   cursor: pointer;
-}
-
-@media (max-width: 575.98px) {
-  .show__modal .modal-dialog .modal-content .modal__bg .modal-body .body__contents__episodes__single__left__thumb img {
-    width: 100%;
-  }
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
