@@ -8,6 +8,7 @@ import "./Sass/style.css";
 import { Provider } from "react-redux";
 import store from "Utilities/Store/store";
 import { loadUser } from "Utilities/Actions/Auth";
+import { LOADING_STOP } from "Utilities/Actions/types";
 
 const App = () => {
   AOS.init({
@@ -19,6 +20,8 @@ const App = () => {
     const state = store.getState();
     if (!state.auth.isAuthenticated) {
       store.dispatch(loadUser());
+    } else {
+      store.dispatch({ type: LOADING_STOP });
     }
   }
 
