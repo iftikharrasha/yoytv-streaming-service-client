@@ -91,7 +91,7 @@ const ShowModal = (props) => {
                                     </div>
                                     ))
                                 }
-                                <Link to={`/on-demand/details/`+details.admin_video_id}><img src={arrow} alt="details" className='arrow' onClick={handleClose}/></Link>
+                                <Link to={`/on-demand/series-details/`+details.admin_video_id}><img src={arrow} alt="details" className='arrow' onClick={handleClose}/></Link>
                             </ul>
                             <div className="body__contents__similar">
                                 <h2>Más títulos similares a este</h2>

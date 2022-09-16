@@ -325,17 +325,35 @@
         margin: 0 auto;
         flex-direction: column;
         align-items: flex-start;
+        position: relative;
+        @media (max-width: 575.98px) {
+            margin-top: 4rem;
+            padding: 1rem 1rem;
+        }
+        @media (min-width: 576px) and (max-width: 991.98px) {
+            padding: 1rem 2rem;
+        }
+        &:before{
+            content: '';
+            background: url('../Image/LogoGreen.svg');
+            @include bgCover;
+            position: absolute;
+            width: 8rem;
+            height: 2.65rem;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            @media (max-width: 575.98px) {
+                content: none;
+            }
+        }
         &__contents{
             position: relative;
             padding: 1rem 0;
             @include flexBetween;
             align-items: flex-start;
             @media (max-width: 575.98px) {
-                padding: 1rem;
-                flex-direction: column;
-            }
-            @media (min-width: 576px) and (max-width: 991.98px) {
-                padding: 1rem 2rem;
+                padding: 0;
             }
             &__left{
                 img{
@@ -343,19 +361,22 @@
                     height: auto;
                     border-radius: 1.5rem;
                     border: 0.1875rem solid $green;
+                    @media (max-width: 575.98px) {
+                        width: 11rem;
+                    }
                 }
             }
             &__right{
                 padding-left: 2rem;
                 @media (max-width: 575.98px) {
-                    padding: 2rem 0;
+                    padding: 0 1rem;
                 }
                 h1{
                     color: $green;
                     font-size: 3rem;
                     font-weight: 700;
                     @media (max-width: 575.98px) {
-                        font-size: 1.5rem;
+                        font-size: 1.25rem;
                     }
                     @media (min-width: 576px) and (max-width: 991.98px) {
                         font-size: 1.75rem;
@@ -365,8 +386,8 @@
                     font-size: 1.75rem;
                     padding-bottom: 2.25rem;
                     @media (max-width: 575.98px) {
-                        padding-bottom: 1.5rem;
-                        font-size: 1.25rem;
+                        padding-bottom: 1.25rem;
+                        font-size: 1.125rem;
                     }
                     @media (min-width: 576px) and (max-width: 991.98px) {
                         padding-bottom: 1.75rem;
@@ -381,6 +402,7 @@
                     @media (max-width: 575.98px) {
                         font-size: 1rem;
                         padding-bottom: 1rem;
+                        display: none;
                     }
                     @media (min-width: 576px) and (max-width: 991.98px) {
                         font-size: 1rem;
@@ -524,7 +546,7 @@
                         flex-direction: column;
                     }
                     &__left{
-                        width: 38%;
+                        width: 36%;
                         display: flex;
                         justify-content: space-between;
                         @media (max-width: 575.98px) {
@@ -542,6 +564,7 @@
                                 height: auto;
                                 cursor: pointer;
                                 @media (max-width: 575.98px) {
+                                    width: 100%;
                                 }
                                 @media (min-width: 576px) and (max-width: 991.98px) {
                                     width: 18rem;
@@ -636,5 +659,162 @@
                 }
             }
         }
+    }
+}
+
+.crew{
+    position: relative;
+    padding: 3rem 0;
+    width: 100%;
+    background-color: $darkblue;
+    .crewWrapper{
+        width: 78rem;
+        margin: 0 auto;
+        @media (max-width: 991.98px) {
+            width: 100%;
+        }
+        @media (max-width: 575.98px) {
+            padding: 1rem;
+        }
+        @media (min-width: 576px) and (max-width: 991.98px) {
+            padding: 0 2rem;
+        }
+        &__single{
+            @include flexBetween;
+            align-items: flex-start;
+            padding: 2rem 0;
+            @media (max-width: 575.98px) {
+                flex-direction: column;
+            }
+            &__left{
+                width: 36%;
+                display: flex;
+                justify-content: space-between;
+                @media (max-width: 575.98px) {
+                    width: 100%;
+                    padding-bottom: 2rem;
+                }
+                &__thumb{
+                    position: relative;
+                    img{
+                        width: 24.5rem;
+                        height: auto;
+                        cursor: pointer;
+                        @media (max-width: 575.98px) {
+                            width: 100%;
+                        }
+                        @media (min-width: 576px) and (max-width: 991.98px) {
+                            width: 90%;
+                        }
+                    }
+                    &:before{
+                        content: '';
+                        background: url('../Image/play_button_white.svg');
+                        @include bgCover;
+                        position: absolute;
+                        width: 5rem;
+                        height: 5rem;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        cursor: pointer;
+                    }
+                }
+            }
+            &__right{
+                width: 62%;
+                @media (max-width: 575.98px) {
+                    width: 100%;
+                }
+                &__info{
+                    width: 100%;
+                    display: flex;
+                    margin-bottom: 2rem;
+                    @media (max-width: 575.98px) {
+                        width: 100%;
+                    }
+                    h4{
+                        font-size: 1.125rem;
+                        font-weight: 500;
+                        color: #BCBCBC;
+                        margin-right: 1.5rem;
+                        line-height: 1.5rem;
+                        @media (max-width: 575.98px) {
+                            font-size: 1rem;
+                        }
+                        @media (min-width: 576px) and (max-width: 991.98px) {
+                            font-size: 0.85rem;
+                        }
+                    }
+                    p{
+                        font-size: 1rem;
+                        line-height: 1.5rem;
+                        @media (max-width: 575.98px) {
+                            font-size: 1rem;
+                        }
+                        @media (min-width: 576px) and (max-width: 991.98px) {
+                            font-size: 0.85rem;
+                        }
+                    }
+                }
+                span{
+                    font-size: 1.65rem;
+                    font-weight: 600;
+                    @media (max-width: 575.98px) {
+                        font-size: 1.125rem;
+                    }
+                    @media (min-width: 576px) and (max-width: 991.98px) {
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.moview{
+    padding: 1rem 0;
+    .crewWrapper__single__right__info, .crewWrapper__single__left__thumb{
+        flex-direction: column;
+        h3, h4{
+            margin-bottom: 2rem;
+        }
+        h4{
+            font-size: 1.5rem;
+            color: $white;
+        }
+    }
+    .allEpisodes__body{
+        @media (max-width: 575.98px) {
+            padding: 0 1rem;
+        }
+        @media (min-width: 576px) and (max-width: 991.98px) {
+            padding: 1rem 2rem;
+        }
+        h2{
+            margin: 2rem 0 1rem 0;
+        }
+    }
+    .allEpisodes__body__contents__similar{
+        h2{
+            padding-top: 0;
+            margin-top: 0;
+        }
+    }
+}
+
+.moviewRight{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (max-width: 575.98px) {
+        min-height: 15rem;
+    }
+    @media (min-width: 576px) {
+        min-height: 29rem;
+    }
+    h2{
+        display: block;
     }
 }

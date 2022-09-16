@@ -1,45 +1,46 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { breakingEpisodes } from '../../Data/breakingEpisodes.js';
+import { similar } from '../../Data/similar';
 import ShowSlider from '../../Components/Custom/Sliders/ShowSlider';
 import arrow_left from '../../Image/arrow_left.svg';
-import banner_image from '../../Image/stranger_things_cover.png';
 import play_fill from '../../Image/play_fill.svg';
 import share_icon from '../../Image/share_icon.svg';
 import plus_icon from '../../Image/plus_icon.svg';
 import love_icon from '../../Image/love_icon.svg';
-import { episodes } from '../../Data/episodes.js';
-import { similar } from '../../Data/similar';
-import { details } from '../../Data/singleDetails';
+import bbThumb from '../../Image/BBMockImages/bbThumb.png';
+import breakingBad from '../../Image/BBMockImages/breakingBad.png';
+import breakingBadThumb from '../../Image/BBMockImages/breakingBadThumb.png';
 
-const Details = () => {
+const SeriesDetails = () => {
     const navigate = useNavigate();
 
     return (
         <>
             <section className="hero detailsHero">
-                <div className="heroBg heroFixed" style={{backgroundImage: `url(${banner_image})`}}>
+                <div className="heroBg heroFixed" style={{backgroundImage: `url(${breakingBad})`}}>
                     <div className="detailsHero__wrapper">
                         <Link to="/" onClick={() => navigate(-1)}><img src={arrow_left} alt="close" className="close"/></Link>
                         <div className="detailsHero__wrapper__contents">
                             <div className="detailsHero__wrapper__contents__left">
-                                <img src={details.data[0].default_image} alt="default_image"/>
+                                <img src={breakingBadThumb} alt="default_image"/>
                             </div>
                             <div className="detailsHero__wrapper__contents__right">
                                 <h1>
-                                    {details.data[0].title}
+                                    Breaking Bad
                                 </h1>
                                 <h5>Series</h5>
-                                <h4>4 temporadas - 2016 - EUA</h4> 
-                                <h2><span>Categorias:</span> Terror. Suspenso. Misterio. Fantasía.</h2>
-                                <p>{details.data[0].description}</p>
+                                <h4>5 temporadas - 2008 - EUA</h4> 
+                                <h2><span>Categorias:</span> Suspenso, Drama, Acción</h2>
+                                <p>Tras cumplir 50 años, Walter White (Bryan Cranston), un profesor de química de un instituto de Albuquerque, Nuevo México, se entera de que tiene un cáncer de pulmón incurable. Casado con Skyler (Anna Gunn) y con un hijo discapacitado (RJ Mitte), la brutal noticia lo impulsa a dar un drástico cambio a su vida: decide, con la ayuda de un antiguo alumno (Aaron Paul), fabricar anfetaminas y ponerlas a la venta. Lo que pretende es liberar a su familia de problemas económicos cuando se produzca el fatal desenlace.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
             
-            <section className="relativeTop">
-                {/* Only for landing parallex! */}
+            <section className="relativeTop detailsTop">
+                {/* Only for parallex! */}
             </section>
 
             <section className="allEpisodes">
@@ -71,7 +72,7 @@ const Details = () => {
                         </div>
                         <ul className="allEpisodes__body__contents__episodes">
                             {
-                                episodes.map((item) => (
+                                breakingEpisodes.map((item) => (
                                 <div className="allEpisodes__body__contents__episodes__single" key={item.id}>
                                     <div className="allEpisodes__body__contents__episodes__single__left">
                                         <span>{item.no}</span>
@@ -97,8 +98,35 @@ const Details = () => {
                     </div>
                 </div>
             </section>
+            
+            <section className="crew">
+                <div className="crewWrapper">
+                    <div className="crewWrapper__single">
+                        <div className="crewWrapper__single__left">
+                            <div className="crewWrapper__single__left__thumb">
+                                <img src={bbThumb} alt="intro" className="thumb"/>
+                            </div>
+                        </div>
+                        <div className="crewWrapper__single__right">
+                            <div className="crewWrapper__single__right__info">
+                                <h4>Resumen:</h4>
+                                <p>A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family's future.</p>
+                            </div>
+                            <div className="crewWrapper__single__right__info">
+                                <h4>Creador:</h4>
+                                <p>Vince Gilligan</p>
+                            </div>
+                            <div className="crewWrapper__single__right__info">
+                                <h4>Reparto:</h4>
+                                <p>Bryan Cranston ,  Anna Gunn ,  Aaron Paul ,  Dean Norris ,  Betsy Brandt ,  RJ Mitte <br />
+                                Bob Odenkirk ,  Giancarlo Esposito , Jonathan Banks ,  Laura Fraser , Jesse Plemons</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </>
     );
 };
 
-export default Details;
+export default SeriesDetails;

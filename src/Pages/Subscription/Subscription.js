@@ -1,13 +1,11 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import basica from '../../Image/basica.png';
 import familiar from '../../Image/familiar.png';
 import premium from '../../Image/premium.png';
 import logoGreen from '../../Image/LogoGreen.svg';
 
 const Subscription = () => {
-    const { token } = useParams();
-    
     return (
         <>
             <section className="browse subscription">
