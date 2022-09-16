@@ -96,6 +96,8 @@ export const registerUser = (formData) => async (dispatch) => {
       data
     );
 
+    console.log("res: ", res);
+
     if (res.data && !res.data.success) {
       dispatch({
         type: REGISTER_FAIL,
