@@ -37,7 +37,7 @@ export default function (state = initialState, action) {
     case AUTH_ERROR:
       localStorage.clear();
       return {
-        loading: true,
+        loading: false,
         isAuthenticated: false,
         data: null,
         userId: null,
