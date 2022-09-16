@@ -16,7 +16,10 @@ const App = () => {
 
   // Validate token by calling load profile API.
   if (localStorage.token) {
-    store.dispatch(loadUser());
+    const state = store.getState();
+    if (!state.auth.isAuthenticated) {
+      store.dispatch(loadUser());
+    }
   }
 
   return (
