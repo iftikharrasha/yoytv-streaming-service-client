@@ -10,14 +10,14 @@ const TvEnVivo = () => {
   const { isLoading, getEpgProps, getLayoutProps } = usePlanby();
 
   // Redirect if user authenticated.
-  const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+  const auth = useSelector(state => state.auth);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isAuthenticated) {
+    if (!auth.isAuthenticated && !auth.loading) {
       navigate("/subscription");
     }
-  }, [isAuthenticated]);
+  }, [auth.isAuthenticated]);
 
   return (
     <>
