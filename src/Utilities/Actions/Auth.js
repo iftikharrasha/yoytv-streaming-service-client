@@ -11,7 +11,7 @@ import {
 // @desc                Login user.
 // @params formData     data of user.
 // @access              public
-export const loadUser = () => async dispatch => {
+export const loadUser = () => async (dispatch) => {
   try {
     const id = localStorage.getItem("id");
     const subProfileId = localStorage.getItem("subProfileId");
@@ -47,7 +47,7 @@ export const loadUser = () => async dispatch => {
 // @desc                Login user.
 // @params formData     data of user.
 // @access              public
-export const loginUser = formData => async dispatch => {
+export const loginUser = (formData) => async (dispatch) => {
   try {
     const res = await axios.post(
       `${process.env.REACT_APP_API_LINK}/userApi/v4/login`,
@@ -80,12 +80,20 @@ export const loginUser = formData => async dispatch => {
 // @desc                Register user.
 // @params formData     data of user.
 // @access              public
-export const registerUser = formData => async dispatch => {
+export const registerUser = (formData) => async (dispatch) => {
   try {
     console.log(formData);
+    let data = new FormData();
+    data.append("name", formData.name);
+    data.append("password", formData.password);
+    data.append("email", formData.email);
+    data.append("login_by", formData.login_by);
+    data.append("device_type", formData.device_type);
+    data.append("device_token", formData.device_token);
+
     const res = await axios.post(
       `${process.env.REACT_APP_API_LINK}/userApi/v4/register`,
-      formData
+      data
     );
 
     if (res.data && !res.data.success) {
