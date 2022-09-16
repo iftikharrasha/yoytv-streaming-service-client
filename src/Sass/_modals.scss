@@ -230,8 +230,10 @@
                             }
                         }
                         &__episodes{
+                            position: relative;
                             &__single{
                                 @include flexBetween;
+                                align-items: flex-start;
                                 padding: 2rem 0;
                                 border-bottom: 0.125rem solid #3E337D;
                                 @media (max-width: 575.98px) {
@@ -278,9 +280,9 @@
                                 &__right{
                                     width: 58%;
                                     @include flexBetween;
+                                    align-items: flex-start;
                                     @media (max-width: 575.98px) {
                                         width: 100%;
-                                        align-items: flex-start;
                                     }
                                     &__info{
                                         width: 80%;
@@ -319,25 +321,19 @@
                                         }
                                     }
                                 }
-                                &:last-child{
-                                    position: relative;
-                                    &:after {
-                                        content: '';
-                                        background: url('../Image/arrow_left_green.svg');
-                                        @include bgCover;
-                                        position: absolute;
-                                        width: 3rem;
-                                        height: 3rem;
-                                        bottom: -1.5rem;
-                                        right: 0;
-                                        left: 0;
-                                        margin-left: auto;
-                                        margin-right: auto;
-                                        text-align: center;
-                                        cursor: pointer;
-                                        transform: rotate(270deg);
-                                    }
-                                }
+                            }
+                            .arrow{
+                                position: absolute;
+                                width: 3rem;
+                                height: 3rem;
+                                bottom: -1.5rem;
+                                right: 0;
+                                left: 0;
+                                margin-left: auto;
+                                margin-right: auto;
+                                text-align: center;
+                                cursor: pointer;
+                                transform: rotate(270deg);
                             }
                         }
                         &__similar{

@@ -8,11 +8,14 @@ import play_fill from '../../../Image/play_fill.svg';
 import share_icon from '../../../Image/share_icon.svg';
 import plus_icon from '../../../Image/plus_icon.svg';
 import love_icon from '../../../Image/love_icon.svg';
+import arrow from '../../../Image/arrow_left_green.svg';
 import { similar } from '../../../Data/similar';
+import { Link } from 'react-router-dom';
 
 const ShowModal = (props) => {
     const { lgShow, setLgShow, details } = props;
     const handleClose = () => setLgShow(false);
+    console.log(details)
 
     return (
         <>
@@ -28,7 +31,7 @@ const ShowModal = (props) => {
                         <img src={arrow_left} alt="close" className="close" onClick={handleClose}/>
                         <div className="modal__contents">
                             <div className="modal__contents__left">
-                                <img src={details.default_image} alt="close"/>
+                                <img src={details.default_image} alt="default_image"/>
                             </div>
                             <div className="modal__contents__right">
                                 <Modal.Title id="example-modal-sizes-title-lg">
@@ -69,25 +72,26 @@ const ShowModal = (props) => {
                                 </div>
                             </div>
                             <ul className="body__contents__episodes">
-                            {
-                                episodes.map((item) => (
-                                <div className="body__contents__episodes__single" key={item.id}>
-                                    <div className="body__contents__episodes__single__left">
-                                        <span>{item.no}</span>
-                                        <div className="body__contents__episodes__single__left__thumb">
-                                            <img src={item.thumbnail} alt="intro" className="thumb"/>
+                                {
+                                    episodes.map((item) => (
+                                    <div className="body__contents__episodes__single" key={item.id}>
+                                        <div className="body__contents__episodes__single__left">
+                                            <span>{item.no}</span>
+                                            <div className="body__contents__episodes__single__left__thumb">
+                                                <img src={item.thumbnail} alt="intro" className="thumb"/>
+                                            </div>
+                                        </div>
+                                        <div className="body__contents__episodes__single__right">
+                                            <div className="body__contents__episodes__single__right__info">
+                                                <h4>{item.name}</h4>
+                                                <p>{item.description}</p>
+                                            </div>
+                                            <span>{item.time} min</span>
                                         </div>
                                     </div>
-                                    <div className="body__contents__episodes__single__right">
-                                        <div className="body__contents__episodes__single__right__info">
-                                            <h4>{item.name}</h4>
-                                            <p>{item.description}</p>
-                                        </div>
-                                        <span>{item.time} min</span>
-                                    </div>
-                                </div>
-                                ))
-                            }
+                                    ))
+                                }
+                                <Link to={`/on-demand/details/`+details.admin_video_id}><img src={arrow} alt="details" className='arrow' onClick={handleClose}/></Link>
                             </ul>
                             <div className="body__contents__similar">
                                 <h2>Más títulos similares a este</h2>

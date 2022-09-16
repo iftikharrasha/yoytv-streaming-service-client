@@ -5,6 +5,7 @@ import PrivateRoute from '../Pages/PrivateRoute/PrivateRoute';
 const Home = React.lazy(() => import("../Pages/Home/Home"));
 const OnDemand = React.lazy(() => import("../Pages/OnDemand/OnDemand"));
 const TvEnVivo = React.lazy(() => import("../Pages/TvEnVivo/TvEnVivo"));
+const Details = React.lazy(() => import("../Pages/OnDemand/Details"));
 const Search = React.lazy(() => import("../Pages/Search/Search"));
 const BrowseProfile = React.lazy(() => import("../Pages/Profile/BrowseProfile"));
 const CreateProfile = React.lazy(() => import("../Pages/Profile/CreateProfile"));
@@ -30,6 +31,7 @@ const Main = () => {
                             <Route path="/search" element={<Search/>} />
                             <Route path="/subscription" element={<Subscription/>} />
                             <Route path="/registration" element={<Registration/>} />
+                            <Route path="/on-demand/details/:admin_video_id" element={<Details/>} />
                             <Route path="/view-more/:pageId" element={
                                 <PrivateRoute>
                                     <ViewMore/>

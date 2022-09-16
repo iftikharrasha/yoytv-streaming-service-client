@@ -71,6 +71,24 @@ export const similar = {
                 "publish_time": "20 Aug 22",
                 "watch_count": 3,
                 "watch_count_formatted": "3 Views"
+            },
+            {
+                "admin_video_id": 23,
+                "category_id": 18,
+                "sub_category_id": 11,
+                "genre_id": 0,
+                "video_type": 1,
+                "title": "El Camino: A Breaking Bad Movie",
+                "description": "In the wake of his dramatic escape from captivity, Jesse Pinkman must come to terms with his past in order to forge some kind of future.",
+                "default_image": "https://image.tmdb.org/t/p/original/ePXuKdXZuJx8hHMNr2yM4jY2L7Z.jpg",
+                "mobile_image": "https://image.tmdb.org/t/p/original/ePXuKdXZuJx8hHMNr2yM4jY2L7Z.jpg",
+                "banner_image": "",
+                "mobile_banner_image": "",
+                "duration": "01:02:03",
+                "age": "13",
+                "publish_time": "7 Aug 22",
+                "watch_count": 2,
+                "watch_count_formatted": "2 Views"
             }
           ]
 }
