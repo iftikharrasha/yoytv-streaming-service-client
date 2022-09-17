@@ -11,7 +11,7 @@ import {
 // @desc                User loading.
 // @params formData     data of user.
 // @access              public
-export const loadUser = () => async dispatch => {
+export const loadUser = () => async (dispatch) => {
   try {
     const id = localStorage.getItem("id");
     const subProfileId = localStorage.getItem("subProfileId");
@@ -47,7 +47,7 @@ export const loadUser = () => async dispatch => {
 // @desc                Login user.
 // @params formData     data of user.
 // @access              public
-export const loginUser = formData => async dispatch => {
+export const loginUser = (formData) => async (dispatch) => {
   try {
     const data = new FormData();
     data.append("password", formData.password);
@@ -88,7 +88,7 @@ export const loginUser = formData => async dispatch => {
 // @desc                Register user.
 // @params formData     data of user.
 // @access              public
-export const registerUser = formData => async dispatch => {
+export const registerUser = (formData) => async (dispatch) => {
   try {
     let data = new FormData();
     data.append("name", formData.name);
@@ -102,8 +102,6 @@ export const registerUser = formData => async dispatch => {
       `${process.env.REACT_APP_API_LINK}/userApi/v4/register`,
       data
     );
-
-    console.log("res: ", res);
 
     if (res.data && !res.data.success) {
       dispatch({

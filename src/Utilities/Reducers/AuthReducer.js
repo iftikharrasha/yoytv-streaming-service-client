@@ -20,8 +20,17 @@ const initialState = {
 export default function (state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
-    case LOGIN_SUCCESS:
     case REGISTER_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        isAuthenticated: false,
+        data: payload,
+        userId: payload.data.id,
+        token: payload.data.token,
+        subProfileId: payload.data.sub_profile_id,
+      };
+    case LOGIN_SUCCESS:
     case LOAD_USER:
       return {
         ...state,
