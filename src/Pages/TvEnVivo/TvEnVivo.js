@@ -10,14 +10,15 @@ const TvEnVivo = () => {
   const { isLoading, getEpgProps, getLayoutProps } = usePlanby();
 
   // Redirect if user authenticated.
-  const auth = useSelector(state => state.auth);
+  const auth = useSelector((state) => state.auth);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!auth.isAuthenticated && !auth.loading) {
+      console.log("auth in", auth.isAuthenticated, auth.loading);
       navigate("/subscription");
     }
-  }, [auth.isAuthenticated]);
+  }, [auth.isAuthenticated, auth.loading]);
 
   return (
     <>
@@ -25,7 +26,7 @@ const TvEnVivo = () => {
         <Epg isLoading={isLoading} {...getEpgProps()}>
           <Layout
             {...getLayoutProps()}
-            renderTimeline={props => <Timeline {...props} />}
+            renderTimeline={(props) => <Timeline {...props} />}
             renderProgram={({ program, ...rest }) => (
               <ProgramItem key={program.data.id} program={program} {...rest} />
             )}

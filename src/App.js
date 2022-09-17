@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import Views from "./Layouts/Views";
 import AuthProvider from "./Utilities/Contexts/AuthProvider/AuthProvider";
@@ -15,15 +16,19 @@ const App = () => {
     once: false,
   });
 
-  // Validate token by calling load profile API.
-  if (localStorage.token) {
-    const state = store.getState();
-    if (!state.auth.isAuthenticated) {
-      store.dispatch(loadUser());
+  useEffect(() => {
+    // Validate token by calling load profile API.
+    if (localStorage.token) {
+      const state = store.getState();
+      if (!state.auth.isAuthenticated) {
+        store.dispatch(loadUser());
+      } else {
+        store.dispatch({ type: LOADING_STOP });
+      }
     } else {
       store.dispatch({ type: LOADING_STOP });
     }
-  }
+  }, []);
 
   return (
     <Provider store={store}>
