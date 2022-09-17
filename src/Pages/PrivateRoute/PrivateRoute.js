@@ -8,23 +8,26 @@ import useAuth from "../../Utilities/Hooks/useAuth";
 
 const PrivateRoute = ({
   children,
+  component: Component,
   auth: { isAuthenticated, loading },
   ...rest
 }) => {
   let location = useLocation();
 
-  useEffect(() => {
-    console.log("here, inside");
-    if (!isAuthenticated) {
-      return <Navigate to={`/subscription`} />;
-    } else {
-      return children;
-    }
-  }, [isAuthenticated]);
-
-  //   if (!isAuthenticated && !loading) {
-  //     return <Navigate to="/subscription" state={{ from: location }} />;
+  // useEffect(() => {
+  //   console.log("here, inside");
+  //   if (!isAuthenticated) {
+  //     return <Navigate to={`/subscription`} />;
+  //   } else {
+  //     return children;
   //   }
+  // }, [isAuthenticated]);
+
+  console.log(!isAuthenticated, !loading);
+  if (!isAuthenticated && !loading) {
+    console.log(!isAuthenticated, !loading, "in");
+    return <Navigate to="/subscription" state={{ from: location }} />;
+  }
 
   return children;
 };

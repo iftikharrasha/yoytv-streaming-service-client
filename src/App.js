@@ -16,19 +16,26 @@ const App = () => {
     once: false,
   });
 
-  useEffect(() => {
-    // Validate token by calling load profile API.
-    if (localStorage.token) {
-      const state = store.getState();
-      if (!state.auth.isAuthenticated) {
-        store.dispatch(loadUser());
-      } else {
-        store.dispatch({ type: LOADING_STOP });
-      }
-    } else {
-      store.dispatch({ type: LOADING_STOP });
+  // useEffect(() => {
+  //   // Validate token by calling load profile API.
+  //   if (localStorage.token) {
+  //     const state = store.getState();
+  //     if (!state.auth.isAuthenticated) {
+  //       store.dispatch(loadUser());
+  //     } else {
+  //       store.dispatch({ type: LOADING_STOP });
+  //     }
+  //   } else {
+  //     store.dispatch({ type: LOADING_STOP });
+  //   }
+  // }, []);
+
+  if (localStorage.token) {
+    const state = store.getState();
+    if (!state.auth.isAuthenticated) {
+      store.dispatch(loadUser());
     }
-  }, []);
+  }
 
   return (
     <Provider store={store}>

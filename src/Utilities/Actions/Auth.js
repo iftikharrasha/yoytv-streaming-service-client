@@ -1,4 +1,5 @@
 import axios from "axios";
+import store from "Utilities/Store/store";
 import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
@@ -6,12 +7,13 @@ import {
   REGISTER_FAIL,
   REGISTER_SUCCESS,
   LOAD_USER,
+  LOGOUT_USER,
 } from "./types";
 
 // @desc                User loading.
 // @params formData     data of user.
 // @access              public
-export const loadUser = () => async (dispatch) => {
+export const loadUser = () => async dispatch => {
   try {
     const id = localStorage.getItem("id");
     const subProfileId = localStorage.getItem("subProfileId");
@@ -47,7 +49,7 @@ export const loadUser = () => async (dispatch) => {
 // @desc                Login user.
 // @params formData     data of user.
 // @access              public
-export const loginUser = (formData) => async (dispatch) => {
+export const loginUser = formData => async dispatch => {
   try {
     const data = new FormData();
     data.append("password", formData.password);
@@ -88,7 +90,7 @@ export const loginUser = (formData) => async (dispatch) => {
 // @desc                Register user.
 // @params formData     data of user.
 // @access              public
-export const registerUser = (formData) => async (dispatch) => {
+export const registerUser = formData => async dispatch => {
   try {
     let data = new FormData();
     data.append("name", formData.name);
@@ -111,6 +113,38 @@ export const registerUser = (formData) => async (dispatch) => {
       dispatch({
         type: REGISTER_SUCCESS,
         payload: res.data,
+      });
+    }
+
+    return res.data.success;
+  } catch (err) {
+    dispatch({
+      type: AUTH_ERROR,
+    });
+
+    return false;
+  }
+};
+
+// @desc                Register user.
+// @params formData     data of user.
+// @access              public
+export const logoutUser = () => async dispatch => {
+  try {
+    const state = store.getState();
+
+    let data = new FormData();
+    data.append("id", state.auth.data.data.id);
+    data.append("token", state.auth.data.data.token);
+
+    const res = await axios.post(
+      `${process.env.REACT_APP_API_LINK}/userApi/logout`,
+      data
+    );
+
+    if (res.data && res.data.success) {
+      dispatch({
+        type: LOGOUT_USER,
       });
     }
 

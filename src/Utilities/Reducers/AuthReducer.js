@@ -6,6 +6,7 @@ import {
   REGISTER_FAIL,
   LOAD_USER,
   LOADING_STOP,
+  LOGOUT_USER,
 } from "Utilities/Actions/types";
 
 const initialState = {
@@ -47,6 +48,7 @@ export default function (state = initialState, action) {
     case LOADING_STOP:
       return { ...state, loading: false };
     case AUTH_ERROR:
+    case LOGOUT_USER:
       localStorage.clear();
       return {
         loading: false,

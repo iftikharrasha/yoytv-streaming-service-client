@@ -38,7 +38,15 @@ const Main = () => {
               <Route path="/tv-en-vivo" element={<TvEnVivo />} />
               <Route path="/search" element={<Search />} />
               <Route path="/subscription" element={<Subscription />} />
-              <Route path="/registration" element={<Registration />} />
+
+              <Route
+                path="/registration"
+                element={
+                  <PrivateRoute>
+                    <Registration />
+                  </PrivateRoute>
+                }
+              />
               <Route
                 path="/view-more/:pageId"
                 element={
