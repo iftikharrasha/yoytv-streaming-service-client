@@ -1,21 +1,31 @@
-import React, { Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import ScrollToTop from './ScrollToTop';
-import PrivateRoute from '../Pages/PrivateRoute/PrivateRoute';
+import React, { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import ScrollToTop from "./ScrollToTop";
+import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 const Home = React.lazy(() => import("../Pages/Home/Home"));
 const OnDemand = React.lazy(() => import("../Pages/OnDemand/OnDemand"));
 const TvEnVivo = React.lazy(() => import("../Pages/TvEnVivo/TvEnVivo"));
 const SeriesDetails = React.lazy(() => import("../Pages/OnDemand/SeriesDetails"));
 const MovieDetails = React.lazy(() => import("../Pages/OnDemand/MovieDetails"));
 const Search = React.lazy(() => import("../Pages/Search/Search"));
-const BrowseProfile = React.lazy(() => import("../Pages/Profile/BrowseProfile"));
-const CreateProfile = React.lazy(() => import("../Pages/Profile/CreateProfile"));
+const BrowseProfile = React.lazy(() =>
+  import("../Pages/Profile/BrowseProfile")
+);
+const CreateProfile = React.lazy(() =>
+  import("../Pages/Profile/CreateProfile")
+);
 const EditProfile = React.lazy(() => import("../Pages/Profile/EditProfile"));
-const SettingsProfile = React.lazy(() => import("../Pages/Profile/SettingsProfile"));
+const SettingsProfile = React.lazy(() =>
+  import("../Pages/Profile/SettingsProfile")
+);
 const ViewMore = React.lazy(() => import("../Pages/ViewMore/ViewMore"));
 const MiLista = React.lazy(() => import("../Pages/Profile/MiLista"));
-const Subscription = React.lazy(() => import("../Pages/Subscription/Subscription"));
-const Registration = React.lazy(() => import("../Pages/Subscription/Registration"));
+const Subscription = React.lazy(() =>
+  import("../Pages/Subscription/Subscription")
+);
+const Registration = React.lazy(() =>
+  import("../Pages/Subscription/Registration")
+);
 const NotFound = React.lazy(() => import("../Pages/NotFound/NotFound"));
 const Loader = React.lazy(() => import("../Components/Custom/Loaders/Loader"));
 

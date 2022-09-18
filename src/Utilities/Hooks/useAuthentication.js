@@ -1,113 +1,124 @@
-import { useState } from 'react';
-import {useNavigate} from 'react-router-dom';
-import axios from 'axios';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const useAuthentication = () => {
-    const [loggedInUser, setLoggedInUser] = useState(null);
-    const [error, setError] = useState('');
-    const [success, setSuccess] = useState('');
+  const [loggedInUser, setLoggedInUser] = useState(null);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const handleLogin = async (data) => {
+  const handleLogin = async data => {
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_LINK}/userApi/v4/login`,
+        data
+      );
 
-        try {
-            const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/v4/login`, data);
+      if (response.data.success) {
+        const signedInUser = {
+          isSignedIn: true,
+          user_id: response.data.data.user_id,
+          sub_profile_id: response.data.data.sub_profile_id,
+          name: response.data.data.name.split("@"),
+          email: response.data.data.email,
+          picture: response.data.data.picture,
+          mobile: response.data.data.mobile,
+          gender: response.data.data.gender,
+          is_verified: response.data.data.is_verified,
+          token: response.data.data.token,
+        };
+        setSuccess(response.data.message);
+        setLoggedInUser(signedInUser);
+        navigate(`/profile/browse/` + signedInUser.token);
+      } else {
+        setError(response.data.error_messages);
+      }
 
-            if(response.data.success){
-                const signedInUser = {
-                    isSignedIn: true,
-                    user_id: response.data.data.user_id,
-                    sub_profile_id: response.data.data.sub_profile_id,
-                    name: response.data.data.name.split("@"),
-                    email: response.data.data.email,
-                    picture: response.data.data.picture,
-                    mobile: response.data.data.mobile,
-                    gender: response.data.data.gender,
-                    is_verified: response.data.data.is_verified,
-                    token: response.data.data.token,
-                };
-                setSuccess(response.data.message);
-                setLoggedInUser(signedInUser);
-                navigate(`/profile/browse/`+signedInUser.token);
-            }else{
-                setError(response.data.error_messages);
-            }
-
-            return response.data;
-        } catch (error) {
-            console.log(error);
-        }
+      return response.data;
+    } catch (error) {
+      console.log(error);
     }
+  };
 
-    const handleRegistration = async (data) => {
-        try {
-            const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/v4/register`, data);
+  const handleRegistration = async data => {
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_LINK}/userApi/v4/register`,
+        data
+      );
 
-            if(response.data.success){
-                setSuccess(response.data.message);
-            }else{
-                setError(response.data.error_messages);
-            }
+      if (response.data.success) {
+        setSuccess(response.data.message);
+      } else {
+        setError(response.data.error_messages);
+      }
 
-            return response.data
-        } catch (error) {
-            console.log(error);
-        }
+      return response.data;
+    } catch (error) {
+      console.log(error);
     }
+  };
 
-    const handleCardData = async (data) => {
-        try {
-            const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/v4/subscriptions_payment`, data);
+  const handleCardData = async data => {
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_LINK}/userApi/v4/subscriptions_payment`,
+        data
+      );
 
-            if(response.data.success){
-                setSuccess(response.data.message);
-            }else{
-                setError(response.data.error_messages);
-            }
+      if (response.data.success) {
+        setSuccess(response.data.message);
+      } else {
+        setError(response.data.error_messages);
+      }
 
-            return response.data
-        } catch (error) {
-            console.log(error);
-        }
+      return response.data;
+    } catch (error) {
+      console.log(error);
     }
+  };
 
-    const handleLogOut = async () => {
-        const data = {
-            "id": loggedInUser.user_id,
-            "token": loggedInUser.token,
-            "sub_profile_id": loggedInUser.sub_profile_id
-        }
-
-        try {
-            const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/logout`, data);
-            
-            if(response.data.success){
-                setError('');
-                setSuccess('');
-                setLoggedInUser(null);
-                navigate('/');
-            }else{
-                setError(response.data.error_messages);
-            }
-
-            return response.data
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    return {
-        error,
-        success,
-        loggedInUser,
-        handleLogin,
-        handleLogOut,
-        handleCardData,
-        handleRegistration,
-        setSuccess,
-        setError,
+  const handleLogOut = async () => {
+    const data = {
+      id: loggedInUser.user_id,
+      token: loggedInUser.token,
+      sub_profile_id: loggedInUser.sub_profile_id,
     };
+
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_LINK}/userApi/logout`,
+        data
+      );
+
+      if (response.data.success) {
+        setError("");
+        setSuccess("");
+        setLoggedInUser(null);
+        navigate("/");
+      } else {
+        setError(response.data.error_messages);
+      }
+
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return {
+    error,
+    success,
+    loggedInUser,
+    handleLogin,
+    handleLogOut,
+    handleCardData,
+    handleRegistration,
+    setSuccess,
+    setError,
+  };
 };
 
 export default useAuthentication;
