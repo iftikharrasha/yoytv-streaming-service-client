@@ -7,9 +7,10 @@
 @import './modals';
 @import './landingContent';
 @import './footer';
-@import './notFound';
 @import './profile';
 @import './auth';
+@import './radio';
+@import './notFound';
 
 * {
     margin: 0;
@@ -149,6 +150,14 @@ input:-webkit-autofill:active {
         min-height: 30rem;
     }
 }
+
+.radioTop{
+    min-height: 44rem; 
+    @media (max-width: 575.98px) {
+        min-height: 25rem;
+    }
+}
+
 .main-btn{
     font-size: 1.25rem;
     font-weight: 600;
@@ -198,12 +207,11 @@ input:-webkit-autofill:active {
         max-width: 720px;
     }
     @media (min-width: 992px) and (max-width: 1199.98px) {
-            max-width: 960px;
+        max-width: 960px;
     }
     @media (min-width: 1200px) and (max-width: 1299.98px) {
         max-width: 95rem;
     }
-    
     @media (min-width: 1300px) and (max-width: 1398.98px){
         max-width: 105rem;
     }

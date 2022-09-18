@@ -6,7 +6,6 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import 'swiper/css/navigation';
 import { Link } from 'react-router-dom';
-import gamebtn from '../../../Image/game-btn.svg';
 
 const RadioSlider = ({shows, delay}) => {
 

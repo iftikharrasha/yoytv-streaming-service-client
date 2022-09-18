@@ -4,6 +4,10 @@ import radio3 from '../Image/radio3.png';
 import radio4 from '../Image/radio4.png';
 import radio5 from '../Image/radio5.png';
 import radio6 from '../Image/radio6.png';
+import radio7 from '../Image/radio7.png';
+import radio8 from '../Image/radio8.png';
+import radio9 from '../Image/radio9.png';
+import radio10 from '../Image/radio10.png';
 
 export const radioData = {
     "data": [
@@ -121,9 +125,9 @@ export const radioData = {
                 "sub_category_id": 26,
                 "genre_id": 0,
                 "video_type": 1,
-                "title": "Pop en Español",
+                "title": "Fiesta",
                 "description": "Peter Parker comienza a experimentar su recién descubierta identidad como el superhéroe Spider-Man (El Hombre Araña). Después de la experiencia vivida con los Vengadores, Peter regresa a casa, donde vive con su tía. Bajo la atenta mirada de su mentor Tony Stark, Peter intenta mantener una vida normal como cualquier joven de su edad, pero interrumpe en su rutina diaria el nuevo villano Vulture y, con él, lo más importante de la vida de Peter comenzará a verse amenazado.",
-                "default_image": radio3,
+                "default_image": radio7,
                 "mobile_image": "https://image.tmdb.org/t/p/original/yJfPC6pjSJ5VOsVyXhx5PXBe0mR.jpg",
                 "banner_image": "",
                 "mobile_banner_image": "",
@@ -139,9 +143,9 @@ export const radioData = {
                 "sub_category_id": 26,
                 "genre_id": 0,
                 "video_type": 1,
-                "title": "Pop en Español",
+                "title": "Top 100",
                 "description": "Peter Parker comienza a experimentar su recién descubierta identidad como el superhéroe Spider-Man (El Hombre Araña). Después de la experiencia vivida con los Vengadores, Peter regresa a casa, donde vive con su tía. Bajo la atenta mirada de su mentor Tony Stark, Peter intenta mantener una vida normal como cualquier joven de su edad, pero interrumpe en su rutina diaria el nuevo villano Vulture y, con él, lo más importante de la vida de Peter comenzará a verse amenazado.",
-                "default_image": radio2,
+                "default_image": radio8,
                 "mobile_image": "https://image.tmdb.org/t/p/original/yJfPC6pjSJ5VOsVyXhx5PXBe0mR.jpg",
                 "banner_image": "",
                 "mobile_banner_image": "",
@@ -151,5 +155,41 @@ export const radioData = {
                 "watch_count": 5,
                 "watch_count_formatted": "5 Views"
             },
+            {
+                "admin_video_id": 27,
+                "category_id": 16,
+                "sub_category_id": 26,
+                "genre_id": 0,
+                "video_type": 1,
+                "title": "Hard Rock & Metal",
+                "description": "Peter Parker comienza a experimentar su recién descubierta identidad como el superhéroe Spider-Man (El Hombre Araña). Después de la experiencia vivida con los Vengadores, Peter regresa a casa, donde vive con su tía. Bajo la atenta mirada de su mentor Tony Stark, Peter intenta mantener una vida normal como cualquier joven de su edad, pero interrumpe en su rutina diaria el nuevo villano Vulture y, con él, lo más importante de la vida de Peter comenzará a verse amenazado.",
+                "default_image": radio9,
+                "mobile_image": "https://image.tmdb.org/t/p/original/yJfPC6pjSJ5VOsVyXhx5PXBe0mR.jpg",
+                "banner_image": "",
+                "mobile_banner_image": "",
+                "duration": "01:55:52",
+                "age": "10",
+                "publish_time": "14 Aug 22",
+                "watch_count": 5,
+                "watch_count_formatted": "5 Views"
+            },
+            {
+                "admin_video_id": 29,
+                "category_id": 16,
+                "sub_category_id": 26,
+                "genre_id": 0,
+                "video_type": 1,
+                "title": "Indie & Alternativa",
+                "description": "Peter Parker comienza a experimentar su recién descubierta identidad como el superhéroe Spider-Man (El Hombre Araña). Después de la experiencia vivida con los Vengadores, Peter regresa a casa, donde vive con su tía. Bajo la atenta mirada de su mentor Tony Stark, Peter intenta mantener una vida normal como cualquier joven de su edad, pero interrumpe en su rutina diaria el nuevo villano Vulture y, con él, lo más importante de la vida de Peter comenzará a verse amenazado.",
+                "default_image": radio10,
+                "mobile_image": "https://image.tmdb.org/t/p/original/yJfPC6pjSJ5VOsVyXhx5PXBe0mR.jpg",
+                "banner_image": "",
+                "mobile_banner_image": "",
+                "duration": "01:55:52",
+                "age": "10",
+                "publish_time": "14 Aug 22",
+                "watch_count": 5,
+                "watch_count_formatted": "5 Views"
+            }
           ]
 }
