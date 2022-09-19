@@ -8,6 +8,16 @@ import radio7 from '../Image/radio7.png';
 import radio8 from '../Image/radio8.png';
 import radio9 from '../Image/radio9.png';
 import radio10 from '../Image/radio10.png';
+import radio11 from '../Image/radio11.png';
+import radio12 from '../Image/radio12.png';
+import radio13 from '../Image/radio13.png';
+import radio14 from '../Image/radio14.png';
+import radio15 from '../Image/radio15.png';
+import radio16 from '../Image/radio16.png';
+import radio17 from '../Image/radio17.png';
+import radio18 from '../Image/radio18.png';
+import radio19 from '../Image/radio19.png';
+import radio20 from '../Image/radio20.png';
 
 export const radioData = {
     "data": [
@@ -190,6 +200,186 @@ export const radioData = {
                 "publish_time": "14 Aug 22",
                 "watch_count": 5,
                 "watch_count_formatted": "5 Views"
-            }
+            },
+            {
+              "admin_video_id": 21,
+              "category_id": 16,
+              "sub_category_id": 26,
+              "genre_id": 0,
+              "video_type": 1,
+              "title": "La Corneta",
+              "description": "Rogue agent Gabriel Shear is determined to get his mitts on $9 billion stashed in a secret Drug Enforcement Administration account. He wants the cash to fight terrorism, but lacks the computer skills necessary to hack into the government mainframe. Enter Stanley Jobson, a n'er-do-well encryption expert who can log into anything.",
+              "default_image": radio11,
+              "mobile_image": "https://image.tmdb.org/t/p/original/mM6h4jMqC4q5IaFgBIGKQDLnRU.jpg",
+              "banner_image": "",
+              "mobile_banner_image": "",
+              "duration": "02:02:02",
+              "age": "122",
+              "publish_time": "7 Aug 22",
+              "watch_count": 0,
+              "watch_count_formatted": "0 View"
+          },
+          {
+              "admin_video_id": 26,
+              "category_id": 16,
+              "sub_category_id": 26,
+              "genre_id": 0,
+              "video_type": 1,
+              "title": "Leyendas Legendarias",
+              "description": "Peter Parker es desenmascarado y ya no puede separar su vida normal de los altos riesgos de ser un súper héroe. Cuando pide ayuda al Doctor Strange para recuperar su secreto, el hechizo crea un agujero en su mundo, liberando a los villanos más poderosos que han luchado con cualquier Spider-Man, en cualquier universo. Ahora Peter debe de superar su reto más grande, que no solo alterara su propio futuro pero el del multiverso, forzándolo a descubrir lo que realmente significa ser Spider-Man.",
+              "default_image": radio12,
+              "mobile_image": "https://image.tmdb.org/t/p/original/osYbtvqjMUhEXgkuFJOsRYVpq6N.jpg",
+              "banner_image": "",
+              "mobile_banner_image": "",
+              "duration": "01:02:03",
+              "age": "10",
+              "publish_time": "14 Aug 22",
+              "watch_count": 0,
+              "watch_count_formatted": "0 View"
+          },
+          {
+              "admin_video_id": 27,
+              "category_id": 16,
+              "sub_category_id": 26,
+              "genre_id": 0,
+              "video_type": 1,
+              "title": "La Cotorrisa",
+              "description": "Peter Parker comienza a experimentar su recién descubierta identidad como el superhéroe Spider-Man (El Hombre Araña). Después de la experiencia vivida con los Vengadores, Peter regresa a casa, donde vive con su tía. Bajo la atenta mirada de su mentor Tony Stark, Peter intenta mantener una vida normal como cualquier joven de su edad, pero interrumpe en su rutina diaria el nuevo villano Vulture y, con él, lo más importante de la vida de Peter comenzará a verse amenazado.",
+              "default_image": radio13,
+              "mobile_image": "https://image.tmdb.org/t/p/original/yJfPC6pjSJ5VOsVyXhx5PXBe0mR.jpg",
+              "banner_image": "",
+              "mobile_banner_image": "",
+              "duration": "01:55:52",
+              "age": "10",
+              "publish_time": "14 Aug 22",
+              "watch_count": 5,
+              "watch_count_formatted": "5 Views"
+          },
+          {
+              "admin_video_id": 28,
+              "category_id": 0,
+              "sub_category_id": 26,
+              "genre_id": 0,
+              "video_type": 1,
+              "title": "El Dollop",
+              "description": "Peter Parker es desenmascarado y ya no puede separar su vida normal de los altos riesgos de ser un súper héroe. Cuando pide ayuda al Doctor Strange para recuperar su secreto, el hechizo crea un agujero en su mundo, liberando a los villanos más poderosos que han luchado con cualquier Spider-Man, en cualquier universo. Ahora Peter debe de superar su reto más grande, que no solo alterara su propio futuro pero el del multiverso, forzándolo a descubrir lo que realmente significa ser Spider-Man.",
+              "default_image": radio14,
+              "mobile_image": "https://image.tmdb.org/t/p/original/iKVR1ba3W1wCm9bVCcpnNvxQUWX.jpg",
+              "banner_image": "",
+              "mobile_banner_image": "",
+              "duration": "02:02:02",
+              "age": "01",
+              "publish_time": "20 Aug 22",
+              "watch_count": 3,
+              "watch_count_formatted": "3 Views"
+          },
+          {
+              "admin_video_id": 28,
+              "category_id": 0,
+              "sub_category_id": 26,
+              "genre_id": 0,
+              "video_type": 1,
+              "title": "Martha Debayle",
+              "description": "Peter Parker es desenmascarado y ya no puede separar su vida normal de los altos riesgos de ser un súper héroe. Cuando pide ayuda al Doctor Strange para recuperar su secreto, el hechizo crea un agujero en su mundo, liberando a los villanos más poderosos que han luchado con cualquier Spider-Man, en cualquier universo. Ahora Peter debe de superar su reto más grande, que no solo alterara su propio futuro pero el del multiverso, forzándolo a descubrir lo que realmente significa ser Spider-Man.",
+              "default_image": radio15,
+              "mobile_image": "https://image.tmdb.org/t/p/original/iKVR1ba3W1wCm9bVCcpnNvxQUWX.jpg",
+              "banner_image": "",
+              "mobile_banner_image": "",
+              "duration": "02:02:02",
+              "age": "01",
+              "publish_time": "20 Aug 22",
+              "watch_count": 3,
+              "watch_count_formatted": "3 Views"
+          },
+          {
+              "admin_video_id": 28,
+              "category_id": 0,
+              "sub_category_id": 26,
+              "genre_id": 0,
+              "video_type": 1,
+              "title": "La radio de la República",
+              "description": "Peter Parker es desenmascarado y ya no puede separar su vida normal de los altos riesgos de ser un súper héroe. Cuando pide ayuda al Doctor Strange para recuperar su secreto, el hechizo crea un agujero en su mundo, liberando a los villanos más poderosos que han luchado con cualquier Spider-Man, en cualquier universo. Ahora Peter debe de superar su reto más grande, que no solo alterara su propio futuro pero el del multiverso, forzándolo a descubrir lo que realmente significa ser Spider-Man.",
+              "default_image": radio16,
+              "mobile_image": "https://image.tmdb.org/t/p/original/iKVR1ba3W1wCm9bVCcpnNvxQUWX.jpg",
+              "banner_image": "",
+              "mobile_banner_image": "",
+              "duration": "02:02:02",
+              "age": "01",
+              "publish_time": "20 Aug 22",
+              "watch_count": 3,
+              "watch_count_formatted": "3 Views"
+          },
+          {
+              "admin_video_id": 27,
+              "category_id": 16,
+              "sub_category_id": 26,
+              "genre_id": 0,
+              "video_type": 1,
+              "title": "Ya Párate",
+              "description": "Peter Parker comienza a experimentar su recién descubierta identidad como el superhéroe Spider-Man (El Hombre Araña). Después de la experiencia vivida con los Vengadores, Peter regresa a casa, donde vive con su tía. Bajo la atenta mirada de su mentor Tony Stark, Peter intenta mantener una vida normal como cualquier joven de su edad, pero interrumpe en su rutina diaria el nuevo villano Vulture y, con él, lo más importante de la vida de Peter comenzará a verse amenazado.",
+              "default_image": radio17,
+              "mobile_image": "https://image.tmdb.org/t/p/original/yJfPC6pjSJ5VOsVyXhx5PXBe0mR.jpg",
+              "banner_image": "",
+              "mobile_banner_image": "",
+              "duration": "01:55:52",
+              "age": "10",
+              "publish_time": "14 Aug 22",
+              "watch_count": 5,
+              "watch_count_formatted": "5 Views"
+          },
+          {
+              "admin_video_id": 27,
+              "category_id": 16,
+              "sub_category_id": 26,
+              "genre_id": 0,
+              "video_type": 1,
+              "title": "Dementes",
+              "description": "Peter Parker comienza a experimentar su recién descubierta identidad como el superhéroe Spider-Man (El Hombre Araña). Después de la experiencia vivida con los Vengadores, Peter regresa a casa, donde vive con su tía. Bajo la atenta mirada de su mentor Tony Stark, Peter intenta mantener una vida normal como cualquier joven de su edad, pero interrumpe en su rutina diaria el nuevo villano Vulture y, con él, lo más importante de la vida de Peter comenzará a verse amenazado.",
+              "default_image": radio18,
+              "mobile_image": "https://image.tmdb.org/t/p/original/yJfPC6pjSJ5VOsVyXhx5PXBe0mR.jpg",
+              "banner_image": "",
+              "mobile_banner_image": "",
+              "duration": "01:55:52",
+              "age": "10",
+              "publish_time": "14 Aug 22",
+              "watch_count": 5,
+              "watch_count_formatted": "5 Views"
+          },
+          {
+              "admin_video_id": 27,
+              "category_id": 16,
+              "sub_category_id": 26,
+              "genre_id": 0,
+              "video_type": 1,
+              "title": "Se regalan dudas",
+              "description": "Peter Parker comienza a experimentar su recién descubierta identidad como el superhéroe Spider-Man (El Hombre Araña). Después de la experiencia vivida con los Vengadores, Peter regresa a casa, donde vive con su tía. Bajo la atenta mirada de su mentor Tony Stark, Peter intenta mantener una vida normal como cualquier joven de su edad, pero interrumpe en su rutina diaria el nuevo villano Vulture y, con él, lo más importante de la vida de Peter comenzará a verse amenazado.",
+              "default_image": radio19,
+              "mobile_image": "https://image.tmdb.org/t/p/original/yJfPC6pjSJ5VOsVyXhx5PXBe0mR.jpg",
+              "banner_image": "",
+              "mobile_banner_image": "",
+              "duration": "01:55:52",
+              "age": "10",
+              "publish_time": "14 Aug 22",
+              "watch_count": 5,
+              "watch_count_formatted": "5 Views"
+          },
+          {
+              "admin_video_id": 29,
+              "category_id": 16,
+              "sub_category_id": 26,
+              "genre_id": 0,
+              "video_type": 1,
+              "title": "Relatos de horror",
+              "description": "Peter Parker comienza a experimentar su recién descubierta identidad como el superhéroe Spider-Man (El Hombre Araña). Después de la experiencia vivida con los Vengadores, Peter regresa a casa, donde vive con su tía. Bajo la atenta mirada de su mentor Tony Stark, Peter intenta mantener una vida normal como cualquier joven de su edad, pero interrumpe en su rutina diaria el nuevo villano Vulture y, con él, lo más importante de la vida de Peter comenzará a verse amenazado.",
+              "default_image": radio20,
+              "mobile_image": "https://image.tmdb.org/t/p/original/yJfPC6pjSJ5VOsVyXhx5PXBe0mR.jpg",
+              "banner_image": "",
+              "mobile_banner_image": "",
+              "duration": "01:55:52",
+              "age": "10",
+              "publish_time": "14 Aug 22",
+              "watch_count": 5,
+              "watch_count_formatted": "5 Views"
+          }
           ]
 }

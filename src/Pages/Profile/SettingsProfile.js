@@ -56,11 +56,11 @@ const SettingsProfile = () => {
                                     <ul className="terms">
                                         <li> 
                                             <input type="checkbox" id="term1" name="term1" value="term1" className="checkbox"/>
-                                            <label for="term1">Reproducir automáticamente el siguiente episodio de una serie en todos los dispositivos conectados.</label>
+                                            <label htmlFor="term1">Reproducir automáticamente el siguiente episodio de una serie en todos los dispositivos conectados.</label>
                                         </li>
                                         <li> 
                                             <input type="checkbox" id="term2" name="term2" value="term2" className="checkbox"/>
-                                            <label for="term2">Se reproducen automáticamente los avances mientras navegas en todos los dispositivos conectados.</label>
+                                            <label htmlFor="term2">Se reproducen automáticamente los avances mientras navegas en todos los dispositivos conectados.</label>
                                         </li>
                                     </ul>
                                 </div>

@@ -15,7 +15,6 @@ import { Link } from 'react-router-dom';
 const ShowModal = (props) => {
     const { lgShow, setLgShow, details } = props;
     const handleClose = () => setLgShow(false);
-    console.log(details)
 
     return (
         <>

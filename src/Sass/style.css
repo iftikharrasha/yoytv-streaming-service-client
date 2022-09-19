@@ -4801,6 +4801,10 @@
   }
 }
 
+.podcast {
+  padding-top: 0rem;
+}
+
 .notFound {
   background-color: #07002E;
   color: #ffffff;
