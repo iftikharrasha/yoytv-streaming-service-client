@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { radioData } from '../../Data/radioData';
 import adbanner3 from '../../Image/adbanner3.png';
 import adbanner4 from '../../Image/adbanner4.png';
+import PodcastModal from '../Custom/Modals/PodcastModal';
 
 const Seasons = () => {
+    const [lgShow, setLgShow] = useState(false);
+    const [details, setDetails] = useState({});
+    const [isFetching, setIsFetching] = useState(true);
+
+    const handlePopup = (data) => {
+        setDetails(data);
+        setIsFetching(false);
+        setLgShow(true);
+    }
+
     return (
     <>
         <section className="relativeTop radioTop">
@@ -23,8 +34,8 @@ const Seasons = () => {
                     <div className="radio__wrapper__card__single" key={index}>
                         <Link to="/radio/estaciones">
                             <img src={item.default_image} alt="default_image"/>
+                            <h6>{item.title}</h6>
                         </Link>
-                        <h6>{item.title}</h6>
                     </div>
                     ))
                 }
@@ -44,11 +55,11 @@ const Seasons = () => {
                 <div className="radio__wrapper__card">
                 {
                     radioData?.data.slice(10,20).map((item, index) => (
-                    <div className="radio__wrapper__card__single" key={index}>
-                        <Link to="/juegos">
+                    <div className="radio__wrapper__card__single" key={index} onClick={() => handlePopup(item)}>
+                        <div className="radio__wrapper__card__single__hyper">
                             <img src={item.default_image} alt="default_image"/>
-                        </Link>
-                        <h6>{item.title}</h6>
+                            <h6>{item.title}</h6>
+                        </div>
                     </div>
                     ))
                 }
@@ -58,6 +69,8 @@ const Seasons = () => {
                 </div>
             </div>
         </section>
+        
+        {!isFetching ? <PodcastModal lgShow={lgShow} setLgShow={setLgShow} details={details}/> : null}
     </>
     );
 };
