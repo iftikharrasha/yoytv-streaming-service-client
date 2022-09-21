@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import 'swiper/css/navigation';
-import { Link } from 'react-router-dom';
-import gamebtn from '../../../Image/game-btn.svg';
+import PodcastModal from '../Modals/PodcastModal';
 
 const RadioSlider = ({shows, delay}) => {
+    const [lgShow, setLgShow] = useState(false);
+    const [details, setDetails] = useState({});
+    const [isFetching, setIsFetching] = useState(true);
+
+    const handlePopup = (data) => {
+        setDetails(data);
+        setIsFetching(false);
+        setLgShow(true);
+    }
 
     return (
         <>
@@ -42,8 +51,8 @@ const RadioSlider = ({shows, delay}) => {
             >
             {
                 shows?.data.map((item, index) => (
-                    <SwiperSlide className="radio" key={index}>
-                        <Link to="/juegos">
+                    <SwiperSlide className="radio" key={index} onClick={() => handlePopup(item)}>
+                        <Link to={`/podcast/details/`+item.admin_video_id}>
                             <img src={item.default_image} alt="default_image" />
                         </Link>
                         <h6>{item.title}</h6>
@@ -51,6 +60,9 @@ const RadioSlider = ({shows, delay}) => {
                 ))
             }
             </Swiper>
+
+            
+            {!isFetching ? <PodcastModal lgShow={lgShow} setLgShow={setLgShow} details={details}/> : null}
         </>
     );
 };

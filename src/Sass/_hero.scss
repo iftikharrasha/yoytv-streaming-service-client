@@ -387,7 +387,7 @@
                     padding-bottom: 2.25rem;
                     @media (max-width: 575.98px) {
                         padding-bottom: 1.25rem;
-                        font-size: 1.125rem;
+                        font-size: 1rem;
                     }
                     @media (min-width: 576px) and (max-width: 991.98px) {
                         padding-bottom: 1.75rem;
@@ -816,5 +816,62 @@
     }
     h2{
         display: block;
+    }
+}
+
+
+.radioHero{
+    .heroBg{
+        @media (max-width: 575.98px) {
+            margin-top: 2rem;
+        }
+        @media (min-width: 576px) {
+            min-height: 46rem;
+        }
+        &__contents{
+            @media (max-width: 991.98px) {
+                padding-right: 0 !important;
+            }
+            &:before {
+                background: transparent linear-gradient(180deg, rgba(9, 0, 46, 0) 30%, #07002E 95%) 0% 0% no-repeat padding-box;
+                @media (max-width: 575.98px) {
+                    background: transparent linear-gradient(180deg, rgba(9, 0, 46, 0) 70%, #07002E 100%) 0% 0% no-repeat padding-box;
+                } 
+            }
+            &__text{
+                width: 78rem;
+                margin: 0 auto;
+                padding-top: 15rem;
+                position: relative;
+                @media (max-width: 991.98px) {
+                    width: 100%;
+                }
+                img{
+                    width: 18.875rem;
+                    height: auto;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    @media (max-width: 575.98px) {
+                        width: 9rem;
+                        top: 5rem;
+                        right: 2rem;
+                    }
+                    @media (min-width: 576px) and (max-width: 991.98px) {
+                        width: 12rem;
+                    }
+                }
+                h1{
+                    padding-bottom: 0.5rem;
+                }
+                h2{
+                    font-size: 2.0625rem;
+                    font-weight: 700;
+                    span{
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
     }
 }
