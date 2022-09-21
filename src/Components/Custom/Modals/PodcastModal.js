@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
-import ShowSlider from '../Sliders/ShowSlider';
+import { radioData } from '../../../Data/radioData';
 import { podcastEpisodes } from '../../../Data/podcastEpisodes.js';
+import RadioSlider from '../Sliders/RadioSlider';
 import arrow_left from '../../../Image/arrow_left.svg';
 import play_fill from '../../../Image/play_fill.svg';
 import play_button from '../../../Image/play_button.svg';
@@ -10,8 +12,6 @@ import plus_icon from '../../../Image/plus_icon.svg';
 import love_icon from '../../../Image/love_icon.svg';
 import arrow from '../../../Image/arrow_left_green.svg';
 import radioThumb from '../../../Image/RadioMockImages/radioThumb.png';
-import { similar } from '../../../Data/similar';
-import { Link } from 'react-router-dom';
 
 const PodcastModal = (props) => {
     const { lgShow, setLgShow, details } = props;
@@ -96,7 +96,7 @@ const PodcastModal = (props) => {
                             <div className="body__contents__similar">
                                 <h2>Podcast recomendados</h2>
                                 {/* TODO: RELATED PODCASTS FILTERING FUNCTIONALITY NEEDED*/}
-                                <ShowSlider shows={similar} delay={2500} clicks={true}/>
+                                <RadioSlider shows={radioData} delay={2500} clicks={true}/>
                             </div>
                         </div>
                     </Modal.Body>
