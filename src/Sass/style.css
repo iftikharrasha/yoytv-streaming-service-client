@@ -5169,6 +5169,98 @@
   }
 }
 
+.playerDetails .allEpisodes__body {
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .playerDetails .allEpisodes__body {
+    padding: 0 5rem;
+  }
+}
+
+.playerDetails__cards {
+  padding-bottom: 2rem;
+}
+
+.playerDetails__cards__slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+@media (min-width: 576px) {
+  .playerDetails__cards__slider .allEpisodes__body__contents__similar {
+    width: 67%;
+  }
+}
+
+.playerDetails__cards__slider__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 575.98px) {
+  .playerDetails__cards__slider__title {
+    margin: 0 2rem;
+  }
+}
+
+.playerDetails__cards__slider__title h2, .playerDetails__cards__slider__title a {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #67fe65;
+  padding-top: 0;
+}
+
+.playerDetails__cards__slider__title a {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+@media (max-width: 575.98px) {
+  .playerDetails__cards__slider__title a {
+    display: none;
+  }
+}
+
+.playerDetails__cards__slider .adbanner {
+  width: 33.25rem;
+  height: 23.75rem;
+  margin: 2.5rem 0;
+}
+
+.playerDetails__cards__slider .adbanner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1.125rem;
+}
+
+@media (max-width: 575.98px) {
+  .playerDetails__cards__slider .adbanner img {
+    height: auto;
+    display: none;
+  }
+}
+
 .notFound {
   background-color: #07002E;
   color: #ffffff;

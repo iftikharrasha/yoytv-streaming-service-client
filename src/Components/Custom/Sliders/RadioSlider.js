@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import 'swiper/css/navigation';
 import PodcastModal from '../Modals/PodcastModal';
 
-const RadioSlider = ({shows, delay}) => {
+const RadioSlider = ({shows, delay, podcast}) => {
     const [lgShow, setLgShow] = useState(false);
     const [details, setDetails] = useState({});
     const [isFetching, setIsFetching] = useState(true);
@@ -50,14 +50,23 @@ const RadioSlider = ({shows, delay}) => {
                 className="shows__slider"
             >
             {
-                shows?.data.map((item, index) => (
-                    <SwiperSlide className="radio" key={index} onClick={() => handlePopup(item)}>
-                        <Link to={`/podcast/details/`+item.admin_video_id}>
-                            <img src={item.default_image} alt="default_image" />
-                        </Link>
-                        <h6>{item.title}</h6>
-                    </SwiperSlide>
-                ))
+                !podcast ? 
+                    shows?.data.slice(0,10).map((item, index) => (
+                        <SwiperSlide className="radio" key={index} onClick={() => handlePopup(item)}>
+                            <Link to={`/podcast/details/`+item.admin_video_id}>
+                                <img src={item.default_image} alt="default_image" />
+                            </Link>
+                            <h6>{item.title}</h6>
+                        </SwiperSlide>
+                    )) :
+                    shows?.data.slice(10,20).map((item, index) => (
+                        <SwiperSlide className="radio" key={index} onClick={() => handlePopup(item)}>
+                            <Link to={`/podcast/details/`+item.admin_video_id}>
+                                <img src={item.default_image} alt="default_image" />
+                            </Link>
+                            <h6>{item.title}</h6>
+                        </SwiperSlide>
+                    ))
             }
             </Swiper>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { podcastEpisodes } from '../../Data/podcastEpisodes.js';
 import { radioData } from '../../Data/radioData';
 import play_button from '../../Image/play_button.svg';
@@ -11,10 +11,11 @@ import love_icon from '../../Image/love_icon.svg';
 import radio from '../../Image/RadioMockImages/radioDetailsLogo.png';
 import radioThumb from '../../Image/RadioMockImages/radioThumb.png';
 import RadioSlider from '../../Components/Custom/Sliders/RadioSlider.js';
+import adbanner3 from '../../Image/adbanner3.png';
+import adbanner4 from '../../Image/adbanner4.png';
 
-const PodcastDetails = () => {
+const PodcastPlayer = () => {
     const navigate = useNavigate();
-    const {id} = useParams();
 
     return (
         <>
@@ -44,16 +45,14 @@ const PodcastDetails = () => {
                 {/* Only for parallex! */}
             </section>
 
-            <section className="allEpisodes podcastDetails">
+            <section className="allEpisodes podcastDetails playerDetails">
                 <div className="allEpisodes__buttons">
                     <ul>
                         <li>
-                            <Link to={`/podcast/player/`+id}>
-                                <button>
-                                        <img src={play_fill} alt="play_fill" />
-                                        <span>Reproducir</span> 
-                                </button>
-                            </Link>
+                            <button>
+                                <img src={play_fill} alt="play_fill" />
+                                <span>Reproducir</span> 
+                            </button>
                         </li>
                         <li><img src={love_icon} alt="love" className="love"/></li>
                         <li><img src={share_icon} alt="play" className="play"/></li>
@@ -96,9 +95,35 @@ const PodcastDetails = () => {
                                 ))
                             }
                         </ul>
-                        <div className="allEpisodes__body__contents__similar">
-                            <h2>Más títulos similares a este</h2>
-                            <RadioSlider shows={radioData} delay={2500} clicks={true} podcast={true}/>
+                        
+                        <div className="playerDetails__cards">
+                            <div className="playerDetails__cards__slider">
+                                <div className="allEpisodes__body__contents__similar">
+                                    <div className="playerDetails__cards__slider__title">
+                                        <h2>Podcast recomendados</h2>
+                                        <Link to="/tv-en-vivo">{`Ver más>`}</Link>
+                                    </div>
+                                    <RadioSlider shows={radioData} delay={2500} clicks={true} podcast={true}/>
+                                </div>
+                                <div className="adbanner">
+                                    <img src={adbanner3} alt="adbanner3"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div className="playerDetails__cards">
+                            <div className="playerDetails__cards__slider">
+                                <div className="allEpisodes__body__contents__similar">
+                                    <div className="playerDetails__cards__slider__title">
+                                        <h2>Estaciones recomendadas</h2>
+                                        <Link to="/tv-en-vivo">{`Ver más>`}</Link>
+                                    </div>
+                                    <RadioSlider shows={radioData} delay={2500}/>
+                                </div>
+                                <div className="adbanner">
+                                    <img src={adbanner4} alt="adbanner4"/>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -107,4 +132,4 @@ const PodcastDetails = () => {
     );
 };
 
-export default PodcastDetails;
+export default PodcastPlayer;
