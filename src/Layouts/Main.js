@@ -10,6 +10,7 @@ const SeriesDetails = React.lazy(() => import("../Pages/OnDemand/SeriesDetails")
 const MovieDetails = React.lazy(() => import("../Pages/OnDemand/MovieDetails"));
 const PodcastDetails = React.lazy(() => import("../Pages/Radio/PodcastDetails"));
 const PodcastPlayer = React.lazy(() => import("../Pages/Radio/PodcastPlayer"));
+const EstacionesPlayer = React.lazy(() => import("../Pages/Radio/EstacionesPlayer"));
 const Search = React.lazy(() => import("../Pages/Search/Search"));
 const BrowseProfile = React.lazy(() => import("../Pages/Profile/BrowseProfile"));
 const CreateProfile = React.lazy(() => import("../Pages/Profile/CreateProfile"));
@@ -85,6 +86,11 @@ const Main = () => {
                             <Route path="/podcast/player/:id" element={
                                 <PrivateRoute>
                                     <PodcastPlayer/>
+                                </PrivateRoute>}
+                            />
+                            <Route path="/seasons/player/:id" element={
+                                <PrivateRoute>
+                                    <EstacionesPlayer/>
                                 </PrivateRoute>}
                             />
                             <Route path="*" element={<NotFound/>} />

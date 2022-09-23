@@ -1497,6 +1497,23 @@
   padding-bottom: 1.125rem;
 }
 
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .playerHero .heroBg .detailsHero__wrapper__contents__right h5 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .playerHero .heroBg .detailsHero__wrapper__contents__right h2 {
+    font-size: 1rem;
+  }
+}
+
+.playerHero .heroBg .detailsHero__wrapper__contents__right h6 {
+  padding-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
 .playerHero .heroBg .detailsHero__wrapper__contents__right button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1520,6 +1537,7 @@
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
   border: 0;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 575.98px) {
@@ -1530,7 +1548,7 @@
 
 @media (min-width: 576px) and (max-width: 991.98px) {
   .playerHero .heroBg .detailsHero__wrapper__contents__right button {
-    font-size: 1rem;
+    font-size: 0.90rem;
   }
 }
 
@@ -1546,7 +1564,7 @@
 
 @media (min-width: 576px) and (max-width: 991.98px) {
   .playerHero .heroBg .detailsHero__wrapper__contents__right button img {
-    width: 1rem;
+    width: 0.90rem;
   }
 }
 
@@ -1571,8 +1589,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 2rem;
   border-radius: 0.75rem;
+  margin-bottom: 1rem;
   background-color: rgba(62, 51, 125, 0.55);
 }
 
@@ -1586,12 +1604,6 @@
           justify-content: space-between;
 }
 
-@media (min-width: 576px) and (max-width: 991.98px) {
-  .playerHero .heroBg .detailsHero__wrapper__contents__right .episodes__single__left {
-    width: 30%;
-  }
-}
-
 .playerHero .heroBg .detailsHero__wrapper__contents__right .episodes__single__left span {
   font-size: 1.65rem;
   font-weight: 600;
@@ -1602,10 +1614,19 @@
 }
 
 .playerHero .heroBg .detailsHero__wrapper__contents__right .episodes__single__left__thumb img {
-  width: 7.125rem;
-  height: auto;
+  width: 6rem;
+  height: 6rem;
+  -o-object-fit: cover;
+     object-fit: cover;
   cursor: pointer;
   border-radius: 0.75rem;
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .playerHero .heroBg .detailsHero__wrapper__contents__right .episodes__single__left__thumb img {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
 }
 
 .playerHero .heroBg .detailsHero__wrapper__contents__right .episodes__single__left__thumb:before {
@@ -1638,8 +1659,18 @@
   padding-bottom: 0;
 }
 
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .playerHero .heroBg .detailsHero__wrapper__contents__right .episodes__single__right__info h4 {
+    font-size: 1rem;
+  }
+}
+
 .playerHero .heroBg .detailsHero__wrapper__contents__right .episodes__single__right__info p {
   font-size: 1rem;
+}
+
+.playerHero .heroBg .detailsHero__wrapper__contents__right .episodes__single:last-child {
+  margin-bottom: 0;
 }
 
 .playerHero .heroBg .detailsHero__wrapper__settings {
