@@ -5,26 +5,27 @@ import underlineGreen from "../../Image/underlineGreen.png";
 import useAuth from "../../Utilities/Hooks/useAuth";
 import caret from "../../Image/caret-below.svg";
 import logoGreen from "../../Image/LogoGreen.svg";
-import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { registerUser } from "Utilities/Actions/Auth";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { addPaymentCard } from "Utilities/Actions/Subscription";
 
-const Registration = () => {
-  const {
-    handleRegistration,
-    handleCardData,
-    error,
-    success,
-    setError,
-    setSuccess,
-  } = useAuth();
+import {
+  AUTH_DEVICE_TOKEN,
+  AUTH_DEVICE_TYPE,
+  AUTH_LOGIN_BY,
+} from "Utilities/Constants";
+
+const Registration = ({ registerUser, addPaymentCard }) => {
+  const { error, success, setError, setSuccess } = useAuth();
   const [regData, setRegData] = useState({
     name: "",
     password: "",
     email: "",
     dateOfBirth: "",
-    login_by: "manual",
-    device_type: "web",
-    device_token: 123456,
+    login_by: AUTH_LOGIN_BY,
+    device_type: AUTH_DEVICE_TYPE,
+    device_token: AUTH_DEVICE_TOKEN,
   });
   const [cardData, setCardData] = useState({
     id: "",
@@ -36,19 +37,16 @@ const Registration = () => {
     cvv: "",
     month: "",
     year: "",
-    login_by: "manual",
-    device_type: "web",
-    device_token: 123456,
+    login_by: AUTH_LOGIN_BY,
+    device_type: AUTH_DEVICE_TYPE,
+    device_token: AUTH_DEVICE_TOKEN,
   });
   const navigate = useNavigate();
 
   const register = async e => {
     e.preventDefault();
-
-    setError("");
-    setSuccess("");
-    const response = await handleRegistration(regData);
-    if (response.success) {
+    const response = await registerUser(regData);
+    if (response) {
       setError("");
       setSuccess(true);
       setCardData({
@@ -59,13 +57,14 @@ const Registration = () => {
         token: response.data.token,
       });
     }
+    setError("");
+    setSuccess("");
   };
 
   const cardAdd = async e => {
     e.preventDefault();
-
-    const response = await handleCardData(cardData);
-    if (response.success) {
+    const response = await addPaymentCard(cardData);
+    if (response) {
       navigate("/");
     }
   };
@@ -356,4 +355,13 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+Registration.propTypes = {
+  registerUser: PropTypes.func.isRequired,
+  addPaymentCard: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => ({});
+
+export default connect(mapStateToProps, { registerUser, addPaymentCard })(
+  Registration
+);

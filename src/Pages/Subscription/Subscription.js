@@ -12,7 +12,7 @@ import { getSubscriptionPlans } from "Utilities/Actions/Subscription";
 import { useEffect } from "react";
 
 const Subscription = ({
-  subscription: { data, sub_loading },
+  subscription: { data, sub_loading, plan_id },
   getSubscriptionPlans,
 }) => {
   const dispatch = useDispatch();
@@ -117,9 +117,11 @@ const Subscription = ({
               </li>
             </ul>
             <Link to="/registration">
-              <button type="submit" className="main-btn secondary">
-                Elegir
-              </button>
+              {plan_id != null && (
+                <button type="submit" className="main-btn secondary">
+                  Elegir
+                </button>
+              )}
             </Link>
             <h6 className="adfree">
               Si deseas continuar con la versión con anuncios{" "}

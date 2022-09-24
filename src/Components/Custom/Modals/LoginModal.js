@@ -7,6 +7,12 @@ import { loginUser, registerUser } from "Utilities/Actions/Auth";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
+import {
+  AUTH_DEVICE_TOKEN,
+  AUTH_DEVICE_TYPE,
+  AUTH_LOGIN_BY,
+} from "Utilities/Constants";
+
 const LoginModal = ({ loginUser, registerUser, show, setShow }) => {
   const { error, setError, success, setSuccess } = useAuth();
   const [mode, setMode] = useState("login");
@@ -28,18 +34,18 @@ const LoginModal = ({ loginUser, registerUser, show, setShow }) => {
     password: "",
     email: "",
     dateOfBirth: "",
-    login_by: "manual",
-    device_type: "web",
-    device_token: 123456,
+    login_by: AUTH_LOGIN_BY,
+    device_type: AUTH_DEVICE_TYPE,
+    device_token: AUTH_DEVICE_TOKEN,
   });
 
   // Login state data.
   const [logData, setLogData] = useState({
     email: "",
     password: "",
-    login_by: "manual",
-    device_type: "web",
-    device_token: 123456,
+    login_by: AUTH_LOGIN_BY,
+    device_type: AUTH_DEVICE_TYPE,
+    device_token: AUTH_DEVICE_TOKEN,
   });
 
   const login = async () => {
