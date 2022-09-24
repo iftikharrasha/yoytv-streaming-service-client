@@ -10,6 +10,7 @@ import {
   SUBSCRIPTION_PAYMENT_USER_TOKEN,
   SUBSCRIPTION_PAYMENT_USER_ID,
 } from "Utilities/Constants";
+import store from "Utilities/Store/store";
 
 // @desc                Add subscprition .
 // @params formData     data of user.
@@ -49,12 +50,13 @@ export const addPaymentCard = () => async dispatch => {
   try {
     const id = localStorage.getItem("id");
     const token = localStorage.getItem("token");
+    const state = store.getState();
 
     let bodyFormData = new FormData();
     bodyFormData.append("id", id);
     bodyFormData.append("token", token);
     bodyFormData.append("sub_profile_id", token);
-    bodyFormData.append("subscription_id", token);
+    bodyFormData.append("subscription_id", state.subscription.plan_id);
     bodyFormData.append("payment_mode", token);
     bodyFormData.append("payment_id", SUBSCRIPTION_PAYMENT_ID);
     bodyFormData.append("payment_mode", SUBSCRIPTION_PAYMENT_MODE);

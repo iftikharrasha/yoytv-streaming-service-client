@@ -100,23 +100,24 @@ export const registerUser = formData => async dispatch => {
     data.append("device_type", formData.device_type);
     data.append("device_token", formData.device_token);
 
-    const res = await axios.post(
-      `${process.env.REACT_APP_API_LINK}/userApi/v4/register`,
-      data
-    );
+    // const res = await axios.post(
+    //   `${process.env.REACT_APP_API_LINK}/userApi/v4/register`,
+    //   data
+    // );
 
-    if (res.data && !res.data.success) {
-      dispatch({
-        type: REGISTER_FAIL,
-      });
-    } else {
-      dispatch({
-        type: REGISTER_SUCCESS,
-        payload: res.data,
-      });
-    }
+    // if (res.data && !res.data.success) {
+    //   dispatch({
+    //     type: REGISTER_FAIL,
+    //   });
+    // } else {
+    //   dispatch({
+    //     type: REGISTER_SUCCESS,
+    //     payload: res.data,
+    //   });
+    // }
 
-    return res.data.success;
+    // return res.data.success;
+    return true;
   } catch (err) {
     dispatch({
       type: AUTH_ERROR,
