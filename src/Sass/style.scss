@@ -158,6 +158,13 @@ input:-webkit-autofill:active {
     }
 }
 
+.podcastTop{
+    min-height: 32rem;
+    @media (max-width: 575.98px) {
+        min-height: 25rem;
+    }
+}
+
 .main-btn{
     font-size: 1.25rem;
     font-weight: 600;

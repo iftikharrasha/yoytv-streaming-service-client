@@ -2501,6 +2501,52 @@
   font-weight: 500;
 }
 
+@media (max-width: 575.98px) {
+  .podcastHero .heroBg {
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .podcastHero .heroBg {
+    min-height: 32rem;
+  }
+}
+
+.podcastHero .heroBg__contents {
+  padding: 0 6rem 0 0 !important;
+}
+
+@media (max-width: 991.98px) {
+  .podcastHero .heroBg__contents {
+    padding: 0 0 0 0 !important;
+  }
+}
+
+.podcastHero .heroBg__contents__text {
+  text-align: center;
+  padding-top: 0;
+}
+
+@media (max-width: 991.98px) {
+  .podcastHero .heroBg__contents__text img {
+    position: relative;
+    top: unset;
+    right: unset;
+  }
+}
+
+.podcastHero .heroBg__contents__text h1 {
+  font-size: 3.75rem;
+  padding-top: 2rem;
+}
+
+@media (max-width: 991.98px) {
+  .podcastHero .heroBg__contents__text h1 {
+    padding-top: 0;
+  }
+}
+
 .tvEnVivo {
   width: 100%;
   height: 100vh;
@@ -5716,6 +5762,32 @@
   }
 }
 
+.podcastCard {
+  padding-top: 2rem;
+}
+
+.podcastCard .radio__wrapper {
+  padding: 1rem 12rem;
+}
+
+@media (max-width: 575.98px) {
+  .podcastCard .radio__wrapper {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .podcastCard .radio__wrapper {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1299.98px) {
+  .podcastCard .radio__wrapper {
+    padding: 1rem 6rem;
+  }
+}
+
 .notFound {
   background-color: #07002E;
   color: #ffffff;
@@ -5936,6 +6008,16 @@ input:-webkit-autofill:active {
 
 @media (max-width: 575.98px) {
   .radioTop {
+    min-height: 25rem;
+  }
+}
+
+.podcastTop {
+  min-height: 32rem;
+}
+
+@media (max-width: 575.98px) {
+  .podcastTop {
     min-height: 25rem;
   }
 }

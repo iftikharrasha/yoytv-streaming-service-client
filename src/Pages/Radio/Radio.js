@@ -1,12 +1,12 @@
 import React from "react";
 import RadioHero from "../../Components/Radio/RadioHero";
-import Seasons from "../../Components/Radio/Seasons";
+import RadioCards from "../../Components/Radio/RadioCards";
 
 const Radio = () => {
     return (
         <>
             <RadioHero/>
-            <Seasons/>
+            <RadioCards/>
         </>
     );
 };

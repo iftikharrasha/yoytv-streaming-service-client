@@ -5,7 +5,7 @@ import adbanner3 from '../../Image/adbanner3.png';
 import adbanner4 from '../../Image/adbanner4.png';
 import PodcastModal from '../Custom/Modals/PodcastModal';
 
-const Seasons = () => {
+const RadioCards = () => {
     const [lgShow, setLgShow] = useState(false);
     const [details, setDetails] = useState({});
     const [isFetching, setIsFetching] = useState(true);
@@ -75,4 +75,4 @@ const Seasons = () => {
     );
 };
 
-export default Seasons;
+export default RadioCards;
