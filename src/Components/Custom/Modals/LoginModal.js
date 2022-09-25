@@ -6,6 +6,7 @@ import useAuth from "../../../Utilities/Hooks/useAuth";
 import { loginUser, registerUser } from "Utilities/Actions/Auth";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { Navigate, useNavigate } from "react-router-dom";
 
 import {
   AUTH_DEVICE_TOKEN,
@@ -16,6 +17,7 @@ import {
 const LoginModal = ({ loginUser, registerUser, show, setShow }) => {
   const { error, setError, success, setSuccess } = useAuth();
   const [mode, setMode] = useState("login");
+  let navigate = useNavigate();
 
   const handleLoginModal = () => {
     setError("");
@@ -52,8 +54,9 @@ const LoginModal = ({ loginUser, registerUser, show, setShow }) => {
     setError("");
     setSuccess("");
     const response = await loginUser(logData);
-    if (response) {
+    if (response.success) {
       setShow(false);
+      navigate(`/profile/browse/${response.data.token}`);
     }
   };
 

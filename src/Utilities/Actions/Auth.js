@@ -77,7 +77,7 @@ export const loginUser = formData => async dispatch => {
         payload: res.data,
       });
     }
-    return res.data.success;
+    return res.data;
   } catch (err) {
     dispatch({
       type: AUTH_ERROR,

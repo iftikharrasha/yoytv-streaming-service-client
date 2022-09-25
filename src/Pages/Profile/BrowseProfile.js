@@ -1,12 +1,10 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import plus from "../../Image/plus-greeen.svg";
 import logoGreen from "../../Image/LogoGreen.svg";
 import { connect } from "react-redux";
 
-const BrowseProfile = ({ auth: { loading, isAuthenticated, data } }) => {
-  const { token } = useParams();
-
+const BrowseProfile = ({ auth: { loading, isAuthenticated, data, token } }) => {
   return (
     <>
       {!loading && isAuthenticated && (

@@ -4,7 +4,6 @@ import ReleaseSlider from "../Custom/Sliders/ReleaseSlider";
 import { faq } from "../../Data/faqs";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-import { useEffect } from "react";
 
 const LandingContent = ({ landingData, newRelease, history }) => {
   const {
@@ -33,11 +32,11 @@ const LandingContent = ({ landingData, newRelease, history }) => {
   };
 
   // Redirect if user authenticated.
-  const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+  const auth = useSelector(state => state.auth);
 
-  if (isAuthenticated) {
-    return <Navigate to={`/tv-en-vivo`} />;
-  }
+  // if (auth.isAuthenticated) {
+  //   return <Navigate to={`/profile/browse/${auth.token}`} />;
+  // }
 
   return (
     <>
