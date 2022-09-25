@@ -54,10 +54,9 @@ export const addPaymentCard = () => async dispatch => {
 
     let bodyFormData = new FormData();
     bodyFormData.append("id", id);
-    bodyFormData.append("token", token);
-    bodyFormData.append("sub_profile_id", token);
+    bodyFormData.append("token", SUBSCRIPTION_PAYMENT_USER_TOKEN);
+    bodyFormData.append("sub_profile_id", SUBSCRIPTION_PAYMENT_USER_ID);
     bodyFormData.append("subscription_id", state.subscription.plan_id);
-    bodyFormData.append("payment_mode", token);
     bodyFormData.append("payment_id", SUBSCRIPTION_PAYMENT_ID);
     bodyFormData.append("payment_mode", SUBSCRIPTION_PAYMENT_MODE);
 
