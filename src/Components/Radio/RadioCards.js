@@ -5,7 +5,7 @@ import adbanner3 from '../../Image/adbanner3.png';
 import adbanner4 from '../../Image/adbanner4.png';
 import PodcastModal from '../Custom/Modals/PodcastModal';
 
-const Seasons = () => {
+const RadioCards = () => {
     const [lgShow, setLgShow] = useState(false);
     const [details, setDetails] = useState({});
     const [isFetching, setIsFetching] = useState(true);
@@ -32,7 +32,7 @@ const Seasons = () => {
                 {
                     radioData?.data.slice(0,10).map((item, index) => (
                     <div className="radio__wrapper__card__single" key={index}>
-                        <Link to="/radio/estaciones">
+                        <Link to={`/estaciones/player/`+item.admin_video_id}>
                             <img src={item.default_image} alt="default_image"/>
                             <h6>{item.title}</h6>
                         </Link>
@@ -75,4 +75,4 @@ const Seasons = () => {
     );
 };
 
-export default Seasons;
+export default RadioCards;

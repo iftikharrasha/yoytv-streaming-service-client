@@ -158,6 +158,13 @@ input:-webkit-autofill:active {
     }
 }
 
+.podcastTop{
+    min-height: 32rem;
+    @media (max-width: 575.98px) {
+        min-height: 25rem;
+    }
+}
+
 .main-btn{
     font-size: 1.25rem;
     font-weight: 600;
@@ -228,5 +235,5 @@ input:-webkit-autofill:active {
 }
 
 .adLinear{
-    background: transparent linear-gradient(0deg, #DE6C2F 35%, #8BD3CB 100%, #77ECF0 100%) 0% 0% no-repeat padding-box;
+    background: rgba(0, 0, 0, 0) linear-gradient(0deg, #DE6C2F 35%, #8BD3CB 100%, #77ECF0 100%) 0% 0% no-repeat padding-box;
 }

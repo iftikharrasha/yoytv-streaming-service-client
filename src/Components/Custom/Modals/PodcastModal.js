@@ -36,10 +36,12 @@ const PodcastModal = (props) => {
                                 <div className="modal__buttons podcast__buttons">
                                     <ul>
                                         <li>
-                                            <button>
-                                                <img src={play_fill} alt="play_fill" />
-                                                <span>Reproducir</span> 
-                                            </button>
+                                            <Link to={`/podcast/player/`+details.admin_video_id}>
+                                                <button>
+                                                        <img src={play_fill} alt="play_fill" />
+                                                        <span>Reproducir</span> 
+                                                </button>
+                                            </Link>
                                         </li>
                                         <li><img src={love_icon} alt="love" className="love"/></li>
                                         <li><img src={share_icon} alt="play" className="play"/></li>
@@ -96,7 +98,7 @@ const PodcastModal = (props) => {
                             <div className="body__contents__similar">
                                 <h2>Podcast recomendados</h2>
                                 {/* TODO: RELATED PODCASTS FILTERING FUNCTIONALITY NEEDED*/}
-                                <RadioSlider shows={radioData} delay={2500} clicks={true}/>
+                                <RadioSlider shows={radioData} delay={2500} clicks={true} podcast={true}/>
                             </div>
                         </div>
                     </Modal.Body>

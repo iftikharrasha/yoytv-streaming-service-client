@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { podcastEpisodes } from '../../Data/podcastEpisodes.js';
 import { radioData } from '../../Data/radioData';
 import play_button from '../../Image/play_button.svg';
@@ -14,6 +14,7 @@ import RadioSlider from '../../Components/Custom/Sliders/RadioSlider.js';
 
 const PodcastDetails = () => {
     const navigate = useNavigate();
+    const {id} = useParams();
 
     return (
         <>
@@ -47,10 +48,12 @@ const PodcastDetails = () => {
                 <div className="allEpisodes__buttons">
                     <ul>
                         <li>
-                            <button>
-                                <img src={play_fill} alt="play_fill" />
-                                <span>Reproducir</span> 
-                            </button>
+                            <Link to={`/podcast/player/`+id}>
+                                <button>
+                                        <img src={play_fill} alt="play_fill" />
+                                        <span>Reproducir</span> 
+                                </button>
+                            </Link>
                         </li>
                         <li><img src={love_icon} alt="love" className="love"/></li>
                         <li><img src={share_icon} alt="play" className="play"/></li>
@@ -95,7 +98,7 @@ const PodcastDetails = () => {
                         </ul>
                         <div className="allEpisodes__body__contents__similar">
                             <h2>Más títulos similares a este</h2>
-                            <RadioSlider shows={radioData} delay={2500} clicks={true}/>
+                            <RadioSlider shows={radioData} delay={2500} clicks={true} podcast={true}/>
                         </div>
                     </div>
                 </div>
