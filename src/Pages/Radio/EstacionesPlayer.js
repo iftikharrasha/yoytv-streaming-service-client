@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { radioData } from '../../Data/radioData';
 import Sound from '../../Image/Soundbutton.svg';
 import Love from '../../Image/Lovebutton.svg';
@@ -16,7 +16,6 @@ import arrow from '../../Image/arrow-left-white.svg';
 
 const EstacionesPlayer = () => {
     const navigate = useNavigate();
-    const {id} = useParams();
 
     return (
         <>
