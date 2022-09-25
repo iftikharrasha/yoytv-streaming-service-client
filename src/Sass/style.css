@@ -1625,7 +1625,7 @@
 @media (min-width: 576px) and (max-width: 991.98px) {
   .playerHero .heroBg .detailsHero__wrapper__contents__right .episodes__single__left__thumb img {
     width: 5.5rem;
-    height: 5.5rem;
+    height: 4.5rem;
   }
 }
 
@@ -2509,7 +2509,7 @@
 
 @media (min-width: 576px) {
   .podcastHero .heroBg {
-    min-height: 32rem;
+    min-height: 32.5rem;
   }
 }
 

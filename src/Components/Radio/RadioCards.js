@@ -32,7 +32,7 @@ const RadioCards = () => {
                 {
                     radioData?.data.slice(0,10).map((item, index) => (
                     <div className="radio__wrapper__card__single" key={index}>
-                        <Link to={`/seasons/player/`+item.admin_video_id}>
+                        <Link to={`/estaciones/player/`+item.admin_video_id}>
                             <img src={item.default_image} alt="default_image"/>
                             <h6>{item.title}</h6>
                         </Link>

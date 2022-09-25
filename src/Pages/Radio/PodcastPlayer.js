@@ -97,7 +97,7 @@ const PodcastPlayer = () => {
                                 <div className="allEpisodes__body__contents__similar">
                                     <div className="playerDetails__cards__slider__title">
                                         <h2>Estaciones recomendadas</h2>
-                                        <Link to="/tv-en-vivo">{`Ver más>`}</Link>
+                                        <Link to="/estaciones">{`Ver más>`}</Link>
                                     </div>
                                     <RadioSlider shows={radioData} delay={2500}/>
                                 </div>
