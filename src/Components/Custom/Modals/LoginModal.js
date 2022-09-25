@@ -63,7 +63,7 @@ const LoginModal = ({ loginUser, registerUser, show, setShow }) => {
   const register = async () => {
     setError("");
     setSuccess("");
-    const response = await registerUser(regData);
+    const response = await registerUser(regData, false);
     if (response) {
       setError("");
       setMode("login");
@@ -104,7 +104,7 @@ const LoginModal = ({ loginUser, registerUser, show, setShow }) => {
                   placeholder="Ingresa tu usuario"
                   autoFocus
                   value={logData.email}
-                  onChange={e =>
+                  onChange={(e) =>
                     setLogData({ ...logData, email: e.target.value })
                   }
                 />
@@ -118,7 +118,7 @@ const LoginModal = ({ loginUser, registerUser, show, setShow }) => {
                   placeholder="Contrasena"
                   autoComplete="off"
                   value={logData.password}
-                  onChange={e =>
+                  onChange={(e) =>
                     setLogData({ ...logData, password: e.target.value })
                   }
                 />
@@ -173,7 +173,7 @@ const LoginModal = ({ loginUser, registerUser, show, setShow }) => {
                   type="text"
                   placeholder="Ingresa tu usuario"
                   value={regData.name}
-                  onChange={e =>
+                  onChange={(e) =>
                     setRegData({ ...regData, name: e.target.value })
                   }
                 />
@@ -186,7 +186,7 @@ const LoginModal = ({ loginUser, registerUser, show, setShow }) => {
                   type="email"
                   placeholder="Correo electrónico"
                   value={regData.email}
-                  onChange={e =>
+                  onChange={(e) =>
                     setRegData({ ...regData, email: e.target.value })
                   }
                 />
@@ -199,7 +199,7 @@ const LoginModal = ({ loginUser, registerUser, show, setShow }) => {
                   type="password"
                   placeholder="Contraseña"
                   value={regData.password}
-                  onChange={e =>
+                  onChange={(e) =>
                     setRegData({ ...regData, password: e.target.value })
                   }
                 />
@@ -209,7 +209,7 @@ const LoginModal = ({ loginUser, registerUser, show, setShow }) => {
                   type="text"
                   placeholder="Año de nacimiento"
                   value={regData.dateOfBirth}
-                  onChange={e =>
+                  onChange={(e) =>
                     setRegData({ ...regData, dateOfBirth: e.target.value })
                   }
                 />
@@ -234,7 +234,7 @@ LoginModal.propTypes = {
   loginUser: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({});
+const mapStateToProps = (state) => ({});
 
 export default connect(mapStateToProps, { registerUser, loginUser })(
   LoginModal

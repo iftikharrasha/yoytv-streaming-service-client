@@ -7,6 +7,7 @@ import {
   LOAD_USER,
   LOADING_STOP,
   LOGOUT_USER,
+  REGISTER_SUBSCRIPTION_SUCCESS,
 } from "Utilities/Actions/types";
 
 const initialState = {
@@ -26,6 +27,16 @@ export default function (state = initialState, action) {
         ...state,
         loading: false,
         isAuthenticated: false,
+        data: payload,
+        userId: payload.data.id,
+        token: payload.data.token,
+        subProfileId: payload.data.sub_profile_id,
+      };
+    case REGISTER_SUBSCRIPTION_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        isAuthenticated: true,
         data: payload,
         userId: payload.data.id,
         token: payload.data.token,

@@ -24,7 +24,7 @@ const BrowseProfile = ({ auth: { loading, isAuthenticated, data, token } }) => {
             </p>
             <ul>
               <li>
-                <Link to="/">
+                <Link to="/home">
                   <img
                     className="screen"
                     src={data.data.picture}

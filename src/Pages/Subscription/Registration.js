@@ -16,7 +16,7 @@ import {
   AUTH_LOGIN_BY,
 } from "Utilities/Constants";
 
-const Registration = ({ registerUser, addPaymentCard }) => {
+const Registration = ({ registerUser, addPaymentCard, auth: { token } }) => {
   const { error, success, setError, setSuccess } = useAuth();
   const [regData, setRegData] = useState({
     name: "",
@@ -43,9 +43,9 @@ const Registration = ({ registerUser, addPaymentCard }) => {
   });
   const navigate = useNavigate();
 
-  const register = async e => {
+  const register = async (e) => {
     e.preventDefault();
-    const response = await registerUser(regData);
+    const response = await registerUser(regData, true);
     if (response) {
       setError("");
       setSuccess(true);
@@ -61,15 +61,15 @@ const Registration = ({ registerUser, addPaymentCard }) => {
     setSuccess("");
   };
 
-  const cardAdd = async e => {
+  const cardAdd = async (e) => {
     e.preventDefault();
     const response = await addPaymentCard(cardData);
     if (response) {
-      navigate("/");
+      navigate(`/profile/browse/${token}`);
     }
   };
 
-  const cancel = async e => {
+  const cancel = async (e) => {
     e.preventDefault();
     setError("");
     setSuccess("");
@@ -111,7 +111,7 @@ const Registration = ({ registerUser, addPaymentCard }) => {
                       placeholder="Ingresa tu usuario"
                       autoComplete="off"
                       value={regData.name}
-                      onChange={e =>
+                      onChange={(e) =>
                         setRegData({ ...regData, name: e.target.value })
                       }
                     />
@@ -126,7 +126,7 @@ const Registration = ({ registerUser, addPaymentCard }) => {
                       placeholder="Correo electrónico"
                       autoComplete="off"
                       value={regData.email}
-                      onChange={e =>
+                      onChange={(e) =>
                         setRegData({ ...regData, email: e.target.value })
                       }
                     />
@@ -141,7 +141,7 @@ const Registration = ({ registerUser, addPaymentCard }) => {
                       placeholder="Contraseña"
                       autoComplete="off"
                       value={regData.password}
-                      onChange={e =>
+                      onChange={(e) =>
                         setRegData({ ...regData, password: e.target.value })
                       }
                     />
@@ -153,7 +153,7 @@ const Registration = ({ registerUser, addPaymentCard }) => {
                       placeholder="Año de nacimiento"
                       autoComplete="off"
                       value={regData.dateOfBirth}
-                      onChange={e =>
+                      onChange={(e) =>
                         setRegData({ ...regData, dateOfBirth: e.target.value })
                       }
                     />
@@ -164,7 +164,7 @@ const Registration = ({ registerUser, addPaymentCard }) => {
                   <button
                     type="submit"
                     className="main-btn secondary"
-                    onClick={e => register(e)}
+                    onClick={(e) => register(e)}
                   >
                     Registrarme
                   </button>
@@ -198,7 +198,7 @@ const Registration = ({ registerUser, addPaymentCard }) => {
                     controlId="exampleForm.ControlInput1"
                   >
                     <label htmlFor="usario">Pago con tarjeta</label>
-                    {["radio"].map(type => (
+                    {["radio"].map((type) => (
                       <div key={`inline-${type}`} className="mb-3">
                         <Form.Check
                           inline
@@ -208,7 +208,7 @@ const Registration = ({ registerUser, addPaymentCard }) => {
                           id={`inline-${type}-1`}
                           autoComplete="off"
                           value="card"
-                          onClick={e =>
+                          onClick={(e) =>
                             setCardData({
                               ...cardData,
                               payment_mode: e.target.value,
@@ -223,7 +223,7 @@ const Registration = ({ registerUser, addPaymentCard }) => {
                           id={`inline-${type}-2`}
                           autoComplete="off"
                           value="card"
-                          onClick={e =>
+                          onClick={(e) =>
                             setCardData({
                               ...cardData,
                               payment_mode: e.target.value,
@@ -242,7 +242,7 @@ const Registration = ({ registerUser, addPaymentCard }) => {
                       type="number"
                       placeholder="16 dígitos"
                       value={cardData.cardNo}
-                      onChange={e =>
+                      onChange={(e) =>
                         setCardData({ ...cardData, cardNo: e.target.value })
                       }
                       autoComplete="off"
@@ -256,7 +256,7 @@ const Registration = ({ registerUser, addPaymentCard }) => {
                     <div className="select__group">
                       <div className="single__dropdown">
                         <select
-                          onChange={e =>
+                          onChange={(e) =>
                             setCardData({ ...cardData, month: e.target.value })
                           }
                         >
@@ -284,7 +284,7 @@ const Registration = ({ registerUser, addPaymentCard }) => {
                       </div>
                       <div className="single__dropdown">
                         <select
-                          onChange={e =>
+                          onChange={(e) =>
                             setCardData({ ...cardData, year: e.target.value })
                           }
                         >
@@ -311,7 +311,7 @@ const Registration = ({ registerUser, addPaymentCard }) => {
                         type="number"
                         placeholder="CVV"
                         value={cardData.cvv}
-                        onChange={e =>
+                        onChange={(e) =>
                           setCardData({ ...cardData, cvv: e.target.value })
                         }
                         autoComplete="off"
@@ -328,14 +328,14 @@ const Registration = ({ registerUser, addPaymentCard }) => {
                     <button
                       type="submit"
                       className="main-btn secondary"
-                      onClick={e => cancel(e)}
+                      onClick={(e) => cancel(e)}
                     >
                       Cancelar
                     </button>
                     <button
                       type="submit"
                       className="main-btn secondary"
-                      onClick={e => cardAdd(e)}
+                      onClick={(e) => cardAdd(e)}
                     >
                       Pagar
                     </button>
@@ -360,7 +360,9 @@ Registration.propTypes = {
   addPaymentCard: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({});
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
 
 export default connect(mapStateToProps, { registerUser, addPaymentCard })(
   Registration

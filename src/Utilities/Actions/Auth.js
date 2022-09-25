@@ -8,12 +8,13 @@ import {
   REGISTER_SUCCESS,
   LOAD_USER,
   LOGOUT_USER,
+  REGISTER_SUBSCRIPTION_SUCCESS,
 } from "./types";
 
 // @desc                User loading.
 // @params formData     data of user.
 // @access              public
-export const loadUser = () => async dispatch => {
+export const loadUser = () => async (dispatch) => {
   try {
     const id = localStorage.getItem("id");
     const subProfileId = localStorage.getItem("subProfileId");
@@ -49,7 +50,7 @@ export const loadUser = () => async dispatch => {
 // @desc                Login user.
 // @params formData     data of user.
 // @access              public
-export const loginUser = formData => async dispatch => {
+export const loginUser = (formData) => async (dispatch) => {
   try {
     const data = new FormData();
     data.append("password", formData.password);
@@ -68,7 +69,6 @@ export const loginUser = formData => async dispatch => {
         type: LOGIN_FAIL,
       });
     } else {
-      console.log(res.data.data);
       localStorage.setItem("token", res.data.data.token);
       localStorage.setItem("id", res.data.data.id);
       localStorage.setItem("subProfileId", res.data.data.sub_profile_id);
@@ -90,47 +90,59 @@ export const loginUser = formData => async dispatch => {
 // @desc                Register user.
 // @params formData     data of user.
 // @access              public
-export const registerUser = formData => async dispatch => {
-  try {
-    let data = new FormData();
-    data.append("name", formData.name);
-    data.append("password", formData.password);
-    data.append("email", formData.email);
-    data.append("login_by", formData.login_by);
-    data.append("device_type", formData.device_type);
-    data.append("device_token", formData.device_token);
+export const registerUser =
+  (formData, isSubsriptionPath = false) =>
+  async (dispatch) => {
+    try {
+      let data = new FormData();
+      data.append("name", formData.name);
+      data.append("password", formData.password);
+      data.append("email", formData.email);
+      data.append("login_by", formData.login_by);
+      data.append("device_type", formData.device_type);
+      data.append("device_token", formData.device_token);
 
-    // const res = await axios.post(
-    //   `${process.env.REACT_APP_API_LINK}/userApi/v4/register`,
-    //   data
-    // );
+      const res = await axios.post(
+        `${process.env.REACT_APP_API_LINK}/userApi/v4/register`,
+        data
+      );
 
-    // if (res.data && !res.data.success) {
-    //   dispatch({
-    //     type: REGISTER_FAIL,
-    //   });
-    // } else {
-    //   dispatch({
-    //     type: REGISTER_SUCCESS,
-    //     payload: res.data,
-    //   });
-    // }
+      if (res.data && !res.data.success) {
+        dispatch({
+          type: REGISTER_FAIL,
+        });
+      } else {
+        if (isSubsriptionPath) {
+          localStorage.setItem("token", res.data.data.token);
+          localStorage.setItem("id", res.data.data.id);
+          localStorage.setItem("subProfileId", res.data.data.sub_profile_id);
 
-    // return res.data.success;
-    return true;
-  } catch (err) {
-    dispatch({
-      type: AUTH_ERROR,
-    });
+          dispatch({
+            type: REGISTER_SUBSCRIPTION_SUCCESS,
+            payload: res.data,
+          });
+        } else {
+          dispatch({
+            type: REGISTER_SUCCESS,
+            payload: res.data,
+          });
+        }
+      }
 
-    return false;
-  }
-};
+      return res.data.success;
+    } catch (err) {
+      dispatch({
+        type: AUTH_ERROR,
+      });
+
+      return false;
+    }
+  };
 
 // @desc                Register user.
 // @params formData     data of user.
 // @access              public
-export const logoutUser = () => async dispatch => {
+export const logoutUser = () => async (dispatch) => {
   try {
     const state = store.getState();
 
