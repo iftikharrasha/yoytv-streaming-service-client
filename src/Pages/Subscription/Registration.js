@@ -5,26 +5,27 @@ import underlineGreen from "../../Image/underlineGreen.png";
 import useAuth from "../../Utilities/Hooks/useAuth";
 import caret from "../../Image/caret-below.svg";
 import logoGreen from "../../Image/LogoGreen.svg";
-import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { registerUser } from "Utilities/Actions/Auth";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { addPaymentCard } from "Utilities/Actions/Subscription";
 
-const Registration = () => {
-  const {
-    handleRegistration,
-    handleCardData,
-    error,
-    success,
-    setError,
-    setSuccess,
-  } = useAuth();
+import {
+  AUTH_DEVICE_TOKEN,
+  AUTH_DEVICE_TYPE,
+  AUTH_LOGIN_BY,
+} from "Utilities/Constants";
+
+const Registration = ({ registerUser, addPaymentCard, auth: { token } }) => {
+  const { error, success, setError, setSuccess } = useAuth();
   const [regData, setRegData] = useState({
     name: "",
     password: "",
     email: "",
     dateOfBirth: "",
-    login_by: "manual",
-    device_type: "web",
-    device_token: 123456,
+    login_by: AUTH_LOGIN_BY,
+    device_type: AUTH_DEVICE_TYPE,
+    device_token: AUTH_DEVICE_TOKEN,
   });
   const [cardData, setCardData] = useState({
     id: "",
@@ -36,19 +37,16 @@ const Registration = () => {
     cvv: "",
     month: "",
     year: "",
-    login_by: "manual",
-    device_type: "web",
-    device_token: 123456,
+    login_by: AUTH_LOGIN_BY,
+    device_type: AUTH_DEVICE_TYPE,
+    device_token: AUTH_DEVICE_TOKEN,
   });
   const navigate = useNavigate();
 
-  const register = async e => {
+  const register = async (e) => {
     e.preventDefault();
-
-    setError("");
-    setSuccess("");
-    const response = await handleRegistration(regData);
-    if (response.success) {
+    const response = await registerUser(regData, true);
+    if (response) {
       setError("");
       setSuccess(true);
       setCardData({
@@ -59,18 +57,19 @@ const Registration = () => {
         token: response.data.token,
       });
     }
+    setError("");
+    setSuccess("");
   };
 
-  const cardAdd = async e => {
+  const cardAdd = async (e) => {
     e.preventDefault();
-
-    const response = await handleCardData(cardData);
-    if (response.success) {
-      navigate("/");
+    const response = await addPaymentCard(cardData);
+    if (response) {
+      navigate(`/profile/browse/${token}`);
     }
   };
 
-  const cancel = async e => {
+  const cancel = async (e) => {
     e.preventDefault();
     setError("");
     setSuccess("");
@@ -112,7 +111,7 @@ const Registration = () => {
                       placeholder="Ingresa tu usuario"
                       autoComplete="off"
                       value={regData.name}
-                      onChange={e =>
+                      onChange={(e) =>
                         setRegData({ ...regData, name: e.target.value })
                       }
                     />
@@ -127,7 +126,7 @@ const Registration = () => {
                       placeholder="Correo electrónico"
                       autoComplete="off"
                       value={regData.email}
-                      onChange={e =>
+                      onChange={(e) =>
                         setRegData({ ...regData, email: e.target.value })
                       }
                     />
@@ -142,7 +141,7 @@ const Registration = () => {
                       placeholder="Contraseña"
                       autoComplete="off"
                       value={regData.password}
-                      onChange={e =>
+                      onChange={(e) =>
                         setRegData({ ...regData, password: e.target.value })
                       }
                     />
@@ -154,7 +153,7 @@ const Registration = () => {
                       placeholder="Año de nacimiento"
                       autoComplete="off"
                       value={regData.dateOfBirth}
-                      onChange={e =>
+                      onChange={(e) =>
                         setRegData({ ...regData, dateOfBirth: e.target.value })
                       }
                     />
@@ -165,7 +164,7 @@ const Registration = () => {
                   <button
                     type="submit"
                     className="main-btn secondary"
-                    onClick={e => register(e)}
+                    onClick={(e) => register(e)}
                   >
                     Registrarme
                   </button>
@@ -199,7 +198,7 @@ const Registration = () => {
                     controlId="exampleForm.ControlInput1"
                   >
                     <label htmlFor="usario">Pago con tarjeta</label>
-                    {["radio"].map(type => (
+                    {["radio"].map((type) => (
                       <div key={`inline-${type}`} className="mb-3">
                         <Form.Check
                           inline
@@ -209,7 +208,7 @@ const Registration = () => {
                           id={`inline-${type}-1`}
                           autoComplete="off"
                           value="card"
-                          onClick={e =>
+                          onClick={(e) =>
                             setCardData({
                               ...cardData,
                               payment_mode: e.target.value,
@@ -224,7 +223,7 @@ const Registration = () => {
                           id={`inline-${type}-2`}
                           autoComplete="off"
                           value="card"
-                          onClick={e =>
+                          onClick={(e) =>
                             setCardData({
                               ...cardData,
                               payment_mode: e.target.value,
@@ -243,7 +242,7 @@ const Registration = () => {
                       type="number"
                       placeholder="16 dígitos"
                       value={cardData.cardNo}
-                      onChange={e =>
+                      onChange={(e) =>
                         setCardData({ ...cardData, cardNo: e.target.value })
                       }
                       autoComplete="off"
@@ -257,7 +256,7 @@ const Registration = () => {
                     <div className="select__group">
                       <div className="single__dropdown">
                         <select
-                          onChange={e =>
+                          onChange={(e) =>
                             setCardData({ ...cardData, month: e.target.value })
                           }
                         >
@@ -285,7 +284,7 @@ const Registration = () => {
                       </div>
                       <div className="single__dropdown">
                         <select
-                          onChange={e =>
+                          onChange={(e) =>
                             setCardData({ ...cardData, year: e.target.value })
                           }
                         >
@@ -312,7 +311,7 @@ const Registration = () => {
                         type="number"
                         placeholder="CVV"
                         value={cardData.cvv}
-                        onChange={e =>
+                        onChange={(e) =>
                           setCardData({ ...cardData, cvv: e.target.value })
                         }
                         autoComplete="off"
@@ -329,14 +328,14 @@ const Registration = () => {
                     <button
                       type="submit"
                       className="main-btn secondary"
-                      onClick={e => cancel(e)}
+                      onClick={(e) => cancel(e)}
                     >
                       Cancelar
                     </button>
                     <button
                       type="submit"
                       className="main-btn secondary"
-                      onClick={e => cardAdd(e)}
+                      onClick={(e) => cardAdd(e)}
                     >
                       Pagar
                     </button>
@@ -356,4 +355,15 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+Registration.propTypes = {
+  registerUser: PropTypes.func.isRequired,
+  addPaymentCard: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps, { registerUser, addPaymentCard })(
+  Registration
+);
