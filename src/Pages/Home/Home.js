@@ -15,7 +15,7 @@ const Home = ({ auth: { isAuthenticated, loading, data } }) => {
     <>
       {!landingData ? (
         <Loader />
-      ) : !isAuthenticated && !loading && data != null ? (
+      ) : !isAuthenticated && !loading ? (
         <>
           <Hero landingData={landingData} />
           <LandingContent landingData={landingData} newRelease={newRelease} />
