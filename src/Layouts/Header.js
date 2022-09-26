@@ -23,9 +23,9 @@ const Header = ({ auth: { isAuthenticated, loading, data }, logoutUser }) => {
 
   const menuLinks = document.querySelectorAll(".menu__link");
 
-  menuLinks.forEach(link => {
+  menuLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      menuLinks.forEach(link => {
+      menuLinks.forEach((link) => {
         link.classList.remove("is__active");
       });
       link.classList.add("is__active");
@@ -183,7 +183,7 @@ const Header = ({ auth: { isAuthenticated, loading, data }, logoutUser }) => {
                   </Dropdown.Menu>
                 </Dropdown>
               ) : (
-                <button className="main-btn" onClick={e => setShow(true)}>
+                <button className="main-btn" onClick={(e) => setShow(true)}>
                   <span>Iniciar sesión</span>
                 </button>
               )}
@@ -206,7 +206,7 @@ const Header = ({ auth: { isAuthenticated, loading, data }, logoutUser }) => {
                     id="dropdown-basic"
                     className="d-flex align-items-center"
                   >
-                    <span>{data.data.name[0]}</span>
+                    <span>{data.data.name}</span>
                     <span className="avatar ms-3">
                       <img alt="user" src={data.data.picture} />
                     </span>
@@ -247,7 +247,7 @@ const Header = ({ auth: { isAuthenticated, loading, data }, logoutUser }) => {
                       ? "main-btn me-3 d-block d-lg-none mt-1"
                       : "main-btn me-3 d-block d-lg-none"
                   }
-                  onClick={e => setShow(true)}
+                  onClick={(e) => setShow(true)}
                 >
                   <span>Iniciar sesión</span>
                 </button>
@@ -338,7 +338,7 @@ const Header = ({ auth: { isAuthenticated, loading, data }, logoutUser }) => {
 
 Header.propTypes = {};
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
