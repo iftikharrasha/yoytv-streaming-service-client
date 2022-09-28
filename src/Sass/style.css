@@ -2890,6 +2890,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
+  min-height: 23.5rem;
 }
 
 @media (max-width: 991.98px) {
@@ -3705,6 +3706,26 @@
   padding: 0.625rem;
   color: #ffffff;
   border-radius: 0;
+}
+
+.authModal .modal-dialog .modal-content .modal-body .like__content {
+  position: relative;
+}
+
+.authModal .modal-dialog .modal-content .modal-body .like__content:before {
+  content: '';
+  background: url("../Image/loveGreen.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 4rem;
+  height: 3.5rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 .authModal .modal-dialog .modal-content .modal-body .like__content img {
@@ -6129,5 +6150,9 @@ input:-webkit-autofill:active {
 .adLinear {
   background: rgba(0, 0, 0, 0) -webkit-gradient(linear, left bottom, left top, color-stop(35%, #DE6C2F), color-stop(100%, #8BD3CB), to(#77ECF0)) 0% 0% no-repeat padding-box;
   background: rgba(0, 0, 0, 0) linear-gradient(0deg, #DE6C2F 35%, #8BD3CB 100%, #77ECF0 100%) 0% 0% no-repeat padding-box;
+}
+
+.notyf__toast {
+  max-width: 21.875rem !important;
 }
 /*# sourceMappingURL=style.css.map */

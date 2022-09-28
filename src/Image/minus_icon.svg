@@ -1,0 +1,14 @@
+<svg id="minus_icon" xmlns="http://www.w3.org/2000/svg" width="66.369" height="66.619" viewBox="0 0 66.369 66.619">
+  <circle id="Ellipse_14" data-name="Ellipse 14" cx="33.096" cy="33.096" r="33.096" transform="translate(0 0.428)" fill="#fff" opacity="0.153"/>
+  <g id="Group_142" data-name="Group 142" transform="translate(0.485)">
+    <g id="Group_135" data-name="Group 135" transform="translate(15.184 32.458) rotate(-45)">
+      <line id="Line_12" data-name="Line 12" x2="25.231" y2="25.231" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="4"/>
+    </g>
+    <g id="Group_142-2" data-name="Group 142">
+      <g id="Ellipse_13" data-name="Ellipse 13" transform="translate(0 0)" fill="none" stroke="#fff" stroke-width="2.8">
+        <circle cx="32.942" cy="32.942" r="32.942" stroke="none"/>
+        <circle cx="32.942" cy="32.942" r="31.542" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>
