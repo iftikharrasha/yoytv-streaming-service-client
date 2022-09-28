@@ -9,9 +9,11 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import 'swiper/css/navigation';
+import LikeModal from '../Modals/LikeModal';
 
 const ReleaseSlider = ({shows, delay}) => {
     const [lgShow, setLgShow] = useState(false);
+    const [likeShow, setLikeShow] = useState(false);
     const [details, setDetails] = useState({});
     const [isFetching, setIsFetching] = useState(true);
 
@@ -53,12 +55,12 @@ const ReleaseSlider = ({shows, delay}) => {
             >
             {
                 shows?.map((item, index) => (
-                    <SwiperSlide key={index} onClick={() => handlePopup(item)}>
+                    <SwiperSlide key={index}>
                         <img src={item.default_image} alt="default_image" />
                         <div className="card__buttons">
                             <ul>
                                 <li><img src={play_button} alt="play" className="play"/></li>
-                                <li><img src={love_icon} alt="love" className="love"/></li>
+                                <li><img src={love_icon} alt="love" className="love" onClick={() => setLikeShow(true)}/></li>
                                 <li><img src={arrow_down} alt="more" className="more" onClick={() => handlePopup(item)}/></li>
                             </ul>
                         </div>
@@ -68,6 +70,7 @@ const ReleaseSlider = ({shows, delay}) => {
             </Swiper>
 
             {!isFetching ? <ShowModal lgShow={lgShow} setLgShow={setLgShow} details={details}/> : null}
+            <LikeModal likeShow={likeShow} setLikeShow={setLikeShow}/>
         </>
     );
 };

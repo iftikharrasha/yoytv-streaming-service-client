@@ -592,107 +592,6 @@
   }
 }
 
-.authModal .modal-dialog {
-  color: #121212;
-  max-width: 36rem;
-}
-
-@media (min-width: 576px) and (max-width: 1531.98px) {
-  .authModal .modal-dialog {
-    max-width: 32rem;
-  }
-}
-
-.authModal .modal-dialog .modal-content {
-  background-color: #0e005c;
-  text-align: center;
-}
-
-.authModal .modal-dialog .modal-content .modal-header {
-  border-bottom: none;
-  margin-left: auto;
-}
-
-.authModal .modal-dialog .modal-content .modal-header img {
-  cursor: pointer;
-  width: 1.75rem;
-  height: 1.75rem;
-  margin: 1rem 1rem 0 0;
-}
-
-.authModal .modal-dialog .modal-content .modal-body {
-  color: #ffffff;
-}
-
-.authModal .modal-dialog .modal-content .modal-body img {
-  width: 13.5rem;
-  height: auto;
-  margin-bottom: 1rem;
-}
-
-.authModal .modal-dialog .modal-content .modal-body h2 {
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 800;
-  opacity: 1;
-  margin: 1.5rem 0;
-}
-
-.authModal .modal-dialog .modal-content .modal-body p {
-  text-align: center;
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: #ffffff;
-  margin-top: 1.25rem;
-  padding: 0 2rem;
-}
-
-.authModal .modal-dialog .modal-content .modal-body p span {
-  text-align: center;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #67fe65;
-  margin: 0;
-  cursor: pointer;
-}
-
-.authModal .modal-dialog .modal-content .modal-body h5 {
-  text-align: center;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #67fe65;
-  margin: 0;
-  cursor: pointer;
-}
-
-.authModal .modal-dialog .modal-content .modal-body form {
-  margin-top: 1.5rem;
-  padding: 0 1rem;
-}
-
-.authModal .modal-dialog .modal-content .modal-body form input {
-  border: 0.125rem solid #67fe65;
-  height: 3.125rem;
-  background-color: #0e005c;
-  font-size: 1.25rem;
-  padding: 0.625rem;
-  color: #ffffff;
-  border-radius: 0;
-}
-
-.authModal .modal-dialog .modal-content .modal-footer {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-top: none;
-  padding-bottom: 3rem;
-}
-
-.authModal .modal-dialog .modal-content .modal-footer button {
-  padding: 0.25rem 4rem;
-  font-size: 1.125rem;
-}
-
 .heroBg {
   position: relative;
   background-color: #0e005c;
@@ -3718,6 +3617,113 @@
     font-size: 1.75rem;
     padding-bottom: 1rem;
   }
+}
+
+.authModal .modal-dialog {
+  color: #121212;
+  max-width: 36rem;
+}
+
+@media (min-width: 576px) and (max-width: 1531.98px) {
+  .authModal .modal-dialog {
+    max-width: 32rem;
+  }
+}
+
+.authModal .modal-dialog .modal-content {
+  background-color: #0e005c;
+  text-align: center;
+}
+
+.authModal .modal-dialog .modal-content .modal-header {
+  border-bottom: none;
+  margin-left: auto;
+}
+
+.authModal .modal-dialog .modal-content .modal-header img {
+  cursor: pointer;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 1rem 1rem 0 0;
+}
+
+.authModal .modal-dialog .modal-content .modal-body {
+  color: #ffffff;
+}
+
+.authModal .modal-dialog .modal-content .modal-body img {
+  width: 13.5rem;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.authModal .modal-dialog .modal-content .modal-body h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  opacity: 1;
+  margin: 0 0 1.5rem 0;
+}
+
+.authModal .modal-dialog .modal-content .modal-body p {
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-top: 1.25rem;
+  padding: 0 2rem;
+}
+
+.authModal .modal-dialog .modal-content .modal-body p span {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #67fe65;
+  margin: 0;
+  cursor: pointer;
+}
+
+.authModal .modal-dialog .modal-content .modal-body h5 {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #67fe65;
+  margin: 0;
+  cursor: pointer;
+}
+
+.authModal .modal-dialog .modal-content .modal-body form {
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+}
+
+.authModal .modal-dialog .modal-content .modal-body form input {
+  border: 0.125rem solid #67fe65;
+  height: 3.125rem;
+  background-color: #0e005c;
+  font-size: 1.25rem;
+  padding: 0.625rem;
+  color: #ffffff;
+  border-radius: 0;
+}
+
+.authModal .modal-dialog .modal-content .modal-body .like__content img {
+  margin-top: 2rem;
+  width: 15rem;
+  height: auto;
+}
+
+.authModal .modal-dialog .modal-content .modal-footer {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-top: none;
+  padding-bottom: 3rem;
+}
+
+.authModal .modal-dialog .modal-content .modal-footer button {
+  padding: 0.25rem 4rem;
+  font-size: 1.125rem;
 }
 
 .video {
