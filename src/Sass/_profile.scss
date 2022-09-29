@@ -7,6 +7,7 @@
     height: auto;
     min-height: 100vh;
     z-index: 1000;
+    @include flexCenter;
     &__contents{
         @include flexCenter;
         flex-direction: column;
@@ -219,6 +220,7 @@
                             width: 100%;
                             height: 100%;
                             object-fit: contain;
+                            background-color: $blue;
                         }
                     }
                     .pen{
@@ -243,7 +245,8 @@
                         padding: 0 0 1.5rem 0;
                         margin-bottom: 2rem;
                         border-bottom: 0.0625rem solid $green;
-                        h4{
+                        label, h4{
+                            display: block;
                             font-size: 2.125rem;
                             font-weight: 500;
                             margin: 1rem 0;
@@ -251,12 +254,14 @@
                                 font-size: 1.5rem;
                             }
                         }
-                        h6{
+                        input, h6{
+                            display: block;
                             padding: 0.75rem;
                             font-size: 1.625rem;
                             background-color: rgba(103, 253, 101, 0.75);
                             color: $white;
                             width: 60%;
+                            border: none;
                             @media (max-width: 575.98px) {
                                 font-size: 1.25rem;
                             }
@@ -264,11 +269,70 @@
                                 width: 100%;
                             }
                         }
+                        &__content{
+                            display: flex;
+                            justify-content: space-between;
+                            margin-bottom: 2rem;
+                            &__input{
+                                width: 46%;
+                                .manage{
+                                    @include flexCenter;
+                                    flex-wrap: nowrap;
+                                    @media (max-width: 575.98px) {
+                                        margin: 0;
+                                        width: 100%;
+                                    }
+                                    @media (max-width: 991.98px) {
+                                        flex-wrap: wrap;
+                                    }
+                                    li{
+                                        margin: 0;
+                                        margin-left: 1rem;
+                                        position: relative;
+                                        .screen{
+                                            width: auto;
+                                            height: auto;
+                                            border-radius: 0.75rem;
+                                            img{
+                                                width: 10rem;
+                                                height: 100%;
+                                            }
+                                        }
+                                        .pen{
+                                            position: absolute;
+                                            width: 2.25rem;
+                                            height: 2.25rem;
+                                            position: absolute;
+                                            bottom: 2.5rem;
+                                            right: 1rem;
+                                            @media (max-width: 575.98px) {
+                                                width: 3.5rem;
+                                                height: 3.5rem;
+                                            }
+                                        }
+                                    }
+                                }
+                                input, h6{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        .inputManage{
+                            @media (max-width: 575.98px) {
+                                flex-direction: column;
+                            }
+                            .single__content__input{
+                                width: auto;
+                                h4{
+                                    margin-bottom: 3rem;
+                                }
+                            }
+                        }
                         p{
                             font-size: 1.375rem;
                             width: 100%;
                             text-align: left;
-                            margin: 1.5rem 0;
+                            margin: 0.25rem 0 1.5rem 0;
                             @media (max-width: 575.98px) {
                                 font-size: 1.25rem;
                             }
@@ -288,74 +352,75 @@
                                     color: $white;
                                     text-decoration: underline;
                                 }
-                                .checkbox{
-                                    position: relative;
-                                    width: 3.5rem;
-                                    height: auto;
-                                    color: $white;
-                                    overflow: hidden;
-                                    padding: 0;
-                                    margin: 0 1rem 0 0;
-                                    background: tranparent none;
-                                    border: 0.125rem solid hsla(0,0%,100%,.8);
-                                    @media (max-width: 575.98px) {    
-                                        width: 6.5rem;
-                                    }
-                                }
+                                // .checkbox{
+                                //     position: relative;
+                                //     width: 3.5rem;
+                                //     height: auto;
+                                //     color: $white;
+                                //     overflow: hidden;
+                                //     padding: 0;
+                                //     margin: 0 1rem 0 0;
+                                //     background: tranparent none;
+                                //     border: 0.125rem solid hsla(0,0%,100%,.8);
+                                //     @media (max-width: 575.98px) {    
+                                //         width: 6.5rem;
+                                //     }
+                                // }
                             }
                         }
-                        &__dropdown{
-                            position: relative;
-                            width: 15rem;
-                            select{
-                                display: block;
-                                margin: 0.125rem 0;
-                                width: 15rem;
-                                height: 3.125rem;
-                                line-height: 1;
-                                font-size: 1.625rem;
-                                font-weight: 500;
-                                text-align: left;
-                                text-transform: none;
-                                letter-spacing: normal;
-                                transition: color .3s ease;
-                                overflow: hidden;
-                                text-overflow: ellipsis;
-                                white-space: nowrap;
-                                outline: none;
-                                background-color: $blue;
-                                color: $green;
-                                padding: 0 1rem;
-                                border: none;
-                                cursor: pointer;
-                                border: 0.125rem solid $green;
-                                -webkit-appearance: none;
-                                -moz-appearance: none;
-                                text-indent: 1px;
-                                text-overflow: '';
-                                @media (max-width: 575.98px) {
-                                    height: 2.75rem;
-                                    font-size: 1.25rem;
-                                }
-                                ::-ms-expand {
-                                    display: none;
-                                }
-                                &::placeholder {
-                                    color: hsla(0,0%,100%,.65);
-                                }
-                            }
-                            .caret{
-                                width: 1.125rem;
-                                height: auto;
-                                position: absolute;
-                                right: 1rem;
-                                top: 1.125rem;
-                            }
-                        }
+                        // &__dropdown{
+                        //     position: relative;
+                        //     width: 15rem;
+                        //     select{
+                        //         display: block;
+                        //         margin: 0.125rem 0;
+                        //         width: 15rem;
+                        //         height: 3.125rem;
+                        //         line-height: 1;
+                        //         font-size: 1.625rem;
+                        //         font-weight: 500;
+                        //         text-align: left;
+                        //         text-transform: none;
+                        //         letter-spacing: normal;
+                        //         transition: color .3s ease;
+                        //         overflow: hidden;
+                        //         text-overflow: ellipsis;
+                        //         white-space: nowrap;
+                        //         outline: none;
+                        //         background-color: $blue;
+                        //         color: $green;
+                        //         padding: 0 1rem;
+                        //         border: none;
+                        //         cursor: pointer;
+                        //         border: 0.125rem solid $green;
+                        //         -webkit-appearance: none;
+                        //         -moz-appearance: none;
+                        //         text-indent: 1px;
+                        //         text-overflow: '';
+                        //         @media (max-width: 575.98px) {
+                        //             height: 2.75rem;
+                        //             font-size: 1.25rem;
+                        //         }
+                        //         ::-ms-expand {
+                        //             display: none;
+                        //         }
+                        //         &::placeholder {
+                        //             color: hsla(0,0%,100%,.65);
+                        //         }
+                        //     }
+                        //     .caret{
+                        //         width: 1.125rem;
+                        //         height: auto;
+                        //         position: absolute;
+                        //         right: 1rem;
+                        //         top: 1.125rem;
+                        //     }
+                        // }
                     }
                     button{
                         font-size: 1.5rem;
                         margin-right: 2rem;
+                        margin-left: 0.5rem;
                         @media (max-width: 575.98px) {
                             font-size: 1.25rem;
                             margin-bottom: 2rem;
