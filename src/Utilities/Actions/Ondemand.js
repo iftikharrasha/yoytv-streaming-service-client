@@ -8,36 +8,10 @@ import {
   GET_MY_WISH_LIST,
   GET_CATEGORIES,
 } from "./types";
-
 import store from "Utilities/Store/store";
-import { Notyf } from 'notyf';
-import 'notyf/notyf.min.css'; // for React, Vue and Svelte
+import { notyf } from "Utilities/Hooks/useNotification";
 
 const BASE_URL = process.env.REACT_APP_API_LINK;
-const notyf = new Notyf({
-  duration: 4000,
-  background: '#67fe65',
-  dismissible: false,
-  position: {
-    x: 'center',
-    y: 'bottom',
-  },
-  types: [
-    {
-      type: 'warning',
-      background: 'orange',
-      icon: {
-        className: 'material-icons',
-        tagName: 'i',
-        text: 'warning'
-      }
-    },
-    {
-      type: 'error',
-      duration: 4000,
-    }
-  ]
-});
 
 // @desc        Get onDemand page data.
 // @api
@@ -104,6 +78,7 @@ export const getHomeFirstSection = () => async (dispatch) => {
 // @api
 // @access      public
 export const addToWishList = (videoId) => async (dispatch) => {
+  // const { notyf } = useNotification();
   try {
     const state = store.getState();
     const id = state.auth.userId;
@@ -123,8 +98,10 @@ export const addToWishList = (videoId) => async (dispatch) => {
 
     if (res.data.success) {
       //   dispatch(setAlert(res.data.message, "success"));
-      // alert(res.data.message);
-      notyf.success(res.data.message);
+      notyf.open({
+        type: 'success',
+        message: res.data.message
+      });
     }
   } catch (err) {
     console.log(err);
