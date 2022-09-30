@@ -8,6 +8,7 @@ const TvEnVivo = React.lazy(() => import("../Pages/TvEnVivo/TvEnVivo"));
 const Radio = React.lazy(() => import("../Pages/Radio/Radio"));
 const Podcast = React.lazy(() => import("../Pages/Radio/Podcast"));
 const Estaciones = React.lazy(() => import("../Pages/Radio/Estaciones"));
+const Juegos = React.lazy(() => import("../Pages/Juegos/Juegos"));
 const SeriesDetails = React.lazy(() => import("../Pages/OnDemand/SeriesDetails"));
 const MovieDetails = React.lazy(() => import("../Pages/OnDemand/MovieDetails"));
 const PodcastDetails = React.lazy(() => import("../Pages/Radio/PodcastDetails"));
@@ -103,6 +104,11 @@ const Main = () => {
                             <Route path="/estaciones" element={
                                 <PrivateRoute>
                                     <Estaciones/>
+                                </PrivateRoute>}
+                            />
+                            <Route path="/juegos" element={
+                                <PrivateRoute>
+                                    <Juegos/>
                                 </PrivateRoute>}
                             />
                             <Route path="*" element={<NotFound/>} />
