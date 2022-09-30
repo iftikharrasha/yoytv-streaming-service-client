@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { notyf } from "../../Utilities/Hooks/useNotification";
 import edit from '../../Image/pen-bg.svg';
 import logoGreen from '../../Image/LogoGreen.svg';
 import useAuth from '../../Utilities/Hooks/useAuth';
@@ -10,6 +11,7 @@ const SettingsProfile = () => {
     const [passShow, setPassShow] = useState(false);  //modal popover for password
     const [deleteShow, setdeleteShow] = useState(false);  //modal popover for saving
     const { loggedInUser } = useAuth();
+    const navigate = useNavigate();
     const { token } = useParams();
 
     const [editData, setEditData] = useState({
@@ -29,6 +31,17 @@ const SettingsProfile = () => {
     const handleDataDelete = (e) => {
         setdeleteShow(true);
         e.preventDefault();
+    }
+
+    const handleSave = (e) => {
+        // TODO: do creation functionality here
+        
+        e.preventDefault();
+        navigate(`/profile/browse/`+token);
+        notyf.open({
+            type: 'success',
+            message: 'Profile Updated Successfully.'
+        });
     }
 
     return (
@@ -144,9 +157,9 @@ const SettingsProfile = () => {
                                     <Link to={`/profile/edit/`+token}>
                                         <button type="submit" className="main-btn secondary">Cancelar</button>
                                     </Link> 
-                                    <Link to={`/profile/browse/`+token}>
-                                        <button type="submit" className="main-btn secondary">Guardar cambios</button>
-                                    </Link> 
+                                    <span>
+                                        <button type="submit" className="main-btn secondary" onClick={(e) => handleSave(e)}>Guardar cambios</button>
+                                    </span> 
                                 </div>
                             </form>
                         </div>

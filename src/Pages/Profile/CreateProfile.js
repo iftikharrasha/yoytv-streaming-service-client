@@ -1,18 +1,31 @@
 import React, { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import personal from '../../Image/personal.svg';
 import edit from '../../Image/pen-bg.svg';
+import { notyf } from "../../Utilities/Hooks/useNotification";
 
 const CreateProfile = () => {
     const { token } = useParams();
+    const navigate = useNavigate();
     
-    const [editData, setEditData] = useState({
+    const [createData, setCreateData] = useState({
         name: "",
         email: "",
         mobile: "",
         age: "",
-        plan: "Familiar",
+        plan: "",
     });
+
+    const handleSave = (e) => {
+        // TODO: do creation functionality here
+        
+        e.preventDefault();
+        navigate(`/profile/browse/`+token);
+        notyf.open({
+            type: 'success',
+            message: 'Profile created successfully'
+        });
+    }
 
     return (
         <>
@@ -37,9 +50,9 @@ const CreateProfile = () => {
                                             <input 
                                                 type="text" 
                                                 name='name'
-                                                value={editData.name}
+                                                value={createData.name}
                                                 placeholder='Nombre completo'
-                                                onChange={(e) => setEditData({ ...editData, name: e.target.value })}
+                                                onChange={(e) => setCreateData({ ...createData, name: e.target.value })}
                                             />
                                         </div>
                                         
@@ -48,18 +61,18 @@ const CreateProfile = () => {
                                             <input 
                                                 type="number" 
                                                 name="age"
-                                                value={editData.age}
+                                                value={createData.age}
                                                 placeholder='Edad'
-                                                onChange={(e) => setEditData({ ...editData, age: e.target.value })}
+                                                onChange={(e) => setCreateData({ ...createData, age: e.target.value })}
                                             />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="button">
+                                    <span>
+                                        <button type="submit" className="main-btn secondary" onClick={(e) => handleSave(e)}>Guardar</button>
+                                    </span> 
                                     <Link to={`/profile/browse/`+token}>
-                                        <button type="submit" className="main-btn secondary">Guardar</button>
-                                    </Link> 
-                                    <Link to={`/profile/edit/`+token}>
                                         <button type="submit" className="main-btn secondary">Cancelar</button>
                                     </Link> 
                                 </div>
