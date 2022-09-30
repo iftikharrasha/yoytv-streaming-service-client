@@ -2,17 +2,15 @@ import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import personal from '../../Image/personal.svg';
 import edit from '../../Image/pen-bg.svg';
-import useAuth from '../../Utilities/Hooks/useAuth';
 
 const CreateProfile = () => {
     const { token } = useParams();
-    const { loggedInUser } = useAuth();
     
     const [editData, setEditData] = useState({
-        name: loggedInUser.name[0],
-        email: loggedInUser.email,
-        mobile: loggedInUser.mobile,
-        age: 26,
+        name: "",
+        email: "",
+        mobile: "",
+        age: "",
         plan: "Familiar",
     });
 
@@ -40,6 +38,7 @@ const CreateProfile = () => {
                                                 type="text" 
                                                 name='name'
                                                 value={editData.name}
+                                                placeholder='Nombre completo'
                                                 onChange={(e) => setEditData({ ...editData, name: e.target.value })}
                                             />
                                         </div>
@@ -50,6 +49,7 @@ const CreateProfile = () => {
                                                 type="number" 
                                                 name="age"
                                                 value={editData.age}
+                                                placeholder='Edad'
                                                 onChange={(e) => setEditData({ ...editData, age: e.target.value })}
                                             />
                                         </div>

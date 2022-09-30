@@ -118,7 +118,7 @@ const SettingsProfile = () => {
                                         <div className='single__content__input'>
                                             <ul className='manage'>
                                                 <li>
-                                                    <Link to="/">
+                                                    <Link to={`/profile/settings/`+token}>
                                                         <div className="screen">
                                                             <img src={loggedInUser.picture} alt="personal" width="344" height="344"/>
                                                         </div>
@@ -126,7 +126,7 @@ const SettingsProfile = () => {
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <Link to={`/profile/create/`+token}>
+                                                    <Link to={`/profile/settings/`+token}>
                                                         <div className="screen">
                                                             <img src={loggedInUser.picture} alt="personal" width="344" height="344"/>
                                                         </div>
