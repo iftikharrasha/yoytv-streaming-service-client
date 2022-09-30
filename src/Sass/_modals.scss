@@ -449,12 +449,15 @@
                 }
             }
             .modal-footer{
+                flex-direction: column;
                 justify-content: center;
                 border-top: none;
                 padding-bottom:3rem;
                 button{
                     padding: 0.25rem 4rem;
                     font-size: 1.125rem;
+                    min-width: 20rem;
+                    margin-bottom: 1rem;
                 }
             }
         }
