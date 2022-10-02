@@ -7,6 +7,8 @@ import {
   GET_CATEGORY_VIDEOS,
   GET_MY_WISH_LIST,
   GET_CATEGORIES,
+  GET_SINGLE_VIDEO,
+  CHANGE_IS_LOADING,
 } from "./types";
 import store from "Utilities/Store/store";
 import { notyf } from "Utilities/Hooks/useNotification";
@@ -99,8 +101,8 @@ export const addToWishList = (videoId) => async (dispatch) => {
     if (res.data.success) {
       //   dispatch(setAlert(res.data.message, "success"));
       notyf.open({
-        type: 'success',
-        message: res.data.message
+        type: "success",
+        message: res.data.message,
       });
     }
   } catch (err) {
@@ -252,5 +254,32 @@ export const getCategories = (categoryId) => async (dispatch) => {
     }
   } catch (error) {
     console.log(error);
+  }
+};
+
+// @desc        Get Single Video data.
+// @api
+// @access      public
+export const getSingleVideo = (adminVideoId) => async (dispatch) => {
+  try {
+    const state = store.getState();
+    const id = state.auth.userId;
+    const subProfileId = state.auth.subProfileId;
+    const token = state.auth.token;
+
+    dispatch({ type: CHANGE_IS_LOADING, payload: true });
+
+    const res = await axios.post(
+      `${BASE_URL}/userApi/singleVideo?id=${id}&token=${token}&language=en&sub_profile_id=${subProfileId}&admin_video_id=${adminVideoId}&login_by=manual&device_type=web&device_token=123456`
+    );
+
+    if (res.data.success) {
+      dispatch({
+        type: GET_SINGLE_VIDEO,
+        payload: res.data,
+      });
+    }
+  } catch (err) {
+    console.log(err);
   }
 };

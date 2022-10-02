@@ -6,6 +6,8 @@ import {
   GET_CATEGORY_VIDEOS,
   GET_MY_WISH_LIST,
   GET_CATEGORIES,
+  GET_SINGLE_VIDEO,
+  CHANGE_IS_LOADING,
 } from "../Actions/types";
 
 const initialState = {
@@ -17,6 +19,8 @@ const initialState = {
   categoryVideos: [],
   wishList: [],
   categories: [],
+  singleVideo: null,
+  isLoading: false,
 };
 
 export default function (state = initialState, action) {
@@ -37,6 +41,10 @@ export default function (state = initialState, action) {
       return { ...state, wishList: payload };
     case GET_CATEGORIES:
       return { ...state, categories: payload };
+    case GET_SINGLE_VIDEO:
+      return { ...state, singleVideo: payload, isLoading: false };
+    case CHANGE_IS_LOADING:
+      return { ...state, isLoading: payload };
     default:
       return state;
   }

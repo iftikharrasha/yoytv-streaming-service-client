@@ -19,9 +19,12 @@ import play from "../../Image/play_blue.svg";
 import doctorStrange from "../../Image/doctor-strange.png";
 import wlakingDead from "../../Image/wlaking-dead.png";
 import house from "../../Image/house.png";
+import { useNavigate } from "react-router-dom";
 
 const OnDemandHero = ({ onDemand, getHomeFirstSection, addToWishList }) => {
   //   const { home_page_bg_image, site_logo, home_banner_heading } = landingData;
+
+  let navigate = useNavigate();
 
   useEffect(() => {
     getHomeFirstSection();
@@ -30,6 +33,10 @@ const OnDemandHero = ({ onDemand, getHomeFirstSection, addToWishList }) => {
   const convertDuration = (duration) => {
     let timeArray = duration.split(":");
     return timeArray[0] + "h " + timeArray[1] + "m";
+  };
+
+  const navigateToPlayer = (videoId) => {
+    navigate(`/player/${videoId}`);
   };
 
   return (
@@ -82,7 +89,11 @@ const OnDemandHero = ({ onDemand, getHomeFirstSection, addToWishList }) => {
                             </h4>
                             <ul>
                               <li>
-                                <button>
+                                <button
+                                  onClick={() =>
+                                    navigateToPlayer(item.admin_video_id)
+                                  }
+                                >
                                   <span>
                                     <img src={play} alt="play" /> Reproducir
                                   </span>
