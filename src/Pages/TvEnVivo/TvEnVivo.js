@@ -1,37 +1,28 @@
 import React, { useState } from 'react';
 import { usePlanby } from '../../Utilities/Hooks/usePlanby';
 import { Epg, Layout } from "planby";
-import { ChannelItem, ProgramItem, Timeline } from "../../Components/TvEnVivo";
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { ChannelItem, ProgramItem, Timeline } from '../../Components/TvEnVivo';
+import TvEnVivoHero from '../../Components/TvEnVivo/TvEnVivoHero';
 
 const TvEnVivo = () => {
     const { isLoading, getEpgProps, getLayoutProps } = usePlanby();
-    const [nowPlaying, setNowPlaying] = useState(null);
-    console.log(nowPlaying)
 
-    // Redirect if user authenticated.
-    const auth = useSelector((state) => state.auth);
-    const navigate = useNavigate();
-
-    useEffect(() => {
-      if (!auth.isAuthenticated && !auth.loading) {
-        console.log("auth in", auth.isAuthenticated, auth.loading);
-        navigate("/subscription");
-      }
-    }, [auth.isAuthenticated, auth.loading]);
+    // TODO: a default tv data will be passed initially
+    const [nowPlaying, setNowPlaying] = useState({
+        channelUuid: "cff6fc2b-35db-3a71-56a5-a1753afa1d5e",
+        description: "After Homer accidentally pollutes the town's water supply, Springfield is encased in a gigantic dome by the EPA and the Simpsons are declared fugitives.",
+        id: "483be519-817b-2d4a-5575-aaff6e7f866e",
+        image: "https://image.tmdb.org/t/p/original/gzb6P78zeFTnv9eoFYnaJ2YrZ5q.jpg",
+        since: "2022-10-03T01:00:00",
+        till: "2022-10-03T02:01:01",
+        title: "The Simpsons Movie",
+        video: "https://mibucketyoytv.s3.amazonaws.com/SV-2022-08-05-23-00-17-dc791f38fef8c4194d9c0e14b29d1d46178ba05f.mp4",
+        Rated: "TV-Y7"
+    });
 
     return (
         <>
-            <section className="tvEnVivo__player">
-                <div className="tvEnVivo__player__setup heroFixed">
-                    {
-                       nowPlaying ? <img src={nowPlaying.image} alt="now playing" /> : <img src="https://www.themoviedb.org/t/p/w1066_and_h600_bestv2/jlruzecsif3tkCSoHlUaPR01O7U.jpg" alt="now playing" />
-                    }
-                </div>
-            </section>
-            <section className="relativeTop tvTop"></section>
+            <TvEnVivoHero nowPlaying={nowPlaying}/>
             <section className="tvEnVivo__epg">
                 <Epg isLoading={isLoading} {...getEpgProps()}>
                     <Layout

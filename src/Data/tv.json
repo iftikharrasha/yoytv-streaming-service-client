@@ -37,7 +37,9 @@
             "image": "https://image.tmdb.org/t/p/original/gzb6P78zeFTnv9eoFYnaJ2YrZ5q.jpg",
             "since": "2022-10-03T01:00:00",
             "till": "2022-10-03T02:01:01",
-            "title": "The Simpsons Movie"
+            "title": "The Simpsons Movie",
+            "video": "https://mibucketyoytv.s3.amazonaws.com/SV-2022-08-05-23-00-17-dc791f38fef8c4194d9c0e14b29d1d46178ba05f.mp4",
+            "Rated": "TV-Y7"
         },
         {
             "channelUuid": "9ebd88e3-4d0e-7417-8cab-184e781bafb5",
@@ -46,7 +48,9 @@
             "image": "https://image.tmdb.org/t/p/original/gzb6P78zeFTnv9eoFYnaJ2YrZ5q.jpg",
             "since": "2022-10-03T19:20:00",
             "till": "2022-10-03T20:15:01",
-            "title": "The Simpsons Movie"
+            "title": "The Simpsons Movie",
+            "video": "https://mibucketyoytv.s3.amazonaws.com/SV-2022-08-05-23-00-17-dc791f38fef8c4194d9c0e14b29d1d46178ba05f.mp4",
+            "Rated": "TV-Y7"
         },
         {
             "channelUuid": "test-id-1",
@@ -55,7 +59,9 @@
             "image":"https://www.themoviedb.org/t/p/w1066_and_h600_bestv2/jlruzecsif3tkCSoHlUaPR01O7U.jpg",
             "since": "2022-10-03T23:05:00",
             "till": "2022-10-04T01:55:00",
-            "title": "Testing Program Item"
+            "title": "Testing Program Item",
+            "video": "https://mibucketyoytv.s3.amazonaws.com/SV-2022-08-05-23-00-17-dc791f38fef8c4194d9c0e14b29d1d46178ba05f.mp4",
+            "Rated": "TV-Y7"
         }
     ]
 }

@@ -1,12 +1,28 @@
 .tvEnVivo{  
     &__player{  
-        margin-top: 6rem; 
-        &__setup{
-            margin-top: 6rem; 
-            padding: 2rem; 
-            img{
-                width: 100%;
-                height: 40rem;
+        // margin-top: 6rem; 
+        // &__setup{
+        //     margin-top: 6rem; 
+        //     padding: 2rem; 
+        //     img{
+        //         width: 100%;
+        //         height: 40rem;
+        //     }
+        // }
+        .heroBg__contents {
+            padding-right: 0 !important;
+            ul{
+                li{
+                    button{
+                        padding: 0.5rem 1.75rem 0.5rem 1.75rem !important;
+                    }
+                }
+            }
+        }
+        .heroBg{
+            min-height: 42rem !important;
+            @media (max-width: 575.98px) {
+                min-height: 23rem !important;
             }
         }
     }  
@@ -15,5 +31,32 @@
         height: 46rem;
         position: relative;
         padding: 2rem 4rem;
+        @media (max-width: 575.98px) {
+            padding: 2rem 0.5rem;
+        }
     }
+}
+.videoModal{
+    .modal-dialog {
+        max-width: 70rem;
+        @media (max-width: 991.98px) {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        .modal-content {
+            background-color: $blue;
+            .modal-body{
+                padding: 0;
+            }
+        }
+    }
+}
+
+.OnDemand__player{
+    position: relative;
+    @include bgCover;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    z-index: 1000;
 }

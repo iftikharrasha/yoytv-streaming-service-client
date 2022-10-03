@@ -23,7 +23,7 @@ const Player = ({
       {isLoading || singleVideo == null ? (
         <Loader />
       ) : (
-        <div>
+        <div className="OnDemand__player">
           <ReactJWPlayer
             playerId="my-unique-id"
             playerScript="https://cdn.jwplayer.com/libraries/CYz0ApGQ.js"

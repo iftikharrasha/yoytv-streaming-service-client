@@ -2446,18 +2446,22 @@
   }
 }
 
-.tvEnVivo__player {
-  margin-top: 6rem;
+.tvEnVivo__player .heroBg__contents {
+  padding-right: 0 !important;
 }
 
-.tvEnVivo__player__setup {
-  margin-top: 6rem;
-  padding: 2rem;
+.tvEnVivo__player .heroBg__contents ul li button {
+  padding: 0.5rem 1.75rem 0.5rem 1.75rem !important;
 }
 
-.tvEnVivo__player__setup img {
-  width: 100%;
-  height: 40rem;
+.tvEnVivo__player .heroBg {
+  min-height: 42rem !important;
+}
+
+@media (max-width: 575.98px) {
+  .tvEnVivo__player .heroBg {
+    min-height: 23rem !important;
+  }
 }
 
 .tvEnVivo__epg {
@@ -2465,6 +2469,42 @@
   height: 46rem;
   position: relative;
   padding: 2rem 4rem;
+}
+
+@media (max-width: 575.98px) {
+  .tvEnVivo__epg {
+    padding: 2rem 0.5rem;
+  }
+}
+
+.videoModal .modal-dialog {
+  max-width: 70rem;
+}
+
+@media (max-width: 991.98px) {
+  .videoModal .modal-dialog {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.videoModal .modal-dialog .modal-content {
+  background-color: #0e005c;
+}
+
+.videoModal .modal-dialog .modal-content .modal-body {
+  padding: 0;
+}
+
+.OnDemand__player {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  z-index: 1000;
 }
 
 .shows {
@@ -6093,7 +6133,7 @@ input:-webkit-autofill:active {
 }
 
 .tvTop {
-  min-height: 42rem;
+  min-height: 42rem !important;
 }
 
 .main-btn {
