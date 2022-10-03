@@ -1,21 +1,21 @@
 export const theme = {
     primary: {
-      600: "#1a202c",
-      900: "#171923"
+      600: "#0e005c",
+      900: "#051937"
     },
     grey: { 300: "#d1d1d1" },
     white: "#fff",
     green: {
-      300: "#2c7a7b"
+      300: "#9c27b0"
     },
     scrollbar: {
-      border: "#ffffff",
+      border: "#67fe65",
       thumb: {
-        bg: "#e1e1e1"
+        bg: "#4a148c"
       }
     },
     loader: {
-      teal: "#5DDADB",
+      teal: "#67fe65",
       purple: "#3437A2",
       pink: "#F78EB6",
       bg: "#171923db"
@@ -37,7 +37,7 @@ export const theme = {
   
     timeline: {
       divider: {
-        bg: "#718096"
+        bg: "#67fe65"
       }
     }
   };
