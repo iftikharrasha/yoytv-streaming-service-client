@@ -2446,11 +2446,25 @@
   }
 }
 
-.tvEnVivo {
+.tvEnVivo__player {
+  margin-top: 6rem;
+}
+
+.tvEnVivo__player__setup {
+  margin-top: 6rem;
+  padding: 2rem;
+}
+
+.tvEnVivo__player__setup img {
   width: 100%;
-  height: 100vh;
+  height: 40rem;
+}
+
+.tvEnVivo__epg {
+  width: 100%;
+  height: 46rem;
   position: relative;
-  top: 6rem;
+  padding: 2rem 4rem;
 }
 
 .shows {
@@ -6076,6 +6090,10 @@ input:-webkit-autofill:active {
   .podcastTop {
     min-height: 25rem;
   }
+}
+
+.tvTop {
+  min-height: 42rem;
 }
 
 .main-btn {

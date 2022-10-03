@@ -1,0 +1,90 @@
+{
+    "channels": [
+        {
+            "logo": "https://mibucketyoytv.s3.amazonaws.com/uploads/images/aKwtpjb8GgDAaD36Gyhd2hz7xyXf73jAhJat19sG.png",
+            "uuid": "9ebd88e3-4d0e-7417-8cab-184e781bafb5"
+        },
+        {
+            "logo": "https://mibucketyoytv.s3.amazonaws.com/uploads/images/nYxS7L5ldw1WrmiiooQ45JFTmLfimy2S2d9Xjmub.png",
+            "uuid": "f9c1e61e-50f6-899b-00a9-5d4b15587cf3"
+        },
+        {
+            "logo": "https://mibucketyoytv.s3.amazonaws.com/uploads/images/JrYVXe4CtvBzFkOR0BdCpolbwnNDnobtKlrVzMyw.jpg",
+            "uuid": "dbfd054a-f704-cc7e-36bc-a4ddc87496c1"
+        },
+        {
+            "logo": "https://mibucketyoytv.s3.amazonaws.com/uploads/images/NkzNQmmmSM9QUbpO3s3bfXtCcWdZPFJT8BBtb5W1.jpg",
+            "uuid": "0a578e37-c6b3-4f50-e934-1b88de0a0964"
+        },
+        {
+            "logo": "https://mibucketyoytv.s3.amazonaws.com/uploads/images/OTNUd1tR4BmSKp30XTW3e6zcQcKGthFLvOIRBJg5.png",
+            "uuid": "cff6fc2b-35db-3a71-56a5-a1753afa1d5e"
+        },
+        {
+            "logo": "https://mibucketyoytv.s3.amazonaws.com/uploads/images/cEGAE6l7u89kUrROWPooeFQCLwUyjTz5JeBxdu3r.png",
+            "uuid": "ab487e9d-750a-3c50-876d-12e8f381a79f"
+        },
+        {
+            "logo": "https://raw.githubusercontent.com/Tapiosinn/tv-logos/master/countries/united-states/abc-white-us.png",
+            "uuid": "d3410c89-95ca-4af5-a151-a62b162fe5ae",
+
+            "type": "channel",
+            "title": "abc",
+            "country": "USA",
+            "provider": 7427,
+            "year": 2002
+        }
+    ],
+    "epg": [
+        {
+            "channelUuid": "cff6fc2b-35db-3a71-56a5-a1753afa1d5e",
+            "description": "After Homer accidentally pollutes the town's water supply, Springfield is encased in a gigantic dome by the EPA and the Simpsons are declared fugitives.",
+            "id": "483be519-817b-2d4a-5575-aaff6e7f866e",
+            "image": "https://image.tmdb.org/t/p/original/gzb6P78zeFTnv9eoFYnaJ2YrZ5q.jpg",
+            "since": "2022-09-23T20:00:00",
+            "till": "2022-09-23T21:01:01",
+            "title": "The Simpsons Movie"
+        },
+        {
+            "channelUuid": "9ebd88e3-4d0e-7417-8cab-184e781bafb5",
+            "description": "After Homer accidentally pollutes the town's water supply, Springfield is encased in a gigantic dome by the EPA and the Simpsons are declared fugitives.",
+            "id": "a70e4a72-a2a4-a8d7-8767-8879ad862156",
+            "image": "https://image.tmdb.org/t/p/original/gzb6P78zeFTnv9eoFYnaJ2YrZ5q.jpg",
+            "since": "2022-09-23T18:00:00",
+            "till": "2022-09-23T19:01:01",
+            "title": "The Simpsons Movie"
+        },
+        {
+            "channelUuid": "d3410c89-95ca-4af5-a151-a62b162fe5ae",
+            "description": "Follow Timmy Turner's cousin, Vivian 'Viv' Turner, and her new stepbrother, Roy Ragland, as they navigate life in Dimmsdale with the help of their fairy godparents, Wanda and Cosmo.",
+            "id": "f7410d14-f76e-4d13-a8ee-f2e1ab1f8dd9",
+            "image":"https://www.themoviedb.org/t/p/w1066_and_h600_bestv2/jlruzecsif3tkCSoHlUaPR01O7U.jpg",
+            "since": "2022-05-24T23:50:00",
+            "till": "2022-05-25T00:55:00",
+            "title": "The Fairly OddParents",
+            
+            "isYesterday": true,
+            "country": "Ghana",
+            "Year": "2022–",
+            "Rated": "TV-Y7",
+            "Released": "N/A",
+            "Runtime": "N/A",
+            "Genre": "Adventure, Comedy, Family",
+            "Director": "N/A",
+            "Writer": "N/A",
+            "Actors": "Audrey Grace Marshall, Ryan-James Hatanaka, Daran Norris",
+            "Language": "English",
+            "Country": "United States",
+            "Awards": "N/A",
+            "Metascore": "N/A",
+            "imdbRating": "N/A",
+            "imdbVotes": "N/A",
+            "imdbID": "tt15057532",
+            "Type": "series",
+            "totalSeasons": "1",
+            "Response": "True",
+            "Ratings": [],
+            "rating": 3
+        }
+    ]
+}

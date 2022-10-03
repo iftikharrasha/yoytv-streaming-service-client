@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
 import { fetchChannels, fetchEpg } from "../Helpers";
 import { useEpg } from "planby";
+import moment from "moment";
 
 // Import theme
 import { theme } from "../Helpers/theme";
@@ -13,6 +14,9 @@ export function usePlanby() {
   const channelsData = useMemo(() => channels, [channels]);
   const epgData = useMemo(() => epg, [epg]);
 
+  const date = new Date();
+  var today = moment(date).format('YYYY-MM-DD');
+
   const { getEpgProps, getLayoutProps } = useEpg({
     channels: channelsData,
     epg: epgData,
@@ -22,9 +26,9 @@ export function usePlanby() {
     isSidebar: true,
     isTimeline: true,
     isLine: true,
-    startDate: "2022-05-25T00:00:00",
-    endDate: "2022-05-25T24:00:00",
     isBaseTimeFormat: true,
+    startDate: `${today}T00:00:00`,
+    // endDate: `${today}T24:00:00`,
     theme
   });
 

@@ -9,7 +9,7 @@ import {
     useProgram
   } from "planby";
   
-  export const ProgramItem = ({ program, ...rest }) => {
+  export const ProgramItem = ({ setNowPlaying, program, ...rest }) => {
     const {
       styles,
       formatTime,
@@ -28,7 +28,7 @@ import {
     const tillTime = formatTime(till, set12HoursTimeFormat()).toLowerCase();
   
     return (
-      <ProgramBox width={styles.width} style={styles.position}>
+      <ProgramBox width={styles.width} style={styles.position} onClick={() => setNowPlaying(data)}>
         <ProgramContent width={styles.width} isLive={isLive}>
           <ProgramFlex>
             {isLive && isMinWidth && <ProgramImage src={image} alt="Preview" />}

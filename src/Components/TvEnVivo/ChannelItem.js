@@ -4,7 +4,7 @@ export const ChannelItem = ({ channel }) => {
   const { position, logo } = channel;
   return (
     <ChannelBox {...position}>
-      <ChannelLogo src={logo} alt="Logo" />
+      <ChannelLogo src={logo} alt="Logo" onClick={() => console.log('channel', channel)}/>
     </ChannelBox>
   );
 };
