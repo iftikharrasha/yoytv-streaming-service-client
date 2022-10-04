@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
-import { fetchChannels, fetchEpg } from "../Helpers";
+import { fetchChannels, fetchEpg, fetchNowPlaying } from "../Helpers";
 import { useEpg } from "planby";
 import moment from "moment";
 
@@ -7,8 +7,9 @@ import moment from "moment";
 import { theme } from "../Helpers/theme";
 
 export function usePlanby() {
-  const [channels, setChannels] = useState([]);
   const [epg, setEpg] = useState([]);
+  const [channels, setChannels] = useState([]);
+  const [nowPlaying, setNowPlaying] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
   const channelsData = useMemo(() => channels, [channels]);
@@ -18,8 +19,8 @@ export function usePlanby() {
   var today = moment(date).format('YYYY-MM-DD');
 
   const { getEpgProps, getLayoutProps } = useEpg({
-    channels: channelsData,
     epg: epgData,
+    channels: channelsData,
     dayWidth: 7200,
     sidebarWidth: 100,
     itemHeight: 80,
@@ -36,8 +37,10 @@ export function usePlanby() {
     setIsLoading(true);
     const epg = await fetchEpg();
     const channels = await fetchChannels();
+    const nowPlaying = await fetchNowPlaying();
     setEpg(epg);
     setChannels(channels);
+    setNowPlaying(nowPlaying);
     setIsLoading(false);
   }, []);
 
@@ -45,5 +48,5 @@ export function usePlanby() {
     handleFetchResources();
   }, [handleFetchResources]);
 
-  return { getEpgProps, getLayoutProps, isLoading };
+  return { getEpgProps, getLayoutProps, isLoading, nowPlaying, setNowPlaying };
 }
