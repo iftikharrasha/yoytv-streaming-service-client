@@ -1,10 +1,11 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
-import { fetchChannels, fetchEpg, fetchNowPlaying } from "../Helpers";
 import { useEpg } from "planby";
 import moment from "moment";
-
-// Import theme
+import axios from "axios";
 import { theme } from "../Helpers/theme";
+
+//THIS IS MOCK DATA WAY
+import { fetchChannels, fetchEpg, fetchNowPlaying } from "../Helpers";
 
 export function usePlanby() {
   const [epg, setEpg] = useState([]);
@@ -29,10 +30,42 @@ export function usePlanby() {
     isLine: true,
     isBaseTimeFormat: true,
     startDate: `${today}T00:00:00`,
-    // endDate: `${today}T24:00:00`,
+    endDate: `${today}T24:00:00`,
     theme
   });
 
+  //TODO: FETCH THIS WITH REDUX SYSTEM
+  // const fetchChannelsAndEpg = async () =>  {
+  //   const data = {
+  //       id: 14,
+  //       sub_profile_id: 14,
+  //       token: "2y10QSc0ldaANgbMPIkdxhX0eKCM0AYi3sklm1kdzMflqhTPIz0elEem"
+  //   }
+  //   try {
+  //       const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/tv_guide`, data);
+
+  //       if(response.status === 200) {
+  //         return response.data
+  //       }else{
+  //         console.log('Server error: ' + response.status);
+  //       }
+
+  //       return response.data
+  //   } catch (error) {
+  //       console.log(error);
+  //   }
+  // }
+
+  // const handleFetchResources = useCallback(async () => {
+  //   setIsLoading(true);
+  //   const data = await fetchChannelsAndEpg();
+  //   setEpg(data.epg);
+  //   setChannels(data.channels);
+  //   setNowPlaying(data.nowPlaying[0]);
+  //   setIsLoading(false);
+  // }, []);
+
+  //THIS IS MOCK DATA WAY
   const handleFetchResources = useCallback(async () => {
     setIsLoading(true);
     const epg = await fetchEpg();
