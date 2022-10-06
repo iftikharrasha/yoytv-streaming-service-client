@@ -6206,4 +6206,8 @@ input:-webkit-autofill:active {
   background: rgba(0, 0, 0, 0) -webkit-gradient(linear, left bottom, left top, color-stop(35%, #DE6C2F), color-stop(100%, #8BD3CB), to(#77ECF0)) 0% 0% no-repeat padding-box;
   background: rgba(0, 0, 0, 0) linear-gradient(0deg, #DE6C2F 35%, #8BD3CB 100%, #77ECF0 100%) 0% 0% no-repeat padding-box;
 }
+
+.notyf__toast {
+  max-width: 25rem !important;
+}
 /*# sourceMappingURL=style.css.map */

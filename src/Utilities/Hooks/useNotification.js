@@ -21,7 +21,7 @@ export const notyf = new Notyf({
       },
       {
         type: 'error',
-        background: 'red',
+        background: '#0e005c',
       },
       {
         type: 'success',
