@@ -46,13 +46,13 @@ import { notyf } from "../../Utilities/Hooks/useNotification";
       }else{
         notyf.open({
           type: 'error',
-          message: "We're not broadcasting this now"
+          message: "El elemento seleccionado no se está transmitiendo en este momento"
       });
       }
     };
   
     return (
-      <ProgramBox width={styles.width} style={styles.position} onClick={() => handlePlayer(data, isLive)}>
+      <ProgramBox width={styles.width} style={styles.position} onClick={() => handlePlayer(data, isLive)} className={isLive ? "isLive" : "isNotLive"}>
         <ProgramContent width={styles.width} isLive={isLive}>
           <ProgramFlex>
             {isMinWidth && <ProgramImage src={image} alt="Preview" />}

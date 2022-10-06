@@ -1,7 +1,6 @@
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 
-// customize all the notifications according to your need
 export const notyf = new Notyf({
     duration: 4000,
     dismissible: false,

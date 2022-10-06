@@ -31,22 +31,22 @@
             "description": "Solo durante las fiestas, Max Mercer hará lo que sea necesario para proteger su hogar de los intrusos.",
             "id": "bf74c2a7-1a30-8612-d603-ebc33ed2b713",
             "image": "https://image.tmdb.org/t/p/original/5K7qxX77PJXWuzkZD8rOBduCEKo.jpg",
-            "since": "2022-10-06T20:11:00",
-            "till": "2022-10-06T21:12:01",
+            "since": "2022-10-06T00:30:00",
+            "till": "2022-10-06T01:52:01",
             "title": "Mi Pobre y Dulce Angelito",
             "Rated": "TV-Y7",
-            "video": "https://437b94be2edd4a2bb47c46816c35e28b.mediatailor.us-east-1.amazonaws.com/v1/master/ce4c40627c20f48c707b72324269c27ab00ffab2/ad1/index.m3u8"
+            "video": "https://mibucketyoytv.s3.amazonaws.com/SV-2022-08-05-23-00-17-dc791f38fef8c4194d9c0e14b29d1d46178ba05f.mp4"
         },
         {
-            "channelUuid": "9ebd88e3-4d0e-7417-8cab-184e781bafb5",
+            "channelUuid": "f9c1e61e-50f6-899b-00a9-5d4b15587cf3",
             "description": "Peter Parker es desenmascarado y ya no puede separar su vida normal de los altos riesgos de ser un súper héroe. Cuando pide ayuda al Doctor Strange para recuperar su secreto, el hechizo crea un agujero en su mundo, liberando a los villanos más poderosos que han luchado con cualquier Spider-Man, en cualquier universo. Ahora Peter debe de superar su reto más grande, que no solo alterara su propio futuro pero el del multiverso, forzándolo a descubrir lo que realmente significa ser Spider-Man.",
             "id": "5efb28d1-825e-51ed-cd55-780d1fd23cd5",
             "image": "https://image.tmdb.org/t/p/original/iKVR1ba3W1wCm9bVCcpnNvxQUWX.jpg",
-            "since": "2022-10-06T21:12:01",
-            "till": "2022-10-06T23:14:03",
+            "since": "2022-10-06T01:05:01",
+            "till": "2022-10-06T02:35:03",
             "title": "Spider-Man: Sin camino a casa",
             "Rated": "R",
-            "video": "https://437b94be2edd4a2bb47c46816c35e28b.mediatailor.us-east-1.amazonaws.com/v1/master/ce4c40627c20f48c707b72324269c27ab00ffab2/ad1/index.m3u8"
+            "video": "https://mibucketyoytv.s3.amazonaws.com/SV-2022-08-05-23-00-17-dc791f38fef8c4194d9c0e14b29d1d46178ba05f.mp4"
         },
         {
             "channelUuid": "9ebd88e3-4d0e-7417-8cab-184e781bafb5",
@@ -57,7 +57,7 @@
             "till": "2022-10-06T17:25:18",
             "title": "Harry Potter and the Deathly Hallows: Part 1",
             "Rated": "TV-Y7",
-            "video": "https://437b94be2edd4a2bb47c46816c35e28b.mediatailor.us-east-1.amazonaws.com/v1/master/ce4c40627c20f48c707b72324269c27ab00ffab2/ad1/index.m3u8"
+            "video": "https://437b94be2edd4a2bb47c46816c35e28b.mediatailor.us-east-1.amazonaws.com/v1/master/ce4c40727c20f48c707b72324269c27ab00ffab2/ad1/index.m3u8"
         },
         {
             "channelUuid": "f9c1e61e-50f6-899b-00a9-5d4b15587cf3",
@@ -68,7 +68,7 @@
             "till": "2022-10-06T14:48:14",
             "title": "Grease",
             "Rated": "TV-Y7",
-            "video": null
+            "video": "https://mibucketyoytv.s3.amazonaws.com/SV-2022-08-05-23-00-17-dc791f38fef8c4194d9c0e14b29d1d46178ba05f.mp4"
         },
         {
             "channelUuid": "dbfd054a-f704-cc7e-36bc-a4ddc87496c1",
@@ -92,7 +92,7 @@
             "till": "2022-10-06T21:12:01",
             "title": "Mi Pobre y Dulce Angelito",
             "Rated": "TV-Y7",
-            "video": "https://437b94be2edd4a2bb47c46816c35e28b.mediatailor.us-east-1.amazonaws.com/v1/master/ce4c40627c20f48c707b72324269c27ab00ffab2/ad1/index.m3u8"
+            "video": "https://mibucketyoytv.s3.amazonaws.com/SV-2022-08-05-23-00-17-dc791f38fef8c4194d9c0e14b29d1d46178ba05f.mp4"
         }
     ]
 }

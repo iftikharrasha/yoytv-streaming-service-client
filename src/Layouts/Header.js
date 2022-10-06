@@ -52,7 +52,7 @@ const Header = () => {
                         {
                             !loggedInUser?.isSignedIn ? null :
                             <Nav className="ms-auto">
-                                <Nav.Link as={Link} to="/tv-en-vivo" className="mx-lg-2 mx-3 navLink menu__link" data-aos="flip-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
+                                <Nav.Link as={Link} to={`/tv-en-vivo/1`} className="mx-lg-2 mx-3 navLink menu__link" data-aos="flip-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
                                     <TvSvg className="navIcon"/>
                                     <span className="pt-1">TV en vivo</span>
                                 </Nav.Link>
@@ -124,7 +124,7 @@ const Header = () => {
                         <div className="menu" id="menu">
                             <ul>
                                 <li className="menu__item">
-                                    <Link to="/tv-en-vivo" className="menu__link" data-aos="flip-up" data-aos-offset="0" data-aos-delay="100" data-aos-duration="1000" data-aos-once="true">
+                                    <Link to={`/tv-en-vivo/1`} className="menu__link" data-aos="flip-up" data-aos-offset="0" data-aos-delay="100" data-aos-duration="1000" data-aos-once="true">
                                         <TvSvg className="navIcon"/>
                                         <span className="pt-1">TV en vivo</span>
                                     </Link>

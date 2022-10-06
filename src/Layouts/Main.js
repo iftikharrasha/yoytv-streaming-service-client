@@ -35,7 +35,7 @@ const Main = () => {
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/home" element={<Home />} />
-                            <Route path="/tv-en-vivo" element={<TvEnVivo/>} />
+                            <Route path="/tv-en-vivo/:id" element={<TvEnVivo/>} />
                             <Route path="/search" element={<Search/>} />
                             <Route path="/subscription" element={<Subscription/>} />
                             <Route path="/registration" element={<Registration/>} />
