@@ -13,6 +13,7 @@ const TvModal = ({ show, setShow, video }) => {
                             playerId="my-unique-id"
                             playerScript="https://cdn.jwplayer.com/libraries/CYz0ApGQ.js"
                             file={video}
+                            isAutoPlay={true}
                         /> 
                     </div>
                 </Modal.Body>

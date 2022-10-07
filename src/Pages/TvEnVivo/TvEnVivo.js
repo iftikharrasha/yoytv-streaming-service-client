@@ -2,8 +2,8 @@ import React from 'react';
 import { Epg, Layout } from "planby";
 import { usePlanby } from '../../Utilities/Hooks/usePlanby';
 import { ChannelItem, ProgramItem, Timeline } from '../../Components/TvEnVivo';
-import TvEnVivoHero from '../../Components/TvEnVivo/TvEnVivoHero';
 import Loader from '../../Components/Custom/Loaders/Loader';
+import TvEnVivoPlayer from '../../Components/TvEnVivo/TvEnVivoPlayer';
 
 const TvEnVivo = () => {
     const { isLoading, getEpgProps, getLayoutProps, nowPlaying, setNowPlaying } = usePlanby();
@@ -11,7 +11,8 @@ const TvEnVivo = () => {
     return (
         <>
             {
-                isLoading ? <Loader /> : <TvEnVivoHero nowPlaying={nowPlaying}/>
+                isLoading ? <Loader /> : 
+                <TvEnVivoPlayer nowPlaying={nowPlaying}/>
             }
             
             <section className="tvEnVivo__epg">
@@ -23,7 +24,7 @@ const TvEnVivo = () => {
                             <ProgramItem key={program.data.id} setNowPlaying={setNowPlaying} program={program} {...rest} />
                         )}
                         renderChannel={({ channel }) => (
-                            <ChannelItem key={channel.uuid} channel={channel} />
+                            <ChannelItem key={channel.uuid} channel={channel} nowPlaying={nowPlaying}/>
                         )}
                     />
                 </Epg>

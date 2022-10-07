@@ -9,6 +9,7 @@ import {
     useProgram
   } from "planby";
 import { useEffect } from "react";
+import { notyf } from "../../Utilities/Hooks/useNotification";
   
   export const ProgramItem = ({ setNowPlaying, program, ...rest }) => {
     const {
@@ -35,16 +36,23 @@ import { useEffect } from "react";
     const tillTime = formatTime(till, set12HoursTimeFormat()).toLowerCase();
 
   
-    const handlePlayer = (data) => {
-      setNowPlaying(data);
-      window.scrollTo({
-          top: 0,
-          behavior: 'smooth',
+    const handlePlayer = (data, isLive) => {
+      if(isLive){
+        setNowPlaying(data);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+      }else{
+        notyf.open({
+          type: 'error',
+          message: "El elemento seleccionado no se está transmitiendo en este momento"
       });
+      }
     };
   
     return (
-      <ProgramBox width={styles.width} style={styles.position} onClick={() => handlePlayer(data)}>
+      <ProgramBox width={styles.width} style={styles.position} onClick={() => handlePlayer(data, isLive)} className={isLive ? "isLive" : "isNotLive"}>
         <ProgramContent width={styles.width} isLive={isLive}>
           <ProgramFlex>
             {isMinWidth && <ProgramImage src={image} alt="Preview" />}

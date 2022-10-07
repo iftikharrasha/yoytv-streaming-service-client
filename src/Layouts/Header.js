@@ -84,7 +84,7 @@ const Header = ({ auth: { isAuthenticated, loading, data }, logoutUser }) => {
               <Nav className="ms-auto">
                 <Nav.Link
                   as={Link}
-                  to="/tv-en-vivo"
+                  to={`/tv-en-vivo/1`}
                   className="mx-lg-2 mx-3 navLink menu__link"
                   data-aos="flip-up"
                   data-aos-delay="200"
@@ -257,7 +257,7 @@ const Header = ({ auth: { isAuthenticated, loading, data }, logoutUser }) => {
               <ul>
                 <li className="menu__item">
                   <Link
-                    to="/tv-en-vivo"
+                    to={`/tv-en-vivo/1`}
                     className="menu__link"
                     data-aos="flip-up"
                     data-aos-offset="0"

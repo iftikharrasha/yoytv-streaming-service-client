@@ -2446,29 +2446,94 @@
   }
 }
 
-.tvEnVivo__player .heroBg__contents {
+.tvEnVivo__player .jw__player {
+  width: 118rem;
+  margin: 0 auto;
+  overflow-x: hidden;
   padding-right: 0 !important;
+  padding-top: 5rem !important;
+  width: 118rem;
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 
-.tvEnVivo__player .heroBg__contents ul li button {
-  padding: 0.5rem 1.75rem 0.5rem 1.75rem !important;
+@media (max-width: 575.98px) {
+  .tvEnVivo__player .jw__player {
+    padding-top: 0 !important;
+    width: 28rem;
+    top: 0;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .tvEnVivo__player .jw__player {
+    width: 55rem;
+    padding-top: 0 !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .tvEnVivo__player .jw__player {
+    width: 78rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1339.98px) {
+  .tvEnVivo__player .jw__player {
+    width: 100rem;
+  }
+}
+
+@media (min-width: 1340px) and (max-width: 1598.98px) {
+  .tvEnVivo__player .jw__player {
+    width: 118rem;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1798.98px) {
+  .tvEnVivo__player .jw__player {
+    width: 100rem;
+  }
+}
+
+@media (min-width: 2500px) {
+  .tvEnVivo__player .jw__player {
+    width: 112rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .tvEnVivo__player .jw__player .jwplayer {
+    height: 20rem !important;
+  }
 }
 
 .tvEnVivo__player .heroBg {
   min-height: 42rem !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #000000;
 }
 
 @media (max-width: 575.98px) {
   .tvEnVivo__player .heroBg {
-    min-height: 23rem !important;
+    min-height: 10rem !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .tvEnVivo__player .heroBg {
+    min-height: 32rem !important;
   }
 }
 
 .tvEnVivo__epg {
   width: 100%;
-  height: 46rem;
+  height: 40rem;
   position: relative;
   padding: 2rem 4rem;
+  background-color: #000000;
 }
 
 @media (max-width: 575.98px) {
@@ -2496,15 +2561,34 @@
   padding: 0;
 }
 
-.OnDemand__player {
-  position: relative;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: auto;
-  min-height: 100vh;
-  z-index: 1000;
+.isLive {
+  border: 1px solid #67fe65;
+  padding: 0 !important;
+}
+
+.isLive .e1f8qikj5 {
+  border-radius: 0 !important;
+}
+
+.isNotLive .e1f8qikj5 {
+  border-radius: 0.25rem !important;
+}
+
+.isChannelLive {
+  background-color: #67fe6595 !important;
+  border: 1px solid #67fe65;
+}
+
+.isChanneNotlLive {
+  background-color: #3E337D40 !important;
+}
+
+.ebfc5082 {
+  height: 0.75rem;
+}
+
+.ebfc5082:nth-child(2n) {
+  height: 0.35rem;
 }
 
 .shows {
@@ -6136,6 +6220,24 @@ input:-webkit-autofill:active {
   min-height: 42rem !important;
 }
 
+@media (max-width: 575.98px) {
+  .tvTop {
+    min-height: 24rem !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .tvTop {
+    min-height: 28rem !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1299.98px) {
+  .tvTop {
+    min-height: 36rem !important;
+  }
+}
+
 .main-btn {
   font-size: 1.25rem;
   font-weight: 600;
@@ -6239,7 +6341,15 @@ input:-webkit-autofill:active {
   background: rgba(0, 0, 0, 0) linear-gradient(0deg, #DE6C2F 35%, #8BD3CB 100%, #77ECF0 100%) 0% 0% no-repeat padding-box;
 }
 
-.notyf__toast {
-  max-width: 21.875rem !important;
+.jwplayer.jw-skin-myskin .jw-display-icon-container {
+  background-color: red;
+}
+
+.notyf__toast .notyf__wrapper {
+  padding-right: 0;
+}
+
+.notyf__toast .notyf__message {
+  font-size: 0.8125rem;
 }
 /*# sourceMappingURL=style.css.map */

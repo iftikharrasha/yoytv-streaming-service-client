@@ -30,7 +30,7 @@ const ViewMore = () => {
                         !filteredData ? null :
                         filteredData.map((list, index) => (
                             <div className="swiper-slide" key={index}>
-                                <Link to="/tv-en-vivo">
+                                <Link to={`/tv-en-vivo/1`}>
                                     <img src={list.default_image} alt="default_image" />
                                 </Link>
                             </div>

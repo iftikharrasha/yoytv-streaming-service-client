@@ -167,6 +167,15 @@ input:-webkit-autofill:active {
 
 .tvTop{
     min-height: 42rem !important;
+    @media (max-width: 575.98px) {
+        min-height: 24rem !important;
+    }
+    @media (min-width: 576px) and (max-width: 991.98px) {
+        min-height: 28rem !important;
+    }
+    @media (min-width: 992px) and (max-width: 1299.98px) {
+        min-height: 36rem !important;  
+    }
 }
 
 .main-btn{
@@ -242,6 +251,16 @@ input:-webkit-autofill:active {
     background: rgba(0, 0, 0, 0) linear-gradient(0deg, #DE6C2F 35%, #8BD3CB 100%, #77ECF0 100%) 0% 0% no-repeat padding-box;
 }
 
+.jwplayer.jw-skin-myskin .jw-display-icon-container {
+    background-color: red;
+}
+
 .notyf__toast{
-    max-width: 21.875rem !important;
+    // max-width: 22rem !important;
+    .notyf__wrapper{
+        padding-right: 0;
+    }
+    .notyf__message{
+        font-size: 0.8125rem;
+    }
 }
