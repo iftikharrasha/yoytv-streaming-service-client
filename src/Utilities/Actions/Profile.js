@@ -1,9 +1,9 @@
 import axios from "axios";
 import store from "Utilities/Store/store";
 import { GET_SUB_PROFILES_SUCCESS } from "./types";
+import { notyf } from "Utilities/Hooks/useNotification";
 
-// @desc                User loading.
-// @params formData     data of user.
+// @desc                get sub profiles
 // @access              public
 export const getSubProfiles = () => async dispatch => {
   try {
@@ -33,7 +33,7 @@ export const getSubProfiles = () => async dispatch => {
 // @params formData     data of user.
 // @access              public
 export const editSubProfile = formData => async dispatch => {
-  try {
+try {
     const state = store.getState();
 
     let bodyFormData = new FormData();
@@ -57,29 +57,68 @@ export const editSubProfile = formData => async dispatch => {
   }
 };
 
+// @desc                add sub profiles.
+// @params formData     data of sub profile.
+// @access              public
+export const addSubProfile = (name, age, picture) => async (dispatch) => {
+  try {
+    const state = store.getState();
+
+    let bodyFormData = new FormData();
+    bodyFormData.append("id", state.auth.userId);
+    bodyFormData.append("token", state.auth.token);
+    bodyFormData.append("name", name);
+    bodyFormData.append("age", age);
+    if (picture !== null) {
+      bodyFormData.append("picture", picture);
+    }
+
+    const res = await axios.post(
+      `${process.env.REACT_APP_API_LINK}/userApi/add-profile`,
+      bodyFormData
+    );
+
+    if (res.data && res.data.success) {
+      notyf.open({
+        type: "success",
+        message: res.data.message,
+      });
+      return res.data.data.user_id;
+    } else {
+      notyf.open({
+        type: "error",
+        message: "No se pudo agregar !",
+      });
+      return null;
+    }
+  } catch (err) {
+    console.log(err);
+    return null;
+  }
+};
+
 // @desc                Edit profile.
 // @params formData     data of user.
 // @access              public
 export const deleteSubProfile =
   (subProfileId, deleteSubProfileId) => async dispatch => {
-    try {
-      const state = store.getState();
+  try {
+    const state = store.getState();
 
-      let bodyFormData = new FormData();
-      bodyFormData.append("id", state.auth.userId);
-      bodyFormData.append("token", state.auth.token);
-      bodyFormData.append("sub_profile_id", subProfileId);
-      bodyFormData.append("delete_sub_profile_id", deleteSubProfileId);
+    let bodyFormData = new FormData();
+    bodyFormData.append("id", state.auth.userId);
+    bodyFormData.append("token", state.auth.token);
+    bodyFormData.append("sub_profile_id", subProfileId);
+    bodyFormData.append("delete_sub_profile_id", deleteSubProfileId);
 
-      const res = await axios.post(
-        `${process.env.REACT_APP_API_LINK}/userApi/sub_profiles/delete`,
-        bodyFormData
-      );
+    const res = await axios.post(
+      `${process.env.REACT_APP_API_LINK}/userApi/sub_profiles/delete`,
+      bodyFormData
+    );
 
-      console.log(res.data);
+    return res.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
 
-      return res.data;
-    } catch (err) {
-      console.log(err);
-    }
-  };

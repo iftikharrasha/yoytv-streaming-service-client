@@ -4,22 +4,27 @@ import plus from "../../Image/plus-greeen.svg";
 import logoGreen from "../../Image/LogoGreen.svg";
 import { connect, useDispatch } from "react-redux";
 import { getSubProfiles } from "../../Utilities/Actions/Profile";
-import { SET_CURRENT_SUB_PROFILE } from "Utilities/Actions/types";
+import { UPDATE_SUB_PROFILE_ID } from "Utilities/Actions/types";
 
 const BrowseProfile = ({
   profile: { subProfileList, isNewSubProfileAllowed, loading },
   auth: { userId },
   getSubProfiles,
 }) => {
+  const dispatch = useDispatch();
+
   useEffect(() => {
     getSubProfiles();
   }, []);
 
-  // Show or Hide Login Modal.
   const dispatch = useDispatch();
 
-  const setCurrentSubProfile = id => {
-    dispatch({ type: SET_CURRENT_SUB_PROFILE, payload: id });
+  const selectProfile = (subProfileId) => {
+    dispatch({
+      type: UPDATE_SUB_PROFILE_ID,
+      payload: subProfileId,
+    });
+    localStorage.setItem("subProfileId", subProfileId);
   };
 
   return (
@@ -45,7 +50,7 @@ const BrowseProfile = ({
                   <li>
                     <Link
                       to="/home"
-                      onClick={() => setCurrentSubProfile(item.sub_profile_id)}
+                      onClick={() => selectProfile(item.sub_profile_id)}
                     >
                       <img
                         className="screen"
