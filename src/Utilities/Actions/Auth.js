@@ -11,12 +11,12 @@ import {
   REGISTER_SUBSCRIPTION_SUCCESS,
 } from "./types";
 import { Navigate, useNavigate } from "react-router-dom";
+import { notyf } from "Utilities/Hooks/useNotification";
 
 // @desc                User loading.
 // @params formData     data of user.
 // @access              public
 export const loadUser = () => async (dispatch) => {
-  let navigate = useNavigate();
   try {
     const id = localStorage.getItem("id");
     const subProfileId = localStorage.getItem("subProfileId");
@@ -77,6 +77,10 @@ export const loginUser = (formData) => async (dispatch) => {
       dispatch({
         type: LOGIN_SUCCESS,
         payload: res.data,
+      });
+      notyf.open({
+        type: "success",
+        message: "Iniciar sesión con éxito !",
       });
     }
     return res.data;

@@ -2,17 +2,29 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import plus from "../../Image/plus-greeen.svg";
 import logoGreen from "../../Image/LogoGreen.svg";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { getSubProfiles } from "../../Utilities/Actions/Profile";
+import { UPDATE_SUB_PROFILE_ID } from "Utilities/Actions/types";
 
 const BrowseProfile = ({
   profile: { subProfileList, isNewSubProfileAllowed, loading },
   auth: { userId },
   getSubProfiles,
 }) => {
+  const dispatch = useDispatch();
+
   useEffect(() => {
     getSubProfiles();
   }, []);
+
+  const selectProfile = (subProfileId) => {
+    dispatch({
+      type: UPDATE_SUB_PROFILE_ID,
+      payload: subProfileId,
+    });
+    localStorage.setItem("subProfileId", subProfileId);
+  };
+
   return (
     <>
       {!loading && (
@@ -34,7 +46,10 @@ const BrowseProfile = ({
               {subProfileList.map((item, index) => {
                 return (
                   <li>
-                    <Link to="/home">
+                    <Link
+                      to="/home"
+                      onClick={() => selectProfile(item.sub_profile_id)}
+                    >
                       <img
                         className="screen"
                         src={item.picture}
