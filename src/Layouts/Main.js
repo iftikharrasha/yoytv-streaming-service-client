@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ScrollToTop from './ScrollToTop';
 import PrivateRoute from '../Pages/PrivateRoute/PrivateRoute';
+import JuegosCategories from '../Pages/Juegos/JuegosCategories';
 const Home = React.lazy(() => import("../Pages/Home/Home"));
 const OnDemand = React.lazy(() => import("../Pages/OnDemand/OnDemand"));
 const TvEnVivo = React.lazy(() => import("../Pages/TvEnVivo/TvEnVivo"));
@@ -109,6 +110,11 @@ const Main = () => {
                             <Route path="/juegos" element={
                                 <PrivateRoute>
                                     <Juegos/>
+                                </PrivateRoute>}
+                            />
+                            <Route path="/juegos/categories" element={
+                                <PrivateRoute>
+                                    <JuegosCategories/>
                                 </PrivateRoute>}
                             />
                             <Route path="*" element={<NotFound/>} />
