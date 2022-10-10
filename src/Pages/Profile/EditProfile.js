@@ -28,7 +28,7 @@ const EditProfile = ({
               {subProfileList.map((item, index) => {
                 return (
                   <li className="edit" key={String(index)}>
-                    <Link to={`/profile/settings/` + token}>
+                    <Link to={`/profile/settings/` + item.sub_profile_id}>
                       <div className="screen">
                         <img
                           src={item.picture}

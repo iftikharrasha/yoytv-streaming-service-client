@@ -52,7 +52,7 @@ export const loadUser = () => async (dispatch) => {
 // @desc                Login user.
 // @params formData     data of user.
 // @access              public
-export const loginUser = formData => async dispatch => {
+export const loginUser = (formData) => async (dispatch) => {
   try {
     const data = new FormData();
     data.append("password", formData.password);
@@ -98,7 +98,7 @@ export const loginUser = formData => async dispatch => {
 // @access              public
 export const registerUser =
   (formData, isSubsriptionPath = false) =>
-  async dispatch => {
+  async (dispatch) => {
     try {
       let data = new FormData();
       data.append("name", formData.name);
@@ -148,7 +148,7 @@ export const registerUser =
 // @desc                Register user.
 // @params formData     data of user.
 // @access              public
-export const logoutUser = () => async dispatch => {
+export const logoutUser = () => async (dispatch) => {
   try {
     const state = store.getState();
 
@@ -180,15 +180,16 @@ export const logoutUser = () => async dispatch => {
 // @desc                Register user.
 // @params formData     data of user.
 // @access              public
-export const changePassword = formData => async dispatch => {
+export const changePassword = (formData) => async (dispatch) => {
   try {
     const state = store.getState();
 
     let data = new FormData();
     data.append("id", state.auth.data.data.id);
     data.append("token", state.auth.data.data.token);
-    data.append("password", formData.password);
     data.append("old_password", formData.old_password);
+    data.append("password", formData.password);
+    data.append("password_confirmation", formData.confirmPass);
 
     const res = await axios.post(
       `${process.env.REACT_APP_API_LINK}/userApi/changePassword`,

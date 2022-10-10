@@ -5,7 +5,7 @@ import { notyf } from "Utilities/Hooks/useNotification";
 
 // @desc                get sub profiles
 // @access              public
-export const getSubProfiles = () => async dispatch => {
+export const getSubProfiles = () => async (dispatch) => {
   try {
     const state = store.getState();
 
@@ -17,6 +17,8 @@ export const getSubProfiles = () => async dispatch => {
       `${process.env.REACT_APP_API_LINK}/userApi/sub_profiles`,
       bodyFormData
     );
+
+    console.log(res.data);
 
     if (res.data && res.data.success) {
       dispatch({
@@ -32,8 +34,8 @@ export const getSubProfiles = () => async dispatch => {
 // @desc                Edit profile.
 // @params formData     data of user.
 // @access              public
-export const editSubProfile = formData => async dispatch => {
-try {
+export const editSubProfile = (formData, selectedImage) => async (dispatch) => {
+  try {
     const state = store.getState();
 
     let bodyFormData = new FormData();
@@ -45,6 +47,9 @@ try {
     bodyFormData.append("mobile", formData.mobile);
     bodyFormData.append("age", formData.age);
     bodyFormData.append("device_token", "123456");
+    if (selectedImage !== null) {
+      bodyFormData.append("picture", selectedImage);
+    }
 
     const res = await axios.post(
       `${process.env.REACT_APP_API_LINK}/userApi/edit-sub-profile`,
@@ -101,24 +106,25 @@ export const addSubProfile = (name, age, picture) => async (dispatch) => {
 // @params formData     data of user.
 // @access              public
 export const deleteSubProfile =
-  (subProfileId, deleteSubProfileId) => async dispatch => {
-  try {
-    const state = store.getState();
+  (subProfileId, deleteSubProfileId) => async (dispatch) => {
+    try {
+      const state = store.getState();
 
-    let bodyFormData = new FormData();
-    bodyFormData.append("id", state.auth.userId);
-    bodyFormData.append("token", state.auth.token);
-    bodyFormData.append("sub_profile_id", subProfileId);
-    bodyFormData.append("delete_sub_profile_id", deleteSubProfileId);
+      let bodyFormData = new FormData();
+      bodyFormData.append("id", state.auth.userId);
+      bodyFormData.append("token", state.auth.token);
+      bodyFormData.append("sub_profile_id", subProfileId);
+      bodyFormData.append("delete_sub_profile_id", deleteSubProfileId);
 
-    const res = await axios.post(
-      `${process.env.REACT_APP_API_LINK}/userApi/sub_profiles/delete`,
-      bodyFormData
-    );
+      const res = await axios.post(
+        `${process.env.REACT_APP_API_LINK}/userApi/sub_profiles/delete`,
+        bodyFormData
+      );
 
-    return res.data;
-  } catch (err) {
-    console.log(err);
-  }
-};
+      console.log("remove ", res.data);
 
+      return res.data;
+    } catch (err) {
+      console.log(err);
+    }
+  };

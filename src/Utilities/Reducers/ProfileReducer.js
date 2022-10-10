@@ -19,7 +19,8 @@ export default function (state = initialState, action) {
         ...state,
         loading: false,
         subProfileList: payload.sub_profiles,
-        isNewSubProfileAllowed: payload.is_new_sub_profile_allowed,
+        isNewSubProfileAllowed:
+          payload.is_new_sub_profile_allowed === 1 ? true : false,
       };
     case SET_CURRENT_SUB_PROFILE:
       return {

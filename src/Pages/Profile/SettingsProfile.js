@@ -18,6 +18,7 @@ const SettingsProfile = ({
 }) => {
   const [passShow, setPassShow] = useState(false); //modal popover for password
   const [deleteShow, setdeleteShow] = useState(false); //modal popover for saving
+  const [selectedImage, setSelectedImage] = useState(null);
   const { loggedInUser } = useAuth();
   const navigate = useNavigate();
   const { token } = useParams();
@@ -25,8 +26,8 @@ const SettingsProfile = ({
   const [subProfileId, setSubProfileId] = useState(null);
 
   useEffect(() => {
-    const res = subProfileList.filter(obj => {
-      return obj.sub_profile_id == 28;
+    const res = subProfileList.filter((obj) => {
+      return obj.sub_profile_id == token;
     });
 
     if (res.length > 0) {
@@ -37,9 +38,12 @@ const SettingsProfile = ({
         age: res[0].age,
         plan: "Familiar",
         subProfileId: res[0].sub_profile_id,
+        picture: res[0].picture,
       });
 
       setSubProfileId(res[0].sub_profile_id);
+    } else {
+      navigate(`/profile/browse/` + token);
     }
   }, [subProfileId]);
 
@@ -50,14 +54,15 @@ const SettingsProfile = ({
     age: "",
     plan: "Familiar",
     subProfileId: null,
+    picture: "",
   });
 
-  const handlePassword = e => {
+  const handlePassword = (e) => {
     setPassShow(true);
     e.preventDefault();
   };
 
-  const handleDataDelete = e => {
+  const handleDataDelete = (e) => {
     setdeleteShow(true);
     e.preventDefault();
   };
@@ -67,21 +72,23 @@ const SettingsProfile = ({
     if (res.success) {
       notyf.open({
         type: "success",
-        message: `${res.messages}`,
+        message: `${res.message}`,
       });
+      setdeleteShow(false);
+      navigate(`/profile/browse/` + token);
     } else {
       notyf.open({
         type: "error",
-        message: `${res.error_messages}`,
+        message: `${res.error_message}`,
       });
     }
   };
 
-  const handleSave = async e => {
+  const handleSave = async (e) => {
     // TODO: do creation functionality here
 
     e.preventDefault();
-    const response = await editSubProfile(editData);
+    const response = await editSubProfile(editData, selectedImage);
 
     if (response.success) {
       navigate(`/profile/browse/` + token);
@@ -95,6 +102,19 @@ const SettingsProfile = ({
         message: `${response.error_messages}`,
       });
     }
+  };
+
+  //upload picture
+  const hiddenFileInput = React.useRef(null);
+
+  const handleClick = (event) => {
+    hiddenFileInput.current.click();
+  };
+  const handleChange = (event) => {
+    const fileUploaded = event.target.files[0];
+    setSelectedImage(fileUploaded);
+    const imgUrl = URL.createObjectURL(fileUploaded);
+    setEditData({ ...editData, picture: imgUrl });
   };
 
   return (
@@ -115,7 +135,7 @@ const SettingsProfile = ({
                 <div className="edit">
                   <div className="screen">
                     <img
-                      src={data.data.picture}
+                      src={editData.picture}
                       alt="personal"
                       width="344"
                       height="344"
@@ -127,6 +147,14 @@ const SettingsProfile = ({
                     alt="edit"
                     width="70"
                     height="70"
+                    onClick={handleClick}
+                    style={{ cursor: "pointer" }}
+                  />
+                  <input
+                    type="file"
+                    ref={hiddenFileInput}
+                    onChange={handleChange}
+                    style={{ display: "none" }}
                   />
                 </div>
               </div>
@@ -140,7 +168,7 @@ const SettingsProfile = ({
                           type="text"
                           name="name"
                           value={editData.name}
-                          onChange={e =>
+                          onChange={(e) =>
                             setEditData({ ...editData, name: e.target.value })
                           }
                         />
@@ -150,7 +178,7 @@ const SettingsProfile = ({
                           type="email"
                           name="email"
                           value={editData.email}
-                          onChange={e =>
+                          onChange={(e) =>
                             setEditData({ ...editData, email: e.target.value })
                           }
                         />
@@ -162,7 +190,7 @@ const SettingsProfile = ({
                           type="number"
                           name="age"
                           value={editData.age}
-                          onChange={e =>
+                          onChange={(e) =>
                             setEditData({ ...editData, age: e.target.value })
                           }
                         />
@@ -172,7 +200,7 @@ const SettingsProfile = ({
                           type="phone"
                           name="phone"
                           value={editData.mobile}
-                          onChange={e =>
+                          onChange={(e) =>
                             setEditData({ ...editData, mobile: e.target.value })
                           }
                         />
@@ -183,7 +211,7 @@ const SettingsProfile = ({
                         <button
                           type="submit"
                           className="main-btn secondary"
-                          onClick={e => handlePassword(e)}
+                          onClick={(e) => handlePassword(e)}
                         >
                           Cambiar contraseña
                         </button>
@@ -231,7 +259,9 @@ const SettingsProfile = ({
                                 setSubProfileId(item.sub_profile_id)
                               }
                             >
-                              <Link to={`/profile/settings/` + token}>
+                              <Link
+                                to={`/profile/settings/` + item.sub_profile_id}
+                              >
                                 <div className="screen">
                                   <img
                                     src={item.picture}
@@ -259,7 +289,7 @@ const SettingsProfile = ({
                       <button
                         type="submit"
                         className="main-btn secondary"
-                        onClick={e => handleDataDelete(e)}
+                        onClick={(e) => handleDataDelete(e)}
                       >
                         Eliminar cuenta
                       </button>
@@ -273,7 +303,7 @@ const SettingsProfile = ({
                       <button
                         type="submit"
                         className="main-btn secondary"
-                        onClick={e => handleSave(e)}
+                        onClick={(e) => handleSave(e)}
                       >
                         Guardar cambios
                       </button>
@@ -296,7 +326,7 @@ const SettingsProfile = ({
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   auth: state.auth,
   profile: state.profile,
 });

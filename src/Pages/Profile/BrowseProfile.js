@@ -15,9 +15,8 @@ const BrowseProfile = ({
 
   useEffect(() => {
     getSubProfiles();
+    console.log("isallowed ", isNewSubProfileAllowed);
   }, []);
-
-  const dispatch = useDispatch();
 
   const selectProfile = (subProfileId) => {
     dispatch({
@@ -66,12 +65,17 @@ const BrowseProfile = ({
               })}
 
               <li>
-                <Link to={`/profile/create/` + userId}>
-                  <div className="screen plus">
-                    <img src={plus} alt="browse" width="127" height="127" />
-                  </div>
-                  <h6>Agregar perfil</h6>
-                </Link>
+                {/* {isNewSubProfileAllowed ? ( */}
+                {true ? (
+                  <Link to={`/profile/create/` + userId}>
+                    <div className="screen plus">
+                      <img src={plus} alt="browse" width="127" height="127" />
+                    </div>
+                    <h6>Agregar perfil</h6>
+                  </Link>
+                ) : (
+                  <div></div>
+                )}
               </li>
             </ul>
             <Link to={`/profile/edit/` + userId}>
@@ -86,7 +90,7 @@ const BrowseProfile = ({
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   profile: state.profile,
   auth: state.auth,
 });
