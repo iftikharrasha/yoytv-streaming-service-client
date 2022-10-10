@@ -17,6 +17,8 @@ const BrowseProfile = ({
     getSubProfiles();
   }, []);
 
+  const dispatch = useDispatch();
+
   const selectProfile = (subProfileId) => {
     dispatch({
       type: UPDATE_SUB_PROFILE_ID,
@@ -84,7 +86,7 @@ const BrowseProfile = ({
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   profile: state.profile,
   auth: state.auth,
 });
