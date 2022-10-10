@@ -15,7 +15,7 @@ import store from "Utilities/Store/store";
 // @desc                Add subscprition .
 // @params formData     data of user.
 // @access              public
-export const getSubscriptionPlans = () => async (dispatch) => {
+export const getSubscriptionPlans = () => async dispatch => {
   try {
     let bodyFormData = new FormData();
     bodyFormData.append("id", SUBSCRIPTION_PAYMENT_USER_ID);
@@ -46,7 +46,7 @@ export const getSubscriptionPlans = () => async (dispatch) => {
 // @desc                Add card.
 // @params formData     data of card details and user.
 // @access              private
-export const addPaymentCard = () => async (dispatch) => {
+export const addPaymentCard = () => async dispatch => {
   try {
     const state = store.getState();
 
@@ -57,8 +57,6 @@ export const addPaymentCard = () => async (dispatch) => {
     bodyFormData.append("subscription_id", state.subscription.plan_id);
     bodyFormData.append("payment_id", SUBSCRIPTION_PAYMENT_ID);
     bodyFormData.append("payment_mode", SUBSCRIPTION_PAYMENT_MODE);
-
-    console.log(bodyFormData);
 
     const res = await axios.post(
       `${process.env.REACT_APP_API_LINK}/userApi/v4/subscriptions_payment`,

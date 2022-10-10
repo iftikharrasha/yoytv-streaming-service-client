@@ -18,7 +18,7 @@ const BASE_URL = process.env.REACT_APP_API_LINK;
 // @desc        Get onDemand page data.
 // @api
 // @access      public
-export const getOnDemandData = () => async (dispatch) => {
+export const getOnDemandData = () => async dispatch => {
   try {
     const state = store.getState();
     const id = state.auth.userId;
@@ -42,7 +42,7 @@ export const getOnDemandData = () => async (dispatch) => {
 // @desc        Get HomeFirstSection data.
 // @api
 // @access      public
-export const getHomeFirstSection = () => async (dispatch) => {
+export const getHomeFirstSection = () => async dispatch => {
   try {
     const state = store.getState();
     const id = state.auth.userId;
@@ -79,7 +79,7 @@ export const getHomeFirstSection = () => async (dispatch) => {
 // @desc        Get addToWishList.
 // @api
 // @access      public
-export const addToWishList = (videoId) => async (dispatch) => {
+export const addToWishList = videoId => async dispatch => {
   // const { notyf } = useNotification();
   try {
     const state = store.getState();
@@ -113,7 +113,7 @@ export const addToWishList = (videoId) => async (dispatch) => {
 // @desc        Get getVideoView.
 // @api
 // @access      public
-export const getVideoView = (videoId) => async (dispatch) => {
+export const getVideoView = videoId => async dispatch => {
   try {
     const state = store.getState();
     const id = state.auth.userId;
@@ -144,7 +144,7 @@ export const getVideoView = (videoId) => async (dispatch) => {
 // @desc        Get getVideoViewSecond.
 // @api
 // @access      public
-export const getVideoViewSecond = (videoId) => async (dispatch) => {
+export const getVideoViewSecond = videoId => async dispatch => {
   try {
     const state = store.getState();
     const id = state.auth.userId;
@@ -175,7 +175,7 @@ export const getVideoViewSecond = (videoId) => async (dispatch) => {
 // @desc        Get getMyWishList.
 // @api
 // @access      public
-export const getMyWishList = () => async (dispatch) => {
+export const getMyWishList = () => async dispatch => {
   try {
     const state = store.getState();
     const id = state.auth.userId;
@@ -192,8 +192,6 @@ export const getMyWishList = () => async (dispatch) => {
       bodyFormData
     );
 
-    console.log("data ", res.data);
-
     if (res.data && res.data.success) {
       dispatch({
         type: GET_MY_WISH_LIST,
@@ -208,7 +206,7 @@ export const getMyWishList = () => async (dispatch) => {
 // @desc        Get getCategory Videos.
 // @api
 // @access      public
-export const getCategoryVideos = (categoryId) => async (dispatch) => {
+export const getCategoryVideos = categoryId => async dispatch => {
   try {
     const state = store.getState();
     const id = state.auth.userId;
@@ -233,7 +231,7 @@ export const getCategoryVideos = (categoryId) => async (dispatch) => {
   }
 };
 
-export const getCategories = (categoryId) => async (dispatch) => {
+export const getCategories = categoryId => async dispatch => {
   try {
     const state = store.getState();
     const id = state.auth.userId;
@@ -263,7 +261,7 @@ export const getCategories = (categoryId) => async (dispatch) => {
 // @desc        Get Single Video data.
 // @api
 // @access      public
-export const getSingleVideo = (adminVideoId) => async (dispatch) => {
+export const getSingleVideo = adminVideoId => async dispatch => {
   try {
     const state = store.getState();
     const id = state.auth.userId;

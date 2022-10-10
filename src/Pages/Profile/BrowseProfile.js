@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import plus from "../../Image/plus-greeen.svg";
 import logoGreen from "../../Image/LogoGreen.svg";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { getSubProfiles } from "../../Utilities/Actions/Profile";
+import { SET_CURRENT_SUB_PROFILE } from "Utilities/Actions/types";
 
 const BrowseProfile = ({
   profile: { subProfileList, isNewSubProfileAllowed, loading },
@@ -13,6 +14,14 @@ const BrowseProfile = ({
   useEffect(() => {
     getSubProfiles();
   }, []);
+
+  // Show or Hide Login Modal.
+  const dispatch = useDispatch();
+
+  const setCurrentSubProfile = id => {
+    dispatch({ type: SET_CURRENT_SUB_PROFILE, payload: id });
+  };
+
   return (
     <>
       {!loading && (
@@ -34,7 +43,10 @@ const BrowseProfile = ({
               {subProfileList.map((item, index) => {
                 return (
                   <li>
-                    <Link to="/home">
+                    <Link
+                      to="/home"
+                      onClick={() => setCurrentSubProfile(item.sub_profile_id)}
+                    >
                       <img
                         className="screen"
                         src={item.picture}
@@ -69,7 +81,7 @@ const BrowseProfile = ({
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   profile: state.profile,
   auth: state.auth,
 });
