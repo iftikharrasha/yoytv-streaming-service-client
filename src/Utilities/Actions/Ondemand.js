@@ -186,10 +186,13 @@ export const getMyWishList = () => async (dispatch) => {
     bodyFormData.append("id", id);
     bodyFormData.append("token", token);
     bodyFormData.append("sub_profile_id", subProfileId);
+    bodyFormData.append("skip", 0);
     const res = await axios.post(
       `${BASE_URL}/userApi/wishlists/list`,
       bodyFormData
     );
+
+    console.log("data ", res.data);
 
     if (res.data && res.data.success) {
       dispatch({

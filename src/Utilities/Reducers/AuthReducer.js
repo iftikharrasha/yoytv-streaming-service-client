@@ -43,6 +43,15 @@ export default function (state = initialState, action) {
         subProfileId: payload.data.sub_profile_id,
       };
     case LOGIN_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        isAuthenticated: true,
+        data: payload,
+        userId: payload.data.id,
+        token: payload.data.token,
+        subProfileId: payload.data.sub_profile_id,
+      };
     case LOAD_USER:
       return {
         ...state,

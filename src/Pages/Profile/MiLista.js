@@ -9,33 +9,20 @@ import arrow from "../../Image/arrow-left-white.svg";
 import adBanner from "../../Image/adbanner1.png";
 import plusIcon from "../../Image/plus_icon.svg";
 import minusIcon from "../../Image/minus_icon.svg";
-import play_button from '../../Image/play_button.svg';
-import love_icon from '../../Image/love_icon.svg';
-import arrow_down from '../../Image/arrow_down.svg';
-// import { myList } from "../../Data/myList.js";
+import play_button from "../../Image/play_button.svg";
+import love_icon from "../../Image/love_icon.svg";
+import arrow_down from "../../Image/arrow_down.svg";
 
-const MiLista = ({ getMyWishList, getHomeFirstSection, onDemand }) => {
+const MiLista = ({
+  getMyWishList,
+  getHomeFirstSection,
+  onDemand: { wishList },
+}) => {
   const navigate = useNavigate();
 
-  const [myList, setMyList] = useState([]);
-
   useEffect(() => {
-    getHomeFirstSection();
+    getMyWishList();
   }, []);
-
-  useEffect(() => {
-    // getMyWishList();
-    let isExistMyList = false;
-    for (let category of onDemand.homeFirstSectionData) {
-      if (category.title === "Mi Lista") {
-        isExistMyList = true;
-        setMyList(category.data);
-      }
-    }
-    if (!isExistMyList) {
-      setMyList([]);
-    }
-  }, [onDemand.homeFirstSectionData]);
 
   return (
     <>
@@ -49,17 +36,31 @@ const MiLista = ({ getMyWishList, getHomeFirstSection, onDemand }) => {
             <div className="swiper-wrapper shows__slider__list">
               {
                 /* LIST FOR ALL THE SELECTED ITEMS*/
-                myList.map((list, index) => (
+                wishList.map((list, index) => (
                   <div className="swiper-slide" key={index}>
                     <Link to="/on-demand">
                       <img src={list.default_image} alt="default_image" />
-                            <div className="card__buttons">
-                                <ul>
-                                    <li><img src={play_button} alt="play" className="play"/></li>
-                                    <li><img src={minusIcon} alt="minusIcon" className="love"/></li>
-                                    <li><img src={arrow_down} alt="more" className="more"/></li>
-                                </ul>
-                            </div>
+                      <div className="card__buttons">
+                        <ul>
+                          <li>
+                            <img
+                              src={play_button}
+                              alt="play"
+                              className="play"
+                            />
+                          </li>
+                          <li>
+                            <img
+                              src={minusIcon}
+                              alt="minusIcon"
+                              className="love"
+                            />
+                          </li>
+                          <li>
+                            <img src={arrow_down} alt="more" className="more" />
+                          </li>
+                        </ul>
+                      </div>
                     </Link>
                   </div>
                 ))

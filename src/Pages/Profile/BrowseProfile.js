@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import plus from "../../Image/plus-greeen.svg";
 import logoGreen from "../../Image/LogoGreen.svg";
 import { connect } from "react-redux";
+import { getSubProfiles } from "../../Utilities/Actions/Profile";
 
-const BrowseProfile = ({ auth: { loading, isAuthenticated, data, token } }) => {
+const BrowseProfile = ({
+  profile: { subProfileList, isNewSubProfileAllowed, loading },
+  auth: { userId },
+  getSubProfiles,
+}) => {
+  useEffect(() => {
+    getSubProfiles();
+  }, []);
   return (
     <>
-      {!loading && isAuthenticated && (
+      {!loading && (
         <section className="browse">
           <div className="wrapper browse__contents">
             <img
@@ -23,20 +31,25 @@ const BrowseProfile = ({ auth: { loading, isAuthenticated, data, token } }) => {
               para continuar navegando dentro de nuestro contenido exclusivo
             </p>
             <ul>
+              {subProfileList.map((item, index) => {
+                return (
+                  <li>
+                    <Link to="/home">
+                      <img
+                        className="screen"
+                        src={item.picture}
+                        alt="browse"
+                        width="344"
+                        height="344"
+                      />
+                      <h6>{item.name}</h6>
+                    </Link>
+                  </li>
+                );
+              })}
+
               <li>
-                <Link to="/home">
-                  <img
-                    className="screen"
-                    src={data.data.picture}
-                    alt="browse"
-                    width="344"
-                    height="344"
-                  />
-                  <h6>{data.data.name}</h6>
-                </Link>
-              </li>
-              <li>
-                <Link to={`/profile/create/` + token}>
+                <Link to={`/profile/create/` + userId}>
                   <div className="screen plus">
                     <img src={plus} alt="browse" width="127" height="127" />
                   </div>
@@ -44,7 +57,7 @@ const BrowseProfile = ({ auth: { loading, isAuthenticated, data, token } }) => {
                 </Link>
               </li>
             </ul>
-            <Link to={`/profile/edit/` + token}>
+            <Link to={`/profile/edit/` + userId}>
               <button type="submit" className="main-btn secondary">
                 Gestionar perfiles
               </button>
@@ -56,8 +69,11 @@ const BrowseProfile = ({ auth: { loading, isAuthenticated, data, token } }) => {
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
+  profile: state.profile,
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, null)(BrowseProfile);
+export default connect(mapStateToProps, {
+  getSubProfiles,
+})(BrowseProfile);

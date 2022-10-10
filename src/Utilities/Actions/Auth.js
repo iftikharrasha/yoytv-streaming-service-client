@@ -10,11 +10,13 @@ import {
   LOGOUT_USER,
   REGISTER_SUBSCRIPTION_SUCCESS,
 } from "./types";
+import { Navigate, useNavigate } from "react-router-dom";
 
 // @desc                User loading.
 // @params formData     data of user.
 // @access              public
 export const loadUser = () => async (dispatch) => {
+  let navigate = useNavigate();
   try {
     const id = localStorage.getItem("id");
     const subProfileId = localStorage.getItem("subProfileId");
