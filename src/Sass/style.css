@@ -2785,6 +2785,7 @@
   width: 20.1875rem !important;
   height: 13.9375rem;
   position: relative;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2799,6 +2800,7 @@
 .shows__slider .rectangular a {
   display: block;
   width: 100%;
+  height: 100%;
 }
 
 .shows__slider .rectangular .game-btn {

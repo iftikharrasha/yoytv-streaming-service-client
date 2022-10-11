@@ -43,8 +43,8 @@ const JuegosSlider = ({shows, delay}) => {
             {
                 shows?.map((item, index) => (
                     <SwiperSlide className="rectangular" key={index}>
-                        <Link to="/juegos">
-                            <img src={item.default_image} alt="default_image" />
+                        <Link to={`/juegos/play/${item.id}`}>
+                            <img src={item.image} alt="game_image" />
                         </Link>
                         <img src={gamebtn} alt="gamebtn" className="game-btn"/>
                     </SwiperSlide>

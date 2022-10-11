@@ -6,8 +6,11 @@ import { gameData } from '../../Data/juegosData';
 import adbanner6 from '../../Image/adbanner6.png';
 import adBanner from '../../Image/adbanner1.png';
 import JuegosSlider from "../../Components/Custom/Sliders/JuegosSlider";
+import useGamesData from "../../Utilities/Hooks/useGamesData";
 
 const Juegos = () => {
+    const { allGames, activeGames } = useGamesData();
+
     return (
         <> 
             <section className="hero radioHero">
@@ -37,14 +40,14 @@ const Juegos = () => {
                                             <h2>Destacados</h2>
                                             <Link to="/juegos/categories">{`Ver más>`}</Link>
                                         </div>
-                                        <JuegosSlider shows={gameData} delay={2500}/>
+                                        <JuegosSlider shows={allGames} delay={6000}/>
                                     </div>
                                     <div>
                                         <div className="playerDetails__cards__slider__title">
                                             <h2>Recomendados</h2>
                                             <Link to="/juegos/categories">{`Ver más>`}</Link>
                                         </div>
-                                        <JuegosSlider shows={gameData} delay={2500}/>
+                                        <JuegosSlider shows={activeGames} delay={6000}/>
                                     </div>
                                 </div>
                                 <div className="adbanner">
@@ -58,21 +61,6 @@ const Juegos = () => {
                                 </div>
                             </div>
                         </div>
-
-                        {/* <div className="playerDetails__cards">
-                            <div className="playerDetails__cards__slider">
-                                <div className="allEpisodes__body__contents__similar">
-                                    <div className="playerDetails__cards__slider__title">
-                                        <h2>Podcast recomendados</h2>
-                                        <Link to="/podcast">{`Ver más>`}</Link>
-                                    </div>
-                                    <JuegosSlider shows={gameData} delay={2500} clicks={true} podcast={true}/>
-                                </div>
-                                <div className="adbanner">
-                                    <img src={adbanner3} alt="adbanner3"/>
-                                </div>
-                            </div>
-                        </div> */}
                     </div>
                 </div>
             </section>

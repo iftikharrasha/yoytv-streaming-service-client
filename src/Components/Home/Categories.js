@@ -7,11 +7,12 @@ import JuegosSlider from '../Custom/Sliders/JuegosSlider';
 import RadioSlider from '../Custom/Sliders/RadioSlider';
 import CategoriesSlider from '../Custom/Sliders/CategoriesSlider';
 import { tvData } from '../../Data/tvData';
-import { gameData } from '../../Data/juegosData';
 import { radioData } from '../../Data/radioData';
+import useGamesData from '../../Utilities/Hooks/useGamesData';
 
 const Categories = ({demandPage}) => {
     const { shows, categories } = useLandingApi();
+    const { allGames, activeGames } = useGamesData();
 
     return (
     <>
@@ -74,9 +75,9 @@ const Categories = ({demandPage}) => {
             <section className="shows">
                 <div className="shows__title">
                     <h2 data-aos="fade" data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000">Juegos</h2>
-                    <Link to="/juegos">{`Ver más>`}</Link>
+                    <Link to="/juegos/categories">{`Ver más>`}</Link>
                 </div>
-                <JuegosSlider shows={gameData} delay={4500}/>
+                <JuegosSlider shows={allGames} delay={6000}/>
             </section>
         }
     </>
