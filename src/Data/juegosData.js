@@ -6,31 +6,31 @@ import gameData5 from '../Image/game5.png';
 
 export const gameData = [
     {
-        "admin_video_id": 1,
-        "default_image": gameData1,
+        "id": 1,
+        "image": gameData1,
     },
     {
-        "admin_video_id": 2,
-        "default_image": gameData2,
+        "id": 2,
+        "image": gameData2,
     },
     {
-        "admin_video_id": 3,
-        "default_image": gameData3,
+        "id": 3,
+        "image": gameData3,
     },
     {
-        "admin_video_id": 3,
-        "default_image": gameData4,
+        "id": 3,
+        "image": gameData4,
     },
     {
-        "admin_video_id": 5,
-        "default_image": gameData5,
+        "id": 5,
+        "image": gameData5,
     },
     {
-        "admin_video_id": 6,
-        "default_image": gameData1,
+        "id": 6,
+        "image": gameData1,
     },
     {
-        "admin_video_id": 7,
-        "default_image": gameData2,
-    }
+        "id": 7,
+        "image": gameData2,
+    },
 ]

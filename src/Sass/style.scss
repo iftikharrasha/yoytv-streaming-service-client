@@ -10,6 +10,7 @@
 @import './profile';
 @import './auth';
 @import './radio';
+@import './juegos';
 @import './notFound';
 
 * {
@@ -262,5 +263,44 @@ input:-webkit-autofill:active {
     }
     .notyf__message{
         font-size: 0.8125rem;
+    }
+}
+
+.adbanner{
+    margin: 0 !important;
+    @media (max-width: 991.98px) {
+        display: none;
+    }
+    &__gamesAd1{
+        background-color: #44A4DC;
+        margin-top: 0 !important;
+        text-align: center;
+        border-radius: 1rem;
+        overflow: hidden;
+        img{
+            width: 100% !important;
+            height: 25rem !important;
+        }
+        h6{
+            padding: 3rem 0;
+            font-size: 1.75rem;
+            color: $white;
+            span{
+                font-weight: 700;
+            }
+        }
+        .bannerBtn{
+            padding: 1rem 2rem;
+            background-color: #2971B7;
+            a{
+                color: $white !important;
+                font-size: 1.5rem;
+                font-weight: 400 !important;
+            }
+        }
+        &:hover{
+            border: none !important;
+            transform: none !important;
+        }
     }
 }

@@ -7,9 +7,9 @@ import JuegosSlider from "../Custom/Sliders/JuegosSlider";
 import RadioSlider from "../Custom/Sliders/RadioSlider";
 import CategoriesSlider from "../Custom/Sliders/CategoriesSlider";
 import { tvData } from "../../Data/tvData";
-import { gameData } from "../../Data/juegosData";
 import { radioData } from "../../Data/radioData";
 import { connect } from "react-redux";
+import useGamesData from '../../Utilities/Hooks/useGamesData';
 import {
   getCategoryVideos,
   getOnDemandData,
@@ -24,6 +24,7 @@ const Categories = ({
   getCategories,
 }) => {
   const { shows, categories } = useLandingApi();
+  const { allGames, activeGames } = useGamesData();
   const [categoryList, setCategoryList] = useState([]);
 
   useEffect(() => {
@@ -121,23 +122,16 @@ const Categories = ({
         </section>
       )}
 
-      {/* TODO: JUEGOS SLIDER - CURRENTLY HARDCODED NEED API*/}
-      {demandPage ? null : (
-        <section className="shows">
-          <div className="shows__title">
-            <h2
-              data-aos="fade"
-              data-aos-offset="0"
-              data-aos-delay="200"
-              data-aos-duration="1000"
-            >
-              Juegos
-            </h2>
-            <Link to="/juegos">{`Ver más>`}</Link>
-          </div>
-          <JuegosSlider shows={gameData} delay={4500} />
-        </section>
-      )}
+      {
+          demandPage ? null : 
+          <section className="shows">
+              <div className="shows__title">
+                  <h2 data-aos="fade" data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000">Juegos</h2>
+                  <Link to="/juegos/categories">{`Ver más>`}</Link>
+              </div>
+              <JuegosSlider shows={allGames} delay={6000}/>
+          </section>
+      }
     </>
   );
 };

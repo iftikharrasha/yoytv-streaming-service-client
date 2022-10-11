@@ -2785,6 +2785,7 @@
   width: 20.1875rem !important;
   height: 13.9375rem;
   position: relative;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2799,6 +2800,7 @@
 .shows__slider .rectangular a {
   display: block;
   width: 100%;
+  height: 100%;
 }
 
 .shows__slider .rectangular .game-btn {
@@ -5982,6 +5984,12 @@
   }
 }
 
+.gamesSlider {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
 .notFound {
   background-color: #07002E;
   color: #ffffff;
@@ -6351,5 +6359,55 @@ input:-webkit-autofill:active {
 
 .notyf__toast .notyf__message {
   font-size: 0.8125rem;
+}
+
+.adbanner {
+  margin: 0 !important;
+}
+
+@media (max-width: 991.98px) {
+  .adbanner {
+    display: none;
+  }
+}
+
+.adbanner__gamesAd1 {
+  background-color: #44A4DC;
+  margin-top: 0 !important;
+  text-align: center;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.adbanner__gamesAd1 img {
+  width: 100% !important;
+  height: 25rem !important;
+}
+
+.adbanner__gamesAd1 h6 {
+  padding: 3rem 0;
+  font-size: 1.75rem;
+  color: #ffffff;
+}
+
+.adbanner__gamesAd1 h6 span {
+  font-weight: 700;
+}
+
+.adbanner__gamesAd1 .bannerBtn {
+  padding: 1rem 2rem;
+  background-color: #2971B7;
+}
+
+.adbanner__gamesAd1 .bannerBtn a {
+  color: #ffffff !important;
+  font-size: 1.5rem;
+  font-weight: 400 !important;
+}
+
+.adbanner__gamesAd1:hover {
+  border: none !important;
+  -webkit-transform: none !important;
+          transform: none !important;
 }
 /*# sourceMappingURL=style.css.map */

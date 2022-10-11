@@ -112,10 +112,12 @@
             width: 20.1875rem !important;
             height: 13.9375rem;
             position: relative;
+            overflow: hidden;
             @include flexCenter;
             a{
                 display: block;
                 width: 100%;
+                height: 100%;
             }
             .game-btn{
                 position: absolute;
