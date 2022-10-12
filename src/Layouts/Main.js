@@ -2,7 +2,6 @@ import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ScrollToTop from './ScrollToTop';
 import PrivateRoute from '../Pages/PrivateRoute/PrivateRoute';
-import JuegosCategories from '../Pages/Juegos/JuegosCategories';
 const Home = React.lazy(() => import("../Pages/Home/Home"));
 const OnDemand = React.lazy(() => import("../Pages/OnDemand/OnDemand"));
 const TvEnVivo = React.lazy(() => import("../Pages/TvEnVivo/TvEnVivo"));
@@ -10,9 +9,9 @@ const Radio = React.lazy(() => import("../Pages/Radio/Radio"));
 const Podcast = React.lazy(() => import("../Pages/Radio/Podcast"));
 const Estaciones = React.lazy(() => import("../Pages/Radio/Estaciones"));
 const Juegos = React.lazy(() => import("../Pages/Juegos/Juegos"));
-const SeriesDetails = React.lazy(() =>
-  import("../Pages/OnDemand/SeriesDetails")
-);
+const JuegosCategories = React.lazy(() => import("../Pages/Juegos/JuegosCategories"));
+const JuegosGameplay = React.lazy(() => import("../Pages/Juegos/JuegosGameplay"));
+const SeriesDetails = React.lazy(() => import("../Pages/OnDemand/SeriesDetails"));
 const MovieDetails = React.lazy(() => import("../Pages/OnDemand/MovieDetails"));
 const PodcastDetails = React.lazy(() =>
   import("../Pages/Radio/PodcastDetails")
@@ -131,6 +130,11 @@ const Main = () => {
                             <Route path="/juegos/categories" element={
                                 <PrivateRoute>
                                     <JuegosCategories/>
+                                </PrivateRoute>}
+                            />
+                            <Route path="/juegos/play/:id" element={
+                                <PrivateRoute>
+                                    <JuegosGameplay/>
                                 </PrivateRoute>}
                             />
                             <Route path="*" element={<NotFound/>} />

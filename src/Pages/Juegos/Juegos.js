@@ -1,15 +1,12 @@
 import React from "react";
 import logoGreen from '../../Image/LogoGreen.svg';
 import juegosBg from '../../Image/juegosBg.png';
-import { Link } from 'react-router-dom';
-import { gameData } from '../../Data/juegosData';
-import adbanner6 from '../../Image/adbanner6.png';
-import adBanner from '../../Image/adbanner1.png';
-import JuegosSlider from "../../Components/Custom/Sliders/JuegosSlider";
 import useGamesData from "../../Utilities/Hooks/useGamesData";
+import JuegosMore from "../../Components/Juegos/JuegosMore";
+import Loader from "../../Components/Custom/Loaders/Loader";
 
 const Juegos = () => {
-    const { allGames, activeGames } = useGamesData();
+    const { allGames, activeGames, loading } = useGamesData();
 
     return (
         <> 
@@ -29,41 +26,10 @@ const Juegos = () => {
                 {/* Only for landing parallex! */}
             </section>
 
-            <section className="allEpisodes podcastDetails playerDetails">
-                <div className="allEpisodes__body">
-                    <div className="allEpisodes__body__contents">
-                        <div className="playerDetails__cards">
-                            <div className="playerDetails__cards__slider gamesSlider">
-                                <div className="allEpisodes__body__contents__similar">
-                                    <div>
-                                        <div className="playerDetails__cards__slider__title">
-                                            <h2>Destacados</h2>
-                                            <Link to="/juegos/categories">{`Ver más>`}</Link>
-                                        </div>
-                                        <JuegosSlider shows={allGames} delay={6000}/>
-                                    </div>
-                                    <div>
-                                        <div className="playerDetails__cards__slider__title">
-                                            <h2>Recomendados</h2>
-                                            <Link to="/juegos/categories">{`Ver más>`}</Link>
-                                        </div>
-                                        <JuegosSlider shows={activeGames} delay={6000}/>
-                                    </div>
-                                </div>
-                                <div className="adbanner">
-                                    <div className="adbanner__gamesAd1">
-                                        <h6>¡Conviértete en <br /> <span>Cliente Digital!</span></h6>
-                                        <img src={adbanner6} alt="adBanner" />
-                                        <div className="bannerBtn">
-                                            <Link to="/ad">{`Hazlo aquí>`}</Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {
+                loading ? <Loader /> : 
+                <JuegosMore allGames={allGames} activeGames={activeGames}/>
+            }
         </>
     );
 };

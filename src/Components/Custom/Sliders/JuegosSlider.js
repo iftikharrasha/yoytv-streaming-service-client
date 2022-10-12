@@ -6,7 +6,6 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import 'swiper/css/navigation';
 import { Link } from 'react-router-dom';
-import gamebtn from '../../../Image/game-btn.svg';
 
 const JuegosSlider = ({shows, delay}) => {
 
@@ -46,7 +45,6 @@ const JuegosSlider = ({shows, delay}) => {
                         <Link to={`/juegos/play/${item.id}`}>
                             <img src={item.image} alt="game_image" />
                         </Link>
-                        <img src={gamebtn} alt="gamebtn" className="game-btn"/>
                     </SwiperSlide>
                 ))
             }

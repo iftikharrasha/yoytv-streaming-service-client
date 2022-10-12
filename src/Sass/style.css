@@ -1345,6 +1345,7 @@
   width: 100%;
   border: none;
   border-radius: 0;
+  height: 28.125rem;
 }
 
 .playerHero .heroBg .detailsHero__wrapper__contents__left h1 {
@@ -1377,7 +1378,7 @@
   background: rgba(9, 0, 46, 0) linear-gradient(180deg, rgba(9, 0, 46, 0) 0%, #0e005c 100%) 0% 0% no-repeat padding-box;
 }
 
-.playerHero .heroBg .detailsHero__wrapper__contents__left:hover h1 {
+.playerHero .heroBg .detailsHero__wrapper__contents__left:hover h1, .playerHero .heroBg .detailsHero__wrapper__contents__left:hover p {
   opacity: 1;
 }
 
@@ -1662,6 +1663,13 @@
 
 .playerHero .heroBg .detailsHero__wrapper__settings .right .sound {
   width: 1.75rem;
+}
+
+@media (min-width: 576px) {
+  .gameHero .list {
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .allEpisodes {
@@ -2803,22 +2811,28 @@
   height: 100%;
 }
 
-.shows__slider .rectangular .game-btn {
-  position: absolute;
+.shows__slider .rectangular a:before {
+  content: '';
   width: 6.25rem;
   height: 6.25rem;
-  -webkit-transition: -webkit-transform .5s ease;
-  transition: -webkit-transform .5s ease;
-  transition: transform .5s ease;
-  transition: transform .5s ease, -webkit-transform .5s ease;
+  background-image: url("../Image/game-btn.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 0;
   opacity: 0;
 }
 
-.shows__slider .rectangular:hover {
+.shows__slider .rectangular a:hover {
   opacity: 1;
 }
 
-.shows__slider .rectangular:hover .game-btn {
+.shows__slider .rectangular a:hover:before {
   opacity: 1;
 }
 
@@ -5988,6 +6002,292 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+iframe #cuerpo__juego {
+  background-color: white !important;
+  text-align: center;
+}
+
+.game__wrapper {
+  width: 92%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media (max-width: 575.98px) {
+  .game__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .game__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.game__wrapper .detailsHero__wrapper__contents__left {
+  width: 100% !important;
+}
+
+.game__wrapper .detailsHero__wrapper__contents__left:before {
+  background: rgba(255, 255, 255, 0) !important;
+  background: rgba(9, 0, 46, 0) -webkit-gradient(linear, left top, left bottom, from(rgba(9, 0, 46, 0)), to(#0e005c)) 0% 0% no-repeat padding-box !important;
+  background: rgba(9, 0, 46, 0) linear-gradient(180deg, rgba(9, 0, 46, 0) 0%, #0e005c 100%) 0% 0% no-repeat padding-box !important;
+}
+
+.game__wrapper .detailsHero__wrapper__contents__left p {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #ffffff;
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  opacity: 1;
+}
+
+@media (max-width: 575.98px) {
+  .game__wrapper .detailsHero__wrapper__contents__left p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .game__wrapper .detailsHero__wrapper__contents__left p {
+    font-size: 1.25rem;
+  }
+}
+
+.game__wrapper .detailsHero__wrapper__settings .left {
+  width: 100% !important;
+  -webkit-box-pack: justify !important;
+      -ms-flex-pack: justify !important;
+          justify-content: space-between !important;
+}
+
+@media (max-width: 575.98px) {
+  .game__wrapper .detailsHero__wrapper__settings .left {
+    padding-right: 0 !important;
+  }
+}
+
+.game__wrapper .detailsHero__wrapper__settings .left .buttons img {
+  margin-left: 1rem;
+  width: 1.25rem;
+}
+
+.game__wrapper .detailsHero__wrapper__settings .left p {
+  padding-left: 0 !important;
+}
+
+.game__wrapper__left {
+  width: 67%;
+}
+
+@media (max-width: 575.98px) {
+  .game__wrapper__left {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .game__wrapper__left {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1299.98px) {
+  .game__wrapper__left {
+    width: 55%;
+  }
+}
+
+.game__wrapper__left .detailsHero__wrapper__contents {
+  position: relative;
+}
+
+.game__wrapper__left .detailsHero__wrapper__contents__left img {
+  height: 39rem !important;
+}
+
+@media (max-width: 575.98px) {
+  .game__wrapper__left .detailsHero__wrapper__contents__left img {
+    height: 25rem !important;
+  }
+}
+
+.game__wrapper__left .detailsHero__wrapper__contents .game-btn {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+@media (max-width: 575.98px) {
+  .game__wrapper__right {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .game__wrapper__right {
+    width: 100%;
+  }
+}
+
+.game__wrapper__right .instructions {
+  border: 0.1875rem solid #67fe65;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 32.25rem;
+  min-height: 18rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 575.98px) {
+  .game__wrapper__right .instructions {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .game__wrapper__right .instructions {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+.game__wrapper__right .instructions h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.game__wrapper__right .instructions h5 {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.game__wrapper__right .instructions ul {
+  width: 100%;
+}
+
+.game__wrapper__right .instructions ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.game__wrapper__right .instructions ul li p {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #67fe65;
+  line-height: 1.125rem;
+}
+
+.game__wrapper__right .instructions ul li img {
+  width: 2.25rem;
+  height: auto;
+}
+
+.game__wrapper__right .adbanner {
+  width: 32.25rem;
+  height: 22.75rem;
+}
+
+.game__wrapper__right .adbanner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1.125rem;
+}
+
+.gameModal {
+  padding-left: 0 !important;
+  height: auto;
+}
+
+.gameModal .modal-dialog {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.gameModal .modal-dialog .modal-content {
+  background-color: #121212;
+  border: 0;
+  border-radius: 0;
+}
+
+.gameModal .modal-dialog .modal-content .modal-header {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: absolute;
+  z-index: 5;
+  right: 0.25rem;
+  bottom: 0.5rem;
+  border: 0;
+}
+
+.gameModal .modal-dialog .modal-content .modal-header img {
+  cursor: pointer;
+}
+
+.gameModal .modal-dialog .modal-content .modal-body {
+  padding: 0;
+}
+
+.gameModal .modal-dialog .modal-content .modal-body .game__player iframe {
+  width: 100%;
+  height: 100vh;
 }
 
 .notFound {

@@ -505,6 +505,7 @@
                         width: 100%;
                         border: none;
                         border-radius: 0;
+                        height: 28.125rem;
                     }
                     h1{
                         font-size: 2.4375rem;
@@ -527,7 +528,7 @@
                             background: rgba(255,255,255, 0);
                             background: rgba(9, 0, 46, 0) linear-gradient(180deg, rgba(9, 0, 46, 0) 0%, #0e005c 100%) 0% 0% no-repeat padding-box;
                         }
-                        h1{
+                        h1, p{
                             opacity: 1;
                         }
                     }
@@ -699,6 +700,15 @@
                     }
                 }
             }
+        }
+    }
+}
+
+.gameHero{
+    .list{
+        @media (min-width: 576px) {
+            margin-top: 8rem;
+            margin-bottom: 2rem;
         }
     }
 }
