@@ -70,6 +70,11 @@ export const loginUser = (formData) => async (dispatch) => {
       dispatch({
         type: LOGIN_FAIL,
       });
+
+      notyf.open({
+        type: "error",
+        message: res.data.error_messages,
+      });
     } else {
       localStorage.setItem("token", res.data.data.token);
       localStorage.setItem("id", res.data.data.id);
@@ -88,7 +93,10 @@ export const loginUser = (formData) => async (dispatch) => {
     dispatch({
       type: AUTH_ERROR,
     });
-
+    notyf.open({
+      type: "error",
+      message: "error de inicio de sesion !",
+    });
     return false;
   }
 };
