@@ -22,6 +22,7 @@ const Categories = ({
   getCategoryVideos,
   getOnDemandData,
   getCategories,
+  radio,
 }) => {
   const { shows, categories } = useLandingApi();
   const [categoryList, setCategoryList] = useState([]);
@@ -117,7 +118,12 @@ const Categories = ({
             </h2>
             <Link to="/radio">{`Ver más>`}</Link>
           </div>
-          <RadioSlider shows={radioData} delay={2500} clicks={true} />
+          <RadioSlider
+            shows={radioData}
+            data={radio?.data}
+            delay={2500}
+            clicks={true}
+          />
         </section>
       )}
 
@@ -144,6 +150,7 @@ const Categories = ({
 
 const mapStateToProps = (state) => ({
   onDemand: state.onDemand,
+  radio: state.radio,
 });
 
 export default connect(mapStateToProps, {
