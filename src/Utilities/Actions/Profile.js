@@ -18,8 +18,6 @@ export const getSubProfiles = () => async (dispatch) => {
       bodyFormData
     );
 
-    console.log(res.data);
-
     if (res.data && res.data.success) {
       dispatch({
         type: GET_SUB_PROFILES_SUCCESS,
@@ -106,25 +104,45 @@ export const addSubProfile = (name, age, picture) => async (dispatch) => {
 // @params formData     data of user.
 // @access              public
 export const deleteSubProfile =
-  (subProfileId, deleteSubProfileId) => async (dispatch) => {
+  (subProfileId, deleteSubProfileId, password) => async (dispatch) => {
     try {
       const state = store.getState();
 
-      let bodyFormData = new FormData();
-      bodyFormData.append("id", state.auth.userId);
-      bodyFormData.append("token", state.auth.token);
-      bodyFormData.append("sub_profile_id", subProfileId);
-      bodyFormData.append("delete_sub_profile_id", deleteSubProfileId);
+      const data = new FormData();
+      data.append("password", password);
+      data.append("email", state.auth.data.data.email);
+      data.append("login_by", "manual");
+      data.append("device_type", "web");
+      data.append("device_token", "123456");
 
-      const res = await axios.post(
-        `${process.env.REACT_APP_API_LINK}/userApi/sub_profiles/delete`,
-        bodyFormData
+      const resLogin = await axios.post(
+        `${process.env.REACT_APP_API_LINK}/userApi/v4/login`,
+        data
       );
 
-      console.log("remove ", res.data);
+      if (resLogin.data && resLogin.data.success) {
+        let bodyFormData = new FormData();
+        bodyFormData.append("id", state.auth.userId);
+        bodyFormData.append("token", state.auth.token);
+        bodyFormData.append("sub_profile_id", subProfileId);
+        bodyFormData.append("delete_sub_profile_id", deleteSubProfileId);
 
-      return res.data;
+        const res = await axios.post(
+          `${process.env.REACT_APP_API_LINK}/userApi/sub_profiles/delete`,
+          bodyFormData
+        );
+
+        return res.data;
+      } else {
+        notyf.open({
+          type: "error",
+          message: "La contraseña no es válida !",
+        });
+      }
     } catch (err) {
-      console.log(err);
+      notyf.open({
+        type: "error",
+        message: "no se puede realizar la operacion !",
+      });
     }
   };

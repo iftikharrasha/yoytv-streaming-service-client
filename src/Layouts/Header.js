@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
@@ -12,16 +12,49 @@ import SearchSvg from "../Image/SvgCodes/SearchSvg";
 import logoBlue from "../Image/LogoBlue.svg";
 import LoginModal from "../Components/Custom/Modals/LoginModal";
 import useAuth from "../Utilities/Hooks/useAuth";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { logoutUser } from "Utilities/Actions/Auth";
-import { Navigate } from "react-router-dom";
+import { getSubProfiles } from "Utilities/Actions/Profile";
+import { Navigate, useNavigate } from "react-router-dom";
+import store from "Utilities/Store/store";
+import { UPDATE_SUB_PROFILE_ID } from "Utilities/Actions/types";
 
-const Header = ({ auth: { isAuthenticated, loading, data }, logoutUser }) => {
-  //   console.log(data);
-  //   const { dataAuth, handleLogOut } = useAuth();
+const Header = ({
+  auth: { isAuthenticated, loading, data, selectedSubProfile, subProfileId },
+  profile: { subProfileList },
+  logoutUser,
+  getSubProfiles,
+}) => {
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
+  const navigate = useNavigate();
+  const state = store.getState();
 
   const menuLinks = document.querySelectorAll(".menu__link");
+
+  useEffect(() => {
+    if (state.auth.userId && !selectedSubProfile) {
+      navigate("/profile/browse/" + state.auth.userId);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      getSubProfiles();
+    }
+  }, [isAuthenticated]);
+
+  useEffect(() => {
+    const res = subProfileList.filter((obj) => {
+      return obj.sub_profile_id == localStorage.getItem("subProfileId");
+    });
+    if (res.length > 0) {
+      dispatch({
+        type: UPDATE_SUB_PROFILE_ID,
+        payload: res[0],
+      });
+    }
+  }, [subProfileList]);
 
   menuLinks.forEach((link) => {
     link.addEventListener("click", () => {
@@ -148,9 +181,12 @@ const Header = ({ auth: { isAuthenticated, loading, data }, logoutUser }) => {
                     id="dropdown-basic"
                     className="d-flex align-items-center"
                   >
-                    <span>{data.data.name.split("@")[0]}</span>
+                    <span>{selectedSubProfile && selectedSubProfile.name}</span>
                     <span className="avatar ms-3">
-                      <img alt="user" src={data.data.picture} />
+                      <img
+                        alt="user"
+                        src={selectedSubProfile && selectedSubProfile.picture}
+                      />
                     </span>
                   </Dropdown.Toggle>
 
@@ -206,9 +242,12 @@ const Header = ({ auth: { isAuthenticated, loading, data }, logoutUser }) => {
                     id="dropdown-basic"
                     className="d-flex align-items-center"
                   >
-                    <span>{data.data.name.split("@")[0]}</span>
+                    <span>{selectedSubProfile && selectedSubProfile.name}</span>
                     <span className="avatar ms-3">
-                      <img alt="user" src={data.data.picture} />
+                      <img
+                        alt="user"
+                        src={selectedSubProfile && selectedSubProfile.picture}
+                      />
                     </span>
                   </Dropdown.Toggle>
 
@@ -340,6 +379,7 @@ Header.propTypes = {};
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
+  profile: state.profile,
 });
 
-export default connect(mapStateToProps, { logoutUser })(Header);
+export default connect(mapStateToProps, { logoutUser, getSubProfiles })(Header);

@@ -3,7 +3,7 @@ import { Modal, Form } from "react-bootstrap";
 import close from "../../../Image/close.svg";
 import useAuth from "../../../Utilities/Hooks/useAuth";
 
-const DeleteModal = props => {
+const DeleteModal = (props) => {
   const { setError, setSuccess } = useAuth();
   const { deleteShow, setdeleteShow, onDeleteHandle } = props;
 
@@ -18,7 +18,7 @@ const DeleteModal = props => {
     setError("");
     setSuccess("");
     /* TODO: PASSWORD VALIDATION */
-    onDeleteHandle();
+    onDeleteHandle(passData.pass);
   };
 
   return (
@@ -51,7 +51,7 @@ const DeleteModal = props => {
                 type="password"
                 placeholder="Ingresa tu contraseña"
                 value={passData.pass}
-                onChange={e =>
+                onChange={(e) =>
                   setPassData({ ...passData, pass: e.target.value })
                 }
               />

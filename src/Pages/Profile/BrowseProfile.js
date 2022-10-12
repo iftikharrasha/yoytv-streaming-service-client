@@ -4,26 +4,27 @@ import plus from "../../Image/plus-greeen.svg";
 import logoGreen from "../../Image/LogoGreen.svg";
 import { connect, useDispatch } from "react-redux";
 import { getSubProfiles } from "../../Utilities/Actions/Profile";
+import { loadUser } from "Utilities/Actions/Auth";
 import { UPDATE_SUB_PROFILE_ID } from "Utilities/Actions/types";
 
 const BrowseProfile = ({
   profile: { subProfileList, isNewSubProfileAllowed, loading },
   auth: { userId },
   getSubProfiles,
+  loadUser,
 }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     getSubProfiles();
-    console.log("isallowed ", isNewSubProfileAllowed);
   }, []);
 
-  const selectProfile = (subProfileId) => {
+  const selectProfile = (item) => {
     dispatch({
       type: UPDATE_SUB_PROFILE_ID,
-      payload: subProfileId,
+      payload: item,
     });
-    localStorage.setItem("subProfileId", subProfileId);
+    localStorage.setItem("subProfileId", item.sub_profile_id);
   };
 
   return (
@@ -47,10 +48,7 @@ const BrowseProfile = ({
               {subProfileList.map((item, index) => {
                 return (
                   <li>
-                    <Link
-                      to="/home"
-                      onClick={() => selectProfile(item.sub_profile_id)}
-                    >
+                    <Link to="/home" onClick={() => selectProfile(item)}>
                       <img
                         className="screen"
                         src={item.picture}
@@ -65,8 +63,7 @@ const BrowseProfile = ({
               })}
 
               <li>
-                {/* {isNewSubProfileAllowed ? ( */}
-                {true ? (
+                {isNewSubProfileAllowed ? (
                   <Link to={`/profile/create/` + userId}>
                     <div className="screen plus">
                       <img src={plus} alt="browse" width="127" height="127" />
@@ -97,4 +94,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, {
   getSubProfiles,
+  loadUser,
 })(BrowseProfile);

@@ -67,8 +67,8 @@ const SettingsProfile = ({
     e.preventDefault();
   };
 
-  const onDeleteHandle = async () => {
-    const res = await deleteSubProfile(subProfileId, subProfileId);
+  const onDeleteHandle = async (password) => {
+    const res = await deleteSubProfile(subProfileId, subProfileId, password);
     if (res.success) {
       notyf.open({
         type: "success",
@@ -79,7 +79,7 @@ const SettingsProfile = ({
     } else {
       notyf.open({
         type: "error",
-        message: `${res.error_message}`,
+        message: `${res.error_messages}`,
       });
     }
   };

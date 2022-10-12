@@ -18,6 +18,7 @@ const initialState = {
   userId: null,
   token: null,
   subProfileId: null,
+  selectedSubProfile: null,
 };
 
 export default function (state = initialState, action) {
@@ -66,7 +67,8 @@ export default function (state = initialState, action) {
     case UPDATE_SUB_PROFILE_ID:
       return {
         ...state,
-        subProfileId: payload,
+        subProfileId: payload.sub_profile_id,
+        selectedSubProfile: payload,
       };
     case LOGIN_FAIL:
     case REGISTER_FAIL:
