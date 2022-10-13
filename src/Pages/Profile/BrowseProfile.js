@@ -17,6 +17,7 @@ const BrowseProfile = ({
 
   useEffect(() => {
     getSubProfiles();
+    loadUser();
   }, []);
 
   const selectProfile = (item) => {
