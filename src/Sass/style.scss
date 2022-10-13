@@ -267,7 +267,7 @@ input:-webkit-autofill:active {
 }
 
 .adbanner{
-    margin: 0 !important;
+    // margin: 0 !important;
     @media (max-width: 991.98px) {
         display: none;
     }
@@ -279,12 +279,21 @@ input:-webkit-autofill:active {
         overflow: hidden;
         img{
             width: 100% !important;
-            height: 25rem !important;
+            height: 21rem !important;
         }
         h6{
             padding: 3rem 0;
             font-size: 1.75rem;
             color: $white;
+            @media (min-width: 576px) and (max-width: 991.98px) {
+                font-size: 1.5rem;
+            }
+            @media (min-width: 576px) and (max-width: 767.98px) {
+                font-size: 1.5rem;
+            }
+            @media (min-width: 992px) and (max-width: 1199.98px) {
+                font-size: 1.5rem;
+            }
             span{
                 font-weight: 700;
             }

@@ -94,12 +94,18 @@
 }
 
 .isChannelLive{
-    background-color: #67fe6595 !important;
+    cursor: pointer;
+    background-color: #3F944E !important;
     border: 1px solid $green;
 }
 
 .isChanneNotlLive{
-    background-color: #3E337D40 !important;
+    cursor: pointer;
+    background-color: #150D41 !important;
+    &:hover{
+        background-color: #3F944E !important;
+        border: 1px solid $green;
+    }
 }
 
 .ebfc5082{

@@ -21,7 +21,7 @@ const JuegosPlay = ({nowPlaying}) => {
             <section className="hero detailsHero playerHero gameHero">
                 <div className="heroBg">
                     <div className="list">
-                        <Link to="/" className="title" onClick={() => navigate(-1)}><img src={arrow} alt={arrow} />Categorías  |  {nowPlaying.category}</Link>
+                        <Link to="/juegos/categories" className="title"><img src={arrow} alt={arrow} />Categorías  |  {nowPlaying.category}</Link>
                     </div>
                     <div className="detailsHero__wrapper game__wrapper">
                         <div className="game__wrapper__left">

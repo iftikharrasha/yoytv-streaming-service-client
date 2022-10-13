@@ -24,6 +24,10 @@ export const notyf = new Notyf({
       },
       {
         type: 'success',
+      },
+      {
+        type: 'info',
+        background: '#0e005c',
       }
     ]
 });

@@ -69,7 +69,6 @@ const Categories = ({demandPage}) => {
             </section>
         }
 
-        {/* TODO: JUEGOS SLIDER - CURRENTLY HARDCODED NEED API*/}
         {
             demandPage ? null : 
             <section className="shows">
