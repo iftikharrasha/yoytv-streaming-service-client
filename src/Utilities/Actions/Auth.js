@@ -14,7 +14,6 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { notyf } from "Utilities/Hooks/useNotification";
 
 // @desc                User loading.
-// @params formData     data of user.
 // @access              public
 export const loadUser = () => async (dispatch) => {
   try {
