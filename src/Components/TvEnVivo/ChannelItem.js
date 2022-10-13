@@ -8,12 +8,12 @@ export const ChannelItem = ({ channel, nowPlaying }) => {
     if(channel.uuid === nowPlaying.channelUuid){
       notyf.open({
         type: 'success',
-        message: "Channel is already broadcasting"
+        message: "El canal ya se está reproduciendo."
       });
     }else{
       notyf.open({
         type: 'error',
-        message: "Choose from the list of live programs to see the content"
+        message: "Elige un programa en vivo desde la guía de programación."
       });
     }
   };
