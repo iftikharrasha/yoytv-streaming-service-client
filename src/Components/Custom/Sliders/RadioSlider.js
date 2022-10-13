@@ -7,6 +7,7 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import PodcastModal from "../Modals/PodcastModal";
+import { radioData } from "Data/radioData";
 
 const RadioSlider = ({ shows, delay, podcast, data }) => {
   const [lgShow, setLgShow] = useState(false);
@@ -50,26 +51,39 @@ const RadioSlider = ({ shows, delay, podcast, data }) => {
         className="shows__slider"
       >
         {!podcast
-          ? data.slice(0, 10).map((item, index) => (
-              <SwiperSlide
-                className="radio"
-                key={index}
-                onClick={() => handlePopup(item)}
-              >
-                <Link to={`/podcast/details/` + item.id}>
-                  <img
-                    src={
-                      shows?.data?.find(
-                        (d) =>
-                          d.title?.toLowerCase() === item?.name?.toLowerCase()
-                      ).default_image
-                    }
-                    alt="default_image"
-                  />
-                </Link>
-                <h6>{item.name}</h6>
-              </SwiperSlide>
-            ))
+          ? data
+            ? data.slice(0, 10).map((item, index) => (
+                <SwiperSlide
+                  className="radio"
+                  key={index}
+                  onClick={() => handlePopup(item)}
+                >
+                  <Link to={`/podcast/details/` + item.id}>
+                    <img
+                      src={
+                        shows?.data?.find(
+                          (d) =>
+                            d.title?.toLowerCase() === item?.name?.toLowerCase()
+                        ).default_image
+                      }
+                      alt="default_image"
+                    />
+                  </Link>
+                  <h6>{item.name}</h6>
+                </SwiperSlide>
+              ))
+            : radioData.data.map((item, index) => (
+                <SwiperSlide
+                  className="radio"
+                  key={index}
+                  onClick={() => handlePopup(item)}
+                >
+                  <Link to={`/podcast/details/` + item.id}>
+                    <img src={item?.default_image} alt="default_image" />
+                  </Link>
+                  <h6>{item.title}</h6>
+                </SwiperSlide>
+              ))
           : shows?.data.slice(10, 20).map((item, index) => (
               <SwiperSlide
                 className="radio"
