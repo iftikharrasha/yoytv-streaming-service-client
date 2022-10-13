@@ -10,6 +10,8 @@ import {
   LOGOUT_USER,
   REGISTER_SUBSCRIPTION_SUCCESS,
 } from "./types";
+import { Navigate, useNavigate } from "react-router-dom";
+import { notyf } from "Utilities/Hooks/useNotification";
 
 // @desc                User loading.
 // @params formData     data of user.
@@ -68,6 +70,11 @@ export const loginUser = (formData) => async (dispatch) => {
       dispatch({
         type: LOGIN_FAIL,
       });
+
+      notyf.open({
+        type: "error",
+        message: res.data.error_messages,
+      });
     } else {
       localStorage.setItem("token", res.data.data.token);
       localStorage.setItem("id", res.data.data.id);
@@ -76,13 +83,20 @@ export const loginUser = (formData) => async (dispatch) => {
         type: LOGIN_SUCCESS,
         payload: res.data,
       });
+      notyf.open({
+        type: "success",
+        message: "Iniciar sesión con éxito !",
+      });
     }
     return res.data;
   } catch (err) {
     dispatch({
       type: AUTH_ERROR,
     });
-
+    notyf.open({
+      type: "error",
+      message: "error de inicio de sesion !",
+    });
     return false;
   }
 };
@@ -162,6 +176,35 @@ export const logoutUser = () => async (dispatch) => {
     }
 
     return res.data.success;
+  } catch (err) {
+    dispatch({
+      type: AUTH_ERROR,
+    });
+
+    return false;
+  }
+};
+
+// @desc                Register user.
+// @params formData     data of user.
+// @access              public
+export const changePassword = (formData) => async (dispatch) => {
+  try {
+    const state = store.getState();
+
+    let data = new FormData();
+    data.append("id", state.auth.data.data.id);
+    data.append("token", state.auth.data.data.token);
+    data.append("old_password", formData.old_password);
+    data.append("password", formData.password);
+    data.append("password_confirmation", formData.confirmPass);
+
+    const res = await axios.post(
+      `${process.env.REACT_APP_API_LINK}/userApi/changePassword`,
+      data
+    );
+
+    return res.data;
   } catch (err) {
     dispatch({
       type: AUTH_ERROR,

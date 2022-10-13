@@ -8,6 +8,7 @@ import {
   LOADING_STOP,
   LOGOUT_USER,
   REGISTER_SUBSCRIPTION_SUCCESS,
+  UPDATE_SUB_PROFILE_ID,
 } from "Utilities/Actions/types";
 
 const initialState = {
@@ -17,6 +18,7 @@ const initialState = {
   userId: null,
   token: null,
   subProfileId: null,
+  selectedSubProfile: null,
 };
 
 export default function (state = initialState, action) {
@@ -43,6 +45,15 @@ export default function (state = initialState, action) {
         subProfileId: payload.data.sub_profile_id,
       };
     case LOGIN_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        isAuthenticated: true,
+        data: payload,
+        userId: payload.data.id,
+        token: payload.data.token,
+        subProfileId: payload.data.sub_profile_id,
+      };
     case LOAD_USER:
       return {
         ...state,
@@ -52,6 +63,12 @@ export default function (state = initialState, action) {
         userId: payload.data.id,
         token: payload.data.token,
         subProfileId: payload.data.sub_profile_id,
+      };
+    case UPDATE_SUB_PROFILE_ID:
+      return {
+        ...state,
+        subProfileId: payload.sub_profile_id,
+        selectedSubProfile: payload,
       };
     case LOGIN_FAIL:
     case REGISTER_FAIL:
