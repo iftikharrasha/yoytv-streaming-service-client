@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
-import close from '../../../Image/close.svg';
+import close from '../../../Image/close-green.svg';
 
 const GameModal = ({ gameShow, setGameShow, nowPlaying }) => {
 
