@@ -2583,12 +2583,19 @@
 }
 
 .isChannelLive {
-  background-color: #67fe6595 !important;
+  cursor: pointer;
+  background-color: #3F944E !important;
   border: 1px solid #67fe65;
 }
 
 .isChanneNotlLive {
-  background-color: #3E337D40 !important;
+  cursor: pointer;
+  background-color: #150D41 !important;
+}
+
+.isChanneNotlLive:hover {
+  background-color: #3F944E !important;
+  border: 1px solid #67fe65;
 }
 
 .ebfc5082 {
@@ -6004,6 +6011,27 @@
           align-items: flex-start;
 }
 
+.gamesSlider .allEpisodes__body__contents__similar {
+  width: 80%;
+}
+
+@media (max-width: 575.98px) {
+  .gamesSlider .allEpisodes__body__contents__similar {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .gamesSlider .allEpisodes__body__contents__similar {
+    width: 100%;
+  }
+}
+
+.gamesSlider .adbanner {
+  width: 17%;
+  margin-top: 4rem !important;
+}
+
 iframe #cuerpo__juego {
   background-color: white !important;
   text-align: center;
@@ -6661,10 +6689,6 @@ input:-webkit-autofill:active {
   font-size: 0.8125rem;
 }
 
-.adbanner {
-  margin: 0 !important;
-}
-
 @media (max-width: 991.98px) {
   .adbanner {
     display: none;
@@ -6681,13 +6705,31 @@ input:-webkit-autofill:active {
 
 .adbanner__gamesAd1 img {
   width: 100% !important;
-  height: 25rem !important;
+  height: 21rem !important;
 }
 
 .adbanner__gamesAd1 h6 {
   padding: 3rem 0;
   font-size: 1.75rem;
   color: #ffffff;
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .adbanner__gamesAd1 h6 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .adbanner__gamesAd1 h6 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .adbanner__gamesAd1 h6 {
+    font-size: 1.5rem;
+  }
 }
 
 .adbanner__gamesAd1 h6 span {
