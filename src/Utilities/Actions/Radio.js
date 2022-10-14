@@ -11,7 +11,7 @@ export const getRadioStation = () => async (dispatch) => {
       type: GET_RADIO_DATA_PENDING,
     });
     const { data } = await axios.get(
-      `${process.env.REACT_APP_API_LINK}/stations`
+      `${process.env.REACT_APP_API_LINK_RADIO}/stations`
     );
     if (data) {
       dispatch({

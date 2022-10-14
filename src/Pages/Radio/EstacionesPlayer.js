@@ -29,14 +29,14 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
 
   const getStation = async () => {
     const { data } = await axios.get(
-      `${process.env.REACT_APP_API_LINK}/station/${id}`
+      `${process.env.REACT_APP_API_LINK_RADIO}/station/${id}`
     );
     setStation(data);
   };
 
   const getNowPlaying = async () => {
     const { data } = await axios.get(
-      `${process.env.REACT_APP_API_LINK}/nowplaying/${id}`
+      `${process.env.REACT_APP_API_LINK_RADIO}/nowplaying/${id}`
     );
     setRemainSecond(data?.now_playing?.remaining);
     getRemainTime();
