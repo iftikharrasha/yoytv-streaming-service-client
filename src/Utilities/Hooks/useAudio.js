@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 
-function useAudio(src) {
+function useAudio() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -15,10 +15,6 @@ function useAudio(src) {
     setIsPlaying(false);
   };
 
-  const handlePlay = useCallback(() => {
-    setIsPlaying(!isPlaying);
-  }, [isPlaying]);
-
   const handleVolume = useCallback(() => {
     if (volume > 0.9) {
       setVolume(0.1);
@@ -29,30 +25,30 @@ function useAudio(src) {
     }
   }, [volume]);
 
-  useEffect(() => {
-    if (isPlaying) {
-      setLoading(true);
-      audio.current.src = src;
-      audio.current
-        .play()
-        .then(() => {
-          setLoading(false);
-        })
-        .catch((error) => {
-          setError("Error in playing audio");
-          setLoading(false);
-        });
-    } else {
-      audio.current.src = "";
-    }
-  }, [isPlaying]);
+  const playRadio = (src) => {
+    setLoading(true);
+    audio.current.src = src;
+    audio.current
+      .play()
+      .then(() => {
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError("Error in playing audio");
+        setLoading(false);
+      });
+  };
+  const pauseRadio = () => {
+    audio.current.src = null;
+  };
 
   return {
     loading,
-    handlePlay,
-    error,
     isPlaying,
+    error,
     handleVolume,
+    playRadio,
+    pauseRadio,
   };
 }
 

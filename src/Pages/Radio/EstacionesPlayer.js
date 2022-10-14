@@ -24,9 +24,7 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
   const { id } = useParams();
   const [station, setStation] = useState({});
   const [remainSecond, setRemainSecond] = useState(0);
-  const { handlePlay, loading, error, isPlaying, handleVolume } = useAudio(
-    station.listen_url
-  );
+  const { loading, error, handleVolume, playRadio, pauseRadio } = useAudio();
   const [nowPlaying, setNowPlyaing] = useState({});
 
   const getStation = async () => {
@@ -61,6 +59,16 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
   useEffect(() => {
     if (radio?.data?.length - 1) getRadioStation();
   }, [radio?.data]);
+
+  useEffect(() => {
+    if (station.listen_url) {
+      playRadio(station.listen_url);
+    }
+    return () => {
+      pauseRadio();
+    };
+  }, [station]);
+
   //   rerender data
   useEffect(() => {
     if (remainSecond < 1) {
@@ -119,11 +127,7 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
             </div>
             <div className="detailsHero__wrapper__settings">
               <div className="left">
-                <img
-                  src={isPlaying ? play : pause}
-                  alt="pause"
-                  onClick={handlePlay}
-                />
+                <img src={pause} alt="pause" />
                 <p>
                   {loading && "Loading...!"}
                   {error && JSON.stringify(error)}
