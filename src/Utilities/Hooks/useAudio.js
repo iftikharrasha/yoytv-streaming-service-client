@@ -1,20 +1,20 @@
 import React, { useCallback, useRef, useState } from "react";
 
 function useAudio() {
-  const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   let audio = useRef(new Audio());
-  audio.current.onplay = function () {
-    setIsPlaying(true);
+  audio.current.oncanplay = function () {
+    console.log("can play");
   };
-
-  audio.current.onended = function () {
-    setIsPlaying(false);
+  audio.current.oncanplaythrough = function () {
+    console.log("can play through");
   };
-
+  audio.current.onloadeddata = function () {
+    console.log("loaded data");
+  };
   const handleVolume = useCallback(() => {
     if (volume > 0.9) {
       setVolume(0.1);
@@ -27,24 +27,27 @@ function useAudio() {
 
   const playRadio = (src) => {
     setLoading(true);
+    setError(null);
     audio.current.src = src;
     audio.current
       .play()
-      .then(() => {
+      .then((response) => {
+        console.log("playing", response);
         setLoading(false);
       })
       .catch((error) => {
-        setError("Error in playing audio");
+        setError("Error please reload the page");
         setLoading(false);
       });
   };
   const pauseRadio = () => {
     audio.current.src = null;
+    audio.current.onload = null;
   };
 
   return {
     loading,
-    isPlaying,
+    setLoading,
     error,
     handleVolume,
     playRadio,
