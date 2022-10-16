@@ -6,7 +6,7 @@ import JuegosMore from "../../Components/Juegos/JuegosMore";
 import Loader from "../../Components/Custom/Loaders/Loader";
 
 const Juegos = () => {
-    const { allGames, activeGames } = useGamesData();
+    const { allGames, activeGames, loading } = useGamesData();
 
     return (
         <> 
@@ -27,7 +27,7 @@ const Juegos = () => {
             </section>
 
             {
-                !allGames && !activeGames ? <Loader /> : 
+                loading ? <Loader /> : 
                 <JuegosMore allGames={allGames} activeGames={activeGames}/>
             }
         </>
