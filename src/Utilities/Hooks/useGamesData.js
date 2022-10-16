@@ -1,43 +1,29 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import useSWR from "swr";
 
 const useGamesData = () => {
-    const [allGames, setAllGames] = useState([]);
-    const [activeGames, setActiveGames] = useState([]);
-    const [loading, setIsLoading] = useState(true);
+    const fetcher = async (url) =>
+    await axios.get(url).then((res) => res.data.message);
 
-    const fetchGames= async (param) =>  {
-        setIsLoading(true)
-        try {
-            const response = await axios.post(`${process.env.REACT_APP_API_LINK_GAMES}/api/games?active=${param}`);
+    const { data: allGames } = useSWR(
+        `${process.env.REACT_APP_API_LINK_GAMES}/games?pub_key=games123456pub&active=all`,
+        fetcher
+    );
 
-            if(response.data.success === true) {
-                if(param === 'active'){
-                    setActiveGames(response.data.message)
-                    setIsLoading(false);
-                }else{
-                    setAllGames(response.data.message);
-                    setIsLoading(false);
-                }
-            }else{
-                console.log('SERVER ERROR');
-            }
-
-            return response.data.message
-        } catch (error) {
-            console.log(error);
-        }
-    }
+    const { data: activeGames } = useSWR(
+        `${process.env.REACT_APP_API_LINK_GAMES}/games?pub_key=games123456pub&active=active`,
+        fetcher
+    );
     
-    useEffect(() => {
-        fetchGames('all');
-        fetchGames('active');
-    }, []);
+    const { data: gamesCategories } = useSWR(
+        `${process.env.REACT_APP_API_LINK_GAMES}/categories?pub_key=games123456pub`,
+        fetcher
+    );
 
     return {
-        loading,
         allGames,
         activeGames,
+        gamesCategories,
     };
 };
 
