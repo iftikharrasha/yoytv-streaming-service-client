@@ -24,7 +24,9 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
   const { id } = useParams();
   const [station, setStation] = useState({});
   const [remainSecond, setRemainSecond] = useState(0);
-  const { loading, error, handleVolume, playRadio, pauseRadio } = useAudio();
+  const [isImageLoad, setIsImageLoad] = useState(false);
+  const { loading, error, handleVolume, playRadio, pauseRadio, setLoading } =
+    useAudio();
   const [nowPlaying, setNowPlyaing] = useState({});
 
   const getStation = async () => {
@@ -61,7 +63,8 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
   }, [radio?.data]);
 
   useEffect(() => {
-    if (station.listen_url) {
+    setLoading(true);
+    if (station?.listen_url) {
       playRadio(station.listen_url);
     }
     return () => {
@@ -76,11 +79,12 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
     }
   }, [remainSecond]);
 
-  const artImage = nowPlaying?.now_playing?.song?.art
-    ? nowPlaying?.now_playing?.song?.art
-    : radioData.data?.find(
-        (item) => item.title?.toLowerCase() === station.name?.toLowerCase()
-      )?.default_image;
+  const artImage =
+    !isImageLoad && nowPlaying?.now_playing?.song?.art
+      ? nowPlaying?.now_playing?.song?.art
+      : radioData.data?.find(
+          (item) => item.title?.toLowerCase() === station.name?.toLowerCase()
+        )?.default_image;
 
   return (
     <>
@@ -95,7 +99,13 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
           <div className="detailsHero__wrapper">
             <div className="detailsHero__wrapper__contents">
               <div className="detailsHero__wrapper__contents__left">
-                <img src={artImage} alt="radio" />
+                <img
+                  src={artImage}
+                  alt="radio"
+                  onError={() => {
+                    setIsImageLoad(true);
+                  }}
+                />
                 <h1>{station.name}</h1>
               </div>
               <div className="detailsHero__wrapper__contents__right">
