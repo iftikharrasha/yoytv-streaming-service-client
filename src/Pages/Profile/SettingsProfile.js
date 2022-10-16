@@ -36,7 +36,7 @@ const SettingsProfile = ({
         email: data.data.email,
         mobile: data.data.mobile,
         age: res[0].age,
-        plan: "Familiar",
+        plan: data.data.subscription_title,
         subProfileId: res[0].sub_profile_id,
         picture: res[0].picture,
       });
