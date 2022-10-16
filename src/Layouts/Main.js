@@ -2,6 +2,9 @@ import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ScrollToTop from './ScrollToTop';
 import PrivateRoute from '../Pages/PrivateRoute/PrivateRoute';
+import AdJSOption from '../Pages/Adbanners/AdJSOption';
+import AdIframe from '../Pages/Adbanners/AdIframe';
+import AdIframe2 from '../Pages/Adbanners/AdIframe2';
 const Home = React.lazy(() => import("../Pages/Home/Home"));
 const OnDemand = React.lazy(() => import("../Pages/OnDemand/OnDemand"));
 const TvEnVivo = React.lazy(() => import("../Pages/TvEnVivo/TvEnVivo"));
@@ -122,6 +125,15 @@ const Main = () => {
                                 <PrivateRoute>
                                     <JuegosGameplay/>
                                 </PrivateRoute>}
+                            />
+                            <Route path="/ad1" element={
+                                <AdJSOption/>}
+                            />
+                            <Route path="/ad2" element={
+                                <AdIframe/>}
+                            />
+                            <Route path="/ad3" element={
+                                <AdIframe2/>}
                             />
                             <Route path="*" element={<NotFound/>} />
                         </Routes>
