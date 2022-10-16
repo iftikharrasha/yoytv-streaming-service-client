@@ -5,27 +5,33 @@ import useUserApi from "../../Utilities/Hooks/useLandingApi";
 import LandingContent from "../../Components/Home/LandingContent";
 import useAuth from "../../Utilities/Hooks/useAuth";
 import Categories from "../../Components/Home/Categories";
+import { connect } from "react-redux";
 
-const Home = () => {
-    const { landingData, newRelease } = useUserApi();
-    const { loggedInUser } = useAuth();
+const Home = ({ auth: { isAuthenticated, loading, data } }) => {
+  const { landingData, newRelease } = useUserApi();
+  const { loggedInUser } = useAuth();
 
-    return (
+  return (
+    <>
+      {!landingData ? (
+        <Loader />
+      ) : !isAuthenticated ? (
         <>
-            {
-                !landingData ? <Loader/> :
-                    !loggedInUser?.isSignedIn ?
-                    <>  
-                        <Hero landingData={landingData}/>
-                        <LandingContent landingData={landingData} newRelease={newRelease}/>
-                    </> : 
-                    <>
-                        <Hero landingData={landingData} loggedInUser={loggedInUser}/>
-                        <Categories/>
-                    </>
-            }
+          <Hero landingData={landingData} />
+          <LandingContent landingData={landingData} newRelease={newRelease} />
         </>
-    );
+      ) : (
+        <>
+          <Hero landingData={landingData} loggedInUser={loggedInUser} />
+          <Categories />
+        </>
+      )}
+    </>
+  );
 };
 
-export default Home;
+const mapStateToProps = state => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps, null)(Home);

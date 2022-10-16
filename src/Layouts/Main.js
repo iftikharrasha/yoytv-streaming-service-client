@@ -16,18 +16,32 @@ const JuegosCategories = React.lazy(() => import("../Pages/Juegos/JuegosCategori
 const JuegosGameplay = React.lazy(() => import("../Pages/Juegos/JuegosGameplay"));
 const SeriesDetails = React.lazy(() => import("../Pages/OnDemand/SeriesDetails"));
 const MovieDetails = React.lazy(() => import("../Pages/OnDemand/MovieDetails"));
-const PodcastDetails = React.lazy(() => import("../Pages/Radio/PodcastDetails"));
+const PodcastDetails = React.lazy(() =>
+  import("../Pages/Radio/PodcastDetails")
+);
 const PodcastPlayer = React.lazy(() => import("../Pages/Radio/PodcastPlayer"));
-const EstacionesPlayer = React.lazy(() => import("../Pages/Radio/EstacionesPlayer"));
+const EstacionesPlayer = React.lazy(() =>
+  import("../Pages/Radio/EstacionesPlayer")
+);
 const Search = React.lazy(() => import("../Pages/Search/Search"));
-const BrowseProfile = React.lazy(() => import("../Pages/Profile/BrowseProfile"));
-const CreateProfile = React.lazy(() => import("../Pages/Profile/CreateProfile"));
+const BrowseProfile = React.lazy(() =>
+  import("../Pages/Profile/BrowseProfile")
+);
+const CreateProfile = React.lazy(() =>
+  import("../Pages/Profile/CreateProfile")
+);
 const EditProfile = React.lazy(() => import("../Pages/Profile/EditProfile"));
-const SettingsProfile = React.lazy(() => import("../Pages/Profile/SettingsProfile"));
+const SettingsProfile = React.lazy(() =>
+  import("../Pages/Profile/SettingsProfile")
+);
 const ViewMore = React.lazy(() => import("../Pages/ViewMore/ViewMore"));
 const MiLista = React.lazy(() => import("../Pages/Profile/MiLista"));
-const Subscription = React.lazy(() => import("../Pages/Subscription/Subscription"));
-const Registration = React.lazy(() => import("../Pages/Subscription/Registration"));
+const Subscription = React.lazy(() =>
+  import("../Pages/Subscription/Subscription")
+);
+const Registration = React.lazy(() =>
+  import("../Pages/Subscription/Registration")
+);
 const NotFound = React.lazy(() => import("../Pages/NotFound/NotFound"));
 const Loader = React.lazy(() => import("../Components/Custom/Loaders/Loader"));
 

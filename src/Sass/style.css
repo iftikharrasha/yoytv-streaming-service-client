@@ -3051,6 +3051,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
+  min-height: 23.5rem;
 }
 
 @media (max-width: 991.98px) {
@@ -3866,6 +3867,26 @@
   padding: 0.625rem;
   color: #ffffff;
   border-radius: 0;
+}
+
+.authModal .modal-dialog .modal-content .modal-body .like__content {
+  position: relative;
+}
+
+.authModal .modal-dialog .modal-content .modal-body .like__content:before {
+  content: '';
+  background: url("../Image/loveGreen.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 4rem;
+  height: 3.5rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 .authModal .modal-dialog .modal-content .modal-body .like__content img {
