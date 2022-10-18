@@ -10,6 +10,7 @@ import { tvData } from "../../Data/tvData";
 import { gameData } from "../../Data/juegosData";
 import { radioData } from "../../Data/radioData";
 import { connect } from "react-redux";
+import { getRadioStation } from "Utilities/Actions/Radio";
 import {
   getCategoryVideos,
   getOnDemandData,
@@ -22,14 +23,16 @@ const Categories = ({
   getCategoryVideos,
   getOnDemandData,
   getCategories,
+  getRadioStation,
+  radio,
 }) => {
   const { shows, categories } = useLandingApi();
   const [categoryList, setCategoryList] = useState([]);
-
   useEffect(() => {
     getCategoryVideos();
     getOnDemandData();
     getCategories();
+    getRadioStation();
   }, []);
 
   useEffect(() => {
@@ -117,7 +120,12 @@ const Categories = ({
             </h2>
             <Link to="/radio">{`Ver más>`}</Link>
           </div>
-          <RadioSlider shows={radioData} delay={2500} clicks={true} />
+          <RadioSlider
+            shows={radioData}
+            delay={2500}
+            radio={radio?.data}
+            clicks={true}
+          />
         </section>
       )}
 
@@ -144,10 +152,12 @@ const Categories = ({
 
 const mapStateToProps = (state) => ({
   onDemand: state.onDemand,
+  radio: state.radio,
 });
 
 export default connect(mapStateToProps, {
   getCategoryVideos,
   getOnDemandData,
   getCategories,
+  getRadioStation,
 })(Categories);

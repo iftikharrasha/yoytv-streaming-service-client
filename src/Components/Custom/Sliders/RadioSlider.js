@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Navigation } from "swiper";
 import "swiper/css";
@@ -9,11 +9,11 @@ import "swiper/css/navigation";
 import PodcastModal from "../Modals/PodcastModal";
 import { radioData } from "Data/radioData";
 
-const RadioSlider = ({ shows, delay, podcast, data }) => {
+const RadioSlider = ({ shows, delay, podcast, radio }) => {
   const [lgShow, setLgShow] = useState(false);
   const [details, setDetails] = useState({});
   const [isFetching, setIsFetching] = useState(true);
-
+  const navigate = useNavigate();
   const handlePopup = (data) => {
     setDetails(data);
     setIsFetching(false);
@@ -51,14 +51,14 @@ const RadioSlider = ({ shows, delay, podcast, data }) => {
         className="shows__slider"
       >
         {!podcast
-          ? data
-            ? data.slice(0, 10).map((item, index) => (
+          ? radio
+            ? radio.slice(0, 10).map((item, index) => (
                 <SwiperSlide
                   className="radio"
                   key={index}
-                  onClick={() => handlePopup(item)}
+                  onClick={() => navigate(`/estaciones/player/${item.id}`)}
                 >
-                  <Link to={`/podcast/details/` + item.id}>
+                  <Link to={`/estaciones/player/` + item.id}>
                     <img
                       src={
                         shows?.data?.find(
