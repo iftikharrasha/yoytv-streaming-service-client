@@ -4,6 +4,7 @@ import subscription from "./Subscription";
 import onDemand from "./OndemandReducer";
 import profile from "./ProfileReducer";
 import radio from "./RadioReducer";
+import search from "./SearchReducer";
 
 export default combineReducers({
   auth,
@@ -11,4 +12,5 @@ export default combineReducers({
   onDemand,
   profile,
   radio,
+  search,
 });
