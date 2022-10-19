@@ -40,7 +40,7 @@ const Home = ({ auth: { isAuthenticated, loading, data } }) => {
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 

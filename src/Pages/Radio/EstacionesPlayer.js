@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { radioData } from "../../Data/radioData";
 import Sound from "../../Image/Soundbutton.svg";
@@ -153,8 +153,8 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
                   className="sound"
                   onClick={handleVolume}
                 />
-                <img src={Love} alt="Love" />
-                <img src={Share} alt="Share" />
+                {/* <img src={Love} alt="Love" />
+                <img src={Share} alt="Share" /> */}
               </div>
             </div>
           </div>
@@ -173,7 +173,7 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
                   </div>
                   <RadioSlider
                     shows={radioData}
-                    data={radio?.data}
+                    radio={radio?.data}
                     delay={2500}
                   />
                 </div>

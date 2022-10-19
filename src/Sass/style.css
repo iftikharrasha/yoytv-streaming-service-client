@@ -1287,7 +1287,7 @@
 }
 
 .playerHero .heroBg .detailsHero__wrapper__contents {
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 2.5rem 2.5rem 0 0;
   background-color: #0e005c;
   -webkit-box-align: center;
       -ms-flex-align: center;
