@@ -8,6 +8,7 @@ import {
   GET_CATEGORIES,
   GET_SINGLE_VIDEO,
   CHANGE_IS_LOADING,
+  SELECT_VIDEO,
 } from "../Actions/types";
 
 const initialState = {
@@ -20,6 +21,8 @@ const initialState = {
   wishList: [],
   categories: [],
   singleVideo: null,
+  selectedVideId: null,
+  isPlayerShow: false,
   isLoading: false,
 };
 
@@ -45,6 +48,12 @@ export default function (state = initialState, action) {
       return { ...state, singleVideo: payload, isLoading: false };
     case CHANGE_IS_LOADING:
       return { ...state, isLoading: payload };
+    case SELECT_VIDEO:
+      return {
+        ...state,
+        isPlayerShow: payload.show,
+        selectedVideId: payload.videoId,
+      };
     default:
       return state;
   }

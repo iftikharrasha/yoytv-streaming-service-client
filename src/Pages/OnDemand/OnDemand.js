@@ -4,22 +4,25 @@ import useUserApi from "../../Utilities/Hooks/useLandingApi";
 import useAuth from "../../Utilities/Hooks/useAuth";
 import Categories from "../../Components/Home/Categories";
 import OnDemandHero from "../../Components/OnDemand/OnDemandHero";
+import TvModal from "Components/Custom/Modals/TvModal";
 
 const OnDemand = () => {
-    const { landingData } = useUserApi();
-    const { loggedInUser } = useAuth();
+  const { landingData } = useUserApi();
+  const { loggedInUser } = useAuth();
 
-    return (
+  return (
+    <>
+      {!landingData ? (
+        <Loader />
+      ) : (
         <>
-            {
-                !landingData ? <Loader/> :
-                    <>
-                        <OnDemandHero landingData={landingData} loggedInUser={loggedInUser}/>
-                        <Categories demandPage={true}/>
-                    </>
-            }
+          <OnDemandHero landingData={landingData} loggedInUser={loggedInUser} />
+          <Categories demandPage={true} />
+          <TvModal show={true} setShow={() => {}} video={""} />
         </>
-    );
+      )}
+    </>
+  );
 };
 
 export default OnDemand;

@@ -12,14 +12,24 @@ import arrow from "../../../Image/arrow_left_green.svg";
 import { similar } from "../../../Data/similar";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { SELECT_VIDEO } from "Utilities/Actions/types";
 
 const ShowModal = (props) => {
   const { lgShow, setLgShow, details } = props;
   const handleClose = () => setLgShow(false);
   let navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const navigateToPlayer = (videoId) => {
-    navigate(`/player/${videoId}`);
+    dispatch({
+      type: SELECT_VIDEO,
+      payload: {
+        show: true,
+        videoId: videoId,
+      },
+    });
+    handleClose();
   };
 
   return (
