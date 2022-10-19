@@ -16,7 +16,7 @@ const JuegosCards = ({categories}) => {
                 {
                     juegosData?.message.map((item, index) => (
                     <div className="radio__wrapper__card__single" key={index}>
-                        <Link className="radio__wrapper__card__single__hyper" to={`/juegos/gameplay/`+item.admin_video_id}>
+                        <Link className="radio__wrapper__card__single__hyper" to={`/juegos/`+item.name}>
                             <img src={item.image} alt="default_image"/>
                             <h6>{item.name}</h6>
                         </Link>

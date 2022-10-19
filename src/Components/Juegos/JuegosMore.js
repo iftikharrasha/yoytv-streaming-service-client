@@ -1,12 +1,13 @@
+import VerticalAdIframe from 'Components/Custom/Ads/VerticalAdIframe';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import adbanner6 from '../../Image/adbanner6.png';
 import JuegosSlider from '../Custom/Sliders/JuegosSlider';
 
-const JuegosMore = ({allGames, activeGames}) => {
+const JuegosMore = ({allGames, activeGames, category}) => {
     return (
         <>
-            <section className="allEpisodes podcastDetails playerDetails">
+            <section className="allEpisodes podcastDetails playerDetails gamesSlideHeight">
                 <div className="allEpisodes__body">
                     <div className="allEpisodes__body__contents">
                         <div className="playerDetails__cards">
@@ -27,15 +28,17 @@ const JuegosMore = ({allGames, activeGames}) => {
                                         <JuegosSlider shows={activeGames} delay={6000}/>
                                     </div>
                                 </div>
-                                <div className="adbanner">
-                                    <div className="adbanner__gamesAd1">
-                                        <h6>¡Conviértete en <br /> <span>Cliente Digital!</span></h6>
-                                        <img src={adbanner6} alt="adBanner" />
-                                        <div className="bannerBtn">
-                                            <Link to="/ad">{`Hazlo aquí>`}</Link>
+                                    <div className="adbanner">
+                                        <div className="adbanner__gamesAd1">
+                                            {/* <h6>¡Conviértete en <br /> <span>Cliente Digital!</span></h6>
+                                            <img src={adbanner6} alt="adBanner" />
+                                            <div className="bannerBtn">
+                                                <Link to="/ad">{`Hazlo aquí>`}</Link>
+                                            </div> */}
+                                            
+                                            <VerticalAdIframe/>
                                         </div>
                                     </div>
-                                </div>
                             </div>
                         </div>
                     </div>

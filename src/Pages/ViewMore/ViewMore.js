@@ -3,6 +3,8 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import arrow from '../../Image/arrow-left-white.svg';
 import adBanner from '../../Image/adbanner2.png';
 import useLandingApi from '../../Utilities/Hooks/useLandingApi';
+import { Helmet } from 'react-helmet-async';
+import VerticalAdIframe from 'Components/Custom/Ads/VerticalAdIframe';
 
 const ViewMore = () => {
     const navigate = useNavigate();
@@ -19,6 +21,11 @@ const ViewMore = () => {
 
     return (
     <>
+        <Helmet>
+            <title>YOY TV | Ver Mas</title>
+            <meta name="description" content='TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital.'/>
+        </Helmet> 
+
         <section className="list">
             <Link to={"/"} onClick={() => navigate(-1)} className="title"><img src={arrow} alt={arrow} width="28" height="28"/> Lanzamientos recientes</Link>
 
@@ -37,12 +44,14 @@ const ViewMore = () => {
                         ))
                     }
                     </div>
-                    <div className="swiper-slide shows__slider__list__adbanner adLinear">
-                        <h6>Escucha tu <br /> <span>Música favorita!</span></h6>
+                    <div className="swiper-slide shows__slider__list__adbanner ">
+                        {/* <h6>Escucha tu <br /> <span>Música favorita!</span></h6>
                         <img src={adBanner} alt="adBanner" />
                         <div className="bannerBtn">
                             <Link to="/ad">{`Hazlo aquí>`}</Link>
-                        </div>
+                        </div> */}
+                        
+                        <VerticalAdIframe />
                     </div>
                 </div>
             </div>

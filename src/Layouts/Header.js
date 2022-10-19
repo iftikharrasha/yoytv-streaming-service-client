@@ -153,7 +153,7 @@ const Header = ({
                 </Nav.Link>
                 <Nav.Link
                   as={Link}
-                  to="/juegos"
+                  to="juegos/all"
                   className="mx-lg-2 mx-3 navLink menu__link"
                   data-aos="flip-up"
                   data-aos-delay="400"
@@ -338,7 +338,7 @@ const Header = ({
                 </li>
                 <li className="menu__item">
                   <Link
-                    to="/juegos"
+                    to="/juegos/all"
                     className="menu__link"
                     data-aos="flip-up"
                     data-aos-offset="0"

@@ -3002,6 +3002,7 @@
   grid-row-gap: 2rem;
   width: 75% !important;
   margin-bottom: 3rem;
+  align-self: baseline;
 }
 
 @media (max-width: 575.98px) {
@@ -3072,9 +3073,9 @@
 }
 
 .shows__slider__list__adbanner {
-  background-color: #44A4DC;
   margin-top: 0 !important;
   text-align: center;
+  overflow: hidden;
 }
 
 .shows__slider__list__adbanner img {
@@ -6318,6 +6319,10 @@ iframe #cuerpo__juego {
   height: 100vh;
 }
 
+.gamesSlideHeight {
+  min-height: 45rem;
+}
+
 .notFound {
   background-color: #07002E;
   color: #ffffff;
@@ -6701,6 +6706,7 @@ input:-webkit-autofill:active {
   text-align: center;
   border-radius: 1rem;
   overflow: hidden;
+  max-height: 35rem;
 }
 
 .adbanner__gamesAd1 img {

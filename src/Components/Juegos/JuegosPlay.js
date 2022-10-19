@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Sound from '../../Image/Soundbutton.svg';
 import fullscreen from '../../Image/fullscreen.svg';
 import Love from '../../Image/Lovebutton.svg';
@@ -14,14 +14,20 @@ import tap from '../../Image/tap.svg';
 
 const JuegosPlay = ({nowPlaying}) => {
     const [gameShow, setGameShow] = useState(false);
-    const navigate = useNavigate();
 
     return (
         <>
             <section className="hero detailsHero playerHero gameHero">
                 <div className="heroBg">
                     <div className="list">
-                        <Link to="/juegos/categories" className="title"><img src={arrow} alt={arrow} />Categorías  |  {nowPlaying.category}</Link>
+                        <Link to="/juegos/categories" className="title"><img src={arrow} alt={arrow} />Categorías  |  
+                            {
+                                nowPlaying.category.map((category, index) => {
+                                    return (
+                                        <span key={index} className="category"> {category}</span>
+                                    )})
+                            }
+                        </Link>
                     </div>
                     <div className="detailsHero__wrapper game__wrapper">
                         <div className="game__wrapper__left">

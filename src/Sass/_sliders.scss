@@ -253,6 +253,7 @@
             grid-row-gap: 2rem;
             width: 75% !important;
             margin-bottom: 3rem;
+            align-self: baseline;
             @media (max-width: 575.98px) {
                 width: 90% !important;
                 grid-template-columns: repeat(2, 1fr);
@@ -291,9 +292,10 @@
                 }
             }
             &__adbanner{
-                background-color: #44A4DC;
+                // background-color: #44A4DC;
                 margin-top: 0 !important;
                 text-align: center;
+                overflow: hidden;
                 img{
                     width: 20.5rem !important;
                     height: auto;

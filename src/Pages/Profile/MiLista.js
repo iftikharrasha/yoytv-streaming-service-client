@@ -12,6 +12,7 @@ import minusIcon from "../../Image/minus_icon.svg";
 import play_button from "../../Image/play_button.svg";
 import love_icon from "../../Image/love_icon.svg";
 import arrow_down from "../../Image/arrow_down.svg";
+import VerticalAdIframe from "Components/Custom/Ads/VerticalAdIframe";
 
 const MiLista = ({
   getMyWishList,
@@ -73,13 +74,16 @@ const MiLista = ({
               </div>
             </div>
             <div className="swiper-slide shows__slider__list__adbanner">
-              <h6>
+              {/* <h6>
                 ¡Conviértete en <br /> <span>Cliente Digital!</span>
               </h6>
               <img src={adBanner} alt="adBanner" />
               <div className="bannerBtn">
                 <Link to="/on-demand">{`Hazlo aquí>`}</Link>
-              </div>
+              </div> */}
+
+              
+              <VerticalAdIframe />
             </div>
           </div>
         </div>

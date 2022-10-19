@@ -23,7 +23,7 @@ const PrivateRoute = ({
   //   }
   // }, [isAuthenticated]);
 
-  console.log(!isAuthenticated, !loading);
+  // console.log(!isAuthenticated, !loading);
   if (!isAuthenticated && !loading) {
     console.log(!isAuthenticated, !loading, "in");
     return <Navigate to="/subscription" state={{ from: location }} />;
