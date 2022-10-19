@@ -45,7 +45,7 @@ const Header = ({
   }, [isAuthenticated]);
 
   useEffect(() => {
-    const res = subProfileList.filter((obj) => {
+    const res = subProfileList.filter(obj => {
       return obj.sub_profile_id == localStorage.getItem("subProfileId");
     });
     if (res.length > 0) {
@@ -56,14 +56,16 @@ const Header = ({
     }
   }, [subProfileList]);
 
-  menuLinks.forEach((link) => {
+  menuLinks.forEach(link => {
     link.addEventListener("click", () => {
-      menuLinks.forEach((link) => {
+      menuLinks.forEach(link => {
         link.classList.remove("is__active");
       });
       link.classList.add("is__active");
     });
   });
+
+  const [query, setQuery] = useState("");
 
   const handleLogout = async () => {
     const res = await logoutUser();
@@ -104,8 +106,10 @@ const Header = ({
                   className="search-text"
                   type="text"
                   placeholder="Escribe aquí..."
+                  name="query"
+                  onChange={e => setQuery(e.target.value)}
                 />
-                <Link to="/search" className="menu__link">
+                <Link to={`/search?query=${query}`} className="menu__link">
                   <img src={cross_icon} alt="cross" />
                 </Link>
               </div>
@@ -219,7 +223,7 @@ const Header = ({
                   </Dropdown.Menu>
                 </Dropdown>
               ) : (
-                <button className="main-btn" onClick={(e) => setShow(true)}>
+                <button className="main-btn" onClick={e => setShow(true)}>
                   <span>Iniciar sesión</span>
                 </button>
               )}
@@ -286,7 +290,7 @@ const Header = ({
                       ? "main-btn me-3 d-block d-lg-none mt-1"
                       : "main-btn me-3 d-block d-lg-none"
                   }
-                  onClick={(e) => setShow(true)}
+                  onClick={e => setShow(true)}
                 >
                   <span>Iniciar sesión</span>
                 </button>
@@ -377,7 +381,7 @@ const Header = ({
 
 Header.propTypes = {};
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   auth: state.auth,
   profile: state.profile,
 });
