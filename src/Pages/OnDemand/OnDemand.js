@@ -18,7 +18,7 @@ const OnDemand = () => {
         <>
           <OnDemandHero landingData={landingData} loggedInUser={loggedInUser} />
           <Categories demandPage={true} />
-          <TvModal show={true} setShow={() => {}} video={""} />
+          <TvModal />
         </>
       )}
     </>

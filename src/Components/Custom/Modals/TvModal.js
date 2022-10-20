@@ -6,7 +6,6 @@ import { getSingleVideo } from "Utilities/Actions/Ondemand";
 import { SELECT_VIDEO } from "Utilities/Actions/types";
 
 const TvModal = ({
-  video,
   getSingleVideo,
   onDemand: { isPlayerShow, selectedVideId, singleVideo },
 }) => {
