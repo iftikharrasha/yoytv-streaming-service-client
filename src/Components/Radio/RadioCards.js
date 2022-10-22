@@ -1,3 +1,4 @@
+import RectangularAdIframe from "Components/Custom/Ads/RectangularAdIframe";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { radioData } from "../../Data/radioData";
@@ -53,13 +54,14 @@ const RadioCards = ({ data }) => {
               </div>
             ))}
             <div className="adbanner">
-              <img src={adbanner3} alt="adbanner3" />
+              {/* <img src={adbanner3} alt="adbanner3" /> */}
+              <RectangularAdIframe/>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="shows radio podcast">
+      {/* <section className="shows radio podcast">
         <div className="shows__title">
           <h2
             data-aos="fade"
@@ -90,7 +92,7 @@ const RadioCards = ({ data }) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {!isFetching ? (
         <PodcastModal lgShow={lgShow} setLgShow={setLgShow} details={details} />

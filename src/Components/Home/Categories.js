@@ -130,8 +130,8 @@ const Categories = ({
         </section>
       )}
 
-        {/* TODO: RADIO SLIDER - CURRENTLY HARDCODED NEED API*/}
-        {
+        {/* TODO: Podcast SLIDER - CURRENTLY HARDCODED NEED API*/}
+        {/* {
             demandPage ? null : 
             <section className="shows">
                 <div className="shows__title">
@@ -140,18 +140,24 @@ const Categories = ({
                 </div>
                 <RadioSlider shows={radioData} podcast={true} delay={2500} clicks={true}/>
             </section>
-        }
+        } */}
 
-        {
-            demandPage ? null : 
-            <section className="shows">
-                <div className="shows__title">
-                    <h2 data-aos="fade" data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000">Juegos</h2>
-                    <Link to="/juegos/categories">{`Ver más>`}</Link>
-                </div>
-                <JuegosSlider shows={allGames} delay={6000}/>
-            </section>
-        }
+      {demandPage ? null : (
+        <section className="shows">
+          <div className="shows__title">
+            <h2
+              data-aos="fade"
+              data-aos-offset="0"
+              data-aos-delay="200"
+              data-aos-duration="1000"
+            >
+              Juegos
+            </h2>
+            <Link to="/juegos/categories">{`Ver más>`}</Link>
+          </div>
+          <JuegosSlider shows={allGames} delay={6000} />
+        </section>
+      )}
     </>
   );
 };

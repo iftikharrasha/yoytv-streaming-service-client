@@ -10,6 +10,7 @@ import adbanner3 from '../../Image/adbanner3.png';
 import leftClick from '../../Image/left-click.svg';
 import gamebtn from '../../Image/game-btn.svg';
 import tap from '../../Image/tap.svg';
+import RectangularAdIframe from "Components/Custom/Ads/RectangularAdIframe";
 
 
 const JuegosPlay = ({nowPlaying}) => {
@@ -70,7 +71,8 @@ const JuegosPlay = ({nowPlaying}) => {
                                 </ul>
                             </div>
                             <div className="adbanner">
-                                <img src={adbanner3} alt="adbanner3"/>
+                                {/* <img src={adbanner3} alt="adbanner3"/> */}
+                                <RectangularAdIframe/>
                             </div>
                         </div>
                     </div>

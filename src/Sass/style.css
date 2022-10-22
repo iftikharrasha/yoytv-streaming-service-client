@@ -1531,6 +1531,7 @@
 
 .playerHero .heroBg .detailsHero__wrapper__contents__right .episodes__single__left__thumb:before {
   content: '';
+  background: url("../Image/play_button_white.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -5492,6 +5493,8 @@
 .radio__wrapper__card .adbanner {
   width: 32.25rem;
   height: 22.75rem;
+  border-radius: 1.125rem;
+  overflow: hidden;
 }
 
 .radio__wrapper__card .adbanner img {
@@ -6268,6 +6271,8 @@ iframe #cuerpo__juego {
 .game__wrapper__right .adbanner {
   width: 32.25rem;
   height: 22.75rem;
+  overflow: hidden;
+  border-radius: 1.125rem;
 }
 
 .game__wrapper__right .adbanner img {
@@ -6700,12 +6705,12 @@ input:-webkit-autofill:active {
 }
 
 .adbanner__gamesAd1 {
-  background-color: #44A4DC;
   margin-top: 0 !important;
   text-align: center;
   border-radius: 1rem;
   overflow: hidden;
-  max-height: 35rem;
+  width: 17.875rem;
+  height: 35rem;
 }
 
 .adbanner__gamesAd1 img {

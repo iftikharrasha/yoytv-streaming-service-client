@@ -25,7 +25,8 @@ const SearchResult = ({ getSearchResults, search: { searchResult } }) => {
     <>
       <section className="list">
         <Link to="/" className="title">
-          <img src={arrow} alt={arrow} /> Resultados - Rock: 45 títulos
+          <img src={arrow} alt={arrow} /> Resultados - Rock:{" "}
+          {searchResult.length} títulos
         </Link>
       </section>
 
@@ -40,8 +41,22 @@ const SearchResult = ({ getSearchResults, search: { searchResult } }) => {
             On Demand
           </h2>
         </div>
-        <TvSlider shows={searchResult} delay={1000} />
+        <ShowSlider shows={{ data: searchResult }} delay={2500} />
       </section>
+
+      {/* <section className="shows">
+        <div className="shows__title">
+          <h2
+            data-aos="fade"
+            data-aos-offset="0"
+            data-aos-delay="200"
+            data-aos-duration="1000"
+          >
+            On Demand
+          </h2>
+        </div>
+        <TvSlider shows={searchResult} delay={1000} />
+      </section> */}
 
       {/* TODO: TV EN VIVO SLIDER - CURRENTLY HARDCODED NEED API
       <section className="shows">
@@ -56,9 +71,9 @@ const SearchResult = ({ getSearchResults, search: { searchResult } }) => {
           </h2>
         </div>
         <TvSlider shows={tvData} delay={1000} />
-      </section>
+      </section> */}
 
-      SLIDER FOR ALL THE OTHER CATEGORIES
+      {/* SLIDER FOR ALL THE OTHER CATEGORIES
       {shows.map((category, index) => (
         <section className="shows" key={index}>
           <div className="shows__title">
@@ -73,9 +88,9 @@ const SearchResult = ({ getSearchResults, search: { searchResult } }) => {
           </div>
           <ShowSlider shows={category} delay={2500} />
         </section>
-      ))}
+      ))} */}
 
-      TODO: RADIO SLIDER - CURRENTLY HARDCODED NEED API
+      {/* TODO: RADIO SLIDER - CURRENTLY HARDCODED NEED API
       <section className="shows">
         <div className="shows__title">
           <h2
@@ -95,7 +110,7 @@ const SearchResult = ({ getSearchResults, search: { searchResult } }) => {
 
 SearchResult.propTypes = {};
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   search: state.search,
 });
 

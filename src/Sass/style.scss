@@ -272,12 +272,13 @@ input:-webkit-autofill:active {
         display: none;
     }
     &__gamesAd1{
-        background-color: #44A4DC;
+        // background-color: #44A4DC;
         margin-top: 0 !important;
         text-align: center;
         border-radius: 1rem;
         overflow: hidden;
-        max-height: 35rem;
+        width: 17.875rem;
+        height: 35rem;
         img{
             width: 100% !important;
             height: 21rem !important;

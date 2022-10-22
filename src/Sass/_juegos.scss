@@ -159,6 +159,8 @@ iframe{
         .adbanner {
             width: 32.25rem;
             height: 22.75rem;
+            overflow: hidden;
+            border-radius: 1.125rem;
             img{
                 width: 100%;
                 height: 100%;
