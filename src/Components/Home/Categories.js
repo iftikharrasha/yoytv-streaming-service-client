@@ -135,10 +135,10 @@ const Categories = ({
             demandPage ? null : 
             <section className="shows">
                 <div className="shows__title">
-                    <h2 data-aos="fade" data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000">Radio</h2>
+                    <h2 data-aos="fade" data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000">Podcast</h2>
                     <Link to="/radio">{`Ver más>`}</Link>
                 </div>
-                <RadioSlider shows={radioData} delay={2500} clicks={true}/>
+                <RadioSlider shows={radioData} podcast={true} delay={2500} clicks={true}/>
             </section>
         }
 

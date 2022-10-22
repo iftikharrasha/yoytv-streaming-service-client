@@ -1531,7 +1531,6 @@
 
 .playerHero .heroBg .detailsHero__wrapper__contents__right .episodes__single__left__thumb:before {
   content: '';
-  background: url("../Image/play_button_white.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

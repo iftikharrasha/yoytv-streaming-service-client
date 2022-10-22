@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { radioData } from "../../Data/radioData";
 import Sound from "../../Image/Soundbutton.svg";
+import SoundMute from "../../Image/SoundMuteButton.svg";
 import Love from "../../Image/Lovebutton.svg";
 import Share from "../../Image/Sharebutton.svg";
 import pause from "../../Image/Pausebutton.svg";
@@ -25,7 +26,7 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
   const [station, setStation] = useState({});
   const [remainSecond, setRemainSecond] = useState(0);
   const [isImageLoad, setIsImageLoad] = useState(false);
-  const { loading, error, handleVolume, playRadio, pauseRadio, setLoading } =
+  const { loading, error, handleVolume, playRadio, pauseRadio, setLoading,isPlaying,volume ,setIsPlaying} =
     useAudio();
   const [nowPlaying, setNowPlyaing] = useState({});
 
@@ -66,6 +67,7 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
     setLoading(true);
     if (station?.listen_url) {
       playRadio(station.listen_url);
+      setIsPlaying(true)
     }
     return () => {
       pauseRadio();
@@ -137,7 +139,13 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
             </div>
             <div className="detailsHero__wrapper__settings">
               <div className="left">
-                <img src={pause} alt="pause" />
+                <img src={isPlaying ? pause : play} alt="pause" onClick={()=>{
+                  if(isPlaying){
+                    pauseRadio()
+                    return
+                  }
+                  playRadio(station.listen_url)
+                }} />
                 <p>
                   {loading && "Loading...!"}
                   {error && JSON.stringify(error)}
@@ -148,7 +156,7 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
               </div>
               <div className="right">
                 <img
-                  src={Sound}
+                  src={volume ===1? Sound : SoundMute}
                   alt="Sound"
                   className="sound"
                   onClick={handleVolume}

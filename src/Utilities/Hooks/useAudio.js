@@ -4,6 +4,7 @@ function useAudio() {
   const [volume, setVolume] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [isPlaying,setIsPlaying]=useState(true)
 
   let audio = useRef(new Audio());
   audio.current.oncanplay = function () {
@@ -16,16 +17,17 @@ function useAudio() {
     console.log("loaded data");
   };
   const handleVolume = useCallback(() => {
-    if (volume > 0.9) {
-      setVolume(0.1);
-      audio.current.volume = 0.1;
+    if (volume === 0) {
+      setVolume(1);
+      audio.current.volume = 1;
     } else {
-      setVolume(volume + 0.1);
-      audio.current.volume = volume + 0.1;
+      setVolume(0);
+      audio.current.volume = 0;
     }
   }, [volume]);
 
   const playRadio = (src) => {
+    setIsPlaying(true)
     setLoading(true);
     setError(null);
     audio.current.src = src;
@@ -41,6 +43,7 @@ function useAudio() {
       });
   };
   const pauseRadio = () => {
+    setIsPlaying(false)
     audio.current.src = null;
     audio.current.onload = null;
   };
@@ -52,6 +55,9 @@ function useAudio() {
     handleVolume,
     playRadio,
     pauseRadio,
+    isPlaying,
+    volume,
+    setIsPlaying
   };
 }
 
