@@ -9,44 +9,20 @@ import arrow from "../../Image/arrow-left-white.svg";
 import adBanner from "../../Image/adbanner2.png";
 import useLandingApi from "../../Utilities/Hooks/useLandingApi";
 import { connect } from "react-redux";
-import { getSingleCategoryVideos } from "../../Utilities/Actions/Ondemand";
+import { getCategories } from "../../Utilities/Actions/Ondemand";
 
-const ViewMore = ({
-  onDemand: { singleCategoryVideos },
-  getSingleCategoryVideos,
-}) => {
+const AllCategories = ({ onDemand: { categories }, getCategories }) => {
   const navigate = useNavigate();
-  // const { shows } = useLandingApi();
-  const { pageId } = useParams();
-  const [filteredData, setFilteredData] = useState([]);
-  const [categoryVideos, setCategoryVideos] = useState([]);
-  const [title, setTitle] = useState("");
-  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    setCategoryVideos([]);
-    setTitle(searchParams.get("name"));
-    if (pageId) {
-      getSingleCategoryVideos(pageId);
-    }
-  }, [pageId]);
-
-  useEffect(() => {
-    setCategoryVideos([]);
-    if (singleCategoryVideos.length > 0) {
-      let categoryVideos = [];
-      singleCategoryVideos.forEach((subCategory, i) => {
-        categoryVideos = categoryVideos.concat(subCategory.videos);
-      });
-      setCategoryVideos(categoryVideos);
-    }
-  }, [singleCategoryVideos]);
+    getCategories();
+  }, []);
 
   return (
     <>
       <section className="list">
         <Link to={"/on-demand"} onClick={() => navigate(-1)} className="title">
-          <img src={arrow} alt={arrow} width="28" height="28" /> {title}
+          <img src={arrow} alt={arrow} width="28" height="28" /> Categorías
         </Link>
 
         <div className="shows">
@@ -54,14 +30,14 @@ const ViewMore = ({
             <div className="swiper-wrapper shows__slider__list">
               {
                 /* LIST FOR ALL THE FILTERED ITEMS*/
-                !categoryVideos
+                !categories
                   ? null
-                  : categoryVideos.map((item, index) => (
+                  : categories.map((item, index) => (
                       <div className="swiper-slide" key={index}>
                         <Link
-                          to={`/on-demand/movie-details/` + item.admin_video_id}
+                          to={`/view-more/${item.category_id}?name=${item.name}`}
                         >
-                          <img src={item.default_image} alt="default_image" />
+                          <img src={item.picture} alt="default_image" />
                         </Link>
                       </div>
                     ))
@@ -87,4 +63,4 @@ const mapStateToProps = (state) => ({
   onDemand: state.onDemand,
 });
 
-export default connect(mapStateToProps, { getSingleCategoryVideos })(ViewMore);
+export default connect(mapStateToProps, { getCategories })(AllCategories);

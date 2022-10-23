@@ -232,7 +232,7 @@ export const getCategoryVideos = (categoryId) => async (dispatch) => {
   }
 };
 
-export const getCategories = (categoryId) => async (dispatch) => {
+export const getCategories = () => async (dispatch) => {
   try {
     const state = store.getState();
     const id = state.auth.userId;
@@ -308,10 +308,19 @@ export const getSingleCategoryVideos = (categoryId) => async (dispatch) => {
     if (res.data.success) {
       dispatch({
         type: GET_SINGLE_CATEGORY_VIDEOS,
-        payload: res.data,
+        payload: res.data.data,
+      });
+    } else {
+      dispatch({
+        type: GET_SINGLE_CATEGORY_VIDEOS,
+        payload: [],
       });
     }
   } catch (err) {
     console.log(err);
+    dispatch({
+      type: GET_SINGLE_CATEGORY_VIDEOS,
+      payload: [],
+    });
   }
 };
