@@ -81,19 +81,14 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
     }
   }, [remainSecond]);
 
-  const artImage =
-    !isImageLoad && nowPlaying?.now_playing?.song?.art
-      ? nowPlaying?.now_playing?.song?.art
-      : radioData.data?.find(
-          (item) => item.title?.toLowerCase() === station.name?.toLowerCase()
-        )?.default_image;
+  const artImage = nowPlaying?.now_playing?.song?.art
 
   return (
     <>
       <section className="hero detailsHero playerHero">
         <div className="heroBg">
           <div className="list">
-            <Link to="/" className="title" onClick={() => navigate(-1)}>
+            <Link to="/estaciones" className="title">
               <img src={arrow} alt={arrow} />
               Estaciones
             </Link>
