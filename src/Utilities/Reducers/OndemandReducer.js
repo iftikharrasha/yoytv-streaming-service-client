@@ -9,6 +9,7 @@ import {
   GET_SINGLE_VIDEO,
   CHANGE_IS_LOADING,
   SELECT_VIDEO,
+  GET_SINGLE_CATEGORY_VIDEOS,
 } from "../Actions/types";
 
 const initialState = {
@@ -23,6 +24,7 @@ const initialState = {
   singleVideo: null,
   selectedVideId: null,
   isPlayerShow: false,
+  singleCategoryVideos: [],
   isLoading: false,
 };
 
@@ -53,6 +55,12 @@ export default function (state = initialState, action) {
         ...state,
         isPlayerShow: payload.show,
         selectedVideId: payload.videoId,
+      };
+    case GET_SINGLE_CATEGORY_VIDEOS:
+      return {
+        ...state,
+        isLoading: false,
+        singleCategoryVideos: payload,
       };
     default:
       return state;

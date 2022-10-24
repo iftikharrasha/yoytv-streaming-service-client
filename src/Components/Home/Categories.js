@@ -15,6 +15,7 @@ import {
   getCategoryVideos,
   getOnDemandData,
   getCategories,
+  getHomeFirstSection,
 } from "Utilities/Actions/Ondemand";
 
 const Categories = ({
@@ -25,11 +26,13 @@ const Categories = ({
   getCategories,
   getRadioStation,
   radio,
+  getHomeFirstSection,
 }) => {
   const { shows, categories } = useLandingApi();
   const { allGames, activeGames } = useGamesData();
   const [categoryList, setCategoryList] = useState([]);
   useEffect(() => {
+    getHomeFirstSection();
     getCategoryVideos();
     getOnDemandData();
     getCategories();
@@ -65,7 +68,7 @@ const Categories = ({
             >
               Categorías
             </h2>
-            <Link to="/all-categories">{`Ver más>`}</Link>
+            <Link to="/on-demand/all-categories">{`Ver más>`}</Link>
           </div>
           <CategoriesSlider categories={onDemand.categories} delay={1000} />
         </section>
@@ -101,7 +104,15 @@ const Categories = ({
             >
               {category.title}
             </h2>
-            <Link to={`/view-more/` + category.url_page_id}>{`Ver más>`}</Link>
+            <Link
+              to={
+                category.title === "Mi Lista"
+                  ? `/profile/mi-lista/123`
+                  : `/view-more/` +
+                    category.url_page_id +
+                    `?name=${category.title}`
+              }
+            >{`Ver más>`}</Link>
           </div>
           <ShowSlider shows={category} delay={2500} />
         </section>
@@ -172,4 +183,5 @@ export default connect(mapStateToProps, {
   getOnDemandData,
   getCategories,
   getRadioStation,
+  getHomeFirstSection,
 })(Categories);
