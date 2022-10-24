@@ -29,7 +29,6 @@ function useAudio() {
   const playRadio = (src) => {
     setIsPlaying(true)
     setLoading(true);
-    setError(null);
     audio.current.src = src;
     audio.current
       .play()
@@ -38,7 +37,6 @@ function useAudio() {
         setLoading(false);
       })
       .catch((error) => {
-        setError("Error please reload the page");
         setLoading(false);
       });
   };
@@ -51,7 +49,6 @@ function useAudio() {
   return {
     loading,
     setLoading,
-    error,
     handleVolume,
     playRadio,
     pauseRadio,
