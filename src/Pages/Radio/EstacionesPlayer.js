@@ -25,8 +25,7 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
   const { id } = useParams();
   const [station, setStation] = useState({});
   const [remainSecond, setRemainSecond] = useState(0);
-  const [isImageLoad, setIsImageLoad] = useState(false);
-  const { loading, error, handleVolume, playRadio, pauseRadio, setLoading,isPlaying,volume ,setIsPlaying} =
+  const { loading, handleVolume, playRadio, pauseRadio, setLoading,isPlaying,volume ,setIsPlaying} =
     useAudio();
   const [nowPlaying, setNowPlyaing] = useState({});
 
@@ -65,10 +64,19 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
 
   useEffect(() => {
     setLoading(true);
-    if (station?.listen_url) {
-      playRadio(station.listen_url);
-      setIsPlaying(true)
+    if(radio?.data){
+      const find = radio?.data.find((i) => i.id === parseInt(id));
+      if(find){
+        playRadio(find?.listen_url);
+        setIsPlaying(true)
+      }else{
+        if (station?.listen_url) {
+          playRadio(station?.listen_url);
+          setIsPlaying(true)
+        }
+      }
     }
+  
     return () => {
       pauseRadio();
     };
@@ -99,9 +107,6 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
                 <img
                   src={artImage}
                   alt="radio"
-                  onError={() => {
-                    setIsImageLoad(true);
-                  }}
                 />
                 <h1>{station.name}</h1>
               </div>
@@ -143,7 +148,6 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
                 }} />
                 <p>
                   {loading && "Loading...!"}
-                  {error && JSON.stringify(error)}
                   <span>{nowPlaying?.now_playing?.song?.album}:</span>{" "}
                   {nowPlaying?.now_playing?.song?.title} -{" "}
                   {nowPlaying?.now_playing?.song?.artist}
