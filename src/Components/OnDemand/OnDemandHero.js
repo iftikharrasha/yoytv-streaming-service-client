@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Navigation } from "swiper";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import {
   getHomeFirstSection,
   addToWishList,
@@ -20,11 +20,13 @@ import doctorStrange from "../../Image/doctor-strange.png";
 import wlakingDead from "../../Image/wlaking-dead.png";
 import house from "../../Image/house.png";
 import { useNavigate } from "react-router-dom";
+import { SELECT_VIDEO } from "Utilities/Actions/types";
 
 const OnDemandHero = ({ onDemand, getHomeFirstSection, addToWishList }) => {
   //   const { home_page_bg_image, site_logo, home_banner_heading } = landingData;
 
   let navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     getHomeFirstSection();
@@ -36,7 +38,13 @@ const OnDemandHero = ({ onDemand, getHomeFirstSection, addToWishList }) => {
   };
 
   const navigateToPlayer = (videoId) => {
-    navigate(`/player/${videoId}`);
+    dispatch({
+      type: SELECT_VIDEO,
+      payload: {
+        show: true,
+        videoId: videoId,
+      },
+    });
   };
 
   return (
@@ -84,7 +92,7 @@ const OnDemandHero = ({ onDemand, getHomeFirstSection, addToWishList }) => {
                             <h2>{item.description}</h2>
                             <h4>
                               {item.publish_time}
-                              <span>TV-MA</span>
+                              <span>{item.age}</span>
                               {convertDuration(item.duration)}
                             </h4>
                             <ul>
