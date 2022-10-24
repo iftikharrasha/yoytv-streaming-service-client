@@ -119,7 +119,7 @@ const Categories = ({
       ))}
 
       {/* TODO: RADIO SLIDER - CURRENTLY HARDCODED NEED API*/}
-      {/* {demandPage ? null : (
+      {demandPage ? null : (
         <section className="shows">
           <div className="shows__title">
             <h2
@@ -139,7 +139,7 @@ const Categories = ({
             clicks={true}
           />
         </section>
-      )} */}
+      )}
 
       {/* TODO: Podcast SLIDER - CURRENTLY HARDCODED NEED API*/}
       {/* {

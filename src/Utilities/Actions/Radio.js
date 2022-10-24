@@ -10,9 +10,11 @@ export const getRadioStation = () => async (dispatch) => {
     dispatch({
       type: GET_RADIO_DATA_PENDING,
     });
+    console.log("radio ", process.env.REACT_APP_API_LINK_RADIO);
     const { data } = await axios.get(
       `${process.env.REACT_APP_API_LINK_RADIO}/stations`
     );
+    console.log("radio ", data);
     if (data) {
       dispatch({
         type: GET_RADIO_DATA_SUCCESS,
