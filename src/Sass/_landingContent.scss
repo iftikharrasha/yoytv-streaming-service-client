@@ -290,3 +290,29 @@
         }
     }
 }
+
+.pageDetails{
+    background-color: #07002E;
+    color: #ffffff;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h4{
+        font-size: 2.25rem;
+        font-weight: 600;
+        color: $green;
+        text-align: center;
+        margin-bottom: 1rem;
+        text-transform: capitalize;
+    }
+    p{
+        font-size: 1.125rem;
+        font-weight: 500;
+        text-transform: capitalize;
+        width: 80%;
+        margin: 0 auto;
+    }
+}

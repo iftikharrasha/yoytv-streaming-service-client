@@ -19,7 +19,7 @@ const Hero = ({ auth: { isAuthenticated }, landingData, loggedInUser }) => {
           <div className="wrapper heroBg__contents">
             {windowWidth > 575.98 ? (
               <img
-                src={logoGreen}
+                src={site_logo}
                 alt="site_logo"
                 width="200"
                 height="99"

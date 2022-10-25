@@ -47,7 +47,7 @@ const ViewMore = ({
   return (
     <>
       <Helmet>
-          <title>YOY TV | Ver Mas</title>
+          <title>Streamapp | Ver Mas</title>
           <meta name="description" content='TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital.'/>
       </Helmet> 
       <section className="list">

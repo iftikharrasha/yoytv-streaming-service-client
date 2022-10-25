@@ -14,7 +14,7 @@ const OnDemand = () => {
   return (
     <>
       <Helmet>
-          <title>YOY TV | On Demand</title>
+          <title>Streamapp | On Demand</title>
           <meta name="description" content={'TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital.'}/>
       </Helmet> 
       {

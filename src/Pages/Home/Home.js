@@ -9,7 +9,7 @@ import { connect } from "react-redux";
 import { Helmet } from 'react-helmet-async';
 
 const Home = ({ auth: { isAuthenticated, loading, data } }) => {
-  const { landingData, newRelease } = useUserApi();
+  const { landingData, newRelease, faq } = useUserApi();
   const { loggedInUser } = useAuth();
 
   return (
@@ -19,14 +19,14 @@ const Home = ({ auth: { isAuthenticated, loading, data } }) => {
       ) : 
       <> 
         <Helmet>
-            <title>YOY TV | Home</title>
-            <meta name="description" content={landingData.meta_description || 'TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital.'}/>
+            <title>Streamapp | Home</title>
+            <meta name="description" content={landingData?.meta_description || 'TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital.'}/>
         </Helmet> 
 
         {!isAuthenticated ? (
             <>
                 <Hero landingData={landingData} />
-                <LandingContent landingData={landingData} newRelease={newRelease} />
+                <LandingContent landingData={landingData} newRelease={newRelease} faq={faq}/>
             </>
         ) : (
             <>

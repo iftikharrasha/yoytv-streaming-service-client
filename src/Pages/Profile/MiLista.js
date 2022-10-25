@@ -13,6 +13,7 @@ import play_button from "../../Image/play_button.svg";
 import love_icon from "../../Image/love_icon.svg";
 import arrow_down from "../../Image/arrow_down.svg";
 import VerticalAdIframe from "Components/Custom/Ads/VerticalAdIframe";
+import { Helmet } from 'react-helmet-async';
 
 const MiLista = ({
   getMyWishList,
@@ -27,6 +28,10 @@ const MiLista = ({
 
   return (
     <>
+      <Helmet>
+          <title>Streamapp | Mi Lista</title>
+          <meta name="description" content='TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital.'/>
+      </Helmet> 
       <section className="list">
         <Link to={"/"} onClick={() => navigate(-1)} className="title">
           <img src={arrow} alt={arrow} width="28" height="28" /> Mi lista

@@ -7,7 +7,7 @@
 </p>
 
 <h1 align="center">
-  YOY TV - Live Streaming Service
+  Streamapp - Live Streaming Service
 </h1>
 
 <p align="center">

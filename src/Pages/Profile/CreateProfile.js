@@ -5,6 +5,7 @@ import edit from "../../Image/pen-bg.svg";
 import { notyf } from "../../Utilities/Hooks/useNotification";
 import { addSubProfile } from "Utilities/Actions/Profile";
 import { connect } from "react-redux";
+import { Helmet } from 'react-helmet-async';
 
 const CreateProfile = ({ profile, addSubProfile }) => {
   const { token } = useParams();
@@ -53,6 +54,10 @@ const CreateProfile = ({ profile, addSubProfile }) => {
 
   return (
     <>
+      <Helmet>
+          <title>Streamapp | Crear perfil</title>
+          <meta name="description" content='TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital.'/>
+      </Helmet> 
       <section className="browse">
         <div className="wrapper browse__contents">
           <h2>Agregar perfil</h2>

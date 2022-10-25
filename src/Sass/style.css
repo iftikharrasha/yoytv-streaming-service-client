@@ -622,7 +622,12 @@
 
 .heroBg__contents {
   padding: 6rem 6rem 0 0 !important;
-  width: 45%;
+}
+
+@media (min-width: 1532px) {
+  .heroBg__contents {
+    width: 45%;
+  }
 }
 
 @media (max-width: 575.98px) {
@@ -813,7 +818,7 @@
 }
 
 .onDemandHero .heroBg__contents__text {
-  width: 38rem;
+  width: 60rem;
   margin: 0 3rem;
 }
 
@@ -4359,6 +4364,43 @@
   border: 0.125rem solid #ffffff !important;
 }
 
+.pageDetails {
+  background-color: #07002E;
+  color: #ffffff;
+  height: 100vh;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pageDetails h4 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #67fe65;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+.pageDetails p {
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  width: 80%;
+  margin: 0 auto;
+}
+
 .footer {
   position: relative;
   background: #07002E;
@@ -4430,7 +4472,19 @@
   padding-top: 0.5rem;
 }
 
-.footer__credit ul {
+.footer__credit .list__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__credit .list__items ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4443,23 +4497,46 @@
 }
 
 @media (max-width: 575.98px) {
-  .footer__credit ul {
+  .footer__credit .list__items ul {
     display: none;
   }
 }
 
-.footer__credit ul li {
+.footer__credit .list__items ul li {
   margin-left: 2rem;
 }
 
-.footer__credit ul li a {
+.footer__credit .list__items ul li a {
+  text-transform: capitalize;
   font-size: 1rem;
   font-weight: 500;
   color: #ffffff;
 }
 
-.footer__credit ul li a:hover {
+.footer__credit .list__items ul li a:hover {
   color: #67fe65;
+}
+
+.footer__credit .list__items .socials {
+  margin-left: 3rem;
+}
+
+@media (max-width: 575.98px) {
+  .footer__credit .list__items .socials {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 0;
+  }
+}
+
+.footer__credit .list__items .socials li {
+  margin-left: 1rem;
+}
+
+.footer__credit .list__items .socials li a img {
+  width: 1.25rem;
+  height: auto;
 }
 
 .browse {

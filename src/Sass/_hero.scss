@@ -11,7 +11,9 @@
     }
     &__contents{
         padding: 6rem 6rem 0 0 !important;    
-        width: 45%;
+        @media (min-width: 1532px){
+            width: 45%;
+        }
         @media (max-width: 575.98px) {
             padding: 0 3rem !important;
         }
@@ -142,7 +144,7 @@
                 } 
             }
             &__text{
-                width: 38rem;
+                width: 60rem;
                 margin: 0 3rem;
                 @media (max-width: 575.98px) {
                     width: 90%;

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import edit from "../../Image/edit.svg";
 import logoGreen from "../../Image/LogoGreen.svg";
+import { Helmet } from 'react-helmet-async';
 
 const EditProfile = ({
   auth: { loading, isAuthenticated, data },
@@ -13,6 +14,11 @@ const EditProfile = ({
   return (
     <>
       {!loading && isAuthenticated && (
+        <>
+        <Helmet>
+            <title>Streamapp | Editar perfil</title>
+            <meta name="description" content='TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital.'/>
+        </Helmet> 
         <section className="browse">
           <div className="wrapper browse__contents">
             <img
@@ -57,6 +63,7 @@ const EditProfile = ({
             </Link>
           </div>
         </section>
+        </>
       )}
     </>
   );

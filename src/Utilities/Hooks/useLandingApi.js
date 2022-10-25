@@ -86,10 +86,22 @@ const useLandingApi = () => {
     fetcher
   );
 
+  const { data: faq } = useSWR(
+    `${process.env.REACT_APP_API_LINK}/userApi/faqs/list`,
+    fetcher
+  );
+
+  const { data: pages } = useSWR(
+    `${process.env.REACT_APP_API_LINK}/userApi/pages/list`,
+    fetcher
+  );
+
   return {
     newRelease,
     landingData,
     shows,
+    faq,
+    pages,
     categories,
   };
 };

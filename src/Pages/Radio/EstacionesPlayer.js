@@ -20,6 +20,7 @@ import { getRadioStation } from "Utilities/Actions/Radio";
 import { connect } from "react-redux";
 import useAudio from "Utilities/Hooks/useAudio";
 import RectangularAdIframe from "Components/Custom/Ads/RectangularAdIframe";
+import { Helmet } from 'react-helmet-async';
 
 const EstacionesPlayer = ({ radio, getRadioStation }) => {
   const navigate = useNavigate();
@@ -94,6 +95,10 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
 
   return (
     <>
+      <Helmet>
+          <title>Streamapp | Estaciones Player</title>
+          <meta name="description" content={'TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital.'}/>
+      </Helmet> 
       <section className="hero detailsHero playerHero">
         <div className="heroBg">
           <div className="list">

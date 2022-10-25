@@ -21,7 +21,7 @@ const JuegosGameplay = () => {
     return (
         <> 
             <Helmet>
-                <title>YOY TV | Juegos Play</title>
+                <title>Streamapp | Juegos Play</title>
                 <meta name="description" content={'TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital.'}/>
             </Helmet> 
             {

@@ -18,6 +18,7 @@ import { getSubProfiles } from "Utilities/Actions/Profile";
 import { Navigate, useNavigate } from "react-router-dom";
 import store from "Utilities/Store/store";
 import { UPDATE_SUB_PROFILE_ID } from "Utilities/Actions/types";
+import useUserApi from "../Utilities/Hooks/useLandingApi";
 
 const Header = ({
   auth: { isAuthenticated, loading, data, selectedSubProfile, subProfileId },
@@ -29,6 +30,7 @@ const Header = ({
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
   const state = store.getState();
+  const { landingData } = useUserApi();
 
   const menuLinks = document.querySelectorAll(".menu__link");
 
@@ -85,7 +87,7 @@ const Header = ({
         <Navbar collapseOnSelect expand="lg" variant="dark" id="mainNavbar">
           <Navbar.Brand as={Link} to="/" className="menu__link">
             <img
-              src={logoBlue}
+              src={landingData?.site_logo}
               alt="logo"
               className="logo"
               width="160"

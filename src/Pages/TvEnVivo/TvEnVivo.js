@@ -12,7 +12,7 @@ const TvEnVivo = () => {
     return (
         <>
             <Helmet>
-                <title>YOY TV | Tv En Vivo</title>
+                <title>Streamapp | Tv En Vivo</title>
                 <meta name="description" content={'TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital.'}/>
             </Helmet> 
             {

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import tv from "../../Image/tv.png";
 import ReleaseSlider from "../Custom/Sliders/ReleaseSlider";
-import { faq } from "../../Data/faqs";
+// import { faq } from "../../Data/faqs";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 
-const LandingContent = ({ landingData, newRelease, history }) => {
+const LandingContent = ({ landingData, newRelease, faq, history }) => {
   const {
     home_section_1_video,
     home_section_1_title,
@@ -201,7 +201,7 @@ const LandingContent = ({ landingData, newRelease, history }) => {
                 data-aos-delay="400"
                 data-aos-duration="1000"
               >
-                {faq.map((tab, index) => (
+                {faq?.map((tab, index) => (
                   <div key={index}>
                     <div>
                       <button
@@ -213,7 +213,7 @@ const LandingContent = ({ landingData, newRelease, history }) => {
                         tabIndex={indexCount(index)}
                       >
                         <span className="title">
-                          {tab.title}
+                          {tab.question}
                           <span
                             className={active === index ? "minus" : "plus"}
                           ></span>
@@ -226,7 +226,7 @@ const LandingContent = ({ landingData, newRelease, history }) => {
                         active === index ? "panel-open" : "panel-close"
                       }
                     >
-                      {tab.description}
+                      {tab.answer}
                     </div>
                   </div>
                 ))}

@@ -9,6 +9,7 @@ import DeleteModal from "../../Components/Custom/Modals/DeleteModal";
 import { connect } from "react-redux";
 import { useEffect } from "react";
 import { editSubProfile, deleteSubProfile } from "Utilities/Actions/Profile";
+import { Helmet } from 'react-helmet-async';
 
 const SettingsProfile = ({
   auth: { loading, isAuthenticated, data },
@@ -120,6 +121,11 @@ const SettingsProfile = ({
   return (
     <>
       {!loading && isAuthenticated && (
+        <>
+        <Helmet>
+            <title>Streamapp | Editar perfil</title>
+            <meta name="description" content='TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital.'/>
+        </Helmet> 
         <section className="browse">
           <div className="wrapper browse__contents">
             <img
@@ -314,6 +320,7 @@ const SettingsProfile = ({
             </div>
           </div>
         </section>
+        </>
       )}
 
       <PassModal passShow={passShow} setPassShow={setPassShow} />

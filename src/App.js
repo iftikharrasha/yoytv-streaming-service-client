@@ -10,8 +10,11 @@ import { Provider } from "react-redux";
 import store from "Utilities/Store/store";
 import { loadUser } from "Utilities/Actions/Auth";
 import { LOADING_STOP } from "Utilities/Actions/types";
+import { Helmet } from 'react-helmet-async';
+import useUserApi from "./Utilities/Hooks/useLandingApi";
 
 const App = () => {
+  const { landingData } = useUserApi();
   AOS.init({
     once: false,
   });
@@ -40,6 +43,9 @@ const App = () => {
   return (
     <Provider store={store}>
       <div className="App">
+        <Helmet>
+          <link rel="icon" href={landingData?.site_icon} />
+        </Helmet> 
         <BrowserRouter>
           <AuthProvider>
             <Views />

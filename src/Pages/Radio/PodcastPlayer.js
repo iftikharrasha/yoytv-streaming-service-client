@@ -11,6 +11,7 @@ import RadioSlider from '../../Components/Custom/Sliders/RadioSlider.js';
 import adbanner3 from '../../Image/adbanner3.png';
 import adbanner4 from '../../Image/adbanner4.png';
 import arrow from '../../Image/arrow-left-white.svg';
+import { Helmet } from 'react-helmet-async';
 
 const PodcastPlayer = () => {
     const navigate = useNavigate();
@@ -18,6 +19,10 @@ const PodcastPlayer = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Streamapp | Podcast Player</title>
+                <meta name="description" content={'TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital.'}/>
+            </Helmet> 
             <section className="hero detailsHero playerHero">
                 <div className="heroBg">
                     <div className="list">

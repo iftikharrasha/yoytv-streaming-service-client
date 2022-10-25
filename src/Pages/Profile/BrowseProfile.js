@@ -6,6 +6,7 @@ import { connect, useDispatch } from "react-redux";
 import { getSubProfiles } from "../../Utilities/Actions/Profile";
 import { loadUser } from "Utilities/Actions/Auth";
 import { UPDATE_SUB_PROFILE_ID } from "Utilities/Actions/types";
+import { Helmet } from 'react-helmet-async';
 
 const BrowseProfile = ({
   profile: { subProfileList, isNewSubProfileAllowed, loading },
@@ -31,6 +32,11 @@ const BrowseProfile = ({
   return (
     <>
       {!loading && (
+        <>
+        <Helmet>
+            <title>Streamapp | Explorar perfil</title>
+            <meta name="description" content='TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital.'/>
+        </Helmet> 
         <section className="browse">
           <div className="wrapper browse__contents">
             <img
@@ -42,7 +48,7 @@ const BrowseProfile = ({
             />
             <h2>¡Cuenta registrada!</h2>
             <p>
-              Bienvenid@ a la plataforma multimedia YOY. Selecciona tu perfil
+              Bienvenid@ a la plataforma multimedia Streamapp. Selecciona tu perfil
               para continuar navegando dentro de nuestro contenido exclusivo
             </p>
             <ul>
@@ -83,6 +89,7 @@ const BrowseProfile = ({
             </Link>
           </div>
         </section>
+        </>
       )}
     </>
   );
