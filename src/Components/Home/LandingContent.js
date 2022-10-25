@@ -88,9 +88,7 @@ const LandingContent = ({ landingData, newRelease, history }) => {
                 data-aos-delay="500"
                 data-aos-duration="1000"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing. elit. Ut
-                elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
-                leo.
+                {home_section_1_description}
               </p>
               <button
                 className="main-btn"

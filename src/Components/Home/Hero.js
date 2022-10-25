@@ -46,8 +46,9 @@ const Hero = ({ auth: { isAuthenticated }, landingData, loggedInUser }) => {
               data-aos-duration="1000"
               data-aos-once="true"
             >
-              Disfruta de todo el contenido con <br /> tu suscripción{" "}
-              <span>Coppel Digital</span>
+              {home_banner_heading}
+              {/* Disfruta de todo el contenido con <br /> tu suscripción{" "}
+              <span>Coppel Digital</span> */}
             </h2>
 
             {isAuthenticated ? (

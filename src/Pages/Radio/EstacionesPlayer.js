@@ -19,6 +19,7 @@ import axios from "axios";
 import { getRadioStation } from "Utilities/Actions/Radio";
 import { connect } from "react-redux";
 import useAudio from "Utilities/Hooks/useAudio";
+import RectangularAdIframe from "Components/Custom/Ads/RectangularAdIframe";
 
 const EstacionesPlayer = ({ radio, getRadioStation }) => {
   const navigate = useNavigate();
@@ -184,13 +185,14 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
                     delay={2500}
                   />
                 </div>
-                <div className="adbanner">
-                  <img src={adbanner4} alt="adbanner4" />
+                <div className="adbanner adPlayer">
+                  {/* <img src={adbanner4} alt="adbanner4" /> */}
+                  <RectangularAdIframe/>
                 </div>
               </div>
             </div>
 
-            <div className="playerDetails__cards">
+            {/* <div className="playerDetails__cards">
               <div className="playerDetails__cards__slider">
                 <div className="allEpisodes__body__contents__similar">
                   <div className="playerDetails__cards__slider__title">
@@ -208,7 +210,7 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
                   <img src={adbanner3} alt="adbanner3" />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
