@@ -6,6 +6,7 @@ import Categories from "../../Components/Home/Categories";
 import OnDemandHero from "../../Components/OnDemand/OnDemandHero";
 import { Helmet } from "react-helmet-async";
 import TvModal from "Components/Custom/Modals/TvModal";
+import LikeModal from "Components/Custom/Modals/LikeModal";
 
 const OnDemand = () => {
   const { landingData } = useUserApi();
@@ -28,6 +29,7 @@ const OnDemand = () => {
         <>
           <OnDemandHero landingData={landingData} loggedInUser={loggedInUser} />
           <Categories demandPage={true} />
+          <LikeModal />
           <TvModal />
         </>
       )}

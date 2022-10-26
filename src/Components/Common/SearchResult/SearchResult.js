@@ -25,8 +25,8 @@ const SearchResult = ({ getSearchResults, search: { searchResult } }) => {
     <>
       <section className="list">
         <Link to="/" className="title">
-          <img src={arrow} alt={arrow} /> Resultados - Rock:{" "}
-          {searchResult.length} títulos
+          <img src={arrow} alt={arrow} /> Resultados -{" "}
+          {searchParams.get("query")}: {searchResult.length} títulos
         </Link>
       </section>
 

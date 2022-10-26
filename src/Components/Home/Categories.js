@@ -9,7 +9,7 @@ import CategoriesSlider from "../Custom/Sliders/CategoriesSlider";
 import { tvData } from "../../Data/tvData";
 import { radioData } from "../../Data/radioData";
 import { connect } from "react-redux";
-import useGamesData from '../../Utilities/Hooks/useGamesData';
+import useGamesData from "../../Utilities/Hooks/useGamesData";
 import { getRadioStation } from "Utilities/Actions/Radio";
 import {
   getCategoryVideos,
@@ -141,8 +141,8 @@ const Categories = ({
         </section>
       )}
 
-        {/* TODO: Podcast SLIDER - CURRENTLY HARDCODED NEED API*/}
-        {/* {
+      {/* TODO: Podcast SLIDER - CURRENTLY HARDCODED NEED API*/}
+      {/* {
             demandPage ? null : 
             <section className="shows">
                 <div className="shows__title">

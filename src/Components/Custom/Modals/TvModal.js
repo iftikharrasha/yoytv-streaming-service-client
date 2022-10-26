@@ -7,7 +7,7 @@ import { SELECT_VIDEO } from "Utilities/Actions/types";
 
 const TvModal = ({
   getSingleVideo,
-  onDemand: { isPlayerShow, selectedVideId, singleVideo },
+  onDemand: { isPlayerShow, selectedVideId, singleVideo, isTrailer },
 }) => {
   const dispatch = useDispatch();
 
@@ -42,7 +42,11 @@ const TvModal = ({
               <ReactJWPlayer
                 playerId="my-unique-id"
                 playerScript="https://cdn.jwplayer.com/libraries/CYz0ApGQ.js"
-                file={singleVideo.video.video}
+                file={
+                  isTrailer
+                    ? singleVideo.trailer_video
+                    : singleVideo.video.video
+                }
                 isAutoPlay={true}
               />
             )}

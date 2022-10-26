@@ -16,11 +16,12 @@ import love from "../../Image/love_icon.svg";
 import share from "../../Image/share_icon.svg";
 import plus from "../../Image/plus_icon.svg";
 import play from "../../Image/play_blue.svg";
+import minusIcon from "../../Image/minus_icon.svg";
 import doctorStrange from "../../Image/doctor-strange.png";
 import wlakingDead from "../../Image/wlaking-dead.png";
 import house from "../../Image/house.png";
 import { useNavigate } from "react-router-dom";
-import { SELECT_VIDEO } from "Utilities/Actions/types";
+import { LIKE_SHOW, SELECT_VIDEO } from "Utilities/Actions/types";
 
 const OnDemandHero = ({ onDemand, getHomeFirstSection, addToWishList }) => {
   //   const { home_page_bg_image, site_logo, home_banner_heading } = landingData;
@@ -30,19 +31,30 @@ const OnDemandHero = ({ onDemand, getHomeFirstSection, addToWishList }) => {
 
   useEffect(() => {
     getHomeFirstSection();
-  }, []);
+  }, [onDemand.wishListUpdatedStatus]);
 
   const convertDuration = (duration) => {
     let timeArray = duration.split(":");
     return timeArray[0] + "h " + timeArray[1] + "m";
   };
 
-  const navigateToPlayer = (videoId) => {
+  const navigateToPlayer = (videoId, isTrailer) => {
     dispatch({
       type: SELECT_VIDEO,
       payload: {
         show: true,
         videoId: videoId,
+        isTrailer: isTrailer,
+      },
+    });
+  };
+
+  const likeModalShow = (item) => {
+    dispatch({
+      type: LIKE_SHOW,
+      payload: {
+        isLikeShow: true,
+        likeObject: item,
       },
     });
   };
@@ -99,7 +111,7 @@ const OnDemandHero = ({ onDemand, getHomeFirstSection, addToWishList }) => {
                               <li>
                                 <button
                                   onClick={() =>
-                                    navigateToPlayer(item.admin_video_id)
+                                    navigateToPlayer(item.admin_video_id, false)
                                   }
                                 >
                                   <span>
@@ -108,24 +120,45 @@ const OnDemandHero = ({ onDemand, getHomeFirstSection, addToWishList }) => {
                                 </button>
                               </li>
                               <li>
-                                <button className="secondary">
+                                <button
+                                  className="secondary"
+                                  onClick={() =>
+                                    navigateToPlayer(item.admin_video_id, true)
+                                  }
+                                >
                                   <span>Tráiler</span>
                                 </button>
                               </li>
                               <li>
-                                <img src={love} alt="love" className="love" />
+                                <img
+                                  src={love}
+                                  alt="love"
+                                  className="love"
+                                  onClick={() => likeModalShow(item)}
+                                />
                               </li>
                               <li>
                                 <img src={share} alt="share" />
                               </li>
                               <li>
-                                <img
-                                  src={plus}
-                                  alt="plus"
-                                  onClick={() =>
-                                    addToWishList(item.admin_video_id)
-                                  }
-                                />
+                                {item.wishlist_status === 0 ? (
+                                  <img
+                                    src={plus}
+                                    alt="plus"
+                                    onClick={() =>
+                                      addToWishList(item.admin_video_id)
+                                    }
+                                  />
+                                ) : (
+                                  <img
+                                    src={minusIcon}
+                                    alt="minusIcon"
+                                    className="love"
+                                    onClick={() =>
+                                      addToWishList(item.admin_video_id)
+                                    }
+                                  />
+                                )}
                               </li>
                             </ul>
                           </div>
