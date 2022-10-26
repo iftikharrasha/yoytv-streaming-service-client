@@ -4,12 +4,14 @@ import { Link, useParams } from "react-router-dom";
 import edit from "../../Image/edit.svg";
 import logoGreen from "../../Image/LogoGreen.svg";
 import { Helmet } from 'react-helmet-async';
+import useUserApi from "../../Utilities/Hooks/useLandingApi";
 
 const EditProfile = ({
   auth: { loading, isAuthenticated, data },
   profile: { subProfileList, isNewSubProfileAllowed },
 }) => {
   const { token } = useParams();
+  const { landingData } = useUserApi();
 
   return (
     <>
@@ -22,7 +24,7 @@ const EditProfile = ({
         <section className="browse">
           <div className="wrapper browse__contents">
             <img
-              src={logoGreen}
+              src={landingData?.site_logo}
               className="logo"
               alt="SiteLogo"
               width="216"
@@ -44,13 +46,13 @@ const EditProfile = ({
                         />
                       </div>
                       <h6>{item.name}</h6>
-                      <img
+                      {/* <img
                         className="pen"
                         src={edit}
                         alt="edit"
                         width="344"
                         height="344"
-                      />
+                      /> */}
                     </Link>
                   </li>
                 );

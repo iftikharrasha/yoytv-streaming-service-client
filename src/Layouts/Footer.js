@@ -16,7 +16,7 @@ const Footer = () => {
                 <div className="wrapper">
                     <div className="footer__credit">
                         <div className="footer__credit__logo" data-aos="fade" data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000">
-                            <img src={logoGreen} alt="logo" className="logo" width="80" height="30"/>
+                            <img src={landingData?.site_logo} alt="logo" className="logo" width="80" height="30"/>
                             <p>© 2022 Coppel.  Todos los derechos reservados.</p>
                         </div>
                         <div className="list__items">

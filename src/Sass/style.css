@@ -4367,7 +4367,7 @@
 .pageDetails {
   background-color: #07002E;
   color: #ffffff;
-  height: 100vh;
+  min-height: 100vh;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4382,6 +4382,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 8rem 0 4rem 0;
+  text-align: left;
 }
 
 .pageDetails h4 {
@@ -4399,6 +4401,27 @@
   text-transform: capitalize;
   width: 80%;
   margin: 0 auto;
+  position: relative;
+}
+
+.pageDetails p::before {
+  content: "\A";
+  white-space: pre-line;
+}
+
+.pageDetails p font {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.pageDetails p font::before {
+  content: "\A";
+  white-space: pre;
 }
 
 .footer {
@@ -4813,15 +4836,36 @@
 
 .browse__contents ul .edit a .screen:before {
   content: '';
-  width: 100%;
-  height: 100%;
+  width: 21.5rem;
+  height: 21.5rem;
   background: #ffffff 0% 0% no-repeat padding-box;
+  background-image: url(../Image/bgGray.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   mix-blend-mode: screen;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 0;
   opacity: 1;
+  border-radius: 3rem;
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .browse__contents ul .edit a .screen:before {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 2.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .browse__contents ul .edit a .screen:before {
+    width: 9.5rem;
+    height: 9.5rem;
+    border-radius: 1.5rem;
+  }
 }
 
 .browse__contents ul .edit a .pen {

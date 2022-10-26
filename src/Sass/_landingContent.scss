@@ -294,12 +294,14 @@
 .pageDetails{
     background-color: #07002E;
     color: #ffffff;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 8rem 0 4rem 0;
+    text-align: left;
     h4{
         font-size: 2.25rem;
         font-weight: 600;
@@ -314,5 +316,19 @@
         text-transform: capitalize;
         width: 80%;
         margin: 0 auto;
+        position: relative;
+        // white-space: pre;
+        &::before {
+            content: "\A";
+            white-space: pre-line;
+        }
+        font{
+            display: flex;
+            flex-direction: column;
+            &::before {
+                content: "\A";
+                white-space: pre;
+            }
+        }
     }
 }

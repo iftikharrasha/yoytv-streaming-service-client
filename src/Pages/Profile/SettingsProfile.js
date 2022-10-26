@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import { useEffect } from "react";
 import { editSubProfile, deleteSubProfile } from "Utilities/Actions/Profile";
 import { Helmet } from 'react-helmet-async';
+import useUserApi from "../../Utilities/Hooks/useLandingApi";
 
 const SettingsProfile = ({
   auth: { loading, isAuthenticated, data },
@@ -23,6 +24,7 @@ const SettingsProfile = ({
   const { loggedInUser } = useAuth();
   const navigate = useNavigate();
   const { token } = useParams();
+  const { landingData } = useUserApi();
 
   const [subProfileId, setSubProfileId] = useState(null);
 
@@ -129,7 +131,7 @@ const SettingsProfile = ({
         <section className="browse">
           <div className="wrapper browse__contents">
             <img
-              src={logoGreen}
+              src={landingData?.site_logo}
               className="logo"
               alt="SiteLogo"
               width="216"
