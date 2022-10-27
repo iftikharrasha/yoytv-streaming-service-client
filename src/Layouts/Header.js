@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
 import search_icon from "../Image/search_icon.svg";
+import slidein from "../Image/slidein.svg";
 import cross_icon from "../Image/cross_icon.svg";
 import TvSvg from "../Image/SvgCodes/TvSvg";
 import OnDemandSvg from "../Image/SvgCodes/OnDemandSvg";
@@ -19,6 +20,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import store from "Utilities/Store/store";
 import { UPDATE_SUB_PROFILE_ID } from "Utilities/Actions/types";
 import useUserApi from "../Utilities/Hooks/useLandingApi";
+import { notyf } from "../Utilities/Hooks/useNotification";
 
 const Header = ({
   auth: { isAuthenticated, loading, data, selectedSubProfile, subProfileId },
@@ -75,6 +77,27 @@ const Header = ({
       return <Navigate to="/" />;
     }
   };
+  
+  const handleBuscar = async (e) => {
+    e.preventDefault();
+    setQuery('');
+    const box1 = document.getElementById("activeSearch1");
+    const box2 = document.getElementById("activeSearch2");
+    box1.classList.toggle("active");
+    box2.classList.toggle("active");
+  }
+
+  const activeSearch = async (e) => {
+    if(query){
+      e.preventDefault();
+      navigate(`/search?query=${query}`);
+    }else {
+      notyf.open({
+        type: "error",
+        message: "Please enter keywords to search!",
+      });
+    }
+  }
 
   return (
     <>
@@ -95,32 +118,34 @@ const Header = ({
             />
           </Navbar.Brand>
           {isAuthenticated && !loading && data != null ? (
-            <form
-              className="d-lg-flex d-none"
+            <div
+              className="d-lg-flex d-none search-box"
               data-aos="flip-up"
               data-aos-delay="100"
               data-aos-duration="1000"
               data-aos-once="true"
-              onSubmit={(e) => {
-                e.preventDefault();
-                navigate(`/search?query=${query}`);
-              }}
             >
-              <div className="search-box">
-                <img src={search_icon} alt="search" />
+              <form 
+                id="activeSearch1"
+              onSubmit={(e) => activeSearch(e)}
+              >
+                <img src={search_icon} alt="search" className="bigSearch" onClick={(e) => handleBuscar(e)}/>
+                <img src={slidein} alt="slidein" className="slidein" onClick={(e) => handleBuscar(e)}/>
                 <input
                   className="search-text"
                   type="text"
                   placeholder="Escribe aquí..."
                   name="query"
+                  value={query}
                   onChange={(e) => setQuery(e.target.value)}
                 />
-                <Link to={`/search?query=${query}`} className="menu__link">
-                  <img src={cross_icon} alt="cross" />
-                </Link>
-              </div>
-              <label className="pt-lg-2">Buscar</label>
-            </form>
+                <div className="menu__link actions">
+                  <img src={cross_icon} alt="cross" onClick={(e) => setQuery('')}/>
+                  <img src={search_icon} alt="search" onClick={(e) => activeSearch(e)}/>
+                </div>
+              </form>
+              <label className="pt-lg-2" onClick={(e) => handleBuscar(e)}>Buscar</label>
+            </div>
           ) : null}
           <Navbar.Collapse id="responsive-navbar-nav">
             {isAuthenticated && !loading && data != null ? (
@@ -303,6 +328,30 @@ const Header = ({
               )}
             </Nav>
             <div className="menu" id="menu">
+            <div
+              className="d-lg-none d-flex search-box"
+            >
+              <form 
+                id="activeSearch2"
+                onSubmit={(e) => activeSearch(e)}
+              >
+                <img src={slidein} alt="slidein" className="slidein" onClick={(e) => handleBuscar(e)}/>
+                <input
+                  className="search-text"
+                  type="text"
+                  placeholder="Escribe aquí..."
+                  name="query"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                />
+                <div className="menu__link actions">
+                  <img src={cross_icon} alt="cross" onClick={(e) => setQuery('')}/>
+                  <img src={search_icon} alt="search" onClick={(e) => activeSearch(e)}/>
+                </div>
+              </form>
+            </div>
+
+              
               <ul>
                 <li className="menu__item">
                   <Link
@@ -369,6 +418,7 @@ const Header = ({
                     data-aos-delay="800"
                     data-aos-duration="500"
                     data-aos-once="true"
+                    onClick={(e) => handleBuscar(e)}
                   >
                     <SearchSvg className="navIcon" />
                     <span className="menu-name">Buscar</span>

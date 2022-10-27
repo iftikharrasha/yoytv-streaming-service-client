@@ -30,7 +30,7 @@ const SearchResult = ({ getSearchResults, search: { searchResult } }) => {
         </Link>
       </section>
 
-      <section className="shows">
+      <section className="shows searchResult">
         <div className="shows__title">
           <h2
             data-aos="fade"
