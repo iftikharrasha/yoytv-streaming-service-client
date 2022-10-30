@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Helmet } from 'react-helmet-async';
-import VerticalAdIframe from 'Components/Custom/Ads/VerticalAdIframe';
+import { Helmet } from "react-helmet-async";
+import VerticalAdIframe from "Components/Custom/Ads/VerticalAdIframe";
 import {
   Link,
   useNavigate,
@@ -24,7 +24,6 @@ const ViewMore = ({
   const [categoryVideos, setCategoryVideos] = useState([]);
   const [title, setTitle] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
-
   useEffect(() => {
     setCategoryVideos([]);
     setTitle(searchParams.get("name"));
@@ -47,9 +46,12 @@ const ViewMore = ({
   return (
     <>
       <Helmet>
-          <title>Streamapp | Ver Mas</title>
-          <meta name="description" content='TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital.'/>
-      </Helmet> 
+        <title>Streamapp | Ver Mas</title>
+        <meta
+          name="description"
+          content="TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital."
+        />
+      </Helmet>
       <section className="list">
         <Link to={"/on-demand"} onClick={() => navigate(-1)} className="title">
           <img src={arrow} alt={arrow} width="28" height="28" /> {title}
@@ -65,7 +67,7 @@ const ViewMore = ({
                   : categoryVideos.map((item, index) => (
                       <div className="swiper-slide" key={index}>
                         <Link
-                          to={`/on-demand/movie-details/` + item.admin_video_id}
+                          to={item?.is_series ? `/on-demand/series-details/` + item.admin_video_id :  `/on-demand/movie-details/` + item.admin_video_id}
                         >
                           <img src={item.default_image} alt="default_image" />
                         </Link>
@@ -81,7 +83,7 @@ const ViewMore = ({
               <div className="bannerBtn">
                 <Link to="/ad">{`Hazlo aquí>`}</Link>
               </div> */}
-              
+
               <VerticalAdIframe />
             </div>
           </div>

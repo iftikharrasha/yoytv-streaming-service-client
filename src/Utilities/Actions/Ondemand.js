@@ -10,9 +10,15 @@ import {
   GET_SINGLE_VIDEO,
   CHANGE_IS_LOADING,
   GET_SINGLE_CATEGORY_VIDEOS,
+  GET_VIDEO_GENRE,
 } from "./types";
 import store from "Utilities/Store/store";
 import { notyf } from "Utilities/Hooks/useNotification";
+import {
+  AUTH_DEVICE_TOKEN,
+  AUTH_DEVICE_TYPE,
+  AUTH_LOGIN_BY,
+} from "Utilities/Constants";
 
 const BASE_URL = process.env.REACT_APP_API_LINK;
 
@@ -300,6 +306,9 @@ export const getSingleCategoryVideos = (categoryId) => async (dispatch) => {
     bodyFormData.append("token", state.auth.token);
     bodyFormData.append("sub_profile_id", state.auth.subProfileId);
     bodyFormData.append("category_id", categoryId);
+    bodyFormData.append("login_by", AUTH_LOGIN_BY);
+    bodyFormData.append("device_type", AUTH_DEVICE_TYPE);
+    bodyFormData.append("device_token", AUTH_DEVICE_TOKEN);
     const res = await axios.post(
       `${process.env.REACT_APP_API_LINK}/userApi/categoryVideos`,
       bodyFormData
@@ -320,6 +329,46 @@ export const getSingleCategoryVideos = (categoryId) => async (dispatch) => {
     console.log(err);
     dispatch({
       type: GET_SINGLE_CATEGORY_VIDEOS,
+      payload: [],
+    });
+  }
+};
+
+export const getVideoGenre = ({categoryId,sub_category_id,genre_id}) => async (dispatch) => {
+  try {
+    const state = store.getState();
+
+    dispatch({ type: CHANGE_IS_LOADING, payload: true });
+    let bodyFormData = new FormData();
+    bodyFormData.append("page_type", "HOME");
+    bodyFormData.append("sub_category_id", sub_category_id);
+    bodyFormData.append("genre_id", genre_id);
+    bodyFormData.append("skip", "0");
+    bodyFormData.append("id", state.auth.userId);
+    bodyFormData.append("token", state.auth.token);
+    bodyFormData.append("sub_profile_id", state.auth.subProfileId);
+    bodyFormData.append("category_id", categoryId);
+
+    const res = await axios.post(
+      `${process.env.REACT_APP_API_LINK}/userApi/genre_videos`,
+      bodyFormData
+    );
+
+    if (res.data.success) {
+      dispatch({
+        type: GET_VIDEO_GENRE,
+        payload: res.data.data,
+      });
+    } else {
+      dispatch({
+        type: GET_VIDEO_GENRE,
+        payload: [],
+      });
+    }
+  } catch (err) {
+    console.log(err);
+    dispatch({
+      type: GET_VIDEO_GENRE,
       payload: [],
     });
   }

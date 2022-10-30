@@ -10,6 +10,8 @@ import {
   CHANGE_IS_LOADING,
   SELECT_VIDEO,
   GET_SINGLE_CATEGORY_VIDEOS,
+  GET_VIDEO_SUGGUESTIONS,
+  GET_VIDEO_GENRE,
 } from "../Actions/types";
 
 const initialState = {
@@ -26,6 +28,8 @@ const initialState = {
   isPlayerShow: false,
   singleCategoryVideos: [],
   isLoading: false,
+  videoSuggestions: [],
+  genreVideos:[]
 };
 
 export default function (state = initialState, action) {
@@ -62,6 +66,16 @@ export default function (state = initialState, action) {
         isLoading: false,
         singleCategoryVideos: payload,
       };
+    case GET_VIDEO_SUGGUESTIONS:
+      return {
+        ...state,
+        videoSuggestions: payload,
+      };
+      case GET_VIDEO_GENRE:
+        return {
+          ...state,
+          genreVideos: payload,
+        };
     default:
       return state;
   }

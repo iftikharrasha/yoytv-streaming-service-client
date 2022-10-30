@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Navigation } from "swiper";
 import PropTypes from "prop-types";
@@ -20,6 +20,7 @@ import doctorStrange from "../../Image/doctor-strange.png";
 import wlakingDead from "../../Image/wlaking-dead.png";
 import house from "../../Image/house.png";
 import { useNavigate } from "react-router-dom";
+import Rating from "./Rating";
 
 const OnDemandHero = ({ onDemand, getHomeFirstSection, addToWishList }) => {
   //   const { home_page_bg_image, site_logo, home_banner_heading } = landingData;
@@ -84,7 +85,7 @@ const OnDemandHero = ({ onDemand, getHomeFirstSection, addToWishList }) => {
                             <h2>{item.description}</h2>
                             <h4>
                               {item.publish_time}
-                              <span>TV-MA</span>
+                              <Rating admin_video_id={item.admin_video_id} />
                               {convertDuration(item.duration)}
                             </h4>
                             <ul>

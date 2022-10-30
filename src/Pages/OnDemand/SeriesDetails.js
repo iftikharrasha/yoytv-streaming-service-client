@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { breakingEpisodes } from '../../Data/breakingEpisodes.js';
 import { similar } from '../../Data/similar';
 import ShowSlider from '../../Components/Custom/Sliders/ShowSlider';
@@ -11,28 +11,56 @@ import love_icon from '../../Image/love_icon.svg';
 import bbThumb from '../../Image/BBMockImages/bbThumb.png';
 import breakingBad from '../../Image/BBMockImages/breakingBad.png';
 import breakingBadThumb from '../../Image/BBMockImages/breakingBadThumb.png';
+import { connect, useDispatch } from 'react-redux';
+import { getSingleVideo,getVideoView ,getVideoGenre} from "Utilities/Actions/Ondemand";
+import { VideoSuggestions } from "Utilities/Actions/VideoCategory";
+import { SELECT_VIDEO } from "Utilities/Actions/types";
 
-const SeriesDetails = () => {
+const SeriesDetails = ({  getSingleVideo,
+    onDemand,
+    VideoSuggestions,
+    suggestions,
+    getVideoView,
+    videoViewState,
+    getVideoGenre,
+    videoGenre
+}) => {
     const navigate = useNavigate();
+    const { id } = useParams();
 
+    useEffect(() => {
+        if (id) {
+          getSingleVideo(id);
+          VideoSuggestions(id);
+          getVideoView(id);
+          getVideoGenre({
+            categoryId:onDemand?.video?.category_id,
+            sub_category_id:onDemand?.video?.sub_category_id,
+            genre_id:onDemand?.video?.genre_id
+        })
+        }
+      }, [id]);
+      if (!onDemand) {
+        return <div>Loading...!</div>;
+      }
     return (
         <>
             <section className="hero detailsHero">
-                <div className="heroBg heroFixed" style={{backgroundImage: `url(${breakingBad})`}}>
+                <div className="heroBg heroFixed" style={{backgroundImage: `url(${onDemand?.video?.banner_image})`}}>
                     <div className="detailsHero__wrapper">
                         <Link to="/" onClick={() => navigate(-1)}><img src={arrow_left} alt="close" className="close"/></Link>
                         <div className="detailsHero__wrapper__contents">
                             <div className="detailsHero__wrapper__contents__left">
-                                <img src={breakingBadThumb} alt="default_image"/>
+                                <img src={onDemand?.video?.default_image} alt="default_image"/>
                             </div>
                             <div className="detailsHero__wrapper__contents__right">
                                 <h1>
-                                    Breaking Bad
+                                   {onDemand?.video?.title}
                                 </h1>
                                 <h5>Series</h5>
-                                <h4>5 temporadas - 2008 - EUA</h4> 
-                                <h2><span>Categorias:</span> Suspenso, Drama, Acción</h2>
-                                <p>Tras cumplir 50 años, Walter White (Bryan Cranston), un profesor de química de un instituto de Albuquerque, Nuevo México, se entera de que tiene un cáncer de pulmón incurable. Casado con Skyler (Anna Gunn) y con un hijo discapacitado (RJ Mitte), la brutal noticia lo impulsa a dar un drástico cambio a su vida: decide, con la ayuda de un antiguo alumno (Aaron Paul), fabricar anfetaminas y ponerlas a la venta. Lo que pretende es liberar a su familia de problemas económicos cuando se produzca el fatal desenlace.</p>
+                                <h4>{videoViewState?.video_playlist?.length} temporadas - {onDemand?.video?.publish_time} - EUA</h4> 
+                                <h2><span>Categorias:</span> {onDemand?.video?.sub_category_name}</h2>
+                                <p>{onDemand?.video?.description} </p>
                             </div>
                         </div>
                     </div>
@@ -62,30 +90,33 @@ const SeriesDetails = () => {
                         <div className="allEpisodes__body__contents__title">
                             <h2>Episodios</h2>
                             <div className="input-group">
-                                <select className="custom-select" id="selectEpisode" defaultValue={1}>
-                                    <option value="1">Temporada 1</option>
-                                    <option value="2">Temporada 2</option>
-                                    <option value="3">Temporada 3</option>
-                                    <option value="3">Temporada 4</option>
+                                <select className="custom-select" id="selectEpisode" defaultValue={1} onChange={(e)=>{
+                                    getVideoGenre({
+                                        categoryId:onDemand?.video?.category_id,
+                                        sub_category_id:onDemand?.video?.sub_category_id,
+                                        genre_id:e.target.value
+                                    })
+                                }}>
+                                    {onDemand?.genres?.map((item) =><option key={item?.genre_id} value={item?.genre_id}>{item?.genre_name}</option>)}
                                 </select>
                             </div>
                         </div>
                         <ul className="allEpisodes__body__contents__episodes">
                             {
-                                breakingEpisodes.map((item) => (
+                                videoGenre?.map((item) => (
                                 <div className="allEpisodes__body__contents__episodes__single" key={item.id}>
                                     <div className="allEpisodes__body__contents__episodes__single__left">
                                         <span>{item.no}</span>
                                         <div className="allEpisodes__body__contents__episodes__single__left__thumb">
-                                            <img src={item.thumbnail} alt="intro" className="thumb"/>
+                                            <img src={item.default_image} alt="intro" className="thumb"/>
                                         </div>
                                     </div>
                                     <div className="allEpisodes__body__contents__episodes__single__right">
                                         <div className="allEpisodes__body__contents__episodes__single__right__info">
-                                            <h4>{item.name}</h4>
+                                            <h4>{item.title}</h4>
                                             <p>{item.description}</p>
                                         </div>
-                                        <span>{item.time} min</span>
+                                        <span>{item.duration} min</span>
                                     </div>
                                 </div>
                                 ))
@@ -93,7 +124,7 @@ const SeriesDetails = () => {
                         </ul>
                         <div className="allEpisodes__body__contents__similar">
                             <h2>Más títulos similares a este</h2>
-                            <ShowSlider shows={similar} delay={2500} clicks={true}/>
+                            <ShowSlider shows={{data:suggestions}} delay={2500} clicks={true}/>
                         </div>
                     </div>
                 </div>
@@ -104,13 +135,13 @@ const SeriesDetails = () => {
                     <div className="crewWrapper__single">
                         <div className="crewWrapper__single__left">
                             <div className="crewWrapper__single__left__thumb">
-                                <img src={bbThumb} alt="intro" className="thumb"/>
+                                <img src={onDemand?.video?.default_image} alt="intro" className="thumb"/>
                             </div>
                         </div>
                         <div className="crewWrapper__single__right">
                             <div className="crewWrapper__single__right__info">
                                 <h4>Resumen:</h4>
-                                <p>A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family's future.</p>
+                                <p>{onDemand?.video?.description}</p>
                             </div>
                             <div className="crewWrapper__single__right__info">
                                 <h4>Creador:</h4>
@@ -118,8 +149,7 @@ const SeriesDetails = () => {
                             </div>
                             <div className="crewWrapper__single__right__info">
                                 <h4>Reparto:</h4>
-                                <p>Bryan Cranston ,  Anna Gunn ,  Aaron Paul ,  Dean Norris ,  Betsy Brandt ,  RJ Mitte <br />
-                                Bob Odenkirk ,  Giancarlo Esposito , Jonathan Banks ,  Laura Fraser , Jesse Plemons</p>
+                                <p>{onDemand?.video?.details}</p>
                             </div>
                         </div>
                     </div>
@@ -129,4 +159,17 @@ const SeriesDetails = () => {
     );
 };
 
-export default SeriesDetails;
+const mapStateToProps = (state) => ({
+    onDemand: state.onDemand?.singleVideo,
+    suggestions: state?.onDemand?.videoSuggestions,
+    videoViewState: state?.onDemand?.videoViewState,
+    videoGenre: state?.onDemand?.genreVideos,
+  });
+  
+  export default connect(mapStateToProps, {
+    getSingleVideo,
+    VideoSuggestions,
+    getVideoView,
+    getVideoGenre
+  })(SeriesDetails);
+  
