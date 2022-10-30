@@ -1769,22 +1769,6 @@
   }
 }
 
-.playerHero .heroBg .detailsHero__wrapper__contents__right .episodes__single__left__thumb:before {
-  content: '';
-  background: url("../Image/play_button_white.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  width: 4rem;
-  height: 4rem;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  cursor: pointer;
-}
-
 .playerHero .heroBg .detailsHero__wrapper__contents__right .episodes__single__right {
   width: 80%;
 }

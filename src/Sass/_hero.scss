@@ -619,18 +619,18 @@
                                             height: 4.5rem;
                                         }
                                     }
-                                    &:before{
-                                        content: '';
-                                        background: url('../Image/play_button_white.svg');
-                                        @include bgCover;
-                                        position: absolute;
-                                        width: 4rem;
-                                        height: 4rem;
-                                        top: 50%;
-                                        left: 50%;
-                                        transform: translate(-50%, -50%);
-                                        cursor: pointer;
-                                    }
+                                    // &:before{
+                                    //     content: '';
+                                    //     background: url('../Image/play_button_white.svg');
+                                    //     @include bgCover;
+                                    //     position: absolute;
+                                    //     width: 4rem;
+                                    //     height: 4rem;
+                                    //     top: 50%;
+                                    //     left: 50%;
+                                    //     transform: translate(-50%, -50%);
+                                    //     cursor: pointer;
+                                    // }
                                 }
                             }
                             &__right{

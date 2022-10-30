@@ -6,7 +6,7 @@ import SoundMute from "../../Image/SoundMuteButton.svg";
 import Love from "../../Image/Lovebutton.svg";
 import Share from "../../Image/Sharebutton.svg";
 import pause from "../../Image/Pausebutton.svg";
-import play from "../../Image/play_button.svg";
+import play from "../../Image/play_button_radio.svg";
 import seasonsPlayerThumb from "../../Image/RadioMockImages/seasonsPlayerThumb.png";
 import badBunny from "../../Image/RadioMockImages/badBunny.png";
 import rauw from "../../Image/RadioMockImages/rauw.png";
@@ -114,7 +114,7 @@ const EstacionesPlayer = ({ radio, getRadioStation }) => {
                   src={artImage}
                   alt="radio"
                 />
-                <h1>{station.name}</h1>
+                <h1>{station?.name}</h1>
               </div>
               <div className="detailsHero__wrapper__contents__right">
                 <h6>Canciones anteriores</h6>
