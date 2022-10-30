@@ -51,9 +51,9 @@ const TvEnVivoHero = ({ nowPlaying }) => {
                         </span>
                       </button>
                     </li>
-                    <li>
+                    {/* <li>
                       <img src={share} alt="share" />
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </div>
