@@ -6,7 +6,8 @@ import LandingContent from "../../Components/Home/LandingContent";
 import useAuth from "../../Utilities/Hooks/useAuth";
 import Categories from "../../Components/Home/Categories";
 import { connect } from "react-redux";
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
+import TvModal from "Components/Custom/Modals/TvModal";
 
 const Home = ({ auth: { isAuthenticated, loading, data } }) => {
   const { landingData, newRelease, faq } = useUserApi();
@@ -23,18 +24,19 @@ const Home = ({ auth: { isAuthenticated, loading, data } }) => {
             <meta name="description" content={landingData?.meta_description || 'TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital.'}/>
         </Helmet> 
 
-        {!isAuthenticated ? (
+          {!isAuthenticated ? (
             <>
                 <Hero landingData={landingData} />
                 <LandingContent landingData={landingData} newRelease={newRelease} faq={faq}/>
             </>
-        ) : (
+          ) : (
             <>
-                <Hero landingData={landingData} loggedInUser={loggedInUser} />
-                <Categories />
+              <Hero landingData={landingData} loggedInUser={loggedInUser} />
+              <Categories />
+              <TvModal />
             </>
-        )}
-      </>
+          )}
+        </>
       }
     </>
   );

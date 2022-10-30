@@ -10,6 +10,7 @@ import {
   GET_SINGLE_VIDEO,
   CHANGE_IS_LOADING,
   GET_SINGLE_CATEGORY_VIDEOS,
+  UPDATE_WISHLIST,
 } from "./types";
 import store from "Utilities/Store/store";
 import { notyf } from "Utilities/Hooks/useNotification";
@@ -100,7 +101,10 @@ export const addToWishList = (videoId) => async (dispatch) => {
     );
 
     if (res.data.success) {
-      //   dispatch(setAlert(res.data.message, "success"));
+      dispatch({
+        type: UPDATE_WISHLIST,
+        payload: null,
+      });
       notyf.open({
         type: "success",
         message: res.data.message,

@@ -10,6 +10,8 @@ import {
   CHANGE_IS_LOADING,
   SELECT_VIDEO,
   GET_SINGLE_CATEGORY_VIDEOS,
+  UPDATE_WISHLIST,
+  LIKE_SHOW,
 } from "../Actions/types";
 
 const initialState = {
@@ -20,11 +22,15 @@ const initialState = {
   videoViewSecondState: null,
   categoryVideos: [],
   wishList: [],
+  wishListUpdatedStatus: false,
   categories: [],
   singleVideo: null,
+  isTrailer: false,
   selectedVideId: null,
   isPlayerShow: false,
   singleCategoryVideos: [],
+  isLikeShow: false,
+  likeObject: null,
   isLoading: false,
 };
 
@@ -44,6 +50,8 @@ export default function (state = initialState, action) {
       return { ...state, categoryVideos: payload };
     case GET_MY_WISH_LIST:
       return { ...state, wishList: payload };
+    case UPDATE_WISHLIST:
+      return { ...state, wishListUpdatedStatus: !state.wishListUpdatedStatus };
     case GET_CATEGORIES:
       return { ...state, categories: payload };
     case GET_SINGLE_VIDEO:
@@ -55,12 +63,19 @@ export default function (state = initialState, action) {
         ...state,
         isPlayerShow: payload.show,
         selectedVideId: payload.videoId,
+        isTrailer: payload.isTrailer,
       };
     case GET_SINGLE_CATEGORY_VIDEOS:
       return {
         ...state,
         isLoading: false,
         singleCategoryVideos: payload,
+      };
+    case LIKE_SHOW:
+      return {
+        ...state,
+        isLikeShow: payload.isLikeShow,
+        likeObject: payload.likeObject,
       };
     default:
       return state;
