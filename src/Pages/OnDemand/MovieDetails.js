@@ -63,10 +63,10 @@ const MovieDetails = ({
               <div className="detailsHero__wrapper__contents__right moviewRight">
                 <h1>{onDemand?.video?.title}</h1>
                 <div>
-                  <h4>Película - {onDemand?.video?.publish_time} - EUA</h4>
+                  <h4>Película - {onDemand?.video?.publish_time}</h4>
                   <h2>
                     <span>Categorias:</span>
-                    {onDemand?.video?.sub_category_name}
+                    {onDemand?.video?.category_name}
                   </h2>
                 </div>
               </div>
@@ -121,7 +121,8 @@ const MovieDetails = ({
             <div className="crewWrapper__single__right">
               <div className="crewWrapper__single__right__info">
                 <h4>Reparto</h4>
-                <p>{onDemand?.video?.details}</p>
+                <p className="inline">{onDemand?.cast_crews?.map((cast)=>cast?.name)?.slice(0,10)}</p>
+         
               </div>
             </div>
           </div>

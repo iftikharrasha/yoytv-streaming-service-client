@@ -11,6 +11,8 @@ import {
   CHANGE_IS_LOADING,
   GET_SINGLE_CATEGORY_VIDEOS,
   GET_VIDEO_GENRE,
+  LIKE_OR_DISLIKE_VIDEO,
+  ADD_OR_REMOVE_WISHLIST_VIDEO
 } from "./types";
 import store from "Utilities/Store/store";
 import { notyf } from "Utilities/Hooks/useNotification";
@@ -336,9 +338,15 @@ export const getSingleCategoryVideos = (categoryId) => async (dispatch) => {
 
 export const getVideoGenre = ({categoryId,sub_category_id,genre_id}) => async (dispatch) => {
   try {
+    dispatch({
+      type: GET_VIDEO_GENRE,
+      payload: {
+        isLoading:true,
+        data:[],
+        error:""
+      },
+    });
     const state = store.getState();
-
-    dispatch({ type: CHANGE_IS_LOADING, payload: true });
     let bodyFormData = new FormData();
     bodyFormData.append("page_type", "HOME");
     bodyFormData.append("sub_category_id", sub_category_id);
@@ -357,19 +365,88 @@ export const getVideoGenre = ({categoryId,sub_category_id,genre_id}) => async (d
     if (res.data.success) {
       dispatch({
         type: GET_VIDEO_GENRE,
-        payload: res.data.data,
+        payload: {
+          isLoading:false,
+          data:res.data?.data,
+          error:""
+        },
       });
     } else {
       dispatch({
         type: GET_VIDEO_GENRE,
-        payload: [],
+        payload: {
+          isLoading:false,
+          data:[],
+          error:""
+        },
       });
     }
   } catch (err) {
     console.log(err);
     dispatch({
       type: GET_VIDEO_GENRE,
-      payload: [],
+      payload: {
+        isLoading:false,
+        data:[],
+        error:""
+      },
     });
   }
 };
+
+export const likeOrDislikeVideoOrSeries =(admin_video_id,like_status=0)=>async(dispatch)=>{
+  try {
+      var formdata = new FormData();
+      const state = store.getState();
+      formdata.append("id", state.auth.userId);
+      formdata.append("token", state.auth.token);
+      formdata.append("language", "en");
+      formdata.append("sub_profile_id", state.auth.subProfileId);
+      formdata.append("admin_video_id", admin_video_id);
+      formdata.append("login_by", AUTH_LOGIN_BY);
+      formdata.append("device_type", AUTH_DEVICE_TYPE);
+      formdata.append("device_token", AUTH_DEVICE_TOKEN);
+      if(like_status===0){
+          await axios.post(
+          `${process.env.REACT_APP_API_LINK}/userApi/videos/like`,
+          formdata
+        );
+      }else{
+          await axios.post(
+          `${process.env.REACT_APP_API_LINK}/userApi/videos/dis_like`,
+          formdata
+        );
+      }
+      dispatch({
+        type: LIKE_OR_DISLIKE_VIDEO,
+        payload: [],
+      });
+  } catch (error) {
+    dispatch({
+      type: LIKE_OR_DISLIKE_VIDEO,
+      payload: [],
+    });
+  }
+}
+export const addOrRemoveWishtlist =(admin_video_id,payload)=>async (dispatch)=>{
+  try {
+    var formdata = new FormData();
+    const state = store.getState();
+    formdata.append("admin_video_id", admin_video_id);
+    formdata.append("clear_all_status", "0");
+    formdata.append("id", state.auth.userId);
+    formdata.append("token", state.auth.token);
+    formdata.append("sub_profile_id", state.auth.subProfileId);
+    const response = await axios.post(
+      `${process.env.REACT_APP_API_LINK}/userApi/wishlists/operations`,
+      formdata
+    );
+    console.log("wishlist video",{response,admin_video_id})
+    dispatch({
+      type:ADD_OR_REMOVE_WISHLIST_VIDEO,
+      payload: payload,
+    })
+  } catch (error) {
+    console.log("wishlist video",{admin_video_id,error})
+  }
+}

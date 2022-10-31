@@ -12,6 +12,8 @@ import {
   GET_SINGLE_CATEGORY_VIDEOS,
   GET_VIDEO_SUGGUESTIONS,
   GET_VIDEO_GENRE,
+  LIKE_OR_DISLIKE_VIDEO,
+  ADD_OR_REMOVE_WISHLIST_VIDEO
 } from "../Actions/types";
 
 const initialState = {
@@ -29,7 +31,7 @@ const initialState = {
   singleCategoryVideos: [],
   isLoading: false,
   videoSuggestions: [],
-  genreVideos:[]
+  genreVideos:{isLoading:false,data:[],error:""},
 };
 
 export default function (state = initialState, action) {
@@ -66,6 +68,15 @@ export default function (state = initialState, action) {
         isLoading: false,
         singleCategoryVideos: payload,
       };
+    case LIKE_OR_DISLIKE_VIDEO:
+    return {
+      ...state
+    }
+    case ADD_OR_REMOVE_WISHLIST_VIDEO:
+      return {
+        ...state,
+        homeFirstSectionData:payload
+      }
     case GET_VIDEO_SUGGUESTIONS:
       return {
         ...state,
