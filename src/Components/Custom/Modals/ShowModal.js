@@ -7,6 +7,7 @@ import banner_image from "../../../Image/stranger_things_cover.png";
 import play_fill from "../../../Image/play_fill.svg";
 import share_icon from "../../../Image/share_icon.svg";
 import plus_icon from "../../../Image/plus_icon.svg";
+import minus_icon from "../../../Image/minus_icon.svg";
 import plus_icon_green from "../../../Image/plus-greeen.svg";
 import love_icon from "../../../Image/love_icon.svg";
 import love_icon_green from "../../../Image/loveGreen.svg";
@@ -65,7 +66,6 @@ const ShowModal = (props) => {
       genre_id:details?.genre_id
     })
   }, []);
-  console.log("homeFirstSectionData", {video,details});
   const isAddInWishlist =(admin_video_id)=>{
     const myList = homeFirstSectionData?.find((i=>i?.title ==="Mi Lista"))
     const videoExists = myList?.data?.find((it)=>it?.admin_video_id===admin_video_id)
@@ -150,7 +150,7 @@ const ShowModal = (props) => {
                    })
                   addOrRemoveWishtlist(details?.admin_video_id,temp)
                 }}>
-                 {isAddInWishlist(details?.admin_video_id) ? <img src={plus_icon_green} alt="add" className="plus"  /> : <img src={plus_icon} alt="add" className="plus"  />}
+                 {isAddInWishlist(details?.admin_video_id) ? <img src={minus_icon} alt="add" className="plus"  /> : <img src={plus_icon} alt="add" className="plus"  />}
                 </li>
               </ul>
               <h2>

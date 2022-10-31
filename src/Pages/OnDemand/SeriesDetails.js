@@ -7,12 +7,15 @@ import arrow_left from '../../Image/arrow_left.svg';
 import play_fill from '../../Image/play_fill.svg';
 import share_icon from '../../Image/share_icon.svg';
 import plus_icon from '../../Image/plus_icon.svg';
+import minus_icon from "../../Image/minus_icon.svg";
 import love_icon from '../../Image/love_icon.svg';
+import love_icon_green from "../../Image/loveGreen.svg";
 import bbThumb from '../../Image/BBMockImages/bbThumb.png';
 import breakingBad from '../../Image/BBMockImages/breakingBad.png';
 import breakingBadThumb from '../../Image/BBMockImages/breakingBadThumb.png';
+import plus_icon_svg from "../../Image/plus-greeen.svg";
 import { connect, useDispatch } from 'react-redux';
-import { getSingleVideo,getVideoView ,getVideoGenre} from "Utilities/Actions/Ondemand";
+import { getSingleVideo,getVideoView ,getVideoGenre,likeOrDislikeVideoOrSeries,addOrRemoveWishtlist} from "Utilities/Actions/Ondemand";
 import { VideoSuggestions } from "Utilities/Actions/VideoCategory";
 import { SELECT_VIDEO } from "Utilities/Actions/types";
 
@@ -23,7 +26,10 @@ const SeriesDetails = ({  getSingleVideo,
     getVideoView,
     videoViewState,
     getVideoGenre,
-    videoGenre
+    videoGenre,
+    likeOrDislikeVideoOrSeries,
+    homeFirstSectionData,
+    addOrRemoveWishtlist
 }) => {
     const navigate = useNavigate();
     const { id } = useParams();
@@ -40,6 +46,14 @@ const SeriesDetails = ({  getSingleVideo,
         })
         }
       }, [id]);
+      const isAddInWishlist =(admin_video_id)=>{
+        const myList = homeFirstSectionData?.find((i=>i?.title ==="Mi Lista"))
+        const videoExists = myList?.data?.find((it)=>it?.admin_video_id===admin_video_id)
+        if(videoExists){
+          return true
+        }
+        return false
+      }
       if (!onDemand) {
         return <div>Loading...!</div>;
       }
@@ -57,9 +71,15 @@ const SeriesDetails = ({  getSingleVideo,
                                 <h1>
                                    {onDemand?.video?.title}
                                 </h1>
+                                <h1>{onDemand?.video?.ratings}</h1>
                                 <h5>Series</h5>
                                 <h4>{videoViewState?.video_playlist?.length} temporadas - {onDemand?.video?.publish_time}</h4> 
-                                <h2><span>Categorias:</span> {onDemand?.video?.category_name}</h2>
+                                <h2>
+                                    <span>Categorias:</span>
+                                    <Link to={`/view-more/${onDemand?.video?.category_id}?name=${onDemand?.video?.category_name}`}>
+                                    <span style={{color:"#67fe65"}}>{onDemand?.video?.category_name}</span>
+                </Link>
+                                    </h2>
                                 <p>{onDemand?.video?.description} </p>
                             </div>
                         </div>
@@ -80,9 +100,40 @@ const SeriesDetails = ({  getSingleVideo,
                                 <span>Reproducir</span> 
                             </button>
                         </li>
-                        <li><img src={love_icon} alt="love" className="love"/></li>
-                        <li><img src={share_icon} alt="play" className="play"/></li>
-                        <li><img src={plus_icon} alt="add" className="plus"/></li>
+                        <li 
+                        onClick={()=>{
+                            likeOrDislikeVideoOrSeries(
+                             onDemand?.video?.admin_video_id,
+                             onDemand?.is_liked
+                           )
+                           getSingleVideo(onDemand?.video?.admin_video_id);
+                         }}
+                        >
+                            {onDemand?.is_liked===1 ? 
+                             <img src={love_icon_green} alt="love" className="love" />:
+                            <img src={love_icon} alt="love" className="love"/>}
+                        </li>
+                        {/* <li><img src={share_icon} alt="play" className="play"/></li> */}
+                        <li onClick={()=>{
+                const myList = homeFirstSectionData?.find((i=>i?.title ==="Mi Lista"))
+                const exist = myList?.data?.find((item)=>item?.admin_video_id === onDemand?.video?.admin_video_id)
+                let data = []
+                if(exist){
+                  data = myList?.data?.filter((item)=>item?.admin_video_id !== onDemand?.video?.admin_video_id)
+                }else{
+                  data = [...myList?.data,onDemand?.video]
+                }
+                const temp = homeFirstSectionData?.map((item)=>{
+                  if(item?.title ==="Mi Lista"){
+                    return {...item,data}
+                  }
+                  return item
+                })
+               addOrRemoveWishtlist(onDemand?.video,temp)
+             }}>
+                
+                {isAddInWishlist(onDemand?.video?.admin_video_id) ? <img src={minus_icon} alt="add" className="plus" />:
+              <img src={plus_icon} alt="add" className="plus" />}</li>
                     </ul>
                 </div>
                 <div className="allEpisodes__body">
@@ -167,12 +218,15 @@ const mapStateToProps = (state) => ({
     suggestions: state?.onDemand?.videoSuggestions,
     videoViewState: state?.onDemand?.videoViewState,
     videoGenre: state?.onDemand?.genreVideos,
+    homeFirstSectionData:state?.onDemand?.homeFirstSectionData
   });
   
   export default connect(mapStateToProps, {
     getSingleVideo,
     VideoSuggestions,
     getVideoView,
-    getVideoGenre
+    getVideoGenre,
+    likeOrDislikeVideoOrSeries,
+    addOrRemoveWishtlist
   })(SeriesDetails);
   
