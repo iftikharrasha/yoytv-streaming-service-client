@@ -61,8 +61,8 @@ const SeriesDetails = ({  getSingleVideo,
                                    {onDemand?.video?.title}
                                 </h1>
                                 <h5>Series</h5>
-                                <h4>{videoViewState?.video_playlist?.length} temporadas - {onDemand?.video?.publish_time} - EUA</h4> 
-                                <h2><span>Categorias:</span> {onDemand?.video?.sub_category_name}</h2>
+                                <h4>{videoViewState?.video_playlist?.length} temporadas - {onDemand?.video?.publish_time}</h4> 
+                                <h2><span>Categorias:</span> {onDemand?.video?.category_name}</h2>
                                 <p>{onDemand?.video?.description} </p>
                             </div>
                         </div>
@@ -100,13 +100,16 @@ const SeriesDetails = ({  getSingleVideo,
                                         genre_id:e.target.value
                                     })
                                 }}>
-                                    {onDemand?.genres?.map((item) =><option key={item?.genre_id} value={item?.genre_id}>{item?.genre_name}</option>)}
+                                    <option  value={onDemand?.genre_id}>
+                                        {onDemand?.genres?.find((it)=>it?.genre_id===onDemand?.genre_id)?.genre_name}
+                              </option>
+                                    {onDemand?.genres?.filter((i)=>i?.genre_id !== onDemand?.genre_id).map((item) =><option key={item?.genre_id} value={item?.genre_id}>{item?.genre_name}</option>)}
                                 </select>
                             </div>
                         </div>
                         <ul className="allEpisodes__body__contents__episodes">
-                            {
-                                videoGenre?.map((item) => (
+                            {videoGenre?.isLoading ? <span>Loading</span> :
+                                videoGenre?.data?.map((item) => (
                                 <div className="allEpisodes__body__contents__episodes__single" key={item.id}>
                                     <div className="allEpisodes__body__contents__episodes__single__left">
                                         <span>{item.no}</span>
@@ -133,7 +136,7 @@ const SeriesDetails = ({  getSingleVideo,
                 </div>
             </section>
             
-            <section className="crew">
+            {/* <section className="crew">
                 <div className="crewWrapper">
                     <div className="crewWrapper__single">
                         <div className="crewWrapper__single__left">
@@ -157,7 +160,7 @@ const SeriesDetails = ({  getSingleVideo,
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </>
     );
 };
