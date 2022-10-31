@@ -43,7 +43,7 @@ const TvSlider = ({shows, delay}) => {
                 shows?.map((item, index) => (
                     <SwiperSlide className="rectangular" key={index}>
                         <Link to={`/tv-en-vivo/${item.uuid}`} className="rectangular">
-                            <img src={item.logo} alt="logo" />
+                            <img src={item.logo_grayscale} alt="logo" />
                         </Link>
                         {/* <div className="card__buttons">
                             <img src={arrow_down} alt="more" className="more"/>

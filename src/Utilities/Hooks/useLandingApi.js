@@ -7,6 +7,7 @@ const useLandingApi = () => {
   const [newRelease, setNewRelease] = useState([]);
   const [shows, setShows] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [tv, setTv] = useState([]);
 
   const state = store.getState();
 
@@ -70,11 +71,30 @@ const useLandingApi = () => {
     }
   };
 
+  const getTvSlider = async () => {
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_LINK}/userApi/tv_guide_channels`,
+        tokenData
+      );
+
+      if (response.data) {
+        setTv(response.data.channels);
+      } else {
+        console.log("Api Error!");
+      }
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   // homefirstsectionfeatured api
   useEffect(() => {
     getHomeFirstShows();
     getHomeFirstShowsAfterLog();
     getCategories();
+    getTvSlider();
   }, [state.auth.subProfileId]);
 
   // homesettings api
@@ -102,6 +122,7 @@ const useLandingApi = () => {
     shows,
     faq,
     pages,
+    tv,
     categories,
   };
 };
