@@ -47,8 +47,7 @@ const Categories = ({
       setCategoryList(onDemand.homeFirstSectionData.concat(onDemand.onDemand));
     }
   }, [onDemand]);
-
-  return (
+    return (
     <>
       <section
         className={!demandPage ? "relativeTop" : "relativeTop demandTop"}
@@ -93,30 +92,35 @@ const Categories = ({
       )}
 
       {/* SLIDER FOR ALL THE OTHER CATEGORIES*/}
-      {categoryList.map((category, index) => (
-        <section className="shows" key={index}>
-          <div className="shows__title">
-            <h2
-              data-aos="fade"
-              data-aos-offset="0"
-              data-aos-delay="200"
-              data-aos-duration="1000"
-            >
-              {category.title}
-            </h2>
-            <Link
-              to={
-                category.title === "Mi Lista"
-                  ? `/profile/mi-lista/123`
-                  : `/view-more/` +
-                    category.url_page_id +
-                    `?name=${category.title}`
-              }
-            >{`Ver más>`}</Link>
-          </div>
-          <ShowSlider shows={category} delay={2500} />
-        </section>
-      ))}
+      {categoryList.map((category, index) => {
+        return (
+          <section className="shows" key={index}>
+            <div className="shows__title">
+              <h2
+                data-aos="fade"
+                data-aos-offset="0"
+                data-aos-delay="200"
+                data-aos-duration="1000"
+              >
+                {category.title}
+              </h2>
+              <Link
+                to={
+                  category.title === "Mi Lista"
+                    ? `/profile/mi-lista/123`
+                    : `/view-more/` +
+                      category.url_page_id +
+                      `?name=${category.title}`
+                }
+              >{`Ver más>`}</Link>
+            </div>
+            <ShowSlider
+              shows={category}
+              delay={2500}
+            />
+          </section>
+        );
+      })}
 
       {/* TODO: RADIO SLIDER - CURRENTLY HARDCODED NEED API*/}
       {demandPage ? null : (

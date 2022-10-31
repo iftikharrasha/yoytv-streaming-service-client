@@ -12,6 +12,8 @@ import {
   GET_SINGLE_CATEGORY_VIDEOS,
   UPDATE_WISHLIST,
   LIKE_SHOW,
+  GET_VIDEO_SUGGUESTIONS,
+  GET_VIDEO_GENRE,
 } from "../Actions/types";
 
 const initialState = {
@@ -32,6 +34,8 @@ const initialState = {
   isLikeShow: false,
   likeObject: null,
   isLoading: false,
+  videoSuggestions: [],
+  genreVideos:[]
 };
 
 export default function (state = initialState, action) {
@@ -77,6 +81,16 @@ export default function (state = initialState, action) {
         isLikeShow: payload.isLikeShow,
         likeObject: payload.likeObject,
       };
+    case GET_VIDEO_SUGGUESTIONS:
+      return {
+        ...state,
+        videoSuggestions: payload,
+      };
+      case GET_VIDEO_GENRE:
+        return {
+          ...state,
+          genreVideos: payload,
+        };
     default:
       return state;
   }

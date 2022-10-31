@@ -5,7 +5,7 @@ import onDemand from "./OndemandReducer";
 import profile from "./ProfileReducer";
 import radio from "./RadioReducer";
 import search from "./SearchReducer";
-
+import videoCategory from "./VideoReducer";
 export default combineReducers({
   auth,
   subscription,
@@ -13,4 +13,5 @@ export default combineReducers({
   profile,
   radio,
   search,
+  videoCategories: videoCategory,
 });

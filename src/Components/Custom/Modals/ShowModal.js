@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Modal } from "react-bootstrap";
 import ShowSlider from "../Sliders/ShowSlider";
 import { episodes } from "../../../Data/episodes.js";
@@ -12,11 +12,28 @@ import arrow from "../../../Image/arrow_left_green.svg";
 import { similar } from "../../../Data/similar";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { SELECT_VIDEO } from "Utilities/Actions/types";
+import { VideoSuggestions } from "Utilities/Actions/VideoCategory";
+import { getSingleVideo ,getVideoView,getVideoGenre} from "Utilities/Actions/Ondemand";
+import { getVideoCategoryList } from "Utilities/Actions/VideoCategory";
 
 const ShowModal = (props) => {
-  const { lgShow, setLgShow, details } = props;
+  const {
+    lgShow,
+    setLgShow,
+    details,
+    VideoSuggestions,
+    suggestions,
+    getSingleVideo,
+    video,
+    videoViewState,
+    getVideoView,
+    getVideoCategoryList,
+    videoCategories,
+    getVideoGenre,
+    videoGenre
+  } = props;
   const handleClose = () => setLgShow(false);
   let navigate = useNavigate();
   const dispatch = useDispatch();
@@ -32,7 +49,18 @@ const ShowModal = (props) => {
     });
     handleClose();
   };
-
+  useEffect(() => {
+    VideoSuggestions(details?.admin_video_id);
+    getSingleVideo(details?.admin_video_id);
+    getVideoView(details?.admin_video_id);
+    getVideoCategoryList()
+    getVideoGenre({
+      categoryId:details?.category_id,
+      sub_category_id:details?.sub_category_id,
+      genre_id:details?.genre_id
+    })
+  }, []);
+  const selectedCategory = videoCategories?.data?.data?.find((item)=>item?.category_id === details?.category_id).name
   return (
     <>
       <Modal
@@ -43,7 +71,9 @@ const ShowModal = (props) => {
         className="show__modal"
       >
         <div className="modal__bg">
-          <Modal.Header style={{ backgroundImage: `url(${banner_image})` }}>
+          <Modal.Header
+            style={{ backgroundImage: `url(${details?.banner_image})` }}
+          >
             <img
               src={arrow_left}
               alt="close"
@@ -58,9 +88,12 @@ const ShowModal = (props) => {
                 <Modal.Title id="example-modal-sizes-title-lg">
                   {details.title}
                 </Modal.Title>
-                <h5>Series</h5>
-                <h6>8.1</h6>
-                <h4>4 temporadas - 2016 - EUA</h4>
+                <h5>{videoViewState?.is_series===0 ? "Movie" : "Series"}</h5>
+                <h6>{video?.video?.ratings}</h6>
+                <h4>
+                  {videoViewState?.is_series===0 ? "" : `${videoViewState?.video_playlist?.length} temporadas -`}
+                  {details?.publish_time} - EUA
+                </h4>
                 <p>{details.description}</p>
               </div>
             </div>
@@ -87,67 +120,84 @@ const ShowModal = (props) => {
                 </li>
               </ul>
               <h2>
-                <span>Categorias:</span> Terror. Suspenso. Misterio. Fantasía.
+                <span>Categorias:</span>{" "}
+                <Link to={`/view-more/${video?.video?.category_id}?name=${selectedCategory}`}>
+                  <span>{selectedCategory}</span>
+                </Link>
               </h2>
             </div>
           </Modal.Header>
           <Modal.Body>
             <div className="body__contents">
-              <div className="body__contents__title">
-                <h2>Episodios</h2>
-                <div className="input-group">
-                  <select
-                    className="custom-select"
-                    id="selectEpisode"
-                    defaultValue={1}
-                  >
-                    <option value="1">Temporada 1</option>
-                    <option value="2">Temporada 2</option>
-                    <option value="3">Temporada 3</option>
-                    <option value="3">Temporada 4</option>
-                  </select>
-                </div>
-              </div>
-              <ul className="body__contents__episodes">
-                {episodes.map((item) => (
-                  <div
-                    className="body__contents__episodes__single"
-                    key={item.id}
-                  >
-                    <div className="body__contents__episodes__single__left">
-                      <span>{item.no}</span>
-                      <div className="body__contents__episodes__single__left__thumb">
-                        <img
-                          src={item.thumbnail}
-                          alt="intro"
-                          className="thumb"
-                        />
-                      </div>
-                    </div>
-                    <div className="body__contents__episodes__single__right">
-                      <div className="body__contents__episodes__single__right__info">
-                        <h4>{item.name}</h4>
-                        <p>{item.description}</p>
-                      </div>
-                      <span>{item.time} min</span>
+              {videoViewState?.is_series===0 ? null : (
+                <>
+                  <div className="body__contents__title">
+                    <h2>Episodios</h2>
+                    <div className="input-group">
+                      <select
+                        className="custom-select"
+                        id="selectEpisode"
+                        defaultValue={1}
+                        onChange={(e)=>{
+                          getVideoGenre({
+                            categoryId:details?.category_id,
+                            sub_category_id:details?.sub_category_id,
+                            genre_id:e.target.value
+                          })
+                        }}
+                      >
+                        {video?.genres?.map((item)=><option key={item?.genre_id} value={item?.genre_id}>{item?.genre_name}</option>)}
+                      </select>
                     </div>
                   </div>
-                ))}
-                <Link
-                  to={`/on-demand/series-details/` + details.admin_video_id}
-                >
-                  <img
-                    src={arrow}
-                    alt="details"
-                    className="arrow"
-                    onClick={handleClose}
-                  />
-                </Link>
-              </ul>
+                  <ul className="body__contents__episodes">
+                    {videoGenre?.map((item) => (
+                      <div
+                        className="body__contents__episodes__single"
+                        key={item.id}
+                      >
+                        <div className="body__contents__episodes__single__left">
+                          <span>{item.no}</span>
+                          <div className="body__contents__episodes__single__left__thumb">
+                            <img
+                              src={item.default_image}
+                              alt="intro"
+                              className="thumb"
+                            />
+                          </div>
+                        </div>
+                        <div className="body__contents__episodes__single__right">
+                          <div className="body__contents__episodes__single__right__info">
+                            <h4>{item.title}</h4>
+                            <p>{item.description}</p>
+                          </div>
+                          <span>{item.duration} min</span>
+                        </div>
+                      </div>
+                    ))?.slice(0,3)}
+                    <Link
+                      to={`/on-demand/series-details/` + details.admin_video_id}
+                    >
+                      <img
+                        src={arrow}
+                        alt="details"
+                        className="arrow"
+                        onClick={handleClose}
+                      />
+                    </Link>
+                  </ul>
+                </>
+              )}
               <div className="body__contents__similar">
                 <h2>Más títulos similares a este</h2>
                 {/* TODO: RELATED SHOWS SLIDER FILTERING FUNCTIONALITY NEEDED*/}
-                <ShowSlider shows={similar} delay={2500} clicks={true} />
+                {Array.isArray(suggestions) && suggestions.length > 0 && (
+                  <ShowSlider
+                    shows={{ data: suggestions }}
+                    delay={2500}
+                    clicks={true}
+                  />
+                )}
               </div>
             </div>
           </Modal.Body>
@@ -157,4 +207,18 @@ const ShowModal = (props) => {
   );
 };
 
-export default ShowModal;
+const mapStateToProps = (state) => ({
+  suggestions: state?.onDemand?.videoSuggestions,
+  video: state?.onDemand?.singleVideo,
+  videoViewState: state?.onDemand?.videoViewState,
+  videoCategories: state.videoCategories,
+  videoGenre: state?.onDemand?.genreVideos,
+});
+
+export default connect(mapStateToProps, {
+  VideoSuggestions,
+  getSingleVideo,
+  getVideoView,
+  getVideoCategoryList,
+  getVideoGenre
+})(ShowModal);

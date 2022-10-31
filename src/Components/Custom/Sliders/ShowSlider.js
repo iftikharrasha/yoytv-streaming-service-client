@@ -79,7 +79,11 @@ const ShowSlider = ({ shows, delay, clicks }) => {
       </Swiper>
 
       {!isFetching ? (
-        <ShowModal lgShow={lgShow} setLgShow={setLgShow} details={details} />
+        <ShowModal
+          lgShow={lgShow}
+          setLgShow={setLgShow}
+          details={details}
+        />
       ) : null}
     </>
   );
