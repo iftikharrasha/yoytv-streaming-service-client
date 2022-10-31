@@ -337,20 +337,6 @@
         @media (min-width: 576px) and (max-width: 991.98px) {
             padding: 1rem 2rem;
         }
-        &:before{
-            content: '';
-            background: url('../Image/LogoGreen.svg');
-            @include bgCover;
-            position: absolute;
-            width: 8rem;
-            height: 2.65rem;
-            top: 0;
-            right: 0;
-            cursor: pointer;
-            @media (max-width: 575.98px) {
-                content: none;
-            }
-        }
         &__contents{
             position: relative;
             padding: 1rem 0;
@@ -435,6 +421,17 @@
                     @media (min-width: 576px) and (max-width: 991.98px) {
                         font-size: 1rem;
                     }
+                }
+            }
+            .site_logo{
+                height: auto;
+                position: absolute;
+                right: 0;
+                top: -8rem;
+                width: 9.75rem;
+                @media (max-width: 575.98px) {
+                    top: -5rem;
+                    width: 5rem;
                 }
             }
         }

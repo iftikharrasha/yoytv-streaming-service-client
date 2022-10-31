@@ -1309,26 +1309,6 @@
   }
 }
 
-.detailsHero__wrapper:before {
-  content: '';
-  background: url("../Image/LogoGreen.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  width: 8rem;
-  height: 2.65rem;
-  top: 0;
-  right: 0;
-  cursor: pointer;
-}
-
-@media (max-width: 575.98px) {
-  .detailsHero__wrapper:before {
-    content: none;
-  }
-}
-
 .detailsHero__wrapper__contents {
   position: relative;
   padding: 1rem 0;
@@ -1469,6 +1449,21 @@
 @media (min-width: 576px) and (max-width: 991.98px) {
   .detailsHero__wrapper__contents__right p {
     font-size: 1rem;
+  }
+}
+
+.detailsHero__wrapper__contents .site_logo {
+  height: auto;
+  position: absolute;
+  right: 0;
+  top: -8rem;
+  width: 9.75rem;
+}
+
+@media (max-width: 575.98px) {
+  .detailsHero__wrapper__contents .site_logo {
+    top: -5rem;
+    width: 5rem;
   }
 }
 
@@ -3725,6 +3720,10 @@
   }
 }
 
+.show__modal .modal-dialog .modal-content .modal__bg .modal__buttons h2 a {
+  color: #ffffff;
+}
+
 .show__modal .modal-dialog .modal-content .modal__bg .modal__buttons h2 span {
   font-weight: 600;
 }
@@ -4777,6 +4776,11 @@
 .footer__credit .list__items .socials li a img {
   width: 1.25rem;
   height: auto;
+}
+
+.footer__credit .list__items .socials li a:hover img {
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
 }
 
 .browse {

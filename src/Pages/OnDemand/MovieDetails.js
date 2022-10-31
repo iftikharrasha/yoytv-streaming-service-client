@@ -13,6 +13,8 @@ import { connect, useDispatch } from "react-redux";
 import { getSingleVideo } from "Utilities/Actions/Ondemand";
 import { VideoSuggestions } from "Utilities/Actions/VideoCategory";
 import { SELECT_VIDEO } from "Utilities/Actions/types";
+import useUserApi from "../../Utilities/Hooks/useLandingApi";
+
 const MovieDetails = ({
   getSingleVideo,
   onDemand,
@@ -22,6 +24,7 @@ const MovieDetails = ({
   const navigate = useNavigate();
   const { id } = useParams();
   const dispatch = useDispatch();
+  const { landingData } = useUserApi();
 
   const navigateToPlayer = (videoId) => {
     dispatch({
@@ -57,6 +60,7 @@ const MovieDetails = ({
               <img src={arrow_left} alt="close" className="close" />
             </Link>
             <div className="detailsHero__wrapper__contents">
+              <img src={landingData?.site_logo} alt="site_logo" className='site_logo' width="200" height="99" data-aos="fade" data-aos-offset="0" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true"/>
               <div className="detailsHero__wrapper__contents__left">
                 <img src={onDemand?.video?.default_image} alt="default_image" />
               </div>
