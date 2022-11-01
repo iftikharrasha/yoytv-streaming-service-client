@@ -73,10 +73,7 @@ const TvModal = ({
               <ReactJWPlayer
                 playerId="my-unique-id"
                 playerScript="https://cdn.jwplayer.com/libraries/CYz0ApGQ.js"
-                // file={renderVideoUrl()}
-                file={
-                  "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                }
+                file={renderVideoUrl()}
                 isAutoPlay={true}
               />
             )}
