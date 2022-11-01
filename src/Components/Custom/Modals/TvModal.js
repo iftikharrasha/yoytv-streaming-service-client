@@ -10,12 +10,33 @@ const TvModal = ({
   onDemand: { isPlayerShow, selectedVideId, singleVideo, isTrailer },
 }) => {
   const dispatch = useDispatch();
+  const [isIosDevice, setIsIosDevice] = useState(false);
 
   useEffect(() => {
     if (selectedVideId !== null) {
       getSingleVideo(selectedVideId);
     }
   }, [selectedVideId]);
+
+  useEffect(() => {
+    checkIsIosDevice();
+  }, []);
+
+  const checkIsIosDevice = () => {
+    console.log("device ", navigator.platform);
+    const iOS_1to12 = /iPad|iPhone|iPod/.test(navigator.platform);
+    const iOS13_iPad =
+      navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+    const isIOS =
+      !window.MSStream && (iOS_1to12 || iOS13_iPad || iOS1to12quirk());
+    setIsIosDevice(isIOS);
+  };
+
+  const iOS1to12quirk = () => {
+    let audio = new Audio(); // temporary Audio object
+    audio.volume = 0.5; // has no effect on iOS <= 12
+    return audio.volume === 1;
+  };
 
   const hideModal = () => {
     dispatch({
@@ -25,6 +46,16 @@ const TvModal = ({
         videoId: null,
       },
     });
+  };
+
+  const renderVideoUrl = () => {
+    if (isIosDevice) {
+      return isTrailer ? singleVideo.ios_trailer_video : singleVideo.ios_video;
+    } else {
+      return isTrailer
+        ? singleVideo.video.trailer_video
+        : singleVideo.video.video;
+    }
   };
 
   return (
@@ -42,10 +73,9 @@ const TvModal = ({
               <ReactJWPlayer
                 playerId="my-unique-id"
                 playerScript="https://cdn.jwplayer.com/libraries/CYz0ApGQ.js"
+                // file={renderVideoUrl()}
                 file={
-                  isTrailer
-                    ? singleVideo.trailer_video
-                    : singleVideo.video.video
+                  "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                 }
                 isAutoPlay={true}
               />
