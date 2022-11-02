@@ -3,11 +3,13 @@ import { useEpg } from "planby";
 import moment from "moment";
 import axios from "axios";
 import { theme } from "../Helpers/theme";
+import useLandingApi from "./useLandingApi";
 
 //THIS IS MOCK DATA WAY
 // import { fetchChannels, fetchEpg, fetchNowPlaying } from "../Helpers";
 
 export function usePlanby() {
+  const { fetchChannels } = useLandingApi();
   const [epg, setEpg] = useState([]);
   const [channels, setChannels] = useState([]);
   const [nowPlaying, setNowPlaying] = useState({});
@@ -34,31 +36,11 @@ export function usePlanby() {
     theme
   });
 
+
   //TODO: FETCH THIS WITH REDUX SYSTEM
-  const fetchChannelsAndEpg = async () =>  {
-    const data = {
-        id: 14,
-        sub_profile_id: 14,
-        token: "2y10QSc0ldaANgbMPIkdxhX0eKCM0AYi3sklm1kdzMflqhTPIz0elEem"
-    }
-    try {
-        const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/tv_guide`, data);
-
-        if(response.status === 200) {
-          return response.data
-        }else{
-          console.log('Server error: ' + response.status);
-        }
-
-        return response.data
-    } catch (error) {
-        console.log(error);
-    }
-  }
-
   const handleFetchResources = useCallback(async () => {
     setIsLoading(true);
-    const data = await fetchChannelsAndEpg();
+    const data = await fetchChannels();
     setEpg(data.epg);
     setChannels(data.channels);
     setNowPlaying(data.nowPlaying[0]);

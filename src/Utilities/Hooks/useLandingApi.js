@@ -16,6 +16,22 @@ const useLandingApi = () => {
     token: state.auth.token,
     sub_profile_id: state.auth.subProfileId,
   };
+    
+  const fetchChannels = async () =>  {
+      try {
+          const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/tv_guide`, tokenData);
+          console.log(response)
+
+          if(response.data.status === 200) {
+              new Promise((res) => setTimeout(() => res(response.data.channels), 400));
+          }else{
+          }
+
+          return response.data
+      } catch (error) {
+          console.log(error);
+      }
+  }
 
   const getHomeFirstShows = async () => {
     try {
@@ -124,6 +140,7 @@ const useLandingApi = () => {
     pages,
     tv,
     categories,
+    fetchChannels,
   };
 };
 

@@ -28,7 +28,7 @@ const Categories = ({
   radio,
   getHomeFirstSection,
 }) => {
-  const { shows, categories, tv } = useLandingApi();
+  const { tv } = useLandingApi();
   const { allGames, activeGames } = useGamesData();
   const [categoryList, setCategoryList] = useState([]);
   useEffect(() => {
