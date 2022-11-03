@@ -15,7 +15,7 @@ import {
   GET_VIDEO_SUGGUESTIONS,
   GET_VIDEO_GENRE,
   LIKE_OR_DISLIKE_VIDEO,
-  ADD_OR_REMOVE_WISHLIST_VIDEO
+  ADD_OR_REMOVE_WISHLIST_VIDEO,
 } from "../Actions/types";
 
 const initialState = {
@@ -35,9 +35,10 @@ const initialState = {
   singleCategoryVideos: [],
   isLikeShow: false,
   likeObject: null,
+  likeArray: [],
   isLoading: false,
   videoSuggestions: [],
-  genreVideos:{isLoading:false,data:[],error:""},
+  genreVideos: { isLoading: false, data: [], error: "" },
 };
 
 export default function (state = initialState, action) {
@@ -84,24 +85,32 @@ export default function (state = initialState, action) {
         likeObject: payload.likeObject,
       };
     case LIKE_OR_DISLIKE_VIDEO:
-    return {
-      ...state
-    }
+      const ifExists = state.likeArray.find((item) => item === payload);
+      let temp = [];
+      if (ifExists) {
+        temp = state.likeArray.filter((item) => item !== payload);
+      } else {
+        temp = [...state.likeArray, payload];
+      }
+      return {
+        ...state,
+        likeArray: temp,
+      };
     case ADD_OR_REMOVE_WISHLIST_VIDEO:
       return {
         ...state,
-        homeFirstSectionData:payload
-      }
+        homeFirstSectionData: payload,
+      };
     case GET_VIDEO_SUGGUESTIONS:
       return {
         ...state,
         videoSuggestions: payload,
       };
-      case GET_VIDEO_GENRE:
-        return {
-          ...state,
-          genreVideos: payload,
-        };
+    case GET_VIDEO_GENRE:
+      return {
+        ...state,
+        genreVideos: payload,
+      };
     default:
       return state;
   }

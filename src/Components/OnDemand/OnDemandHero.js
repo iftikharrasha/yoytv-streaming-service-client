@@ -6,6 +6,7 @@ import { connect, useDispatch } from "react-redux";
 import {
   getHomeFirstSection,
   addToWishList,
+  likeOrDislikeVideoOrSeries,
 } from "../../Utilities/Actions/Ondemand";
 
 import "swiper/css";
@@ -16,6 +17,7 @@ import love from "../../Image/love_icon.svg";
 import share from "../../Image/share_icon.svg";
 import plus from "../../Image/plus_icon.svg";
 import play from "../../Image/play_blue.svg";
+import love_icon_green from "../../Image/loveGreen.svg";
 import minusIcon from "../../Image/minus_icon.svg";
 import doctorStrange from "../../Image/doctor-strange.png";
 import wlakingDead from "../../Image/wlaking-dead.png";
@@ -24,9 +26,16 @@ import { useNavigate } from "react-router-dom";
 import { LIKE_SHOW, SELECT_VIDEO } from "Utilities/Actions/types";
 import Rating from "./Rating";
 
-const OnDemandHero = ({ onDemand, getHomeFirstSection, addToWishList }) => {
+const OnDemandHero = ({
+  onDemand,
+  getHomeFirstSection,
+  addToWishList,
+  video,
+  likeOrDislikeVideoOrSeries,
+  getSingleVideo,
+}) => {
   //   const { home_page_bg_image, site_logo, home_banner_heading } = landingData;
-
+  const [data, setData] = useState([]);
   let navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -59,7 +68,9 @@ const OnDemandHero = ({ onDemand, getHomeFirstSection, addToWishList }) => {
       },
     });
   };
-
+  const likeVideo = (admin_video_id) => {
+    likeOrDislikeVideoOrSeries(admin_video_id, video?.is_liked);
+  };
   return (
     <>
       <section className="hero onDemandHero">
@@ -106,7 +117,7 @@ const OnDemandHero = ({ onDemand, getHomeFirstSection, addToWishList }) => {
                             <h4>
                               {item.publish_time}
                               <span>{item.age}</span>
-                              <Rating admin_video_id={item.admin_video_id} />
+                              {/* <Rating admin_video_id={item.admin_video_id} /> */}
                               {convertDuration(item.duration)}
                             </h4>
                             <ul>
@@ -131,16 +142,24 @@ const OnDemandHero = ({ onDemand, getHomeFirstSection, addToWishList }) => {
                                   <span>Tráiler</span>
                                 </button>
                               </li>
-                              <li>
-                                <img
-                                  src={love}
-                                  alt="love"
-                                  className="love"
-                                  onClick={() => likeModalShow(item)}
-                                />
-                              </li>
-                              <li>
-                                <img src={share} alt="share" />
+
+                              <li
+                                onClick={() => {
+                                  likeVideo(item.admin_video_id);
+                                  likeModalShow(item);
+                                }}
+                              >
+                                {onDemand?.likeArray.find(
+                                  (i) => i === item?.admin_video_id
+                                ) ? (
+                                  <img
+                                    src={love_icon_green}
+                                    alt="love"
+                                    className="love"
+                                  />
+                                ) : (
+                                  <img src={love} alt="love" className="love" />
+                                )}
                               </li>
                               <li>
                                 {item.wishlist_status === 0 ? (
@@ -183,9 +202,11 @@ OnDemandHero.propTypes = {
 
 const mapStateToProps = (state) => ({
   onDemand: state.onDemand,
+  video: state?.onDemand?.singleVideo,
 });
 
 export default connect(mapStateToProps, {
   getHomeFirstSection,
   addToWishList,
+  likeOrDislikeVideoOrSeries,
 })(OnDemandHero);

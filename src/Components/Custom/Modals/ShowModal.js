@@ -18,7 +18,14 @@ import { useNavigate } from "react-router-dom";
 import { connect, useDispatch } from "react-redux";
 import { SELECT_VIDEO } from "Utilities/Actions/types";
 import { VideoSuggestions } from "Utilities/Actions/VideoCategory";
-import { getSingleVideo ,getVideoView,getVideoGenre,likeOrDislikeVideoOrSeries,addOrRemoveWishtlist,getOnDemandData} from "Utilities/Actions/Ondemand";
+import {
+  getSingleVideo,
+  getVideoView,
+  getVideoGenre,
+  likeOrDislikeVideoOrSeries,
+  addOrRemoveWishtlist,
+  getOnDemandData,
+} from "Utilities/Actions/Ondemand";
 import { getVideoCategoryList } from "Utilities/Actions/VideoCategory";
 
 const ShowModal = (props) => {
@@ -39,7 +46,7 @@ const ShowModal = (props) => {
     likeOrDislikeVideoOrSeries,
     addOrRemoveWishtlist,
     getOnDemandData,
-    homeFirstSectionData
+    homeFirstSectionData,
   } = props;
   const handleClose = () => setLgShow(false);
   let navigate = useNavigate();
@@ -60,22 +67,27 @@ const ShowModal = (props) => {
     VideoSuggestions(details?.admin_video_id);
     getSingleVideo(details?.admin_video_id);
     getVideoView(details?.admin_video_id);
-    getVideoCategoryList()
+    getVideoCategoryList();
     getVideoGenre({
-      categoryId:details?.category_id,
-      sub_category_id:details?.sub_category_id,
-      genre_id:details?.genre_id
-    })
+      categoryId: details?.category_id,
+      sub_category_id: details?.sub_category_id,
+      genre_id: details?.genre_id,
+    });
   }, []);
-  const isAddInWishlist =(admin_video_id)=>{
-    const myList = homeFirstSectionData?.find((i=>i?.title ==="Mi Lista"))
-    const videoExists = myList?.data?.find((it)=>it?.admin_video_id===admin_video_id)
-    if(videoExists){
-      return true
+  const isAddInWishlist = (admin_video_id) => {
+    const myList = homeFirstSectionData?.find((i) => i?.title === "Mi Lista");
+    const videoExists = myList?.data?.find(
+      (it) => it?.admin_video_id === admin_video_id
+    );
+    if (videoExists) {
+      return true;
     }
-    return false
-  }
-  const selectedCategory = videoCategories?.data?.data?.find((item)=>item?.category_id === details?.category_id).name
+    return false;
+  };
+  const selectedCategory = videoCategories?.data?.data?.find(
+    (item) => item?.category_id === details?.category_id
+  ).name;
+
   return (
     <>
       <Modal
@@ -103,11 +115,13 @@ const ShowModal = (props) => {
                 <Modal.Title id="example-modal-sizes-title-lg">
                   {details.title}
                 </Modal.Title>
-                <h5>{videoViewState?.is_series===0 ? "Movie" : "Series"}</h5>
-                <h6>{video?.video?.ratings}</h6>
+                <h5>{videoViewState?.is_series === 0 ? "Movie" : "Series"}</h5>
+                <h6>{video?.video?.age}</h6>
                 <h4>
-                  {videoViewState?.is_series===0 ? "" : `${videoViewState?.video_playlist?.length} temporadas -`}
-                  {details?.publish_time} - EUA
+                  {videoViewState?.is_series === 0
+                    ? ""
+                    : `${videoViewState?.video_playlist?.length} temporadas -`}
+                  {details?.publish_time}
                 </h4>
                 <p>{details.description}</p>
               </div>
@@ -124,49 +138,68 @@ const ShowModal = (props) => {
                     <span>Reproducir</span>
                   </button>
                 </li>
-                <li onClick={()=>{
-                  likeOrDislikeVideoOrSeries(
-                    video?.video?.admin_video_id,
-                    video?.is_liked
-                  )
-                  getSingleVideo(details?.admin_video_id);
-                }}>
-                 {video?.is_liked===1 ? <img src={love_icon_green} alt="love" className="love" /> :  <img src={love_icon} alt="love" className="love" />}
+                <li
+                  onClick={() => {
+                    likeOrDislikeVideoOrSeries(
+                      video?.video?.admin_video_id,
+                      video?.is_liked
+                    );
+                    getSingleVideo(details?.admin_video_id);
+                  }}
+                >
+                  {video?.is_liked === 1 ? (
+                    <img src={love_icon_green} alt="love" className="love" />
+                  ) : (
+                    <img src={love_icon} alt="love" className="love" />
+                  )}
                 </li>
-                {/* <li>
-                  <img src={share_icon} alt="play" className="play" />
-                </li> */}
-                <li onClick={()=>{
-                   const myList = homeFirstSectionData?.find((i=>i?.title ==="Mi Lista"))
-                   const exist = myList?.data?.find((item)=>item?.admin_video_id === details?.admin_video_id)
-                   let data = []
-                   if(exist){
-                     data = myList?.data?.filter((item)=>item?.admin_video_id !== details?.admin_video_id)
-                   }else{
-                     data = [...myList?.data,details]
-                   }
-                   const temp = homeFirstSectionData?.map((item)=>{
-                     if(item?.title ==="Mi Lista"){
-                       return {...item,data}
-                     }
-                     return item
-                   })
-                  addOrRemoveWishtlist(details?.admin_video_id,temp)
-                }}>
-                 {isAddInWishlist(details?.admin_video_id) ? <img src={minus_icon} alt="add" className="plus"  /> : <img src={plus_icon} alt="add" className="plus"  />}
+
+                <li
+                  onClick={() => {
+                    const myList = homeFirstSectionData?.find(
+                      (i) => i?.title === "Mi Lista"
+                    );
+                    const exist = myList?.data?.find(
+                      (item) => item?.admin_video_id === details?.admin_video_id
+                    );
+                    let data = [];
+                    if (exist) {
+                      data = myList?.data?.filter(
+                        (item) =>
+                          item?.admin_video_id !== details?.admin_video_id
+                      );
+                    } else {
+                      data = [...myList?.data, details];
+                    }
+                    const temp = homeFirstSectionData?.map((item) => {
+                      if (item?.title === "Mi Lista") {
+                        return { ...item, data };
+                      }
+                      return item;
+                    });
+                    addOrRemoveWishtlist(details?.admin_video_id, temp);
+                  }}
+                >
+                  {isAddInWishlist(details?.admin_video_id) ? (
+                    <img src={minus_icon} alt="add" className="plus" />
+                  ) : (
+                    <img src={plus_icon} alt="add" className="plus" />
+                  )}
                 </li>
               </ul>
               <h2>
                 <span>Categorias:</span>{" "}
-                <Link to={`/view-more/${video?.video?.category_id}?name=${selectedCategory}`}>
-                  <span style={{color:"#67fe65"}}>{selectedCategory}</span>
+                <Link
+                  to={`/view-more/${video?.video?.category_id}?name=${selectedCategory}`}
+                >
+                  <span style={{ color: "#67fe65" }}>{selectedCategory}</span>
                 </Link>
               </h2>
             </div>
           </Modal.Header>
           <Modal.Body>
             <div className="body__contents">
-              {videoViewState?.is_series===0 ? null : (
+              {videoViewState?.is_series === 0 ? null : (
                 <>
                   <div className="body__contents__title">
                     <h2>Episodios</h2>
@@ -175,50 +208,67 @@ const ShowModal = (props) => {
                         className="custom-select"
                         id="selectEpisode"
                         defaultValue={1}
-                        onChange={(e)=>{
+                        onChange={(e) => {
                           getVideoGenre({
-                            categoryId:details?.category_id,
-                            sub_category_id:details?.sub_category_id,
-                            genre_id:e.target.value
-                          })
+                            categoryId: details?.category_id,
+                            sub_category_id: details?.sub_category_id,
+                            genre_id: e.target.value,
+                          });
                         }}
                       >
-                        <option  value={details?.genre_id}>
-                              {video?.genres?.find((it)=>it?.genre_id===details?.genre_id)?.genre_name}
+                        <option value={details?.genre_id}>
+                          {
+                            video?.genres?.find(
+                              (it) => it?.genre_id === details?.genre_id
+                            )?.genre_name
+                          }
+                        </option>
+                        {video?.genres
+                          ?.filter((i) => i?.genre_id !== details?.genre_id)
+                          .map((item) => {
+                            return (
+                              <option
+                                key={item?.genre_id}
+                                value={item?.genre_id}
+                              >
+                                {item?.genre_name}
                               </option>
-                        {video?.genres?.filter((i)=>i?.genre_id !==details?.genre_id).map((item)=>{
-                            return <option key={item?.genre_id} value={item?.genre_id}>
-                              {item?.genre_name}
-                              </option>
-                        })}
+                            );
+                          })}
                       </select>
                     </div>
                   </div>
                   <ul className="body__contents__episodes">
-                    {videoGenre?.isLoading ? <span>Loading</span> : videoGenre?.data?.map((item) => (
-                      <div
-                        className="body__contents__episodes__single"
-                        key={item.id}
-                      >
-                        <div className="body__contents__episodes__single__left">
-                          <span>{item.no}</span>
-                          <div className="body__contents__episodes__single__left__thumb">
-                            <img
-                              src={item.default_image}
-                              alt="intro"
-                              className="thumb"
-                            />
+                    {videoGenre?.isLoading ? (
+                      <span>Loading</span>
+                    ) : (
+                      videoGenre?.data
+                        ?.map((item) => (
+                          <div
+                            className="body__contents__episodes__single"
+                            key={item.id}
+                          >
+                            <div className="body__contents__episodes__single__left">
+                              <span>{item.no}</span>
+                              <div className="body__contents__episodes__single__left__thumb">
+                                <img
+                                  src={item.default_image}
+                                  alt="intro"
+                                  className="thumb"
+                                />
+                              </div>
+                            </div>
+                            <div className="body__contents__episodes__single__right">
+                              <div className="body__contents__episodes__single__right__info">
+                                <h4>{item.title}</h4>
+                                <p>{item.description}</p>
+                              </div>
+                              <span>{item.duration} min</span>
+                            </div>
                           </div>
-                        </div>
-                        <div className="body__contents__episodes__single__right">
-                          <div className="body__contents__episodes__single__right__info">
-                            <h4>{item.title}</h4>
-                            <p>{item.description}</p>
-                          </div>
-                          <span>{item.duration} min</span>
-                        </div>
-                      </div>
-                    ))?.slice(0,3)}
+                        ))
+                        ?.slice(0, 3)
+                    )}
                     <Link
                       to={`/on-demand/series-details/` + details.admin_video_id}
                     >
@@ -257,8 +307,8 @@ const mapStateToProps = (state) => ({
   videoViewState: state?.onDemand?.videoViewState,
   videoCategories: state.videoCategories,
   videoGenre: state?.onDemand?.genreVideos,
-  isLoading:state?.onDemand?.isLoading,
-  homeFirstSectionData:state?.onDemand?.homeFirstSectionData
+  isLoading: state?.onDemand?.isLoading,
+  homeFirstSectionData: state?.onDemand?.homeFirstSectionData,
 });
 
 export default connect(mapStateToProps, {
@@ -269,5 +319,5 @@ export default connect(mapStateToProps, {
   getVideoGenre,
   likeOrDislikeVideoOrSeries,
   addOrRemoveWishtlist,
-  getOnDemandData
+  getOnDemandData,
 })(ShowModal);
