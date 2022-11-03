@@ -45,12 +45,13 @@ const ShowModal = (props) => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const navigateToPlayer = (videoId) => {
+  const navigateToPlayer = (videoId, isTrailer) => {
     dispatch({
       type: SELECT_VIDEO,
       payload: {
         show: true,
         videoId: videoId,
+        isTrailer: isTrailer,
       },
     });
     handleClose();
@@ -115,7 +116,9 @@ const ShowModal = (props) => {
               <ul>
                 <li>
                   <button
-                    onClick={() => navigateToPlayer(details.admin_video_id)}
+                    onClick={() =>
+                      navigateToPlayer(details.admin_video_id, false)
+                    }
                   >
                     <img src={play_fill} alt="play_fill" />
                     <span>Reproducir</span>

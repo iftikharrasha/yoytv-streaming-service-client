@@ -10,6 +10,7 @@ import {
   GET_SINGLE_VIDEO,
   CHANGE_IS_LOADING,
   GET_SINGLE_CATEGORY_VIDEOS,
+  UPDATE_WISHLIST,
   GET_VIDEO_GENRE,
   LIKE_OR_DISLIKE_VIDEO,
   ADD_OR_REMOVE_WISHLIST_VIDEO
@@ -108,7 +109,10 @@ export const addToWishList = (videoId) => async (dispatch) => {
     );
 
     if (res.data.success) {
-      //   dispatch(setAlert(res.data.message, "success"));
+      dispatch({
+        type: UPDATE_WISHLIST,
+        payload: null,
+      });
       notyf.open({
         type: "success",
         message: res.data.message,

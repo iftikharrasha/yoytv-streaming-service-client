@@ -7,6 +7,7 @@ import { loginUser, registerUser } from "Utilities/Actions/Auth";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Navigate, useNavigate } from "react-router-dom";
+import useUserApi from "../../../Utilities/Hooks/useLandingApi";
 
 import {
   AUTH_DEVICE_TOKEN,
@@ -15,6 +16,7 @@ import {
 } from "Utilities/Constants";
 
 const LoginModal = ({ loginUser, registerUser, show, setShow }) => {
+  const { landingData } = useUserApi();
   const { error, setError, success, setSuccess } = useAuth();
   const [mode, setMode] = useState("login");
   let navigate = useNavigate();
@@ -90,7 +92,7 @@ const LoginModal = ({ loginUser, registerUser, show, setShow }) => {
             />
           </Modal.Header>
           <Modal.Body>
-            <img src={logoGreen} alt="SiteLogo" width="216" height="221" />
+            <img src={landingData?.site_logo} alt="SiteLogo" width="216" height="221" />
             <h2>Iniciar Sesión</h2>
             <p>Utiliza tu cuenta Coppel Digital. ¿No tienes membresía?</p>
             <h5 onClick={handleRegisterModal}>Regístrate aquí</h5>
@@ -157,7 +159,7 @@ const LoginModal = ({ loginUser, registerUser, show, setShow }) => {
             />
           </Modal.Header>
           <Modal.Body>
-            <img src={logoGreen} alt="SiteLogo" width="216" height="221" />
+            <img src={landingData?.site_logo} alt="SiteLogo" width="216" height="221" />
             <h2>Añadir Breaking Bad a Mi Lista</h2>
             <p>
               Para guardar tu podcast en favoritos es necesario una membresía

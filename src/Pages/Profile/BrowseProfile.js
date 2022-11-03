@@ -7,6 +7,7 @@ import { getSubProfiles } from "../../Utilities/Actions/Profile";
 import { loadUser } from "Utilities/Actions/Auth";
 import { UPDATE_SUB_PROFILE_ID } from "Utilities/Actions/types";
 import { Helmet } from 'react-helmet-async';
+import useUserApi from "../../Utilities/Hooks/useLandingApi";
 
 const BrowseProfile = ({
   profile: { subProfileList, isNewSubProfileAllowed, loading },
@@ -15,6 +16,7 @@ const BrowseProfile = ({
   loadUser,
 }) => {
   const dispatch = useDispatch();
+  const { landingData } = useUserApi();
 
   useEffect(() => {
     getSubProfiles();
@@ -40,7 +42,7 @@ const BrowseProfile = ({
         <section className="browse">
           <div className="wrapper browse__contents">
             <img
-              src={logoGreen}
+              src={landingData?.site_logo}
               className="logo"
               alt="SiteLogo"
               width="216"

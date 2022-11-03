@@ -7,6 +7,7 @@ import logoGreen from "../../Image/LogoGreen.svg";
 import { connect, useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 import { SET_SUBSCRIPTION_PLAN } from "Utilities/Actions/types";
+import useUserApi from "../../Utilities/Hooks/useLandingApi";
 
 import { getSubscriptionPlans } from "Utilities/Actions/Subscription";
 import { useEffect } from "react";
@@ -15,6 +16,7 @@ const Subscription = ({
   subscription: { data, sub_loading, plan_id },
   getSubscriptionPlans,
 }) => {
+  const { landingData } = useUserApi();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -32,7 +34,7 @@ const Subscription = ({
         <section className="browse subscription">
           <div className="wrapper browse__contents">
             <img
-              src={logoGreen}
+              src={landingData?.site_logo}
               className="logo"
               alt="SiteLogo"
               width="216"

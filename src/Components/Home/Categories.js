@@ -28,7 +28,7 @@ const Categories = ({
   radio,
   getHomeFirstSection,
 }) => {
-  const { shows, categories } = useLandingApi();
+  const { tv } = useLandingApi();
   const { allGames, activeGames } = useGamesData();
   const [categoryList, setCategoryList] = useState([]);
   useEffect(() => {
@@ -87,7 +87,7 @@ const Categories = ({
             </h2>
             <Link to="/tv-en-vivo">{`Ver más>`}</Link>
           </div>
-          <TvSlider shows={tvData} delay={1000} />
+          <TvSlider shows={tv} delay={1000} />
         </section>
       )}
 

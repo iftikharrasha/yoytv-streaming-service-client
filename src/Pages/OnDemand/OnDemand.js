@@ -6,6 +6,7 @@ import Categories from "../../Components/Home/Categories";
 import OnDemandHero from "../../Components/OnDemand/OnDemandHero";
 import { Helmet } from "react-helmet-async";
 import TvModal from "Components/Custom/Modals/TvModal";
+import LikeModal from "Components/Custom/Modals/LikeModal";
 
 const OnDemand = () => {
   const { landingData } = useUserApi();
@@ -14,23 +15,18 @@ const OnDemand = () => {
   return (
     <>
       <Helmet>
-        <title>Streamapp | On Demand</title>
-        <meta
-          name="description"
-          content={
-            "TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital."
-          }
-        />
-      </Helmet>
-      {!landingData ? (
-        <Loader />
-      ) : (
-        <>
-          <OnDemandHero landingData={landingData} loggedInUser={loggedInUser} />
-          <Categories demandPage={true} />
-          <TvModal />
-        </>
-      )}
+          <title>Streamapp | On Demand</title>
+          <meta name="description" content={'TV en vivo, on demand, series, películas, radio y más. Todo en un solo lugar gracias a tu cuenta Coppel Digital.'}/>
+      </Helmet> 
+      {
+          !landingData ? <Loader/> :
+              <>
+                  <OnDemandHero landingData={landingData} loggedInUser={loggedInUser}/>
+                  <Categories demandPage={true}/>
+                  <LikeModal />
+                  <TvModal />
+              </>
+      }
     </>
   );
 };
