@@ -5,6 +5,7 @@ import adbanner6 from '../../Image/adbanner6.png';
 import JuegosSlider from '../Custom/Sliders/JuegosSlider';
 
 const JuegosMore = ({activeGames, nuevosGames, category}) => {
+    console.log(nuevosGames)
     return (
         <>
             <section className="allEpisodes podcastDetails playerDetails gamesSlideHeight">
@@ -25,7 +26,12 @@ const JuegosMore = ({activeGames, nuevosGames, category}) => {
                                             <h2>Recomendados</h2>
                                             <Link to="/juegos/categories">{`Ver más>`}</Link>
                                         </div>
-                                        <JuegosSlider shows={nuevosGames} delay={6000}/>
+
+                                        {
+                                            nuevosGames.length !== 0 ? <JuegosSlider shows={nuevosGames} delay={6000}/> :
+                                            <h6>No se encontró ninguna recomendación!</h6>
+                                        }
+                                        
                                     </div>
                                 </div>
                                     <div className="adbanner">

@@ -7,9 +7,10 @@ import Share from '../../Image/Sharebutton.svg';
 import arrow from '../../Image/arrow-left-white.svg';
 import GameModal from "../Custom/Modals/GameModal";
 import adbanner3 from '../../Image/adbanner3.png';
-import leftClick from '../../Image/left-click.svg';
+import mouse from '../../Image/left-click.svg';
+import keyboard from '../../Image/arrows.svg';
 import gamebtn from '../../Image/game-btn.svg';
-import tap from '../../Image/tap.svg';
+import touch from '../../Image/tap.svg';
 import RectangularAdIframe from "Components/Custom/Ads/RectangularAdIframe";
 
 
@@ -57,16 +58,24 @@ const JuegosPlay = ({nowPlaying}) => {
                             <div className="instructions">
                                 <h4>Cómo jugar</h4>
 
-                                <h5>{nowPlaying.desktop_instructions}</h5>
+                                <h5>{nowPlaying.description}</h5>
 
                                 <ul>
                                     <li>
-                                        <p>Usa el clic del mouse <br />para moverte</p>
-                                        <img src={leftClick} alt="leftClick"/>
+                                        <p>{nowPlaying.desktop_instructions}</p>
+                                        {
+                                            nowPlaying.desktop_control === "1" ? <img src={mouse} alt="mouse"/> :
+                                            nowPlaying.desktop_control === "2" ? <img src={keyboard} alt="keyboard"/> :
+                                            null
+                                        }
                                     </li>
                                     <li>
-                                        <p>Toca sobre la pantalla<br /> para moverte</p>
-                                        <img src={tap} alt="tap"/>
+                                        <p>{nowPlaying.movil_instructions}</p>
+                                        {
+                                            nowPlaying.movil_control === "1" ? <img src={touch} alt="touch"/> :
+                                            nowPlaying.movil_control === "2" ? <img src={touch} alt="touch"/> :
+                                            null
+                                        }
                                     </li>
                                 </ul>
                             </div>

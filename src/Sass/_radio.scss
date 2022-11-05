@@ -22,16 +22,21 @@
             flex-wrap: wrap;
             grid-gap: 2rem;
             position: relative;
-            overflow: hidden;
+            margin-top: 1rem;
             &__single{
                 width: 15.625rem;
                 height: auto;
                 position: relative;
                 border-radius: 1.125rem;
+                @include flexCenter;
+                border: 0.25rem solid rgba(0, 0, 0, 0);
                 @media (max-width: 575.98px) {
                     width: 46%;
                 }
-                @include flexCenter;
+                &:hover{
+                    border: 0.25rem solid $green;
+                    transform: scale(1.05);
+                }
                 a, &__hyper{
                     @include flexCenter;
                     width: 100%;

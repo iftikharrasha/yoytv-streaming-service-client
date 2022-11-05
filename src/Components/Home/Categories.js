@@ -29,7 +29,7 @@ const Categories = ({
   getHomeFirstSection,
 }) => {
   const { tv } = useLandingApi();
-  const { allGames, activeGames } = useGamesData();
+  const { activeGames } = useGamesData();
   const [categoryList, setCategoryList] = useState([]);
   useEffect(() => {
     getHomeFirstSection();
@@ -170,7 +170,7 @@ const Categories = ({
             </h2>
             <Link to="/juegos/categories">{`Ver más>`}</Link>
           </div>
-          <JuegosSlider shows={allGames} delay={6000} />
+          <JuegosSlider shows={activeGames} delay={6000} />
         </section>
       )}
     </>
