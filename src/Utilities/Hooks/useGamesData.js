@@ -5,10 +5,10 @@ const useGamesData = () => {
     const fetcher = async (url) =>
     await axios.get(url).then((res) => res.data.message);
 
-    const { data: allGames } = useSWR(
-        `${process.env.REACT_APP_API_LINK_GAMES}/games?pub_key=games123456pub&active=all`,
-        fetcher
-    );
+    // const { data: allGames } = useSWR(
+    //     `${process.env.REACT_APP_API_LINK_GAMES}/games?pub_key=games123456pub&active=all`,
+    //     fetcher
+    // );
 
     const { data: activeGames } = useSWR(
         `${process.env.REACT_APP_API_LINK_GAMES}/games?pub_key=games123456pub&active=active`,
@@ -21,7 +21,7 @@ const useGamesData = () => {
     );
 
     return {
-        allGames,
+        // allGames,
         activeGames,
         gamesCategories,
     };

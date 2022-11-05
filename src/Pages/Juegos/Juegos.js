@@ -9,36 +9,30 @@ import { Helmet } from 'react-helmet-async';
 import useUserApi from "../../Utilities/Hooks/useLandingApi";
 
 const Juegos = () => {
-    const { allGames, activeGames } = useGamesData();
+    const { activeGames } = useGamesData();
     const { category } = useParams();
-    const [fiteredAllGames, setFiteredAllGames] = useState([]);
+    const [filterNuevosGames, setFilterNuevosGames] = useState([]);
     const [fiteredActiveGames, setFiteredActiveGames] = useState([]);
     const { landingData } = useUserApi();
     
     useEffect(() => {
-        if(allGames && activeGames){
+        if(activeGames){
             const fitlerGames = async () => {
-                const filterAll = allGames.filter(el=>{
-                    return el.category.includes(category)
-                })
-
                 const filterActive = activeGames.filter(el=>{
                     return el.category.includes(category)
                 })
 
-                setFiteredAllGames(filterAll);
-                setFiteredActiveGames(filterActive);
+                const filterNuevos = activeGames.filter(el=>{
+                    return el.category.includes('Nuevos')
+                })
 
-                //linear category filtering
-                // const filterAll = allGames.filter(game => game.category === category);
-                // setFiteredAllGames(filterAll);
-                // const filterActive = activeGames.filter(game => game.category === category);
-                // setFiteredActiveGames(filterActive);
+                setFiteredActiveGames(filterActive);
+                setFilterNuevosGames(filterNuevos);
             };
 
             fitlerGames();
         }
-    }, [category, allGames, activeGames]);
+    }, [category, activeGames]);
  
     return (
         <> 
@@ -64,10 +58,10 @@ const Juegos = () => {
 
             {
                 category === "all" ? 
-                    !allGames && !activeGames ? <Loader /> : 
-                    <JuegosMore allGames={allGames} activeGames={activeGames} category={category}/>
-                    : !fiteredAllGames && !fiteredActiveGames ? <Loader /> : 
-                    <JuegosMore allGames={fiteredAllGames} activeGames={fiteredActiveGames} category={category}/>
+                    !activeGames ? <Loader /> : 
+                    <JuegosMore activeGames={activeGames} nuevosGames={filterNuevosGames} category={category}/>
+                    : !fiteredActiveGames ? <Loader /> : 
+                    <JuegosMore activeGames={fiteredActiveGames} nuevosGames={filterNuevosGames} category={category}/>
             }
         </>
     );

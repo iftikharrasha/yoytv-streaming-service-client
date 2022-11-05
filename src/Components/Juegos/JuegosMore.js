@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import adbanner6 from '../../Image/adbanner6.png';
 import JuegosSlider from '../Custom/Sliders/JuegosSlider';
 
-const JuegosMore = ({allGames, activeGames, category}) => {
+const JuegosMore = ({activeGames, nuevosGames, category}) => {
     return (
         <>
             <section className="allEpisodes podcastDetails playerDetails gamesSlideHeight">
@@ -18,14 +18,14 @@ const JuegosMore = ({allGames, activeGames, category}) => {
                                             <h2>Destacados</h2>
                                             <Link to="/juegos/categories">{`Ver más>`}</Link>
                                         </div>
-                                        <JuegosSlider shows={allGames} delay={6000}/>
+                                        <JuegosSlider shows={activeGames} delay={6000}/>
                                     </div>
                                     <div>
                                         <div className="playerDetails__cards__slider__title">
                                             <h2>Recomendados</h2>
                                             <Link to="/juegos/categories">{`Ver más>`}</Link>
                                         </div>
-                                        <JuegosSlider shows={activeGames} delay={6000}/>
+                                        <JuegosSlider shows={nuevosGames} delay={6000}/>
                                     </div>
                                 </div>
                                     <div className="adbanner">
