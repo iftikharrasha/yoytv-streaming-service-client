@@ -7,16 +7,31 @@ import Loader from "../../Components/Custom/Loaders/Loader";
 import { Helmet } from 'react-helmet-async';
 
 const JuegosGameplay = () => {
-    const { allGames, activeGames } = useGamesData();
+    const { activeGames } = useGamesData();
     const [nowPlaying, setNowPlaying] = useState(null);
+    const [filterNuevosGames, setFilterNuevosGames] = useState([]);
+    const [fiteredActiveGames, setFiteredActiveGames] = useState([]);
     const { id } = useParams();
-
+    
     useEffect(() => {
-        if(allGames){
-            const game = allGames.filter(games => games.id === id);
-            setNowPlaying(game[0]);
+        if(activeGames){
+            const fitlerGames = async () => {
+                const game = activeGames.filter(games => games.id === id);
+                setNowPlaying(game[0]);
+
+                const filterActive = activeGames.filter(games => games.id !== id);
+                
+                const filterNuevos = activeGames.filter(games=>{
+                    return games.category.includes('Nuevos') && games.id !== id
+                })
+
+                setFiteredActiveGames(filterActive);
+                setFilterNuevosGames(filterNuevos);
+            };
+
+            fitlerGames();
         }
-    }, [id, allGames])
+    }, [id, activeGames]);
 
     return (
         <> 
@@ -28,7 +43,7 @@ const JuegosGameplay = () => {
                 !nowPlaying ? <Loader/> : 
                 <>  
                     <JuegosPlay nowPlaying={nowPlaying}/>
-                    <JuegosMore allGames={allGames} activeGames={activeGames}/>
+                    <JuegosMore activeGames={fiteredActiveGames} nuevosGames={filterNuevosGames}/>
                 </>
             }
         </>
