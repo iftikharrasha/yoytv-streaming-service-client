@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import useSWR from "swr";
 import axios from "axios";
 import store from "Utilities/Store/store";
+import { AUTH_DEVICE_TOKEN, AUTH_DEVICE_TYPE } from "Utilities/Constants";
 
 const useLandingApi = () => {
   const [newRelease, setNewRelease] = useState([]);
@@ -16,22 +17,30 @@ const useLandingApi = () => {
     token: state.auth.token,
     sub_profile_id: state.auth.subProfileId,
   };
-    
-  const fetchChannels = async () =>  {
-      try {
-          const response = await axios.post(`${process.env.REACT_APP_API_LINK}/userApi/tv_guide`, tokenData);
-          console.log(response)
 
-          if(response.data.status === 200) {
-              new Promise((res) => setTimeout(() => res(response.data.channels), 400));
-          }else{
-          }
-
-          return response.data
-      } catch (error) {
-          console.log(error);
+  const fetchChannels = async () => {
+    try {
+      var formdata = new FormData();
+      formdata.append("id", state.auth.userId);
+      formdata.append("token", state.auth.token);
+      formdata.append("device_type", AUTH_DEVICE_TYPE);
+      formdata.append("device_token", AUTH_DEVICE_TOKEN);
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_LINK}/userApi/tv_guide`,
+        formdata
+      );
+      if (response.data.status === 200) {
+        new Promise((res) =>
+          setTimeout(() => res(response.data.channels), 400)
+        );
+      } else {
       }
-  }
+
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const getHomeFirstShows = async () => {
     try {
@@ -89,9 +98,15 @@ const useLandingApi = () => {
 
   const getTvSlider = async () => {
     try {
+      var formdata = new FormData();
+      formdata.append("id", state.auth.userId);
+      formdata.append("token", state.auth.token);
+      formdata.append("device_type", AUTH_DEVICE_TYPE);
+      formdata.append("device_token", AUTH_DEVICE_TOKEN);
+
       const response = await axios.post(
         `${process.env.REACT_APP_API_LINK}/userApi/tv_guide_channels`,
-        tokenData
+        formdata
       );
 
       if (response.data) {
